@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Calculation &mdash; Ichnaea 1.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Ichnaea 1.3 documentation" href="index.html"/>
+        <link rel="next" title="Metrics" href="metrics.html"/>
+        <link rel="prev" title="Testing" href="testing.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> Ichnaea
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using the Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#http-api">HTTP API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#applications-libraries">Applications / Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Services API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#api-access-keys">API Access Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#errors">Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#invalid-api-key">Invalid API Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#api-key-limit">API Key Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#parse-error">Parse Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#service-error">Service Error</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#apis">APIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/geolocate.html">Geolocate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/country.html">Country</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/country.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/country.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/geosubmit2.html">Geosubmit Version 2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/geosubmit.html">Geosubmit (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/search.html">Search (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/submit.html">Submit (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#response">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#cell-fields">Cell Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Installing / Deploying</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#mysql-amazon-rds">MySQL / Amazon RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#redis-amazon-elasticache">Redis / Amazon ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#amazon-s3">Amazon S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#statsd-sentry">Statsd / Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#assets">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cache">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#celery">Celery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#database">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#geoip">GeoIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#sentry">Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#statsd">StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#export">Export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html#bucket-export">Bucket Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#internal-export">Internal Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#https-export">HTTPS Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#import">Import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#locate-fallback">Locate Fallback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#python-dependencies">Python Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#css-js-images">CSS / JS / Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#cleanup">Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#release-build">Release Build</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-tasks">Testing Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-multiple-python-versions">Testing Multiple Python Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Calculation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accuracy">Accuracy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wifi">WiFi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gsm">GSM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wcdma-umts">WCDMA / UMTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lte">LTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cdma">CDMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geoip">GeoIP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-request-metrics">API Request Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-user-metrics">API User Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-query-metrics">API Query Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-result-metrics">API Result Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-source-metrics">API Source Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-fallback-source-metrics">API Fallback Source Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#data-pipeline-metrics">Data Pipeline Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#data-pipeline-export-metrics">Data Pipeline Export Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#internal-monitoring">Internal Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#http-counters">HTTP Counters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#http-timers">HTTP Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#task-timers">Task Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#datamaps-timers">Datamaps Timers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal_api/index.html">Internal Code API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal_api/index.html#indices-and-tables">Indices and Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/api/index.html"><code class="docutils literal"><span class="pre">ichnaea.api</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/config.html"><code class="docutils literal"><span class="pre">ichnaea.api.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.api.exceptions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/locate/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/rate_limit.html"><code class="docutils literal"><span class="pre">ichnaea.api.rate_limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/submit/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.submit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/views.html"><code class="docutils literal"><span class="pre">ichnaea.api.views</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/async/index.html"><code class="docutils literal"><span class="pre">ichnaea.async</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/app.html"><code class="docutils literal"><span class="pre">ichnaea.async.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/config.html"><code class="docutils literal"><span class="pre">ichnaea.async.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/schedule.html"><code class="docutils literal"><span class="pre">ichnaea.async.schedule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/settings.html"><code class="docutils literal"><span class="pre">ichnaea.async.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/task.html"><code class="docutils literal"><span class="pre">ichnaea.async.task</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/geocalc.html"><code class="docutils literal"><span class="pre">ichnaea.geocalc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/hashkey.html"><code class="docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/wifi.html"><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/util.html"><code class="docutils literal"><span class="pre">ichnaea.util</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/webapp/index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/app.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/config.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/monitor.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.monitor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/settings.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/view.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.view</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/worker.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.worker</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#unreleased">1.3 (unreleased)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#untagged">Untagged</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#migrations">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#changes">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id1">20150813105600</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id2">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id3">20150806105100</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id4">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id5">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id6">20150730143600</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id7">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id8">20150730111000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id9">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id10">Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">1.2 (2015-07-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id12">20150716174000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id13">Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id14">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id15">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id16">20150707130400</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id17">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id18">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id19">20150616104200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id20">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id21">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id22">20150610103900</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id23">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id24">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id25">20150604164500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id26">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id27">20150528085200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id28">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id29">20150522094900</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id30">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id31">20150507103300</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id32">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id33">20150505113200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id34">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id35">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id36">20150423105800</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id37">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id38">20150416111700</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id39">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id40">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id41">20150409120500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id42">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id43">20150320100800</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id44">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id45">20150309175500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id46">20150305122500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id47">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id48">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id49">20150211113000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id50">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id51">20150209110000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id52">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id53">20150203093000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id54">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id55">20150127130000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id56">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id57">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id58">20150122140000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id59">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id60">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id61">20150105140000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id62">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id63">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id64">20141218093500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id65">20141120130000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id66">20141103125500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id67">20141030113700</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id68">1.1 (2014-10-27)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id69">20141027122000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id70">20141023094000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id71">20141016123300</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id72">20141014161400</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id73">20141009121300</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id74">20141002103900</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id75">20140904094000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id76">20140901114000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id77">20140821114200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id78">20140812120000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id79">20140730133000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id80">20140715114000</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id81">1.0 (2014-07-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id82">0.1 (2013-11-22)</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ichnaea</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Calculation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/calculation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="calculation">
+<span id="id1"></span><h1>Calculation<a class="headerlink" href="#calculation" title="Permalink to this headline">¶</a></h1>
+<p>There&#8217;s two general approaches to calculate positions from signal sources,
+without the cooperation of the signal sources or mobile networks.</p>
+<ol class="arabic simple">
+<li>Determine the location of signal sources from <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a>,
+then compare / trilaterate user locations.</li>
+<li>Generate signal fingerprints for a fine-grained grid of the world.
+Find best match for a observed fingerprint.</li>
+</ol>
+<p>The second approach has a much better accuracy, but relies on a lot more
+available and constantly updated data. For most of the world this
+approach is not practical, so we currently focus on approach one.</p>
+<p>In theory one would assume that one could use signal strength data to
+infer a distance measure from it. The further a device is away from the
+signal source, the weaker the signal should get.</p>
+<p>Unfortunately the signal strength is more dependent on the device type,
+how a user holds a device and changing environmental factors like trucks in
+the way. Even worth modern networks adjust their signal strength to the number
+of devices inside their reception area. This makes this data practically
+useless while looking up a users position via a single reading.</p>
+<p>In aggregate over many data points this information can still be valuable
+in determining the actual position of the signal source. While observing
+multiple signals at once, their relative strengths can also be used, as
+this keeps some of the changing factors constant, like the device type.</p>
+<p>One other approach is using time of flight data as a distance metric.
+While there are some reflection and multipath problems it&#8217;s a much more
+accurate distance predictor. Fine grained enough timing data is
+unfortunately almost never available to the application or operating
+system layer in client devices. Some LTE networks and really modern
+WiFi networks with support for 802.11v are the rare exception to this.
+But these are so rare, that we currently ignore timing data.</p>
+<div class="section" id="accuracy">
+<h2>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h2>
+<p>Depending on the signal standard, we can promise different sorts of accuracy.</p>
+<p>Underlying this is the assumption that we have enough data about the
+area at all. With no or too little data we&#8217;ll have to fallback to less
+accurate data sources. WiFi is the most accurate, followed by cell based
+estimation using single cells, multiple cells or cell location areas.
+If all else fails GeoIP serves as a general fallback.</p>
+<div class="section" id="wifi">
+<h3>WiFi<a class="headerlink" href="#wifi" title="Permalink to this headline">¶</a></h3>
+<p>WiFi networks have a fairly limited range, with buildings in the way often
+only in the tens or low hundreds of meters. But caching layers in the
+operating system and time differences between when a WiFi scan happened
+and when this is made available to the calling app can lead to WiFi networks
+still being visible up to some kilometers away from their actual position
+if the device moves in the meantime.</p>
+<p>This means position estimates based on WiFi networks are usually accurate
+to low hundreds of meters. If a lot of networks are available in the area
+accuracy tends to increase to 100 meter or less.</p>
+<p>One challenge that&#8217;s particular severe in WiFi networks are all the
+constantly moving WiFi networks, for example those installed on buses
+or trains or in the form of hotspot enabled mobile phones or tablets.
+So movement detection and detecting inconsistencies between observed
+data and the database world view are important considerations.</p>
+</div>
+<div class="section" id="gsm">
+<h3>GSM<a class="headerlink" href="#gsm" title="Permalink to this headline">¶</a></h3>
+<p>For GSM networks we will likely have access to the unique cell id of the
+serving cell only. In GSM networks the phone does not know the full cell
+ids of any neighboring cells, unless it associates with the new cell as
+part of a hand-over, forgetting the cell id of the old cell.</p>
+<p>So we are limited to a basic <a class="reference internal" href="glossary.html#term-cell-id"><span class="xref std std-term">Cell-ID</span></a> approach, meaning we assume
+that the user is at the center of the current GSM cell area and use the
+cell radius as the accuracy.</p>
+<p>GSM cells are restricted to a maximum range of 35km, but there are rare
+exceptions using the GSM extended range of 120km.</p>
+<p>In more populated places the cell sizes are typically much smaller, but
+generally accuracy will be in the tens of kilometer range.</p>
+</div>
+<div class="section" id="wcdma-umts">
+<h3>WCDMA / UMTS<a class="headerlink" href="#wcdma-umts" title="Permalink to this headline">¶</a></h3>
+<p>In WCDMA networks neighboring cell information can be available. But
+limitations in chipset drivers, the radio interface layer and the
+operating systems often hide this data from application code. Or
+only partially expose the cell identifiers, for example only exposing
+the carrier and primary scrambling code of the neighboring cells.</p>
+<p>So in most cases we are limited to the same approach as for GSM cells.
+The typical cell sizes of UMTS cells are much smaller, which practically
+leads to a better accuracy. But WCDMA cells in rural areas can have a
+larger radius than GSM cells and we observed cells sizes of 60-70km.</p>
+<p>In urban areas we should typically see accuracy in the 1 to 10 kilometer
+range.</p>
+</div>
+<div class="section" id="lte">
+<h3>LTE<a class="headerlink" href="#lte" title="Permalink to this headline">¶</a></h3>
+<p>LTE networks are similar to WCDMA networks and the same restriction on
+neighboring cells applies. Instead of a primary scrambling code LTE uses
+a physical cell id, which for our purposes has similar characteristics.</p>
+<p>LTE cells are again often even smaller than WCDMA cells which leads to
+better accuracies.</p>
+<p>LTE networks also expose a time based distance metric in the form of
+the timing advance. While we currently don&#8217;t use this information, in
+the future it has the potential to significantly improve position
+estimates based on multiple cells.</p>
+</div>
+<div class="section" id="cdma">
+<h3>CDMA<a class="headerlink" href="#cdma" title="Permalink to this headline">¶</a></h3>
+<p>CDMA networks are structured differently from the GSM family. A device
+is usually always connected to multiple cell towers at once and
+information about signal quality refers to the combined signal quality
+gotten from all connected towers.</p>
+<p>This means we usually get information about multiple cells and can do
+trilateration, leading to better position estimates. Cells sizes are
+comparable to WCDMA networks and can be in the 100km range in rural
+areas.</p>
+<p>In theory in CDMA networks the latitude and longitude of each connected
+cell tower is sent along to the client device, similar to how it sends
+accurate time data. In practice almost none of the cell towers are
+configured with this information or it is outdated or outright wrong.
+So we don&#8217;t attempt to use this data.</p>
+</div>
+<div class="section" id="geoip">
+<h3>GeoIP<a class="headerlink" href="#geoip" title="Permalink to this headline">¶</a></h3>
+<p>The accuracy of GeoIP depends a lot on the country or region the user
+is in. In the US GeoIP can be fairly accurate and often places the
+user in the right city or metropolitan area. In many other parts of
+the world GeoIP is only accurate to the region level.</p>
+<p>Typical GeoIP accuracies are either in the 50km range for city based
+estimates or multiple hundred kilometers for region based estimates.</p>
+<p>IP version 6 has the chance to improve this situation, as the need for
+private carrier networks and network address translation decreases.
+But so far this hasn&#8217;t made any measurable impact and most traffic
+is still restricted to IP version 4.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="metrics.html" class="btn btn-neutral float-right" title="Metrics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="testing.html" class="btn btn-neutral" title="Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2015, Mozilla.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

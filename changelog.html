@@ -1,0 +1,1231 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Changelog &mdash; Ichnaea 1.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Ichnaea 1.3 documentation" href="index.html"/>
+        <link rel="prev" title="Glossary" href="glossary.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> Ichnaea
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using the Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#http-api">HTTP API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#applications-libraries">Applications / Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Services API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#api-access-keys">API Access Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#errors">Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#invalid-api-key">Invalid API Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#api-key-limit">API Key Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#parse-error">Parse Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#service-error">Service Error</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#apis">APIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/geolocate.html">Geolocate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/country.html">Country</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/country.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/country.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/geosubmit2.html">Geosubmit Version 2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/geosubmit.html">Geosubmit (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/search.html">Search (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/submit.html">Submit (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#response">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#cell-fields">Cell Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Installing / Deploying</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#mysql-amazon-rds">MySQL / Amazon RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#redis-amazon-elasticache">Redis / Amazon ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#amazon-s3">Amazon S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#statsd-sentry">Statsd / Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#assets">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cache">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#celery">Celery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#database">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#geoip">GeoIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#sentry">Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#statsd">StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#export">Export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html#bucket-export">Bucket Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#internal-export">Internal Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#https-export">HTTPS Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#import">Import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#locate-fallback">Locate Fallback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#python-dependencies">Python Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#css-js-images">CSS / JS / Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#cleanup">Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#release-build">Release Build</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-tasks">Testing Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-multiple-python-versions">Testing Multiple Python Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calculation.html">Calculation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calculation.html#accuracy">Accuracy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#wifi">WiFi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#gsm">GSM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#wcdma-umts">WCDMA / UMTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#lte">LTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#cdma">CDMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#geoip">GeoIP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-request-metrics">API Request Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-user-metrics">API User Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-query-metrics">API Query Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-result-metrics">API Result Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-source-metrics">API Source Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-fallback-source-metrics">API Fallback Source Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#data-pipeline-metrics">Data Pipeline Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#data-pipeline-export-metrics">Data Pipeline Export Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#internal-monitoring">Internal Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#http-counters">HTTP Counters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#http-timers">HTTP Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#task-timers">Task Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#datamaps-timers">Datamaps Timers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal_api/index.html">Internal Code API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal_api/index.html#indices-and-tables">Indices and Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/api/index.html"><code class="docutils literal"><span class="pre">ichnaea.api</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/config.html"><code class="docutils literal"><span class="pre">ichnaea.api.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.api.exceptions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/locate/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/rate_limit.html"><code class="docutils literal"><span class="pre">ichnaea.api.rate_limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/submit/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.submit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/views.html"><code class="docutils literal"><span class="pre">ichnaea.api.views</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/async/index.html"><code class="docutils literal"><span class="pre">ichnaea.async</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/app.html"><code class="docutils literal"><span class="pre">ichnaea.async.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/config.html"><code class="docutils literal"><span class="pre">ichnaea.async.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/schedule.html"><code class="docutils literal"><span class="pre">ichnaea.async.schedule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/settings.html"><code class="docutils literal"><span class="pre">ichnaea.async.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/task.html"><code class="docutils literal"><span class="pre">ichnaea.async.task</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/geocalc.html"><code class="docutils literal"><span class="pre">ichnaea.geocalc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/hashkey.html"><code class="docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/wifi.html"><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/util.html"><code class="docutils literal"><span class="pre">ichnaea.util</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/webapp/index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/app.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/config.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/monitor.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.monitor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/settings.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/view.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.view</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/worker.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.worker</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#unreleased">1.3 (unreleased)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#untagged">Untagged</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#migrations">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changes">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">20150813105600</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">20150806105100</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">20150730143600</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">20150730111000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">1.2 (2015-07-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">20150716174000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">20150707130400</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">20150616104200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">20150610103900</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">20150604164500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">20150528085200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">20150522094900</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id30">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">20150507103300</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id32">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">20150505113200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id34">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id35">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">20150423105800</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id37">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">20150416111700</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id39">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id40">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">20150409120500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id42">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">20150320100800</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id44">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id45">20150309175500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">20150305122500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id47">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id48">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id49">20150211113000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id50">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">20150209110000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id52">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">20150203093000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id54">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id55">20150127130000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id56">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id57">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id58">20150122140000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id59">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id60">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id61">20150105140000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id62">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id63">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id64">20141218093500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id65">20141120130000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id66">20141103125500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id67">20141030113700</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id68">1.1 (2014-10-27)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id69">20141027122000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id70">20141023094000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id71">20141016123300</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id72">20141014161400</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id73">20141009121300</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id74">20141002103900</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id75">20140904094000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id76">20140901114000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id77">20140821114200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id78">20140812120000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id79">20140730133000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id80">20140715114000</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id81">1.0 (2014-07-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id82">0.1 (2013-11-22)</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ichnaea</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Changelog</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/changelog.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="unreleased">
+<h2>1.3 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="untagged">
+<h3>Untagged<a class="headerlink" href="#untagged" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="migrations">
+<h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>c1efc747c9: Remove unused api_key email/description columns.</li>
+<li>4f12bf0c0828: Remove standalone wifi blocklist table.</li>
+</ul>
+</div>
+<div class="section" id="changes">
+<h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Add a source tag for successful result metrics.</li>
+<li>Update data tables and stats/regions page.</li>
+<li>Setup basic Cython support and convert <cite>geocalc.distance</cite>.</li>
+<li>Optimize OCID cell data export and import.</li>
+<li>Return multiple results from MCC based country source.</li>
+<li>Move best country result selection into searcher logic.</li>
+<li>Update to latest versions of alembic, cffi, cryptography, coverage,
+hiredis, numpy and pip.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>20150813105600<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>Changes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Use data_accuracy as the criteria to decide if more locate sources
+should be consulted.</li>
+<li>Use both old and new wifi tables in locate logic.</li>
+<li>Add a new <cite>__version__</cite> route.</li>
+<li>Cache Wifi-only based fallback position results.</li>
+<li>Don&#8217;t rate limit cache lookups for the fallback position source.</li>
+<li>Retry outbound connections once to counter expired keep alive connections.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>20150806105100<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>Migrations<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>2127f9dd0ed7: Move wifi blocklist entries into wifi shard tables.</li>
+<li>4860cb8e54f5: Add new sharded wifi tables.</li>
+<li>The structure of the application ini file changed and the <cite>ichnaea</cite>
+section was replaced by a number of new more specific sections.</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h4>Changes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Enable SSL verification for outbound network requests.</li>
+<li>Add new metrics for counting unique IPs per API endpoint / API key.</li>
+<li>Enable locate source level metrics.</li>
+<li>#457: Fix cell export to again use UMTS as the radio type string.</li>
+<li>Optimize various tasks by doing batch queries and inserts.</li>
+<li>Avoid using a metric tag called <cite>name</cite> as it conflicts with a default tag.</li>
+<li>Deprecate <cite>insert_measure_*</cite> tasks.</li>
+<li>Move new station score bookkeeping into insert_measures task.</li>
+<li>Update to latest version of datadog.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>20150730143600<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h4>Changes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Make report and observation drop metrics more consistent.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>20150730111000<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>Migrations<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>The statsd configuration moved from the <cite>statsd_host</cite> option in the
+application ini file into its own section called <cite>statsd</cite>.</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h4>Changes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Move blocklist and station creation logic into update_station tasks.</li>
+<li>Add new <cite>ratelimit_interval</cite> option to <cite>locate:fallback</cite> section.</li>
+<li>Set up a HTTPS connection pool used by the fallback source.</li>
+<li>Disable statsd request metrics for static assets.</li>
+<li>Let all internal data pipeline metrics use tags.</li>
+<li>Let all public API and fallback source metrics use tags.</li>
+<li>Let task, datamaps, monitor and HTTP counter/timer metrics use tags.</li>
+<li>Add support for statsd metric tagging.</li>
+<li>Use colander to map external to internal names in submit schemata.</li>
+<li>Add dependencies pyopenssl, ndg-httpsclient and pyasn1.</li>
+<li>Switch to datadog statsd client library.</li>
+<li>Consider Wifi based query results accurate enough to satisfy queries.</li>
+<li>Stop maintaining separate Python dependency list in setup.py.</li>
+<li>#433: Move GeoIP lookup onto the query object.</li>
+<li>#433: Add new detailed query metrics.</li>
+<li>Use a colander schema to describe the outbound fallback provider query.</li>
+<li>Set up and configure locate searchers and providers once during startup.</li>
+<li>Move all per-query state onto the locate query instance.</li>
+<li>Split customjson into internal and external pretty float version.</li>
+<li>Update to latest versions of alembic, setproctitle, simplejson and
+SQLAlchemy.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>1.2 (2015-07-15)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>20150716174000<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h4>Changes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Add a database migration test from a fresh SQL structure dump.</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h4>Migrations<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>1a320a751cf: Remove observation tables.</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>Changes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#395: Move <cite>incomplete_observation</cite> logic onto colander schema.</li>
+<li>#287: Replace observation models with non-db-model classes.</li>
+<li>#433: Move query data validation into Query class.</li>
+<li>#433: Introduce a new <cite>api.locate.query.Query</cite> class.</li>
+<li>Handle any RedisError, e.g. TimeoutError and not just ConnectionErrors.</li>
+<li>Update to latest raven release and update transport configuration.</li>
+<li>Explicitly limit the cell cache key to its unique id parts.</li>
+<li>Add <cite>fallback</cite> key to all locate responses.</li>
+<li>#451: Properly test and reject empty submit requests.</li>
+<li>#376: Document the added home mcc/mnc fields.</li>
+<li>#419: Update geolocate docs to mention all GLS fields.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>20150707130400<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h4>Migrations<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>2e0e620ebc92: Remove id column from content models.</li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h4>Changes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Add workaround for andymccurdy/redis-py#633.</li>
+<li>Unify v1 and v2 parse error responses to v2 format.</li>
+<li>Batch key queries depending on a per-model batch size.</li>
+<li>#192: Suggest a observation data retention period.</li>
+<li>Optimize mapstat and station data tasks.</li>
+<li>Switch to using bower for CSS/JS dependency management.</li>
+<li>Update to latest versions of all CSS and JS dependencies.</li>
+<li>Update to latest versions of geoip2, SQLAlchemy and unittest2.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id19">
+<h3>20150616104200<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h4>Migrations<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>55db289fa497: Add content model composite primary keys.</li>
+<li>14dbafc4fec2: Remove new_measures indices.</li>
+<li>19d6d9fbdb6b: Increase stat table value column to biginteger.</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h4>Changes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Fix locate errors for incomplete cell keys.</li>
+<li>Remove backwards compatibility code.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>20150610103900<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h4>Migrations<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>38fde2949750: Remove measure_block table.</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h4>Changes<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#287: Remove table based location_update tasks and old backup code.</li>
+<li>Adjust batch sizes for new update_station tasks.</li>
+<li>Bugzilla 1172833: Use apolitical names on country stats page.</li>
+<li>#443: Reorganize internal module/classes.</li>
+<li>Update to latest version of SQLAlchemy.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>20150604164500<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id26">
+<h4>Changes<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#446: Filter out incomplete csv cell records.</li>
+<li>#287: Switch location_update tasks to new queue based system.</li>
+<li>#438: Add explicit fallback choices to geolocate API.</li>
+<li>Replace the last daily stats task with a queue based one.</li>
+<li>#440: Allow search/locate queries without a cell id.</li>
+<li>Update to latest versions of nose, simplejson and SQLAlchemy.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>20150528085200<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id28">
+<h4>Changes<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#394: Replace magic schema values by <cite>None</cite>.</li>
+<li>#423: Add new public <cite>v2/geosubmit</cite> API.</li>
+<li>#242: Pass through submission IP address into the data pipeline.</li>
+<li>#242: Expose geoip database to async tasks.</li>
+<li>Make sure there are no unexpected raven messages left after each test.</li>
+<li>#434: Internal test only changes to test base classes.</li>
+<li>Update to latest versions of gevent and simplejson.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id29">
+<h3>20150522094900<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h4>Changes<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#421: Pass through additional lookup data into the fallback query.</li>
+<li>#421: Cache cell-only lookups for fallback provider queries.</li>
+<li>#421: Add rate limiting to fallback provider.</li>
+<li>#421: Reordered data sources to prefer fallback over geoip responses.</li>
+<li>Fix api-key specific report upload counter.</li>
+<li>Add workaround for raven issue #608.</li>
+<li>Enable new stat counter tasks.</li>
+<li>#433: Remove the wifi specific query stats.</li>
+<li>Updated to latest version of alembic, celery, greenlet, kombu and pytz.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id31">
+<h3>20150507103300<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id32">
+<h4>Changes<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Correct handling for requests without API keys.</li>
+<li>#421: Fix encoding of radioType in fallback queries.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id33">
+<h3>20150505113200<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id34">
+<h4>Migrations<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>e9c1224f6bb: Add allow_fallback column to api_key table.</li>
+</ul>
+</div>
+<div class="section" id="id35">
+<h4>Changes<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#287: Move mapstat and score processing to separate queues/tasks.</li>
+<li>#287: Keep track of uploaded data via Redis stat counters.</li>
+<li>#287: Add new backup to S3 export target.</li>
+<li>#421: Add fallback geolocation provider.</li>
+<li>Deal with nan/inf floating point numbers in data submissions.</li>
+<li>Fixed upload issues for cell entries without any radio field.</li>
+<li>Updated to latest versions of certifi, greenlet, pyramid, raven and requests.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id36">
+<h3>20150423105800<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id37">
+<h4>Changes<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Allow anonymous data submission via the geosubmit API.</li>
+<li>#425: Refactor internal API key logic.</li>
+<li>Updated to latest raven version, requires a Sentry 7 server.</li>
+<li>Updated to latests versions of billiard, pyramid and WebOb.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id38">
+<h3>20150416111700<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id39">
+<h4>Migrations<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>The command line invocation for the services changed, please refer to
+the deploy docs for the new syntax.</li>
+</ul>
+</div>
+<div class="section" id="id40">
+<h4>Changes<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#423: Add a first version of an export job.</li>
+<li>Expose all config file settings to the runtime services.</li>
+<li>Move runtime related code into async/webapp sub-packages.</li>
+<li>#385: Configure Python&#8217;s logging module.</li>
+<li>#423: Add a new queue system using the new geosubmit v2 internal format.</li>
+<li>Updated to latest versions of boto and maxminddb.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id41">
+<h3>20150409120500<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id42">
+<h4>Changes<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Make radio an internally required field.</li>
+<li>Don&#8217;t validate radio fields in request side schema.</li>
+<li>#418: Remove country API shortcut implementation.</li>
+<li>Removed BBB code for old tasks and pre-hashkey queued values.</li>
+<li>Updated to latest versions of alabaster, boto, factory_boy and pytz.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id43">
+<h3>20150320100800<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id44">
+<h4>Changes<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Remove the circus docs and example ini file.</li>
+<li>Remove the vaurien/integration tests.</li>
+<li>#416: Accept radioType inside the cellTowers mapping in geolocate queries.</li>
+<li>Updated to latest version of Sphinx and its new dependencies.</li>
+<li>Updated to latest versions of pyramid, requests, SQLAlchemy and statsd.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id45">
+<h3>20150309175500<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Fix unittest2 version pin.</li>
+</ul>
+</div>
+<div class="section" id="id46">
+<h3>20150305122500<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id47">
+<h4>Migrations<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>1d549c1d6cfe: Drop total_measures index on station tables.</li>
+<li>230bbf3fe044: Add index on mapstat.time column.</li>
+<li>6527bee5ac1: Remove auto-inc id columns from cell related tables.</li>
+<li>3b8d52a9eac4: Change score, stat and measure_block enum columns to tinyint.</li>
+</ul>
+</div>
+<div class="section" id="id48">
+<h4>Changes<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Replace heka-py-raven with a direct raven client.</li>
+<li>#319: Remove the per station ingress filtering.</li>
+<li>Allow partial cell ids in geolocate/geosubmit APIs.</li>
+<li>Removed the mixed locate/submit mode from the geosubmit API.</li>
+<li>#402: Avoid multiple validation of common report data fields.</li>
+<li>Add a new CellCountryProvider to allow country searches based on cell data.</li>
+<li>#406: Allow access to the country API via empty GET requests.</li>
+<li>Massive internal code refactoring and cleanup.</li>
+<li>Updated to latest versions of iso3166, pyramid and requests.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id49">
+<h3>20150211113000<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id50">
+<h4>Changes<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Reestablish database connections on connection failures.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id51">
+<h3>20150209110000<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id52">
+<h4>Changes<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Backup/delete all observation data except for the current day.</li>
+<li>Updated to latest versions of boto, Chameleon, gunicorn, jaraco.util, Mako,
+psutil, Pygments, pyzmq and WebTest.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id53">
+<h3>20150203093000<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id54">
+<h4>Changes<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Specify statsd prefix in application code instead of heka config.</li>
+<li>Fix geoip country lookup for entries without countries.</li>
+<li>#274: Extend monitor view to include geoip db status.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id55">
+<h3>20150127130000<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id56">
+<h4>Migrations<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>10542c592089: Remove invalid lac values.</li>
+<li>fe2cfea89f5: Change cell/_blacklist tables primary keys.</li>
+</ul>
+</div>
+<div class="section" id="id57">
+<h4>Changes<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#367: Tighten lac filtering to exclude 65534 (gsm) and 65535 (all).</li>
+<li>Remove alembic migrations before the 1.0 PyPi release.</li>
+<li>#353: Remove auto-inc id column from cell/_blacklist tables.</li>
+<li>Add additional stats to judge quality of WiFi based queries.</li>
+<li>#390: Remove command line importer script.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id58">
+<h3>20150122140000<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id59">
+<h4>Migrations<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>188e749e51ec: Change lac/cid columns to signed integers.</li>
+</ul>
+</div>
+<div class="section" id="id60">
+<h4>Changes<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>#352: Switch to new maxmind v2 database format and libraries.</li>
+<li>#274: Add a new <cite>__monitor__</cite> endpoint.</li>
+<li>#291: Allow 32bit UMTS cell ids, tighten checks for CDMA and LTE.</li>
+<li>#311: On station creation optionally use previous blacklist time.</li>
+<li>#378: Use colander for internal data validation.</li>
+<li>Remove explicit queue declaration from celery base task.</li>
+<li>Updated to latest versions of alembic, boto, Chameleon, jaraco.util,
+mobile-codes, psutil, requests-mock, WSGIProxy2 and zope.deprecation.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id61">
+<h3>20150105140000<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id62">
+<h4>Migrations<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>48ab8d41fb83: Move cell areas into separate table.</li>
+</ul>
+</div>
+<div class="section" id="id63">
+<h4>Changes<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Prevent non-countries from being returned by the country API.</li>
+<li>#368: Add per API key metrics for uploaded batches, reports and observations.</li>
+<li>Clarify metric names related to batches/reports/observations,
+add new <cite>items.uploaded.batch_size</cite> pseudo-timer and
+<cite>items.uploaded.reports</cite> counter.</li>
+<li>Introduce new internal <cite>GeoIPWrapper.country_lookup</cite> API.</li>
+<li>#343: Fall back to GeoIP for incomplete search requests.</li>
+<li>#349/#350: Move cell areas into new table.</li>
+<li>Give all celery queues a prefix to better distinguish them in Redis.</li>
+<li>#354: Remove scan_lacs fallback code looking at new_measures.</li>
+<li>Updated to latest versions of alembic, argparse, billiard, celery, colander,
+filechunkio, iso8601, kombu, PyMySQL, pytz, requests, six,
+WebTest and zope.interface.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id64">
+<h3>20141218093500<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>#371: Add new country API.</li>
+</ul>
+</div>
+<div class="section" id="id65">
+<h3>20141120130000<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Add api key specific stats to count best data lookup hits/misses.</li>
+<li>Validate WiFi data in location lookups earlier in the process.</li>
+<li>#312: Add email field to User model.</li>
+<li>#287: Move lac update scheduling to Redis based queue.</li>
+<li>#304: Auto-correct radio field of GSM cells with large cid values.</li>
+<li>Move responsibility for lac entry deletion into update_lac task.</li>
+<li>Accept more ASU values but tighten signal strength validation.</li>
+<li>#305: Stricter range check for mnc values for non-CDMA networks.</li>
+<li>Add a convenience <cite>session.on_post_commit</cite> helper method.</li>
+<li>#17: Remove the unused code for cell backfill.</li>
+<li>#41: Explicitly allow anonymous data submissions.</li>
+<li>#335: Omit incomplete cell records from exports.</li>
+<li>Delete measures in batches of 10k rows in backup tasks.</li>
+<li>Re-arrange backup tasks to avoid holding db session open for too long.</li>
+<li>Report errors for malformed data in submit call to sentry.</li>
+<li>Report errors during backup job to sentry.</li>
+<li>#332: Fix session handling in map tiles generation.</li>
+<li>Updated to latest versions of argparse, Chameleon, irc, Pygments, pyramid,
+translationstring and unittest2.</li>
+</ul>
+</div>
+<div class="section" id="id66">
+<h3>20141103125500<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>#330: Expand api keys and download sections.</li>
+<li>Close database session early in map tiles generation.</li>
+<li>Close database session early in export task to avoid timeout errors
+while uploading data to S3.</li>
+<li>Optimize cell export task and avoid datetime/unixtime conversions.</li>
+<li>Add an index on cell.modified to speed up cell export task.</li>
+<li>Updated to latest versions of boto, irc, pygeoip, pytz, pyzmq,
+simplejson and unittest2.</li>
+</ul>
+</div>
+<div class="section" id="id67">
+<h3>20141030113700<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Add play store link for Mozilla Stumbler to apps page.</li>
+<li>Updated privacy notice style to match general Mozilla style.</li>
+<li>Switch gunicorn to use a gevent-based worker.</li>
+<li>Clean last database result from connections on pool checkin.</li>
+<li>Close the database connections even if exceptions occurred.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id68">
+<h2>1.1 (2014-10-27)<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id69">
+<h3>20141027122000<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Lower DB pool and overflow sizes.</li>
+<li>Update Mozilla Stumbler screenshot.</li>
+<li>Update to new privacy policy covering both Fennec and Mozilla Stumbler.</li>
+</ul>
+</div>
+<div class="section" id="id70">
+<h3>20141023094000<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Fennec link to point to Aurora channel.</li>
+<li>Renamed MozStumbler to Mozilla Stumbler, added new screenshot.</li>
+<li>Increase batch size for <cite>insert_measures_wifi</cite> task.</li>
+<li>Extend queue maximum lifetime for incoming reports to six hours.</li>
+<li>Extend observation task batching logic to apply to cell observations.</li>
+<li>#328: Let gunicorn start without a valid geoip database file.</li>
+<li>Extend the <cite>make release</cite> step to deal with Python files with
+incompatible syntax.</li>
+<li>Update to latest versions of configparser, greenlet, irc and pyzmq.</li>
+</ul>
+</div>
+<div class="section" id="id71">
+<h3>20141016123300<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Log gunicorn errors to stderr.</li>
+<li>#327: Add an anchor to the leaderboard table.</li>
+<li>Move the measure tables gauges to an hourly task.</li>
+<li>Fix initdb script to explicitly import all models.</li>
+</ul>
+</div>
+<div class="section" id="id72">
+<h3>20141014161400<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>#311: Filter out location areas from unique cell statistics.</li>
+<li>Introduce a 10 point minimum threshold to the leaderboard.</li>
+<li>Change download page to list files with kilobytes (kB) sizes.</li>
+<li>#326: Quantize data maps image tiles via pngquant.</li>
+<li>Optimize file size of static image assets.</li>
+<li>Remove task modules retained for backwards compatibility.</li>
+<li>Update to latest version of SQLAlchemy.</li>
+</ul>
+</div>
+<div class="section" id="id73">
+<h3>20141009121300<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Add a task to monitor the last import time of OCID cells.</li>
+<li>Change api_key rate limitation monitoring task to use shortnames.</li>
+<li>Small improvements to the manual importer script.</li>
+<li>#276: Fix bug in batch processing, when receiving more than 100
+observations in one submission.</li>
+<li>Refactor some internals and move code around.</li>
+<li>Create a new <cite>lbcheck</cite> MySQL user in the <cite>location_initdb</cite> command.</li>
+<li>Fix <cite>monitor_api_key_limits</cite> task to work without api limit entries.</li>
+<li>#301: Schedule hourly differential imports of OCID cell data.</li>
+<li>Update to latest versions of boto, celery, iso3166, jaraco.util,
+requests and simplejson.</li>
+</ul>
+</div>
+<div class="section" id="id74">
+<h3>20141002103900<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>#301: Add OCID cell data to statistics page.</li>
+<li>Allow a radio type of <cite>lte</cite> for the geolocate API. Relates to
+<a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1010284">https://bugzilla.mozilla.org/show_bug.cgi?id=1010284</a>.</li>
+<li>#315: Add a <cite>show my location</cite> control to the map.</li>
+<li>Reverse ordering of download files to display latest files first.</li>
+<li>Extend db ping to retry connections for <cite>2003 connection refused</cite> errors.</li>
+<li>Ignore more exception types in API key check, to continue degraded service
+in case of database downtimes.</li>
+<li>Switch from d3.js/rickshaw to flot.js and prepare graphs to plot multiple
+lines in one graph.</li>
+<li>Make country statistics table sortable.</li>
+<li>Remove auto-increment column from ocid_cell table and make the
+radio, mcc, mnc, lac, cid combination the primary key. Also optimize the
+column types of the lac and cid fields.</li>
+<li>Update to latest versions of alembic, amqp, celery, configparser, cornice,
+greenlet, jaraco.util, kombu, protobuf, psutil, pytz, requests, six,
+Sphinx and WebTest.</li>
+<li>#301: Add code to do continuous updates of the OpenCellID data and add
+license note for OCID data.</li>
+</ul>
+</div>
+<div class="section" id="id75">
+<h3>20140904094000<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>#308: Fixed header row in cell export files.</li>
+</ul>
+</div>
+<div class="section" id="id76">
+<h3>20140901114000<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>#283: Add manual logic to trigger OpenCellID imports.</li>
+<li>Add Redis based caching for SQL queries used in the website.</li>
+<li>#295: Add a downloads section to the website and enable cell export tasks.</li>
+<li>Clarify api usage policy.</li>
+<li>Monitor api key rate limits and graph them in graphite.</li>
+<li>Update to latest versions of nose and simplejson.</li>
+<li>#282: Add a header row to the exported CSV files.</li>
+</ul>
+</div>
+<div class="section" id="id77">
+<h3>20140821114200<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>#296: Trust WiFi positions over GeoIP results.</li>
+<li>Optimized SQL types of mnc, psc, radio and ta columns in cell tables.</li>
+<li>Update to latest versions of country-bounding-boxes, gunicorn and redis.</li>
+<li>#282: Added code to do exports of cell data, both daily snapshots as
+well as hourly diffs. Currently the automatic schedule is still disabled.
+This also adds a new modified column to the cell and wifi tables.</li>
+</ul>
+</div>
+<div class="section" id="id78">
+<h3>20140812120000<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Include links to blog and new &#64;MozGeo twitter account.</li>
+<li>Update to latest version of alembic, boto, redis, simplejson and statsd.</li>
+<li>Add a monitoring task to record Redis queue length.</li>
+<li>Make a Redis client available in Celery tasks.</li>
+<li>#285: Update favicon, add touch icon and tile image.</li>
+<li>Only retain two days of observation data inside the DB.</li>
+<li>Fixed image tiles generation to generate up to zoom level 13 again.</li>
+<li>#279: Offer degraded service if Redis is unavailable.</li>
+<li>#72: Always log sentry messages for exceptions inside tasks.</li>
+<li>#53: Document testing approaches.</li>
+<li>#130: Add a test for syntactic correctness of the beat schedule.</li>
+<li>#27: Require sufficiently different BSSIDs in WiFi lookups.
+This reduces the chance of being able to look up a single device with
+multiple logical networks.</li>
+</ul>
+</div>
+<div class="section" id="id79">
+<h3>20140730133000<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Avoid using <cite>on_duplicate</cite> for common update tasks of tables.</li>
+<li>Remove GeoIP country submission filter, as GeoIP has shown to be too
+inaccurate.</li>
+<li>#280: Relax the GeoIP country restriction and also trust the mcc derived
+country codes.</li>
+<li>#269: Improve search logic when dealing with multiple location areas.</li>
+<li>Correctly deal with multiple country codes per mcc value and don&#8217;t
+restrict lookups to one arbitrary of those countries.</li>
+<li>Fix requirement in WiFi lookups to really only require two networks.</li>
+<li>Added basic setup for documenting internal code API&#8217;s and use the geocalc
+and service.locate modules as first examples.</li>
+<li>Initialize the application and outbound connections as part of the
+gunicorn worker startup process, instead of waiting for the first
+request and slowing it down.</li>
+<li>Switch pygeoip module to use memory caching, to prevent errors from
+changing the datafile from underneath the running process.</li>
+<li>Introduce 10% jitter into gunicorn&#8217;s max_requests setting, to prevent
+all worker processes from being recycled at once.</li>
+<li>Update gunicorn to 19.1.0 and use the new support for config settings
+based on a Python module. The gunicorn invocation needs to include
+<cite>-c ichnaea.gunicorn_config</cite> now and can drop various of the other
+arguments.</li>
+<li>Updated production Python dependencies to latest versions.</li>
+<li>Updated supporting Python libraries to latest versions.</li>
+<li>Update clean-css to 2.2.9 and uglify-js to 2.4.15.</li>
+<li>Update d3.js to 3.4.11 and jQuery 1.11.1.</li>
+<li>Changed graphs on the stats page to show a monthly count for the past
+year, closes <a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1043386">https://bugzilla.mozilla.org/show_bug.cgi?id=1043386</a>.</li>
+<li>Update rickshaw.js to 1.5.0 and tweak stats page layout.</li>
+<li>Add MLS logo and use higher resolution images where available.</li>
+<li>Always load cdn.mozilla.net resources over https.</li>
+<li>Updated deployment docs to more clearly mention the Redis dependency
+and clean up Heka / logging related docs.</li>
+<li>Split out circus and its dependencies into a separate requirements file.</li>
+<li>Remove non-local debug logging from map tiles generation script.</li>
+<li>Test all additional fields in geosubmit API and correctly retain new
+<cite>signalToNoiseRatio</cite> field for WiFi observations.</li>
+<li>Improve geosubmit API docs and make them independent of the submit docs.</li>
+<li>Update and tweak metrics docs.</li>
+<li>Adjust Fennec link to point to Fennec Nightly install instructions.
+<a class="reference external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1039787">https://bugzilla.mozilla.org/show_bug.cgi?id=1039787</a></li>
+</ul>
+</div>
+<div class="section" id="id80">
+<h3>20140715114000<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Adjust beat schedule to update more rows during each location update task.</li>
+<li>Let the backup tasks retain three full days of measures in the DB.</li>
+<li>Remove the database connectivity test from the heartbeat view.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id81">
+<h2>1.0 (2014-07-14)<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Initial production release.</li>
+</ul>
+</div>
+<div class="section" id="id82">
+<h2>0.1 (2013-11-22)<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Initial prototype.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="glossary.html" class="btn btn-neutral" title="Glossary" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2015, Mozilla.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

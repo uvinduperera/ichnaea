@@ -1,0 +1,829 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Module Index &mdash; Ichnaea 1.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Ichnaea 1.3 documentation" href="index.html"/>
+ 
+
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> Ichnaea
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using the Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#http-api">HTTP API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#applications-libraries">Applications / Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Services API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#api-access-keys">API Access Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#errors">Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#invalid-api-key">Invalid API Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#api-key-limit">API Key Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#parse-error">Parse Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/index.html#service-error">Service Error</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/index.html#apis">APIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/geolocate.html">Geolocate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geolocate.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/country.html">Country</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/country.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/country.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/geosubmit2.html">Geosubmit Version 2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit2.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/geosubmit.html">Geosubmit (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/geosubmit.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/search.html">Search (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/search.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/submit.html">Submit (Deprecated)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/submit.html#response">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#cell-fields">Cell Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Installing / Deploying</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#mysql-amazon-rds">MySQL / Amazon RDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#redis-amazon-elasticache">Redis / Amazon ElastiCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#amazon-s3">Amazon S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#statsd-sentry">Statsd / Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#assets">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cache">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#celery">Celery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#database">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#geoip">GeoIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#sentry">Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#statsd">StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#export">Export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html#bucket-export">Bucket Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#internal-export">Internal Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#https-export">HTTPS Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#import">Import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#locate-fallback">Locate Fallback</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#python-dependencies">Python Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#css-js-images">CSS / JS / Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#cleanup">Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#release-build">Release Build</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-tasks">Testing Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-multiple-python-versions">Testing Multiple Python Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="calculation.html">Calculation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calculation.html#accuracy">Accuracy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#wifi">WiFi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#gsm">GSM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#wcdma-umts">WCDMA / UMTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#lte">LTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#cdma">CDMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculation.html#geoip">GeoIP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-request-metrics">API Request Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-user-metrics">API User Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-query-metrics">API Query Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-result-metrics">API Result Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-source-metrics">API Source Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#api-fallback-source-metrics">API Fallback Source Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#data-pipeline-metrics">Data Pipeline Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#data-pipeline-export-metrics">Data Pipeline Export Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#internal-monitoring">Internal Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#http-counters">HTTP Counters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#http-timers">HTTP Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#task-timers">Task Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#datamaps-timers">Datamaps Timers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal_api/index.html">Internal Code API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal_api/index.html#indices-and-tables">Indices and Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/api/index.html"><code class="docutils literal"><span class="pre">ichnaea.api</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/config.html"><code class="docutils literal"><span class="pre">ichnaea.api.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.api.exceptions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/locate/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/rate_limit.html"><code class="docutils literal"><span class="pre">ichnaea.api.rate_limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/submit/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.submit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/api/views.html"><code class="docutils literal"><span class="pre">ichnaea.api.views</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/async/index.html"><code class="docutils literal"><span class="pre">ichnaea.async</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/app.html"><code class="docutils literal"><span class="pre">ichnaea.async.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/config.html"><code class="docutils literal"><span class="pre">ichnaea.async.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/schedule.html"><code class="docutils literal"><span class="pre">ichnaea.async.schedule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/settings.html"><code class="docutils literal"><span class="pre">ichnaea.async.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/async/task.html"><code class="docutils literal"><span class="pre">ichnaea.async.task</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/geocalc.html"><code class="docutils literal"><span class="pre">ichnaea.geocalc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/hashkey.html"><code class="docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/models/wifi.html"><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/util.html"><code class="docutils literal"><span class="pre">ichnaea.util</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="internal_api/webapp/index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/app.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/config.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/monitor.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.monitor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/settings.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/view.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.view</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="internal_api/webapp/worker.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.worker</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#unreleased">1.3 (unreleased)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#untagged">Untagged</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#migrations">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#changes">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id1">20150813105600</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id2">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id3">20150806105100</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id4">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id5">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id6">20150730143600</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id7">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id8">20150730111000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id9">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id10">Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">1.2 (2015-07-15)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id12">20150716174000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id13">Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id14">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id15">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id16">20150707130400</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id17">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id18">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id19">20150616104200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id20">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id21">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id22">20150610103900</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id23">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id24">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id25">20150604164500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id26">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id27">20150528085200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id28">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id29">20150522094900</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id30">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id31">20150507103300</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id32">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id33">20150505113200</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id34">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id35">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id36">20150423105800</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id37">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id38">20150416111700</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id39">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id40">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id41">20150409120500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id42">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id43">20150320100800</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id44">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id45">20150309175500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id46">20150305122500</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id47">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id48">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id49">20150211113000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id50">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id51">20150209110000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id52">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id53">20150203093000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id54">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id55">20150127130000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id56">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id57">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id58">20150122140000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id59">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id60">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id61">20150105140000</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id62">Migrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#id63">Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id64">20141218093500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id65">20141120130000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id66">20141103125500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id67">20141030113700</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id68">1.1 (2014-10-27)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id69">20141027122000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id70">20141023094000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id71">20141016123300</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id72">20141014161400</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id73">20141009121300</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id74">20141002103900</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id75">20140904094000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id76">20140901114000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id77">20140821114200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id78">20140812120000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id79">20140730133000</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id80">20140715114000</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id81">1.0 (2014-07-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id82">0.1 (2013-11-22)</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Ichnaea</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+
+   <h1>Python Module Index</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-a"><strong>a</strong></a> | 
+   <a href="#cap-c"><strong>c</strong></a> | 
+   <a href="#cap-d"><strong>d</strong></a> | 
+   <a href="#cap-e"><strong>e</strong></a> | 
+   <a href="#cap-f"><strong>f</strong></a> | 
+   <a href="#cap-g"><strong>g</strong></a> | 
+   <a href="#cap-h"><strong>h</strong></a> | 
+   <a href="#cap-i"><strong>i</strong></a> | 
+   <a href="#cap-l"><strong>l</strong></a> | 
+   <a href="#cap-m"><strong>m</strong></a> | 
+   <a href="#cap-q"><strong>q</strong></a> | 
+   <a href="#cap-u"><strong>u</strong></a> | 
+   <a href="#cap-w"><strong>w</strong></a>
+   </div>
+
+   <table class="indextable modindextable" cellspacing="0" cellpadding="2">
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-a"><td></td><td>
+       <strong>a</strong></td><td></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-1" style="display: none" alt="-" /></td>
+       <td>
+       <a href="internal_api/api/index.html#module-ichnaea.api"><code class="xref">ichnaea.api</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/config.html#module-ichnaea.api.config"><code class="xref">ichnaea.api.config</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/exceptions.html#module-ichnaea.api.exceptions"><code class="xref">ichnaea.api.exceptions</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/index.html#module-ichnaea.api.locate"><code class="xref">ichnaea.api.locate</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/cell.html#module-ichnaea.api.locate.cell"><code class="xref">ichnaea.api.locate.cell</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/constants.html#module-ichnaea.api.locate.constants"><code class="xref">ichnaea.api.locate.constants</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/fallback.html#module-ichnaea.api.locate.fallback"><code class="xref">ichnaea.api.locate.fallback</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/geoip.html#module-ichnaea.api.locate.geoip"><code class="xref">ichnaea.api.locate.geoip</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/internal.html#module-ichnaea.api.locate.internal"><code class="xref">ichnaea.api.locate.internal</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/ocid.html#module-ichnaea.api.locate.ocid"><code class="xref">ichnaea.api.locate.ocid</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/query.html#module-ichnaea.api.locate.query"><code class="xref">ichnaea.api.locate.query</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/result.html#module-ichnaea.api.locate.result"><code class="xref">ichnaea.api.locate.result</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/schema.html#module-ichnaea.api.locate.schema"><code class="xref">ichnaea.api.locate.schema</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/searcher.html#module-ichnaea.api.locate.searcher"><code class="xref">ichnaea.api.locate.searcher</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/source.html#module-ichnaea.api.locate.source"><code class="xref">ichnaea.api.locate.source</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/views.html#module-ichnaea.api.locate.views"><code class="xref">ichnaea.api.locate.views</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/locate/wifi.html#module-ichnaea.api.locate.wifi"><code class="xref">ichnaea.api.locate.wifi</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/rate_limit.html#module-ichnaea.api.rate_limit"><code class="xref">ichnaea.api.rate_limit</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/submit/index.html#module-ichnaea.api.submit"><code class="xref">ichnaea.api.submit</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/submit/schema.html#module-ichnaea.api.submit.schema"><code class="xref">ichnaea.api.submit.schema</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/submit/views.html#module-ichnaea.api.submit.views"><code class="xref">ichnaea.api.submit.views</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/api/views.html#module-ichnaea.api.views"><code class="xref">ichnaea.api.views</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-2" style="display: none" alt="-" /></td>
+       <td>
+       <a href="internal_api/async/index.html#module-ichnaea.async"><code class="xref">ichnaea.async</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/async/app.html#module-ichnaea.async.app"><code class="xref">ichnaea.async.app</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/async/config.html#module-ichnaea.async.config"><code class="xref">ichnaea.async.config</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/async/schedule.html#module-ichnaea.async.schedule"><code class="xref">ichnaea.async.schedule</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/async/settings.html#module-ichnaea.async.settings"><code class="xref">ichnaea.async.settings</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/async/task.html#module-ichnaea.async.task"><code class="xref">ichnaea.async.task</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-c"><td></td><td>
+       <strong>c</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/cache.html#module-ichnaea.cache"><code class="xref">ichnaea.cache</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/config.html#module-ichnaea.config"><code class="xref">ichnaea.config</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/constants.html#module-ichnaea.constants"><code class="xref">ichnaea.constants</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-d"><td></td><td>
+       <strong>d</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/db.html#module-ichnaea.db"><code class="xref">ichnaea.db</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-e"><td></td><td>
+       <strong>e</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/exceptions.html#module-ichnaea.exceptions"><code class="xref">ichnaea.exceptions</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-f"><td></td><td>
+       <strong>f</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/floatjson.html#module-ichnaea.floatjson"><code class="xref">ichnaea.floatjson</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-g"><td></td><td>
+       <strong>g</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/geocalc.html#module-ichnaea.geocalc"><code class="xref">ichnaea.geocalc</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/geoip.html#module-ichnaea.geoip"><code class="xref">ichnaea.geoip</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-h"><td></td><td>
+       <strong>h</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/http.html#module-ichnaea.http"><code class="xref">ichnaea.http</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-i"><td></td><td>
+       <strong>i</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/internaljson.html#module-ichnaea.internaljson"><code class="xref">ichnaea.internaljson</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-l"><td></td><td>
+       <strong>l</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/log.html#module-ichnaea.log"><code class="xref">ichnaea.log</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-m"><td></td><td>
+       <strong>m</strong></td><td></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-3" style="display: none" alt="-" /></td>
+       <td>
+       <a href="internal_api/models/index.html#module-ichnaea.models"><code class="xref">ichnaea.models</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/models/base.html#module-ichnaea.models.base"><code class="xref">ichnaea.models.base</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/models/cell.html#module-ichnaea.models.cell"><code class="xref">ichnaea.models.cell</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/models/constants.html#module-ichnaea.models.constants"><code class="xref">ichnaea.models.constants</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/models/hashkey.html#module-ichnaea.models.hashkey"><code class="xref">ichnaea.models.hashkey</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/models/wifi.html#module-ichnaea.models.wifi"><code class="xref">ichnaea.models.wifi</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-q"><td></td><td>
+       <strong>q</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/queue.html#module-ichnaea.queue"><code class="xref">ichnaea.queue</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-u"><td></td><td>
+       <strong>u</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="internal_api/util.html#module-ichnaea.util"><code class="xref">ichnaea.util</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="cap" id="cap-w"><td></td><td>
+       <strong>w</strong></td><td></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-4" style="display: none" alt="-" /></td>
+       <td>
+       <a href="internal_api/webapp/index.html#module-ichnaea.webapp"><code class="xref">ichnaea.webapp</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/webapp/app.html#module-ichnaea.webapp.app"><code class="xref">ichnaea.webapp.app</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/webapp/config.html#module-ichnaea.webapp.config"><code class="xref">ichnaea.webapp.config</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/webapp/monitor.html#module-ichnaea.webapp.monitor"><code class="xref">ichnaea.webapp.monitor</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/webapp/settings.html#module-ichnaea.webapp.settings"><code class="xref">ichnaea.webapp.settings</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/webapp/view.html#module-ichnaea.webapp.view"><code class="xref">ichnaea.webapp.view</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="internal_api/webapp/worker.html#module-ichnaea.webapp.worker"><code class="xref">ichnaea.webapp.worker</code></a></td><td>
+       <em></em></td></tr>
+   </table>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2015, Mozilla.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
