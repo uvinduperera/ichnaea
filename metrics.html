@@ -704,12 +704,15 @@ response code like 200, 400, etc.</div></blockquote>
 <div>One gauge is created per API key that has rate limiting enabled on it.
 This gauge measures how many requests have been done for each such
 API key for the current day.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">queue#queue:celery_default</span></code>,
+<p><code class="docutils literal"><span class="pre">queue#queue:celery_cell</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:celery_default</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_export</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_incoming</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_monitor</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:celery_ocid</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_reports</span></code>,
-<code class="docutils literal"><span class="pre">queue#queue:celery_upload</span></code> : gauges</p>
+<code class="docutils literal"><span class="pre">queue#queue:celery_upload</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:celery_wifi</span></code> : gauges</p>
 <blockquote>
 <div>These gauges measure the number of tasks in each of the Redis queues.
 They are sampled at an approximate per-minute interval.</div></blockquote>
