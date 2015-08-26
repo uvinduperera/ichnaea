@@ -618,6 +618,19 @@ the response, an additional fallback key will be returned in the response.</li>
 </div>
 <div class="section" id="response">
 <h2>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h2>
+<p>A successful response returns a position estimate and an accuracy field.
+Combined these two describe the center and radius of a circle. The users
+true position should be inside the circle with a 95th percentile
+confidence value. The accuracy is measured in meters.</p>
+<p>If the position is to be shown on a map and the returned accuracy is
+large, it may be advisable to zoom out the map, so that all of the
+circle can be seen, even if the circle itself is not shown graphically.
+That way a user should still see his true position on the map and can
+further zoom in.</p>
+<p>If instead the returned position is shown highly zoomed in, the user
+may just see an arbitrary location that they don&#8217;t recognize at all.
+This typically happens when GeoIP based results are returned and the
+returned position is the center of a city or the center of a country.</p>
 <p>A successful response will be:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">{</span>

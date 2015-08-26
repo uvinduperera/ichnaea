@@ -451,14 +451,18 @@
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>Factor out more of the <cite>aggregate position</cite> logic.</li>
+<li>Optimize gzip compression levels.</li>
+<li>Add new celery queues (<cite>celery_cell</cite>, <cite>celery_ocid</cite>, <cite>celery_wifi</cite>).</li>
+<li>Remove extra internal_dumps call from insert task.</li>
 <li>Add a source tag for successful result metrics.</li>
 <li>Update data tables and stats/regions page.</li>
-<li>Setup basic Cython support and convert <cite>geocalc.distance</cite>.</li>
+<li>Setup Cython support and convert geocalc centroid and distance functions.</li>
 <li>Optimize OCID cell data export and import.</li>
 <li>Return multiple results from MCC based country source.</li>
 <li>Move best country result selection into searcher logic.</li>
 <li>Update to latest versions of alembic, cffi, cryptography, coverage,
-hiredis, numpy and pip.</li>
+cython, hiredis, numpy, pip and scipy.</li>
 </ul>
 </div>
 </div>

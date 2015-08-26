@@ -463,12 +463,12 @@ distance in meters.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea.geocalc.bound">
-<code class="descclassname">ichnaea.geocalc.</code><code class="descname">bound</code><span class="sig-paren">(</span><em>low</em>, <em>value</em>, <em>high</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.bound" title="Permalink to this definition">¶</a></dt>
-<dd><p>If value is between low and high, return value.
-If value is below low, return low.
-If value is above high, return high.
-If low is below high, raise an exception.</p>
+<dt id="ichnaea.geocalc.aggregate_position">
+<code class="descclassname">ichnaea.geocalc.</code><code class="descname">aggregate_position</code><span class="sig-paren">(</span><em>circles</em>, <em>minimum_accuracy</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.aggregate_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the aggregate position based on a number of circles
+(numpy 3-column arrays of lat/lon/radius).</p>
+<p>Return the position and an accuracy estimate, but at least
+use the minimum_accuracy.</p>
 </dd></dl>
 
 <dl class="function">
@@ -492,14 +492,6 @@ to any of the extreme points of a bounding box.</p>
 <dd><p>Compute the distance between a pair of lat/longs in meters using
 the haversine calculation. The output distance is in meters.</p>
 <p>Uses <a class="reference internal" href="_geocalc.html#ichnaea._geocalc.distance" title="ichnaea._geocalc.distance"><code class="xref py py-func docutils literal"><span class="pre">ichnaea._geocalc.distance()</span></code></a> internally.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.geocalc.estimate_accuracy">
-<code class="descclassname">ichnaea.geocalc.</code><code class="descname">estimate_accuracy</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em>, <em>points</em>, <em>minimum</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.estimate_accuracy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the maximum range between a position (lat/lon) and a
-list of secondary positions (points). But at least use the
-specified minimum value.</p>
 </dd></dl>
 
 <dl class="function">
