@@ -177,7 +177,6 @@
 <li class="toctree-l3"><a class="reference internal" href="calculation.html#gsm">GSM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="calculation.html#wcdma-umts">WCDMA / UMTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="calculation.html#lte">LTE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calculation.html#cdma">CDMA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="calculation.html#geoip">GeoIP</a></li>
 </ul>
 </li>
@@ -472,31 +471,29 @@ unique and changing for each source of the data, though both ichnaea and
 <h2>Cell Fields<a class="headerlink" href="#cell-fields" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">radio</span></code></p>
 <blockquote>
-<div>Network type. One of the strings <cite>GSM</cite>, <cite>UMTS</cite>, <cite>LTE</cite> or <cite>CDMA</cite>.</div></blockquote>
+<div>Network type. One of the strings <cite>GSM</cite>, <cite>UMTS</cite> or <cite>LTE</cite>.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">mcc</span></code></p>
 <blockquote>
 <div>Mobile Country Code. An integer, for example <cite>505</cite>, the code for Australia.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">net</span></code></p>
 <blockquote>
-<div>For GSM, UMTS and LTE networks, this is the mobile network code (MNC). For
-CDMA networks, this is the system identification number (SID). An integer,
-for example <cite>4</cite>, the MNC used by Vodaphone in the Netherlands.</div></blockquote>
+<div>For GSM, UMTS and LTE networks, this is the mobile network code (MNC).
+An integer, for example <cite>4</cite>, the MNC used by Vodaphone in the Netherlands.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">area</span></code></p>
 <blockquote>
 <div>For GSM and UMTS networks, this is the location area code (LAC). For LTE
-networks, this is the tracking area code (TAC). For CDMA networks, this is
-the network identification number (NID). An integer, for example <cite>2035</cite>.</div></blockquote>
+networks, this is the tracking area code (TAC).
+An integer, for example <cite>2035</cite>.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">cell</span></code></p>
 <blockquote>
 <div>For GSM and LTE networks, this is the cell id or cell identity (CID).
 For UMTS networks this is the UTRAN cell id, which is the concatenation
 of 2 bytes of radio network controller (RNC) code and 2 bytes of cell id.
-For CDMA networks this is the base station identifier (BID).
 An integer, for example <cite>32345</cite>.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">unit</span></code></p>
 <blockquote>
 <div>For UMTS networks, this is the primary scrambling code (PSC). For LTE
-networks, this is the physical cell id (PCI). For GSM and CDMA networks,
+networks, this is the physical cell id (PCI). For GSM networks,
 this is empty. An integer, for example <cite>312</cite>.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lon</span></code></p>
 <blockquote>

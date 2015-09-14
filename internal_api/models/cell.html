@@ -178,7 +178,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../calculation.html#gsm">GSM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../calculation.html#wcdma-umts">WCDMA / UMTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../calculation.html#lte">LTE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../calculation.html#cdma">CDMA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../calculation.html#geoip">GeoIP</a></li>
 </ul>
 </li>
@@ -479,9 +478,6 @@ of a Radio integer enum and four integers.</p>
 <code class="descclassname">ichnaea.models.cell.</code><code class="descname">encode_cellid</code><span class="sig-paren">(</span><em>radio</em>, <em>mcc</em>, <em>mnc</em>, <em>lac</em>, <em>cid</em>, <em>codec=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.encode_cellid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a five-tuple of cell id parts, return a compact 11 byte
 sequence representing the cell id.</p>
-<p>If the radio type is given as CDMA, clobbers the mcc value and
-uses 0 instead, as the mcc is not part of the unique cell id key
-for CDMA radio networks.</p>
 <p>If <code class="docutils literal"><span class="pre">codec='base64'</span></code>, return the value as a base64 encoded sequence.</p>
 </dd></dl>
 
@@ -552,7 +548,7 @@ type should be specified as <cite>gsm</cite>. This includes <cite>GSM</cite>, <c
 <dt>radio <strong>(required)</strong></dt>
 <dd>The string <cite>gsm</cite>.</dd>
 <dt>mcc <strong>(required)</strong></dt>
-<dd>The mobile country code. An integer in the range of 0 to 999.</dd>
+<dd>The mobile country code. An integer in the range of 1 to 999.</dd>
 <dt>mnc <strong>(required)</strong></dt>
 <dd>The mobile network code. An integer in the range of 0 to 999.</dd>
 <dt>lac <strong>(required)</strong></dt>
@@ -560,7 +556,7 @@ type should be specified as <cite>gsm</cite>. This includes <cite>GSM</cite>, <c
 According to <a class="reference external" href="http://www.etsi.org/deliver/etsi_ts/124000_124099/124008/12.07.00_60/ts_124008v120700p.pdf#page=431">TS 24.008 10.5.3</a> both 0 and 65534 are reserved
 values indicating a deleted state.</dd>
 <dt>cid <strong>(required)</strong></dt>
-<dd>The cell id. An integer in the range of 0 to 65535.</dd>
+<dd>The cell id. An integer in the range of 1 to 65535.</dd>
 <dt>signal</dt>
 <dd>The received signal strength (RSSI) in dBm, typically in the range of
 -51 to -113 (optional).</dd>
@@ -593,7 +589,7 @@ field should be specified as <cite>wcdma</cite>. This includes <cite>UMTS</cite>
 <dt>radio <strong>(required)</strong></dt>
 <dd>The string <cite>wcdma</cite>.</dd>
 <dt>mcc <strong>(required)</strong></dt>
-<dd>The mobile country code. An integer in the range of 0 to 999.</dd>
+<dd>The mobile country code. An integer in the range of 1 to 999.</dd>
 <dt>mnc <strong>(required)</strong></dt>
 <dd>The mobile network code. An integer in the range of 0 to 999.</dd>
 <dt>lac <strong>(required)</strong></dt>
@@ -601,7 +597,7 @@ field should be specified as <cite>wcdma</cite>. This includes <cite>UMTS</cite>
 According to <a class="reference external" href="http://www.etsi.org/deliver/etsi_ts/124000_124099/124008/12.07.00_60/ts_124008v120700p.pdf#page=431">TS 24.008 10.5.3</a> both 0 and 65534 are reserved
 values indicating a deleted state.</dd>
 <dt>cid <strong>(required)</strong></dt>
-<dd>The cell id. An integer in the range of 0 to 268435455.</dd>
+<dd>The cell id. An integer in the range of 1 to 268435455.</dd>
 <dt>psc</dt>
 <dd>The primary scrambling code as an integer in the range of 0 to 511
 (optional).</dd>
@@ -636,7 +632,7 @@ time a valid psc field is submitted.</p>
 <dt>radio <strong>(required)</strong></dt>
 <dd>The string <cite>lte</cite>.</dd>
 <dt>mcc <strong>(required)</strong></dt>
-<dd>The mobile country code. An integer in the range of 0 to 999.</dd>
+<dd>The mobile country code. An integer in the range of 1 to 999.</dd>
 <dt>mnc <strong>(required)</strong></dt>
 <dd>The mobile network code. An integer in the range of 0 to 999.</dd>
 <dt>lac <strong>(required)</strong></dt>
@@ -644,7 +640,7 @@ time a valid psc field is submitted.</p>
 According to <a class="reference external" href="http://www.etsi.org/deliver/etsi_ts/124300_124399/124301/12.06.00_60/ts_124301v120600p.pdf#page=286">TS 24.301 9.9.3.32</a> both 0 and 65534 are reserved
 values indicating a deleted state.</dd>
 <dt>cid <strong>(required)</strong></dt>
-<dd>The cell identity. An integer in the range of 0 to 268435455.</dd>
+<dd>The cell identity. An integer in the range of 1 to 268435455.</dd>
 <dt>psc</dt>
 <dd>The physical cell id as an integer in the range of 0 to 503 (optional).</dd>
 <dt>signal</dt>
@@ -662,13 +658,12 @@ time a valid psc field is submitted.</p>
 </div>
 <div class="section" id="cdma">
 <h3>CDMA<a class="headerlink" href="#cdma" title="Permalink to this headline">¶</a></h3>
-<p>If the network is either CDMA or one of the EVDO variants, the radio
-field should be specified as <cite>cdma</cite>. This includes <cite>1xRTT</cite>, <cite>CDMA</cite>, <cite>eHRPD</cite>,
-<cite>EVDO_0</cite>, <cite>EVDO_A</cite>, <cite>EVDO_B</cite>, <cite>IS95A</cite> and <cite>IS95B</cite>.</p>
+<p>We classify CDMA networks and their EVDO variants as <cite>cdma</cite>. This includes
+<cite>1xRTT</cite>, <cite>CDMA</cite>, <cite>eHRPD</cite>, <cite>EVDO_0</cite>, <cite>EVDO_A</cite>, <cite>EVDO_B</cite>, <cite>IS95A</cite> and <cite>IS95B</cite>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Since CDMA networks are rare and only available in a minority
-of countries, this project no longer supports them.</p>
+of countries, this project does not support them.</p>
 </div>
 </div>
 </div>

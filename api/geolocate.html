@@ -178,7 +178,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../calculation.html#gsm">GSM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../calculation.html#wcdma-umts">WCDMA / UMTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../calculation.html#lte">LTE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../calculation.html#cdma">CDMA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../calculation.html#geoip">GeoIP</a></li>
 </ul>
 </li>
@@ -513,8 +512,7 @@ estimate at least two WiFi networks need to be provided and for each the
 privacy restriction for WiFi based location services.</p>
 <p>Cell based position estimates require each cell record to contain at least
 the five <cite>radioType</cite>, <cite>mobileCountryCode</cite>, <cite>mobileNetworkCode</cite>,
-<cite>locationAreaCode</cite> and <cite>cellId</cite> values, except for CDMA networks where the
-<cite>mobileCountryCode</cite> field is optional.</p>
+<cite>locationAreaCode</cite> and <cite>cellId</cite> values.</p>
 <p>Position estimates do get a lot more precise if in addition to these unique
 identifiers at least <cite>signalStrength</cite> data can be provided for each entry.</p>
 <p>Note that all the cell JSON keys use the same names for all radio types,
