@@ -19,9 +19,8 @@ Geolocate requests are submitted using a POST request to the URL::
 
 This implements almost the same interface as the `Google Maps Geolocation
 API <https://developers.google.com/maps/documentation/business/geolocation/>`_
-endpoint, hence referred to as `GLS` or Google Location Service API.
-
-Our service implements all of the standard GLS API with a couple of additions.
+endpoint, hence referred to as `GLS` or Google Location Service API. Our
+service implements all of the standard GLS API with a couple of additions.
 
 Geolocate requests are submitted using a POST request with a JSON body.
 

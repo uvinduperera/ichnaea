@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea._geocalc &mdash; Ichnaea 1.4 documentation</title>
+  <title>ichnaea.country &mdash; Ichnaea 1.4 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="Ichnaea 1.4 documentation" href="../index.html"/>
         <link rel="up" title="Internal Code API" href="index.html"/>
-        <link rel="next" title="ichnaea.geocalc" href="geocalc.html"/>
-        <link rel="prev" title="ichnaea.floatjson" href="floatjson.html"/> 
+        <link rel="next" title="ichnaea.db" href="db.html"/>
+        <link rel="prev" title="ichnaea.constants" href="constants.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -99,10 +99,10 @@
 <li class="toctree-l3"><a class="reference internal" href="cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.country</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea._geocalc</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="geocalc.html"><code class="docutils literal"><span class="pre">ichnaea.geocalc</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
@@ -150,11 +150,11 @@
       
           <li><a href="index.html">Internal Code API</a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea._geocalc</span></code></li>
+    <li><code class="docutils literal"><span class="pre">ichnaea.country</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/internal_api/_geocalc.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/internal_api/country.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -164,78 +164,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea._geocalc">
-<span id="ichnaea-geocalc"></span><h1><a class="reference internal" href="#module-ichnaea._geocalc" title="ichnaea._geocalc"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea._geocalc</span></code></a><a class="headerlink" href="#module-ichnaea._geocalc" title="Permalink to this headline">¶</a></h1>
-<p>Contains helper functions for various geo related calculations.</p>
-<p>These are implemented in Cython / C using NumPy.</p>
-<dl class="function">
-<dt id="ichnaea._geocalc.bbox">
-<code class="descclassname">ichnaea._geocalc.</code><code class="descname">bbox</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/_geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea._geocalc.bbox" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a bounding box around the passed in lat/lon position.</p>
+  <div class="section" id="module-ichnaea.country">
+<span id="ichnaea-country"></span><h1><a class="reference internal" href="#module-ichnaea.country" title="ichnaea.country"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.country</span></code></a><a class="headerlink" href="#module-ichnaea.country" title="Permalink to this headline">¶</a></h1>
+<p>Contains helper functions for country related tasks.</p>
+<dl class="class">
+<dt id="ichnaea.country.Subunit">
+<em class="property">class </em><code class="descclassname">ichnaea.country.</code><code class="descname">Subunit</code><span class="sig-paren">(</span><em>bbox</em>, <em>alpha2</em>, <em>alpha3</em>, <em>radius</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.Subunit" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ichnaea.country.Subunit.alpha2">
+<code class="descname">alpha2</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.Subunit.alpha2" title="Permalink to this definition">¶</a></dt>
+<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
+<p>Return a callable object that fetches the given item(s) from its operand.
+After, f=itemgetter(2), the call f(r) returns r[2].
+After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.country.Subunit.alpha3">
+<code class="descname">alpha3</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.Subunit.alpha3" title="Permalink to this definition">¶</a></dt>
+<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
+<p>Return a callable object that fetches the given item(s) from its operand.
+After, f=itemgetter(2), the call f(r) returns r[2].
+After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.country.Subunit.bbox">
+<code class="descname">bbox</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.Subunit.bbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
+<p>Return a callable object that fetches the given item(s) from its operand.
+After, f=itemgetter(2), the call f(r) returns r[2].
+After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.country.Subunit.radius">
+<code class="descname">radius</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.Subunit.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
+<p>Return a callable object that fetches the given item(s) from its operand.
+After, f=itemgetter(2), the call f(r) returns r[2].
+After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea._geocalc.centroid">
-<code class="descclassname">ichnaea._geocalc.</code><code class="descname">centroid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/_geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea._geocalc.centroid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the centroid (average lat and lon) from a set of points
-(two-dimensional lat/lon array).</p>
+<dt id="ichnaea.country.country_for_location">
+<code class="descclassname">ichnaea.country.</code><code class="descname">country_for_location</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.country_for_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a ISO alpha2 country code matching the provided location.
+If the location is found inside multiple or no countries return None.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea._geocalc.distance">
-<code class="descclassname">ichnaea._geocalc.</code><code class="descname">distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/_geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea._geocalc.distance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the distance between a pair of lat/longs in meters using
-the haversine calculation. The output distance is in meters.</p>
-<dl class="docutils">
-<dt>References:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://en.wikipedia.org/wiki/Haversine_formula">http://en.wikipedia.org/wiki/Haversine_formula</a></li>
-<li><a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong.html">http://www.movable-type.co.uk/scripts/latlong.html</a></li>
-</ul>
-</dd>
-</dl>
-<p>Accuracy: since the earth is not quite a sphere, there are small
-errors in using spherical geometry; the earth is actually roughly
-ellipsoidal (or more precisely, oblate spheroidal) with a radius
-varying between about 6378km (equatorial) and 6357km (polar),
-and local radius of curvature varying from 6336km (equatorial
-meridian) to 6399km (polar). 6371 km is the generally accepted
-value for the Earth&#8217;s mean radius. This means that errors from
-assuming spherical geometry might be up to 0.55% crossing the
-equator, though generally below 0.3%, depending on latitude and
-direction of travel. An accuracy of better than 3m in 1km is
-mostly good enough for me, but if you want greater accuracy, you
-could use the Vincenty formula for calculating geodesic distances
-on ellipsoids, which gives results accurate to within 1mm.</p>
+<dt id="ichnaea.country.country_matches_location">
+<code class="descclassname">ichnaea.country.</code><code class="descname">country_matches_location</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em>, <em>country_code</em>, <em>margin=0.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.country_matches_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether or not a given (lat, lon) pair is inside one of the
+country subunits associated with a given alpha2 country code.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea._geocalc.latitude_add">
-<code class="descclassname">ichnaea._geocalc.</code><code class="descname">latitude_add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/_geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea._geocalc.latitude_add" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a latitude in degrees which is shifted by
-distance in meters.</p>
-<p>The new latitude is bounded by our globally defined
-<a class="reference internal" href="constants.html#ichnaea.constants.MIN_LAT" title="ichnaea.constants.MIN_LAT"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.constants.MIN_LAT</span></code></a> and
-<a class="reference internal" href="constants.html#ichnaea.constants.MAX_LAT" title="ichnaea.constants.MAX_LAT"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.constants.MAX_LAT</span></code></a>.</p>
-<p>A suitable estimate for surface level calculations is
-111,111m = 1 degree latitude</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea._geocalc.longitude_add">
-<code class="descclassname">ichnaea._geocalc.</code><code class="descname">longitude_add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/_geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea._geocalc.longitude_add" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a longitude in degrees which is shifted by
-distance in meters.</p>
-<p>The new longitude is bounded by our globally defined
-<a class="reference internal" href="constants.html#ichnaea.constants.MIN_LON" title="ichnaea.constants.MIN_LON"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.constants.MIN_LON</span></code></a> and
-<a class="reference internal" href="constants.html#ichnaea.constants.MAX_LON" title="ichnaea.constants.MAX_LON"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.constants.MAX_LON</span></code></a>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea._geocalc.max_distance">
-<code class="descclassname">ichnaea._geocalc.</code><code class="descname">max_distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/_geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea._geocalc.max_distance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the maximum distance from the given lat/lon point to any of
-the provided points in the points array.</p>
+<dt id="ichnaea.country.country_max_radius">
+<code class="descclassname">ichnaea.country.</code><code class="descname">country_max_radius</code><span class="sig-paren">(</span><em>country_code</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/country.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.country.country_max_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum radius of a circle encompassing the largest
+country subunit in meters, rounded to 1 km increments.</p>
 </dd></dl>
 
 </div>
@@ -247,10 +238,10 @@ the provided points in the points array.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="geocalc.html" class="btn btn-neutral float-right" title="ichnaea.geocalc" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="db.html" class="btn btn-neutral float-right" title="ichnaea.db" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="floatjson.html" class="btn btn-neutral" title="ichnaea.floatjson" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="constants.html" class="btn btn-neutral" title="ichnaea.constants" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
