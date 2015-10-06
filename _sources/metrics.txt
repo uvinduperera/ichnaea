@@ -353,17 +353,18 @@ Internal Monitoring
     They are sampled at an approximate per-minute interval.
 
 ``queue#queue:update_cell``,
-``queue#queue:update_cell_area``,
+``queue#queue:update_cellarea``,
 ``queue#queue:update_mapstat``,
 ``queue#queue:update_score``,
-``queue#queue:update_wifi`` : gauges
+``queue#queue:update_wifi_0``,
+``queue#queue:update_wifi_f`` : gauges
 
     These gauges measure the number of items in the Redis update queues.
     These queues are used to keep track of which :term:`observations`
     still need to be acted upon and integrated into the aggregate
     :term:`station` data.
 
-``table#table:ocid_cell_age`` : gauge
+``table#table:cell_ocid_age`` : gauge
 
     This gauge measures when the last entry was added to the :term:`OCID`
     table. It represents this as `now() - max(created)` and converts it

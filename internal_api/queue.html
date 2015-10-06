@@ -32,7 +32,7 @@
   
     <link rel="top" title="Ichnaea 1.4 documentation" href="../index.html"/>
         <link rel="up" title="Internal Code API" href="index.html"/>
-        <link rel="next" title="ichnaea.util" href="util.html"/>
+        <link rel="next" title="ichnaea.region" href="region.html"/>
         <link rel="prev" title="ichnaea.models.wifi" href="models/wifi.html"/> 
 
   
@@ -102,7 +102,6 @@
 <li class="toctree-l3"><a class="reference internal" href="db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="_geocalc.html"><code class="docutils literal"><span class="pre">ichnaea._geocalc</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="geocalc.html"><code class="docutils literal"><span class="pre">ichnaea.geocalc</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
@@ -110,6 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="region.html"><code class="docutils literal"><span class="pre">ichnaea.region</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html"><code class="docutils literal"><span class="pre">ichnaea.util</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="webapp/index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a></li>
 </ul>
@@ -167,6 +167,30 @@
   <div class="section" id="module-ichnaea.queue">
 <span id="ichnaea-queue"></span><h1><a class="reference internal" href="#module-ichnaea.queue" title="ichnaea.queue"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.queue</span></code></a><a class="headerlink" href="#module-ichnaea.queue" title="Permalink to this headline">¶</a></h1>
 <p>Functionality related to custom Redis based queues.</p>
+<dl class="class">
+<dt id="ichnaea.queue.BaseQueue">
+<em class="property">class </em><code class="descclassname">ichnaea.queue.</code><code class="descname">BaseQueue</code><span class="sig-paren">(</span><em>name</em>, <em>redis_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Redis based queue which stores items formatted via internaljson
+in lists.</p>
+<p>The lists maintain a TTL value corresponding to the time data has
+been last put into the queue.</p>
+<p>The enough_data function checks if a queue has either more than a
+certain batch number of items in it, or if the last time it has
+seen new data was more than an hour ago.</p>
+<dl class="attribute">
+<dt id="ichnaea.queue.BaseQueue.queue_ttl">
+<code class="descname">queue_ttl</code><em class="property"> = 86400</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue.queue_ttl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum TTL value for the Redis list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.queue.BaseQueue.queue_max_age">
+<code class="descname">queue_max_age</code><em class="property"> = 3600</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue.queue_max_age" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum age that data can sit in the queue.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -176,7 +200,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="util.html" class="btn btn-neutral float-right" title="ichnaea.util" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="region.html" class="btn btn-neutral float-right" title="ichnaea.region" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="models/wifi.html" class="btn btn-neutral" title="ichnaea.models.wifi" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

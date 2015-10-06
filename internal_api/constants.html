@@ -168,12 +168,6 @@
 <span id="ichnaea-constants"></span><h1><a class="reference internal" href="#module-ichnaea.constants" title="ichnaea.constants"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.constants</span></code></a><a class="headerlink" href="#module-ichnaea.constants" title="Permalink to this headline">¶</a></h1>
 <p>Contains general constants.</p>
 <dl class="data">
-<dt id="ichnaea.constants.ALL_VALID_COUNTRIES">
-<code class="descclassname">ichnaea.constants.</code><code class="descname">ALL_VALID_COUNTRIES</code><em class="property"> = frozenset([u'BD', u'BE', u'BF', u'BG', u'BA', u'BB', u'WF', u'BL', u'BM', u'BN', u'BO', u'BH', u'BI', u'BJ', u'BT', u'JM', u'BV', u'BW', u'WS', u'BQ', u'BR', u'BS', u'JE', u'BY', u'BZ', u'XJ', u'RU', u'RW', u'RS', u'XV', u'TL', u'XW', u'RE', u'TM', u'XT', u'TJ', u'RO', u'TK', u'GW', u'GU', u'GT', u'GS', u'GR', u'GQ', u'GP', u'QX', u'JP', u'GY', u'GG', u'GF', u'GE', u'GD', u'GB', u'GA', u'SV', u'GN', u'GM', u'GL', u'GI', u'GH', u'OM', u'TN', u'JO', u'HR', u'HT', u'HU', u'HK', u'HN', u'HM', u'VE', u'PR', u'PW', u'PT', u'PY', u'IQ', u'PA', u'PF', u'PG', u'PE', u'PK', u'PH', u'PN', u'PL', u'PM', u'ZM', u'EH', u'EE', u'EG', u'ZA', u'EC', u'IT', u'XL', u'VN', u'SB', u'ET', u'SO', u'ZW', u'SA', u'ES', u'ER', u'ME', u'MD', u'MG', u'MF', u'MA', u'MC', u'UZ', u'MM', u'ML', u'MO', u'MN', u'MH', u'MK', u'MU', u'MT', u'MW', u'MV', u'MQ', u'MP', u'MS', u'MR', u'IM', u'UG', u'MY', u'MX', u'IL', u'FR', u'IO', u'XQ', u'SH', u'XS', u'XB', u'FI', u'FJ', u'FK', u'FM', u'FO', u'NI', u'NL', u'NO', u'NA', u'VU', u'NC', u'NE', u'NF', u'NG', u'NZ', u'NP', u'NR', u'NU', u'CK', u'XK', u'CI', u'CH', u'CO', u'CN', u'CM', u'CL', u'CC', u'XC', u'CA', u'XA', u'CG', u'CF', u'XD', u'CD', u'CZ', u'CY', u'CX', u'XR', u'CR', u'XP', u'CP', u'CW', u'CV', u'CU', u'XU', u'SZ', u'SY', u'SX', u'KG', u'KE', u'SS', u'SR', u'KI', u'KH', u'KN', u'KM', u'ST', u'SK', u'KR', u'SI', u'KP', u'KW', u'SN', u'SM', u'SL', u'SC', u'KZ', u'KY', u'SG', u'SE', u'SD', u'DO', u'DM', u'DJ', u'DK', u'VG', u'DG', u'DE', u'YE', u'XH', u'DZ', u'US', u'UY', u'YT', u'LB', u'LC', u'LA', u'TV', u'TW', u'TT', u'XM', u'TR', u'LK', u'LI', u'LV', u'TO', u'LT', u'LU', u'LR', u'LS', u'TH', u'TF', u'TG', u'TD', u'TC', u'LY', u'VA', u'VC', u'AE', u'AD', u'AG', u'AF', u'AI', u'VI', u'IS', u'IR', u'AM', u'AL', u'AO', u'XG', u'AQ', u'AS', u'AR', u'AU', u'AT', u'AW', u'IN', u'TZ', u'AZ', u'IE', u'ID', u'QS', u'QU', u'QW', u'UA', u'QZ', u'QA', u'MZ', u'QM', u'XE'])</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.constants.ALL_VALID_COUNTRIES" title="Permalink to this definition">¶</a></dt>
-<dd><p>A set of all ISO 3166 alpha2 region codes present in the GENC dataset.</p>
-</dd></dl>
-
-<dl class="data">
 <dt id="ichnaea.constants.DEGREE_DECIMAL_PLACES">
 <code class="descclassname">ichnaea.constants.</code><code class="descname">DEGREE_DECIMAL_PLACES</code><em class="property"> = 7</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.constants.DEGREE_DECIMAL_PLACES" title="Permalink to this definition">¶</a></dt>
 <dd><p>We return position and accuracy values rounded to 7 <a class="reference internal" href="../glossary.html#term-decimal-degrees"><span class="xref std std-term">decimal degrees</span></a>,
@@ -220,9 +214,9 @@ of tens of meters range.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.constants.LAC_MIN_ACCURACY">
-<code class="descclassname">ichnaea.constants.</code><code class="descname">LAC_MIN_ACCURACY</code><em class="property"> = 20000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.constants.LAC_MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
-<dd><p>Minimum accuracy returned for cell area queries.</p>
+<dt id="ichnaea.constants.CELLAREA_MIN_ACCURACY">
+<code class="descclassname">ichnaea.constants.</code><code class="descname">CELLAREA_MIN_ACCURACY</code><em class="property"> = 20000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.constants.CELLAREA_MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accuracy for cell area queries.</p>
 </dd></dl>
 
 <dl class="data">

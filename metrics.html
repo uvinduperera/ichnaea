@@ -434,16 +434,17 @@ API key for the current day.</div></blockquote>
 <div>These gauges measure the number of tasks in each of the Redis queues.
 They are sampled at an approximate per-minute interval.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">queue#queue:update_cell</span></code>,
-<code class="docutils literal"><span class="pre">queue#queue:update_cell_area</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_cellarea</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_mapstat</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_score</span></code>,
-<code class="docutils literal"><span class="pre">queue#queue:update_wifi</span></code> : gauges</p>
+<code class="docutils literal"><span class="pre">queue#queue:update_wifi_0</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_wifi_f</span></code> : gauges</p>
 <blockquote>
 <div>These gauges measure the number of items in the Redis update queues.
 These queues are used to keep track of which <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a>
 still need to be acted upon and integrated into the aggregate
 <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> data.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">table#table:ocid_cell_age</span></code> : gauge</p>
+<p><code class="docutils literal"><span class="pre">table#table:cell_ocid_age</span></code> : gauge</p>
 <blockquote>
 <div>This gauge measures when the last entry was added to the <a class="reference internal" href="glossary.html#term-ocid"><span class="xref std std-term">OCID</span></a>
 table. It represents this as <cite>now() - max(created)</cite> and converts it

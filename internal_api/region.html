@@ -188,20 +188,37 @@ If the position is not found inside any region return None.</p>
 
 <dl class="method">
 <dt id="ichnaea.region.Geocoder.in_region">
-<code class="descname">in_region</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em>, <em>code</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/region.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.region.Geocoder.in_region" title="Permalink to this definition">¶</a></dt>
+<code class="descname">in_region</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em>, <em>alpha2</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/region.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.region.Geocoder.in_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is the provided lat/lon position inside the region associated
 with the given alpha2 region code.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ichnaea.region.Geocoder.in_region_mcc">
+<code class="descname">in_region_mcc</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em>, <em>mcc</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/region.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.region.Geocoder.in_region_mcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the provided lat/lon position inside one of the regions
+associated with the given mcc.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ichnaea.region.regions_for_mcc">
-<code class="descclassname">ichnaea.region.</code><code class="descname">regions_for_mcc</code><span class="sig-paren">(</span><em>mcc</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/region.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.region.regions_for_mcc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of <code class="xref py py-class docutils literal"><span class="pre">mobile_codes.Country</span></code> instances matching
-the passed in mobile country code.</p>
-<p>The return list is filtered by the set of recognized ISO 3166 alpha2
-codes present in the GENC dataset.</p>
+<dl class="method">
+<dt id="ichnaea.region.Geocoder.regions_for_mcc">
+<code class="descname">regions_for_mcc</code><span class="sig-paren">(</span><em>mcc</em>, <em>names=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/region.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.region.Geocoder.regions_for_mcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of alpha2 region codes matching the passed in
+mobile country code.</p>
+<p>If the names argument is set to True, returns a list of
+<code class="xref py py-class docutils literal"><span class="pre">genc.regions.Region</span></code> instances instead.</p>
+<p>The return list is filtered by the set of recognized ISO 3166
+alpha2 codes present in the GENC dataset and those that we have
+region shapefiles for.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.region.Geocoder.region_for_cell">
+<code class="descname">region_for_cell</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em>, <em>mcc</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/region.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.region.Geocoder.region_for_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a alpha2 region code matching the provided mcc and position.
+If the position is not found inside any region return None.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="function">

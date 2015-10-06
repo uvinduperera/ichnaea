@@ -168,28 +168,6 @@
 <span id="ichnaea-db"></span><h1><a class="reference internal" href="#module-ichnaea.db" title="ichnaea.db"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.db</span></code></a><a class="headerlink" href="#module-ichnaea.db" title="Permalink to this headline">¶</a></h1>
 <p>Database related functionality.</p>
 <dl class="function">
-<dt id="ichnaea.db.mogrify">
-<code class="descclassname">ichnaea.db.</code><code class="descname">mogrify</code><span class="sig-paren">(</span><em>self</em>, <em>query</em>, <em>args=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.mogrify" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the exact string that is sent to the database by calling the
-execute() method.</p>
-<p>This method follows the extension to the DB API 2.0 followed by Psycopg.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.db.execute">
-<code class="descclassname">ichnaea.db.</code><code class="descname">execute</code><span class="sig-paren">(</span><em>self</em>, <em>query</em>, <em>args=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.execute" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute a query</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.db.executemany">
-<code class="descclassname">ichnaea.db.</code><code class="descname">executemany</code><span class="sig-paren">(</span><em>self</em>, <em>query</em>, <em>args</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.executemany" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run several data against one query</p>
-<p>PyMySQL can execute bulkinsert for query like &#8216;INSERT ... VALUES (%s)&#8217;.
-In other form of queries, just run <a class="reference internal" href="#ichnaea.db.execute" title="ichnaea.db.execute"><code class="xref py py-meth docutils literal"><span class="pre">execute()</span></code></a> many times.</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="ichnaea.db.on_duplicate">
 <code class="descclassname">ichnaea.db.</code><code class="descname">on_duplicate</code><span class="sig-paren">(</span><em>insert</em>, <em>compiler</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.on_duplicate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Custom MySQL insert on_duplicate support.</p>
