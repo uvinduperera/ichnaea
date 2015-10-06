@@ -317,13 +317,17 @@
 <div class="section" id="migrations">
 <h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>All OCID data has to be manually imported again into the new tables.</li>
+<li>460ce3d4fe09: Rename columns to region.</li>
 <li>339d19da63ee: Add new cell OCID tables.</li>
+<li>All OCID data has to be manually imported again into the new tables.</li>
 </ul>
 </div>
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>Change internal names to refer to region.</li>
+<li>Change metric tag to region for region codes.</li>
+<li>Temporarily stop using cell/area range in locate logic.</li>
 <li>Discard too large cell networks during import.</li>
 <li>Use mcc in region determination for cells.</li>
 <li>Use new OCID tables in the entire code base.</li>

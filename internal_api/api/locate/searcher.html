@@ -178,13 +178,13 @@
             
   <div class="section" id="module-ichnaea.api.locate.searcher">
 <span id="ichnaea-api-locate-searcher"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.searcher" title="ichnaea.api.locate.searcher"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.searcher</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.searcher" title="Permalink to this headline">¶</a></h1>
-<p>Abstract searcher and concrete country and position searchers each using
+<p>Abstract searcher and concrete position and region searchers each using
 multiple sources to satisfy a given query.</p>
 <dl class="function">
-<dt id="ichnaea.api.locate.searcher.configure_country_searcher">
-<code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">configure_country_searcher</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db=None</em>, <em>raven_client=None</em>, <em>redis_client=None</em>, <em>stats_client=None</em>, <em>_searcher=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.configure_country_searcher" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.api.locate.searcher.configure_region_searcher">
+<code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">configure_region_searcher</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db=None</em>, <em>raven_client=None</em>, <em>redis_client=None</em>, <em>stats_client=None</em>, <em>_searcher=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.configure_region_searcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure and return a configured
-<a class="reference internal" href="#ichnaea.api.locate.searcher.CountrySearcher" title="ichnaea.api.locate.searcher.CountrySearcher"><code class="xref py py-class docutils literal"><span class="pre">CountrySearcher</span></code></a> instance.</p>
+<a class="reference internal" href="#ichnaea.api.locate.searcher.RegionSearcher" title="ichnaea.api.locate.searcher.RegionSearcher"><code class="xref py py-class docutils literal"><span class="pre">RegionSearcher</span></code></a> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -278,13 +278,13 @@ a longitude and an accuracy in meters.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.api.locate.searcher.CountrySearcher">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">CountrySearcher</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.CountrySearcher" title="Permalink to this definition">¶</a></dt>
-<dd><p>A CountrySearcher will return a country name and code.</p>
+<dt id="ichnaea.api.locate.searcher.RegionSearcher">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">RegionSearcher</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>A RegionSearcher will return a region name and code.</p>
 <dl class="attribute">
-<dt id="ichnaea.api.locate.searcher.CountrySearcher.result_type">
-<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.CountrySearcher.result_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Country</span></code></p>
+<dt id="ichnaea.api.locate.searcher.RegionSearcher.result_type">
+<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher.result_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Region</span></code></p>
 </dd></dl>
 
 </dd></dl>

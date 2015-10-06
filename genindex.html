@@ -485,12 +485,12 @@
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellPositionSource">CellPositionSource (class in ichnaea.api.locate.cell)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/geocalc.html#ichnaea.geocalc.centroid">centroid() (in module ichnaea.geocalc)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="glossary.html#term-cgi"><strong>CGI</strong></a>
   </dt>
@@ -566,10 +566,6 @@
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.configure_country_searcher">configure_country_searcher() (in module ichnaea.api.locate.searcher)</a>
-  </dt>
-
-      
   <dt><a href="internal_api/async/config.html#ichnaea.async.config.configure_data">configure_data() (in module ichnaea.async.config)</a>
   </dt>
 
@@ -610,19 +606,11 @@
   </dt>
 
       
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.configure_region_searcher">configure_region_searcher() (in module ichnaea.api.locate.searcher)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/log.html#ichnaea.log.configure_stats">configure_stats() (in module ichnaea.log)</a>
-  </dt>
-
-      
-  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.Country">Country (class in ichnaea.api.locate.result)</a>
-  </dt>
-
-      
-  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.CountrySearcher">CountrySearcher (class in ichnaea.api.locate.searcher)</a>
-  </dt>
-
-      
-  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.CountrySource">CountrySource (class in ichnaea.api.locate.source)</a>
   </dt>
 
       
@@ -876,10 +864,6 @@
   </dt>
 
       
-  <dt><a href="internal_api/constants.html#ichnaea.constants.GEOIP_COUNTRY_ACCURACY">GEOIP_COUNTRY_ACCURACY (in module ichnaea.constants)</a>
-  </dt>
-
-      
   <dt><a href="internal_api/async/task.html#ichnaea.async.task.BaseTask.geoip_db">geoip_db (ichnaea.async.task.BaseTask attribute)</a>
   </dt>
 
@@ -894,7 +878,7 @@
 
       </dl></dd>
       
-  <dt><a href="internal_api/api/locate/geoip.html#ichnaea.api.locate.geoip.GeoIPCountrySource">GeoIPCountrySource (class in ichnaea.api.locate.geoip)</a>
+  <dt><a href="internal_api/constants.html#ichnaea.constants.GEOIP_REGION_ACCURACY">GEOIP_REGION_ACCURACY (in module ichnaea.constants)</a>
   </dt>
 
       
@@ -903,6 +887,10 @@
 
       
   <dt><a href="internal_api/api/locate/geoip.html#ichnaea.api.locate.geoip.GeoIPPositionSource">GeoIPPositionSource (class in ichnaea.api.locate.geoip)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/geoip.html#ichnaea.api.locate.geoip.GeoIPRegionSource">GeoIPRegionSource (class in ichnaea.api.locate.geoip)</a>
   </dt>
 
   </dl></td>
@@ -1256,11 +1244,11 @@
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalCountrySource">InternalCountrySource (class in ichnaea.api.locate.internal)</a>
+  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalPositionSource">InternalPositionSource (class in ichnaea.api.locate.internal)</a>
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalPositionSource">InternalPositionSource (class in ichnaea.api.locate.internal)</a>
+  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalRegionSource">InternalRegionSource (class in ichnaea.api.locate.internal)</a>
   </dt>
 
       
@@ -1735,12 +1723,16 @@
   </dt>
 
       </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/cache.html#ichnaea.cache.RedisClient">RedisClient (class in ichnaea.cache)</a>
   </dt>
 
+      
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.Region">Region (class in ichnaea.api.locate.result)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/region.html#ichnaea.region.Geocoder.region">region() (ichnaea.region.Geocoder method)</a>
   </dt>
@@ -1755,6 +1747,14 @@
 
       
   <dt><a href="internal_api/region.html#ichnaea.region.Geocoder.regions_for_mcc">regions_for_mcc() (ichnaea.region.Geocoder method)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.RegionSearcher">RegionSearcher (class in ichnaea.api.locate.searcher)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.RegionSource">RegionSource (class in ichnaea.api.locate.source)</a>
   </dt>
 
       
@@ -1785,11 +1785,11 @@
 
       <dd><dl>
         
-  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.CountrySearcher.result_type">(ichnaea.api.locate.searcher.CountrySearcher attribute)</a>
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.PositionSearcher.result_type">(ichnaea.api.locate.searcher.PositionSearcher attribute)</a>
   </dt>
 
         
-  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.PositionSearcher.result_type">(ichnaea.api.locate.searcher.PositionSearcher attribute)</a>
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.RegionSearcher.result_type">(ichnaea.api.locate.searcher.RegionSearcher attribute)</a>
   </dt>
 
         
@@ -1797,11 +1797,11 @@
   </dt>
 
         
-  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.CountrySource.result_type">(ichnaea.api.locate.source.CountrySource attribute)</a>
+  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.PositionSource.result_type">(ichnaea.api.locate.source.PositionSource attribute)</a>
   </dt>
 
         
-  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.PositionSource.result_type">(ichnaea.api.locate.source.PositionSource attribute)</a>
+  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.RegionSource.result_type">(ichnaea.api.locate.source.RegionSource attribute)</a>
   </dt>
 
         
@@ -1927,11 +1927,11 @@
 
       <dd><dl>
         
-  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalCountrySource.source">(ichnaea.api.locate.internal.InternalCountrySource attribute)</a>
+  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalPositionSource.source">(ichnaea.api.locate.internal.InternalPositionSource attribute)</a>
   </dt>
 
         
-  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalPositionSource.source">(ichnaea.api.locate.internal.InternalPositionSource attribute)</a>
+  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalRegionSource.source">(ichnaea.api.locate.internal.InternalRegionSource attribute)</a>
   </dt>
 
         

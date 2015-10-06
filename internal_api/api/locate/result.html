@@ -178,11 +178,11 @@
             
   <div class="section" id="module-ichnaea.api.locate.result">
 <span id="ichnaea-api-locate-result"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.result" title="ichnaea.api.locate.result"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.result</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.result" title="Permalink to this headline">¶</a></h1>
-<p>Classes representing an abstract query result
-or a concrete country or position result.</p>
+<p>Classes representing an abstract query result or
+a concrete position or region result.</p>
 <dl class="class">
 <dt id="ichnaea.api.locate.result.Result">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>country_code=None</em>, <em>country_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Result" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Result" title="Permalink to this definition">¶</a></dt>
 <dd><p>An empty query result.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.locate.result.Result.data_accuracy">
@@ -231,14 +231,14 @@ the expected query data accuracy.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.result.Position">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Position</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>country_code=None</em>, <em>country_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Position" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Position</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Position" title="Permalink to this definition">¶</a></dt>
 <dd><p>The position returned by a position query.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.api.locate.result.Country">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Country</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>country_code=None</em>, <em>country_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Country" title="Permalink to this definition">¶</a></dt>
-<dd><p>The country returned by a country query.</p>
+<dt id="ichnaea.api.locate.result.Region">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Region</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Region" title="Permalink to this definition">¶</a></dt>
+<dd><p>The region returned by a region query.</p>
 </dd></dl>
 
 </div>

@@ -239,19 +239,6 @@ check if this source should attempt to perform a search.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.api.locate.source.CountrySource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">CountrySource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.CountrySource" title="Permalink to this definition">¶</a></dt>
-<dd><p>A CountrySource will return a country result with
-a country name and code in it.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.source.CountrySource.result_type">
-<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.CountrySource.result_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Country</span></code></p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="ichnaea.api.locate.source.PositionSource">
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">PositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.PositionSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>A PositionSource will return a position result with
@@ -260,6 +247,19 @@ a latitude, a longitude and an accuracy in meters in it.</p>
 <dt id="ichnaea.api.locate.source.PositionSource.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.PositionSource.result_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Position</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.source.RegionSource">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">RegionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.RegionSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>A RegionSource will return a region result with
+a region name and code in it.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.source.RegionSource.result_type">
+<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.RegionSource.result_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Region</span></code></p>
 </dd></dl>
 
 </dd></dl>

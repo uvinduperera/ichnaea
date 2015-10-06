@@ -170,12 +170,12 @@ In this case the above metric would be emitted as:
 <h2>API Request Metrics<a class="headerlink" href="#api-request-metrics" title="Permalink to this headline">¶</a></h2>
 <p>These are metrics that track how many times each specific public API
 is used and which clients identified by their API keys do so. They are
-grouped by the type of the API, where type is one of <cite>country</cite>, <cite>locate</cite>
+grouped by the type of the API, where type is one of <cite>locate</cite>, <cite>region</cite>
 and <cite>submit</cite>, independent of the specific version of that API.</p>
 <p>These metrics can help in deciding when to remove a deprecated API.</p>
-<p><code class="docutils literal"><span class="pre">country.request#path:v1.country,key:&lt;apikey_shortname&gt;</span></code>,
-<code class="docutils literal"><span class="pre">locate.request#path:v1.search,key:&lt;apikey_shortname&gt;</span></code>,
+<p><code class="docutils literal"><span class="pre">locate.request#path:v1.search,key:&lt;apikey_shortname&gt;</span></code>,
 <code class="docutils literal"><span class="pre">locate.request#path:v1.geolocate,key:&lt;apikey_shortname&gt;</span></code>,
+<code class="docutils literal"><span class="pre">region.request#path:v1.country,key:&lt;apikey_shortname&gt;</span></code>,
 <code class="docutils literal"><span class="pre">submit.request#path:v1.submit,key:&lt;apikey_shortname&gt;</span></code>,
 <code class="docutils literal"><span class="pre">submit.request#path:v1.geosubmit,key:&lt;apikey_shortname&gt;</span></code>,
 <code class="docutils literal"><span class="pre">submit.request#path:v2.geosubmit,key:&lt;apikey_shortname&gt;</span></code> : counters</p>
@@ -208,12 +208,12 @@ the actual number.</p>
 <h2>API Query Metrics<a class="headerlink" href="#api-query-metrics" title="Permalink to this headline">¶</a></h2>
 <p>For each incoming API query we log metrics about the data contained in
 the query with the metric name and tags:</p>
-<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.query#key&lt;api_shortname&gt;,country:&lt;country_code&gt;</span></code> : counter</p>
+<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.query#key&lt;api_shortname&gt;,region:&lt;region_code&gt;</span></code> : counter</p>
 <p><cite>api_type</cite> describes the type of API being used, independent of the
-version number of the API. So <cite>v1/country</cite> gets logged as <cite>country</cite>
+version number of the API. So <cite>v1/country</cite> gets logged as <cite>region</cite>
 and both <cite>v1/search</cite> and <cite>v1/geolocate</cite> get logged as <cite>locate</cite>.</p>
-<p><cite>country_code</cite> is either a two-letter ISO3166 code like <cite>de</cite> or the
-special value <cite>none</cite> if the country origin of the incoming request
+<p><cite>region_code</cite> is either a two-letter GENC region code like <cite>de</cite> or the
+special value <cite>none</cite> if the region of origin of the incoming request
 could not be determined.</p>
 <p>We extend the metric with additional tags based on the data contained
 in it:</p>
@@ -233,8 +233,8 @@ wifi tag get added. The tags depend on the number of valid
 <h2>API Result Metrics<a class="headerlink" href="#api-result-metrics" title="Permalink to this headline">¶</a></h2>
 <p>Similar to the API query metrics we also collect metrics about each
 result of an API query. This follows the same per API type and per
-country rules under the prefix / tag combination:</p>
-<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.result#key:&lt;api_shortname&gt;,country:&lt;country_code&gt;</span></code></p>
+region rules under the prefix / tag combination:</p>
+<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.result#key:&lt;api_shortname&gt;,region:&lt;region_code&gt;</span></code></p>
 <p>The result metrics measure if we satisfied the incoming API query in
 the best possible fashion. Incoming queries can generally contain
 an IP address, cell networks, WiFi networks or any combination thereof.
@@ -296,11 +296,11 @@ but only for results that met the expected accuracy.</p>
 <h2>API Source Metrics<a class="headerlink" href="#api-source-metrics" title="Permalink to this headline">¶</a></h2>
 <p>In addition to the final API result, we also collect metrics about each
 individual data source we use to answer queries under the
-<code class="docutils literal"><span class="pre">&lt;api_type&gt;.source#key:&lt;api_shortname&gt;,country:&lt;country_code&gt;</span></code> metric.</p>
+<code class="docutils literal"><span class="pre">&lt;api_type&gt;.source#key:&lt;api_shortname&gt;,region:&lt;region_code&gt;</span></code> metric.</p>
 <p>Each request may use one or multiple of these sources to deliver a result.
 We log the same metrics as mentioned above for the result.</p>
 <p>All of this combined might lead to a tagged metric like:</p>
-<p><code class="docutils literal"><span class="pre">locate.source#key:test,country:de,source:ocid,accuracy:medium,status:hit</span></code></p>
+<p><code class="docutils literal"><span class="pre">locate.source#key:test,region:de,source:ocid,accuracy:medium,status:hit</span></code></p>
 </div>
 <div class="section" id="api-fallback-source-metrics">
 <h2>API Fallback Source Metrics<a class="headerlink" href="#api-fallback-source-metrics" title="Permalink to this headline">¶</a></h2>
