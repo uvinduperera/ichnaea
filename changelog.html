@@ -317,6 +317,7 @@
 <div class="section" id="migrations">
 <h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>33d0f7fb4da0: Add api_type specific logging flags to api keys.</li>
 <li>460ce3d4fe09: Rename columns to region.</li>
 <li>339d19da63ee: Add new cell OCID tables.</li>
 <li>All OCID data has to be manually imported again into the new tables.</li>
@@ -325,6 +326,7 @@
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>Add new <cite>fallback_allowed</cite> tag to locate metrics.</li>
 <li>Calculate region radii based on precise shapefiles.</li>
 <li>Use subunits dataset to preserve smaller regions.</li>
 <li>Use GENC codes and names in GeoIP results.</li>
@@ -343,7 +345,8 @@
 <li>Merge scan_areas/update_area tasks into a single new update_cellarea task.</li>
 <li>Remove backwards compatible tasks and area/mapstat task processing logic.</li>
 <li>Update to latest versions of bower, clean-css and uglify-js.</li>
-<li>Update to latest versions of cryptography, Cython, numpy, pyasn1 and PyMySQL.</li>
+<li>Update to latest versions of cryptography, Cython, kombu, numpy,
+pyasn1, PyMySQL, requests, Shapely, six and WebOb.</li>
 </ul>
 </div>
 </div>
