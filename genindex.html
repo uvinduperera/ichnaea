@@ -214,10 +214,6 @@
   </dt>
 
       
-  <dt><a href="internal_api/geoip.html#ichnaea.geoip.GeoIPWrapper.accuracy">accuracy() (ichnaea.geoip.GeoIPWrapper method)</a>
-  </dt>
-
-      
   <dt><a href="internal_api/async/task.html#ichnaea.async.task.BaseTask.acks_late">acks_late (ichnaea.async.task.BaseTask attribute)</a>
   </dt>
 
@@ -489,6 +485,10 @@
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellPositionSource">CellPositionSource (class in ichnaea.api.locate.cell)</a>
   </dt>
 
+      
+  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellRegionMixin">CellRegionMixin (class in ichnaea.api.locate.cell)</a>
+  </dt>
+
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
@@ -517,6 +517,14 @@
 
       
   <dt><a href="internal_api/geocalc.html#ichnaea.geocalc.circle_radius">circle_radius() (in module ichnaea.geocalc)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.CITY_RADII">CITY_RADII (in module ichnaea.geoip)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.CITY_RADIUS">CITY_RADIUS (in module ichnaea.geoip)</a>
   </dt>
 
       
@@ -864,25 +872,11 @@
   </dt>
 
       
-  <dt><a href="internal_api/constants.html#ichnaea.constants.GEOIP_CITY_ACCURACY">GEOIP_CITY_ACCURACY (in module ichnaea.constants)</a>
-  </dt>
-
-      
   <dt><a href="internal_api/async/task.html#ichnaea.async.task.BaseTask.geoip_db">geoip_db (ichnaea.async.task.BaseTask attribute)</a>
   </dt>
 
       
-  <dt><a href="internal_api/geoip.html#ichnaea.geoip.GeoIPNull.geoip_lookup">geoip_lookup() (ichnaea.geoip.GeoIPNull method)</a>
-  </dt>
-
-      <dd><dl>
-        
-  <dt><a href="internal_api/geoip.html#ichnaea.geoip.GeoIPWrapper.geoip_lookup">(ichnaea.geoip.GeoIPWrapper method)</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt><a href="internal_api/constants.html#ichnaea.constants.GEOIP_REGION_ACCURACY">GEOIP_REGION_ACCURACY (in module ichnaea.constants)</a>
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.GEOIP_GENC_MAP">GEOIP_GENC_MAP (in module ichnaea.geoip)</a>
   </dt>
 
       
@@ -897,12 +891,12 @@
   <dt><a href="internal_api/api/locate/geoip.html#ichnaea.api.locate.geoip.GeoIPRegionSource">GeoIPRegionSource (class in ichnaea.api.locate.geoip)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/api/locate/geoip.html#ichnaea.api.locate.geoip.GeoIPSource">GeoIPSource (class in ichnaea.api.locate.geoip)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/geoip.html#ichnaea.geoip.GeoIPWrapper">GeoIPWrapper (class in ichnaea.geoip)</a>
   </dt>
@@ -1334,6 +1328,16 @@
   </dt>
 
       
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.GeoIPNull.lookup">lookup() (ichnaea.geoip.GeoIPNull method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.GeoIPWrapper.lookup">(ichnaea.geoip.GeoIPWrapper method)</a>
+  </dt>
+
+      </dl></dd>
+      
   <dt><a href="internal_api/api/locate/constants.html#ichnaea.api.locate.constants.DataAccuracy.low">low (ichnaea.api.locate.constants.DataAccuracy attribute)</a>
   </dt>
 
@@ -1686,6 +1690,10 @@
 
       </dl></dd>
       
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.GeoIPWrapper.radius">radius() (ichnaea.geoip.GeoIPWrapper method)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/log.html#ichnaea.log.random">random() (in module ichnaea.log)</a>
   </dt>
 
@@ -1766,6 +1774,10 @@
   </dt>
 
       
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.REGION_RADIUS">REGION_RADIUS (in module ichnaea.geoip)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/geocode.html#ichnaea.geocode.Geocoder.regions_for_mcc">regions_for_mcc() (ichnaea.geocode.Geocoder method)</a>
   </dt>
 
@@ -1804,6 +1816,10 @@
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellRegionMixin.result_type">(ichnaea.api.locate.cell.CellRegionMixin attribute)</a>
+  </dt>
+
         
   <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.PositionSearcher.result_type">(ichnaea.api.locate.searcher.PositionSearcher attribute)</a>
   </dt>
@@ -1927,12 +1943,12 @@
   <dt><a href="internal_api/async/config.html#ichnaea.async.config.shutdown_worker">shutdown_worker() (in module ichnaea.async.config)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/async/app.html#ichnaea.async.app.shutdown_worker_process">shutdown_worker_process() (in module ichnaea.async.app)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.Network.signal">signal (ichnaea.api.locate.wifi.Network attribute)</a>
   </dt>
@@ -1985,6 +2001,14 @@
 
       
   <dt><a href="internal_api/log.html#ichnaea.log.StatsClient">StatsClient (class in ichnaea.log)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.SUB_RADII">SUB_RADII (in module ichnaea.geoip)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/geoip.html#ichnaea.geoip.SUB_RADIUS">SUB_RADIUS (in module ichnaea.geoip)</a>
   </dt>
 
       
