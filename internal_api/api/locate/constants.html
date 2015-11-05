@@ -212,6 +212,36 @@ results based on the cluster.</p>
 the aggregate result.</p>
 </dd></dl>
 
+<dl class="data">
+<dt id="ichnaea.api.locate.constants.WIFI_MIN_ACCURACY">
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">WIFI_MIN_ACCURACY</code><em class="property"> = 100.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.WIFI_MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accuracy returned for Wifi queries.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.api.locate.constants.CELL_MIN_ACCURACY">
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">CELL_MIN_ACCURACY</code><em class="property"> = 1000.1</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.CELL_MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accuracy returned for cell queries.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.api.locate.constants.CELL_MAX_ACCURACY">
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">CELL_MAX_ACCURACY</code><em class="property"> = 50000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.CELL_MAX_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum accuracy returned for cell queries.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.api.locate.constants.CELLAREA_MIN_ACCURACY">
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">CELLAREA_MIN_ACCURACY</code><em class="property"> = 50000.099999999999</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.CELLAREA_MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accuracy for cell area queries.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.api.locate.constants.CELLAREA_MAX_ACCURACY">
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">CELLAREA_MAX_ACCURACY</code><em class="property"> = 500000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.CELLAREA_MAX_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum accuracy for cell area queries.</p>
+</dd></dl>
+
 <dl class="class">
 <dt id="ichnaea.api.locate.constants.DataSource">
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">DataSource</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.DataSource" title="Permalink to this definition">¶</a></dt>
@@ -248,7 +278,7 @@ the aggregate result.</p>
 <dd><p>Describes the possible and actual accuracy class of a locate query.</p>
 <p>Instances of this class can be compared based on their value or can
 be compared to int/float values.</p>
-<p>These values are related to <a class="reference internal" href="../../constants.html#ichnaea.constants.CELL_MIN_ACCURACY" title="ichnaea.constants.CELL_MIN_ACCURACY"><code class="xref py py-data docutils literal"><span class="pre">CELL_MIN_ACCURACY</span></code></a>
+<p>These values are related to <code class="xref py py-data docutils literal"><span class="pre">CELL_MIN_ACCURACY</span></code>
 and <a class="reference internal" href="../../geoip.html#ichnaea.geoip.CITY_RADIUS" title="ichnaea.geoip.CITY_RADIUS"><code class="xref py py-data docutils literal"><span class="pre">CITY_RADIUS</span></code></a> and adjustments
 in one need to be reflected in the other.</p>
 <dl class="attribute">

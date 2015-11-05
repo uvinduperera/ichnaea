@@ -254,6 +254,21 @@ distance in meters.</p>
 the provided points in the points array.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="ichnaea.geocalc.random_points">
+<code class="descclassname">ichnaea.geocalc.</code><code class="descname">random_points</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.random_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a row from the datamap table, return a list of
+pseudo-randomized but stable points for the datamap grid.</p>
+<p>The points look random, but their position only depends on the
+passed in latitude and longitude. This ensures that on consecutive
+calls with the same input data, the exact same output data is
+returned, and the generated image tiles showing these points don&#8217;t
+change. The randomness needs to be good enough to not show clear
+visual patterns for adjacent grid cells, so a change in one of
+the input arguments by 1 needs to result in a large change in
+the pattern.</p>
+</dd></dl>
+
 </div>
 
 

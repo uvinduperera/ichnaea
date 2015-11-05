@@ -440,15 +440,15 @@ API key for the current day.</div></blockquote>
 They are sampled at an approximate per-minute interval.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">queue#queue:update_cell</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_cellarea</span></code>,
-<code class="docutils literal"><span class="pre">queue#queue:update_mapstat</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_datamap_ne</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_datamap_nw</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_datamap_se</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_datamap_sw</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_score</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_wifi_0</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_wifi_f</span></code> : gauges</p>
 <blockquote>
-<div>These gauges measure the number of items in the Redis update queues.
-These queues are used to keep track of which <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a>
-still need to be acted upon and integrated into the aggregate
-<a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> data.</div></blockquote>
+<div>These gauges measure the number of items in the Redis update queues.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">table#table:cell_ocid_age</span></code> : gauge</p>
 <blockquote>
 <div>This gauge measures when the last entry was added to the <a class="reference internal" href="glossary.html#term-ocid"><span class="xref std std-term">OCID</span></a>
@@ -498,22 +498,23 @@ emits a timer indicating its execution time.</p>
 <p>We include a script to generate a data map from the gathered map
 statistics. This script includes a number of timers and pseudo-timers
 to monitor its operation.</p>
-<p><code class="docutils literal"><span class="pre">datamaps#func:export_to_csv</span></code>,
+<p><code class="docutils literal"><span class="pre">datamaps#func:export</span></code>,
 <code class="docutils literal"><span class="pre">datamaps#func:encode</span></code>,
+<code class="docutils literal"><span class="pre">datamaps#func:merge</span></code>,
 <code class="docutils literal"><span class="pre">datamaps#func:main</span></code>,
 <code class="docutils literal"><span class="pre">datamaps#func:render</span></code>,
-<code class="docutils literal"><span class="pre">datamaps#func:upload_to_s3</span></code> : timers</p>
+<code class="docutils literal"><span class="pre">datamaps#func:upload</span></code> : timers</p>
 <blockquote>
 <div>These timers track the individual functions of the generation process.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">datamaps#count:csv_rows</span></code>,
-<code class="docutils literal"><span class="pre">datamaps#count:s3_list</span></code>,
-<code class="docutils literal"><span class="pre">datamaps#count:s3_put</span></code>,
+<code class="docutils literal"><span class="pre">datamaps#count:quadtrees</span></code>,
 <code class="docutils literal"><span class="pre">datamaps#count:tile_new</span></code>,
 <code class="docutils literal"><span class="pre">datamaps#count:tile_changed</span></code>,
+<code class="docutils literal"><span class="pre">datamaps#count:tile_deleted</span></code>,
 <code class="docutils literal"><span class="pre">datamaps#count:tile_unchanged</span></code> : timers</p>
 <blockquote>
-<div>Pseudo-timers to track the number of CSV rows, image tiles and
-S3 operations.</div></blockquote>
+<div>Pseudo-timers to track the number of CSV rows, Quadtree files and
+image tiles.</div></blockquote>
 </div>
 </div>
 
