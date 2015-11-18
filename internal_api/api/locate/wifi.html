@@ -179,91 +179,6 @@
   <div class="section" id="module-ichnaea.api.locate.wifi">
 <span id="ichnaea-api-locate-wifi"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.wifi" title="ichnaea.api.locate.wifi"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.wifi</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.wifi" title="Permalink to this headline">¶</a></h1>
 <p>Search implementation using a wifi database.</p>
-<dl class="class">
-<dt id="ichnaea.api.locate.wifi.Network">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">Network</code><span class="sig-paren">(</span><em>mac</em>, <em>lat</em>, <em>lon</em>, <em>radius</em>, <em>signal</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.Network" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="attribute">
-<dt id="ichnaea.api.locate.wifi.Network.lat">
-<code class="descname">lat</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.Network.lat" title="Permalink to this definition">¶</a></dt>
-<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
-<p>Return a callable object that fetches the given item(s) from its operand.
-After, f=itemgetter(2), the call f(r) returns r[2].
-After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.wifi.Network.lon">
-<code class="descname">lon</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.Network.lon" title="Permalink to this definition">¶</a></dt>
-<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
-<p>Return a callable object that fetches the given item(s) from its operand.
-After, f=itemgetter(2), the call f(r) returns r[2].
-After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.wifi.Network.mac">
-<code class="descname">mac</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.Network.mac" title="Permalink to this definition">¶</a></dt>
-<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
-<p>Return a callable object that fetches the given item(s) from its operand.
-After, f=itemgetter(2), the call f(r) returns r[2].
-After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.wifi.Network.radius">
-<code class="descname">radius</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.Network.radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
-<p>Return a callable object that fetches the given item(s) from its operand.
-After, f=itemgetter(2), the call f(r) returns r[2].
-After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.wifi.Network.signal">
-<code class="descname">signal</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.Network.signal" title="Permalink to this definition">¶</a></dt>
-<dd><p>itemgetter(item, ...) &#8211;&gt; itemgetter object</p>
-<p>Return a callable object that fetches the given item(s) from its operand.
-After, f=itemgetter(2), the call f(r) returns r[2].
-After, g=itemgetter(2,5,3), the call g(r) returns (r[2], r[5], r[3])</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.wifi.cluster_elements">
-<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">cluster_elements</code><span class="sig-paren">(</span><em>items</em>, <em>distance_fn</em>, <em>threshold</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.cluster_elements" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generic pairwise clustering routine.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>items</strong> &#8211; A list of elements to cluster.</li>
-<li><strong>distance_fn</strong> &#8211; A pairwise distance function over elements.</li>
-<li><strong>threshold</strong> &#8211; A numeric threshold for clustering;
-clusters P, Q will be joined if
-distance_fn(a,b) &lt;= threshold,
-for any a in P, b in Q.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A list of lists of elements, each sub-list being a cluster.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.wifi.filter_bssids_by_similarity">
-<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">filter_bssids_by_similarity</code><span class="sig-paren">(</span><em>bssids</em>, <em>distance_threshold=2</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.filter_bssids_by_similarity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cluster BSSIDs by &#8220;similarity&#8221; (hamming or arithmetic distance);
-return one BSSID from each cluster. The distance threshold is
-hard-wired to 2, meaning that two BSSIDs are clustered together
-if they are within a numeric difference of 2 of one another or
-a hamming distance of 2.</p>
-</dd></dl>
-
 <dl class="function">
 <dt id="ichnaea.api.locate.wifi.get_clusters">
 <code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">get_clusters</code><span class="sig-paren">(</span><em>wifis</em>, <em>lookups</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.get_clusters" title="Permalink to this definition">¶</a></dt>
@@ -274,17 +189,10 @@ a list of clusters of nearby wifi networks.</p>
 <dl class="function">
 <dt id="ichnaea.api.locate.wifi.pick_best_cluster">
 <code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">pick_best_cluster</code><span class="sig-paren">(</span><em>clusters</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.pick_best_cluster" title="Permalink to this definition">¶</a></dt>
-<dd><p>Out of the list of possible clusters, pick the best one.</p>
-<p>Currently we pick the cluster with the most found networks inside
-it. If we find more than one cluster, we have some stale data in
-our database, as a device shouldn&#8217;t be able to pick up signals
-from networks more than
-<a class="reference internal" href="constants.html#ichnaea.api.locate.constants.MAX_WIFI_CLUSTER_METERS" title="ichnaea.api.locate.constants.MAX_WIFI_CLUSTER_METERS"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.api.locate.constants.MAX_WIFI_CLUSTER_METERS</span></code></a> apart.
-We assume that the majority of our data is correct and discard the
-minority match.</p>
-<p>The list of clusters is pre-sorted by signal strength, so given
-two clusters with two networks each, the cluster with the better
-signal strength readings wins.</p>
+<dd><p>Out of the list of possible clusters, pick the best one based
+on the sum of the individual network scores.</p>
+<p>In case of a tie, we use the cluster with the better median
+signal strength.</p>
 </dd></dl>
 
 <dl class="function">
