@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea.webapp.settings &mdash; Ichnaea 1.4 documentation</title>
+  <title>ichnaea.models.sa_types &mdash; Ichnaea 1.4 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="Ichnaea 1.4 documentation" href="../../index.html"/>
-        <link rel="up" title="ichnaea.webapp" href="index.html"/>
-        <link rel="next" title="ichnaea.webapp.view" href="view.html"/>
-        <link rel="prev" title="ichnaea.webapp.monitor" href="monitor.html"/> 
+        <link rel="up" title="ichnaea.models" href="index.html"/>
+        <link rel="next" title="ichnaea.models.schema" href="schema.html"/>
+        <link rel="prev" title="ichnaea.models.observation" href="observation.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -108,18 +108,22 @@
 <li class="toctree-l3"><a class="reference internal" href="../http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../util.html"><code class="docutils literal"><span class="pre">ichnaea.util</span></code></a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="app.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.app</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.config</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="monitor.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.monitor</span></code></a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="view.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.view</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="worker.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.worker</span></code></a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="station.html"><code class="docutils literal"><span class="pre">ichnaea.models.station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="wifi.html"><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../util.html"><code class="docutils literal"><span class="pre">ichnaea.util</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../webapp/index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -158,13 +162,13 @@
       
           <li><a href="../index.html">Internal Code API</a> &raquo;</li>
       
-          <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a> &raquo;</li>
+          <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></li>
+    <li><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/webapp/settings.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/models/sa_types.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,13 +178,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.webapp.settings">
-<span id="ichnaea-webapp-settings"></span><h1><a class="reference internal" href="#module-ichnaea.webapp.settings" title="ichnaea.webapp.settings"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a><a class="headerlink" href="#module-ichnaea.webapp.settings" title="Permalink to this headline">¶</a></h1>
-<p>Contains <a class="reference external" href="http://docs.gunicorn.org/en/latest/settings.html#settings" title="(in Gunicorn v19.4.1)"><span class="xref std std-ref">Gunicorn configuration settings</span></a>.</p>
-<p>This needs to be specified on the command line via the <cite>-c</cite> argument:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/gunicorn -c ichnaea.webapp.settings ichnaea.webapp.app:wsgi_app
-</pre></div>
-</div>
+  <div class="section" id="module-ichnaea.models.sa_types">
+<span id="ichnaea-models-sa-types"></span><h1><a class="reference internal" href="#module-ichnaea.models.sa_types" title="ichnaea.models.sa_types"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a><a class="headerlink" href="#module-ichnaea.models.sa_types" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ichnaea.models.sa_types.MacColumn">
+<em class="property">class </em><code class="descclassname">ichnaea.models.sa_types.</code><code class="descname">MacColumn</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/sa_types.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.sa_types.MacColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>A binary type storing MAC&#8217;s.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.sa_types.MacColumn.impl">
+<code class="descname">impl</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/sa_types.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.sa_types.MacColumn.impl" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">BINARY</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.sa_types.TinyIntEnum">
+<em class="property">class </em><code class="descclassname">ichnaea.models.sa_types.</code><code class="descname">TinyIntEnum</code><span class="sig-paren">(</span><em>enum</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/sa_types.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.sa_types.TinyIntEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>An IntEnum type storing values as tiny integers.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.sa_types.TinyIntEnum.impl">
+<code class="descname">impl</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/sa_types.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.sa_types.TinyIntEnum.impl" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">TINYINT</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.sa_types.TZDateTime">
+<em class="property">class </em><code class="descclassname">ichnaea.models.sa_types.</code><code class="descname">TZDateTime</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/sa_types.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.sa_types.TZDateTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Safely coerce Python datetime with timezone data
+before passing off to the database.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.sa_types.TZDateTime.impl">
+<code class="descname">impl</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/sa_types.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.sa_types.TZDateTime.impl" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">DATETIME</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -190,10 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="view.html" class="btn btn-neutral float-right" title="ichnaea.webapp.view" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="schema.html" class="btn btn-neutral float-right" title="ichnaea.models.schema" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="monitor.html" class="btn btn-neutral" title="ichnaea.webapp.monitor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="observation.html" class="btn btn-neutral" title="ichnaea.models.observation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

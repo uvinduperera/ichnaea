@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea.models.hashkey &mdash; Ichnaea 1.4 documentation</title>
+  <title>ichnaea.models.schema &mdash; Ichnaea 1.4 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="Ichnaea 1.4 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.models" href="index.html"/>
-        <link rel="next" title="ichnaea.models.wifi" href="wifi.html"/>
-        <link rel="prev" title="ichnaea.models.constants" href="constants.html"/> 
+        <link rel="next" title="ichnaea.models.station" href="station.html"/>
+        <link rel="prev" title="ichnaea.models.sa_types" href="sa_types.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -109,10 +109,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="station.html"><code class="docutils literal"><span class="pre">ichnaea.models.station</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="wifi.html"><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
 </ul>
 </li>
@@ -159,11 +164,11 @@
       
           <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></li>
+    <li><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/models/hashkey.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/models/schema.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -173,82 +178,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.models.hashkey">
-<span id="ichnaea-models-hashkey"></span><h1><a class="reference internal" href="#module-ichnaea.models.hashkey" title="ichnaea.models.hashkey"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></a><a class="headerlink" href="#module-ichnaea.models.hashkey" title="Permalink to this headline">¶</a></h1>
-<p>Classes representing unique hashable keys and related database query helpers.</p>
+  <div class="section" id="module-ichnaea.models.schema">
+<span id="ichnaea-models-schema"></span><h1><a class="reference internal" href="#module-ichnaea.models.schema" title="ichnaea.models.schema"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.schema</span></code></a><a class="headerlink" href="#module-ichnaea.models.schema" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="ichnaea.models.hashkey.HashKey">
-<em class="property">class </em><code class="descclassname">ichnaea.models.hashkey.</code><code class="descname">HashKey</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKey" title="Permalink to this definition">¶</a></dt>
-<dd><p>A class representing a unique combination of fields, much like a
-namedtuple. Instances of this class can be used as dictionary keys.</p>
-<dl class="method">
-<dt id="ichnaea.models.hashkey.HashKey.__hash__">
-<code class="descname">__hash__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKey.__hash__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a hash of a tuple of the instance values in the same
-order as the _fields definition.</p>
-</dd></dl>
-
+<dt id="ichnaea.models.schema.DateFromString">
+<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">DateFromString</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.DateFromString" title="Permalink to this definition">¶</a></dt>
+<dd><p>A DateFromString will return a date object
+from either a date object or a string.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.hashkey.HashKeyMixin">
-<em class="property">class </em><code class="descclassname">ichnaea.models.hashkey.</code><code class="descname">HashKeyMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>A mixin to tie a class and its unique hashkey together.</p>
-<dl class="classmethod">
-<dt id="ichnaea.models.hashkey.HashKeyMixin.to_hashkey">
-<em class="property">classmethod </em><code class="descname">to_hashkey</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyMixin.to_hashkey" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the classes hashkey from a dict or keyword arguments.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ichnaea.models.hashkey.HashKeyMixin.hashkey">
-<code class="descname">hashkey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyMixin.hashkey" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a hashkey of this instance.</p>
-</dd></dl>
-
+<dt id="ichnaea.models.schema.DateTimeFromString">
+<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">DateTimeFromString</code><span class="sig-paren">(</span><em>default_tzinfo=&lt;object object&gt;</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.DateTimeFromString" title="Permalink to this definition">¶</a></dt>
+<dd><p>A DateTimeFromString will return a datetime object
+from either a datetime object or a string.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.hashkey.HashKeyQueryMixin">
-<em class="property">class </em><code class="descclassname">ichnaea.models.hashkey.</code><code class="descname">HashKeyQueryMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyQueryMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>A database model mixin, where the classes hashkey represents
-the primary key columns of the model.</p>
-<dl class="classmethod">
-<dt id="ichnaea.models.hashkey.HashKeyQueryMixin.joinkey">
-<em class="property">classmethod </em><code class="descname">joinkey</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyQueryMixin.joinkey" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a SQLAlchemy filter criterion for doing a primary key
-lookup.</p>
+<dt id="ichnaea.models.schema.ValidatorNode">
+<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">ValidatorNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.ValidatorNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A ValidatorNode is a schema node which defines validator as a callable
+method, so all subclasses can rely on calling it via super().</p>
 </dd></dl>
 
-<dl class="classmethod">
-<dt id="ichnaea.models.hashkey.HashKeyQueryMixin.getkey">
-<em class="property">classmethod </em><code class="descname">getkey</code><span class="sig-paren">(</span><em>session</em>, <em>key</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyQueryMixin.getkey" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a database session, returns the row matching the passed
-in hashkey.</p>
+<dl class="class">
+<dt id="ichnaea.models.schema.DefaultNode">
+<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">DefaultNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.DefaultNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A DefaultNode will use its <code class="docutils literal"><span class="pre">missing</span></code> value
+if it fails to validate during deserialization.</p>
 </dd></dl>
 
-<dl class="classmethod">
-<dt id="ichnaea.models.hashkey.HashKeyQueryMixin.querykey">
-<em class="property">classmethod </em><code class="descname">querykey</code><span class="sig-paren">(</span><em>session</em>, <em>key</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyQueryMixin.querykey" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a database session, returns a SQLAlchemy query object
-with a filter set to return the row matching the passed in
-hashkey.</p>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="ichnaea.models.hashkey.HashKeyQueryMixin.iterkeys">
-<em class="property">classmethod </em><code class="descname">iterkeys</code><span class="sig-paren">(</span><em>session</em>, <em>keys</em>, <em>extra=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/hashkey.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.hashkey.HashKeyQueryMixin.iterkeys" title="Permalink to this definition">¶</a></dt>
-<dd><p>Called with a database session, a list of hashkeys and an optional
-callable that will be attached to the database queries, for
-example a load_only or options.</p>
-<p>This is an iterator returning all the matching rows, while the
-underlying database queries are batched into chunks based on
-the classes _query_batch constant.</p>
-<p>Note that providing an order option via extra won&#8217;t work, as
-it would only order each chunked query but won&#8217;t provide a
-total order over all returned rows.</p>
-</dd></dl>
-
+<dl class="class">
+<dt id="ichnaea.models.schema.MacNode">
+<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">MacNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.MacNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A node containing a valid mac address, ex: 01005e901000.</p>
 </dd></dl>
 
 </div>
@@ -260,10 +223,10 @@ total order over all returned rows.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="wifi.html" class="btn btn-neutral float-right" title="ichnaea.models.wifi" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="station.html" class="btn btn-neutral float-right" title="ichnaea.models.station" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="constants.html" class="btn btn-neutral" title="ichnaea.models.constants" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sa_types.html" class="btn btn-neutral" title="ichnaea.models.sa_types" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

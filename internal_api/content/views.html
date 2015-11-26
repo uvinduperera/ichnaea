@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea.webapp.settings &mdash; Ichnaea 1.4 documentation</title>
+  <title>ichnaea.content.views &mdash; Ichnaea 1.4 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="Ichnaea 1.4 documentation" href="../../index.html"/>
-        <link rel="up" title="ichnaea.webapp" href="index.html"/>
-        <link rel="next" title="ichnaea.webapp.view" href="view.html"/>
-        <link rel="prev" title="ichnaea.webapp.monitor" href="monitor.html"/> 
+        <link rel="up" title="ichnaea.content" href="index.html"/>
+        <link rel="next" title="ichnaea.data" href="../data/index.html"/>
+        <link rel="prev" title="ichnaea.content" href="index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -99,6 +99,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.content</span></code></a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.content.views</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../data/index.html"><code class="docutils literal"><span class="pre">ichnaea.data</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
@@ -111,15 +116,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../util.html"><code class="docutils literal"><span class="pre">ichnaea.util</span></code></a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="app.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.app</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.config</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="monitor.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.monitor</span></code></a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="view.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.view</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="worker.html"><code class="docutils literal"><span class="pre">ichnaea.webapp.worker</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../webapp/index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -158,13 +155,13 @@
       
           <li><a href="../index.html">Internal Code API</a> &raquo;</li>
       
-          <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.webapp</span></code></a> &raquo;</li>
+          <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.content</span></code></a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></li>
+    <li><code class="docutils literal"><span class="pre">ichnaea.content.views</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/webapp/settings.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/content/views.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,13 +171,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.webapp.settings">
-<span id="ichnaea-webapp-settings"></span><h1><a class="reference internal" href="#module-ichnaea.webapp.settings" title="ichnaea.webapp.settings"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a><a class="headerlink" href="#module-ichnaea.webapp.settings" title="Permalink to this headline">¶</a></h1>
-<p>Contains <a class="reference external" href="http://docs.gunicorn.org/en/latest/settings.html#settings" title="(in Gunicorn v19.4.1)"><span class="xref std std-ref">Gunicorn configuration settings</span></a>.</p>
-<p>This needs to be specified on the command line via the <cite>-c</cite> argument:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/gunicorn -c ichnaea.webapp.settings ichnaea.webapp.app:wsgi_app
-</pre></div>
-</div>
+  <div class="section" id="module-ichnaea.content.views">
+<span id="ichnaea-content-views"></span><h1><a class="reference internal" href="#module-ichnaea.content.views" title="ichnaea.content.views"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.content.views</span></code></a><a class="headerlink" href="#module-ichnaea.content.views" title="Permalink to this headline">¶</a></h1>
+<p>Contains website related routes and views.</p>
 </div>
 
 
@@ -190,10 +183,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="view.html" class="btn btn-neutral float-right" title="ichnaea.webapp.view" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../data/index.html" class="btn btn-neutral float-right" title="ichnaea.data" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="monitor.html" class="btn btn-neutral" title="ichnaea.webapp.monitor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="ichnaea.content" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

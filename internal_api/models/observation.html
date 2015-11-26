@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea.models.base &mdash; Ichnaea 1.4 documentation</title>
+  <title>ichnaea.models.observation &mdash; Ichnaea 1.4 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="Ichnaea 1.4 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.models" href="index.html"/>
-        <link rel="next" title="ichnaea.models.cell" href="cell.html"/>
-        <link rel="prev" title="ichnaea.models.api" href="api.html"/> 
+        <link rel="next" title="ichnaea.models.sa_types" href="sa_types.html"/>
+        <link rel="prev" title="ichnaea.models.content" href="content.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -110,11 +110,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="station.html"><code class="docutils literal"><span class="pre">ichnaea.models.station</span></code></a></li>
@@ -164,11 +164,11 @@
       
           <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></li>
+    <li><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/models/base.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/models/observation.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -178,53 +178,78 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.models.base">
-<span id="ichnaea-models-base"></span><h1><a class="reference internal" href="#module-ichnaea.models.base" title="ichnaea.models.base"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.base</span></code></a><a class="headerlink" href="#module-ichnaea.models.base" title="Permalink to this headline">¶</a></h1>
-<p>Model and schema related common classes.</p>
-<dl class="data">
-<dt id="ichnaea.models.base.MYSQL_SETTINGS">
-<code class="descclassname">ichnaea.models.base.</code><code class="descname">MYSQL_SETTINGS</code><em class="property"> = {'mysql_engine': 'InnoDB', 'mysql_charset': 'utf8'}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/base.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.base.MYSQL_SETTINGS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Common MySQL database settings.</p>
+  <div class="section" id="module-ichnaea.models.observation">
+<span id="ichnaea-models-observation"></span><h1><a class="reference internal" href="#module-ichnaea.models.observation" title="ichnaea.models.observation"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.observation</span></code></a><a class="headerlink" href="#module-ichnaea.models.observation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ichnaea.models.observation.ValidReportSchema">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidReportSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidReportSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>A schema which validates the fields present in a report.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.base.BaseModel">
-<em class="property">class </em><code class="descclassname">ichnaea.models.base.</code><code class="descname">BaseModel</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/base.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.base.BaseModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>A base model with a common set of database settings.</p>
+<dt id="ichnaea.models.observation.Report">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">Report</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.Report" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for report data.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.base.JSONMixin">
-<em class="property">class </em><code class="descclassname">ichnaea.models.base.</code><code class="descname">JSONMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/base.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.base.JSONMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>A mixin class that supports round-tripping of the actual class
-via our internal JSON format back into an instance of the class.</p>
+<dt id="ichnaea.models.observation.ValidCellReportSchema">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidCellReportSchema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidCellReportSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>A schema which validates the cell specific fields in a report.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.base.ValidationMixin">
-<em class="property">class </em><code class="descclassname">ichnaea.models.base.</code><code class="descname">ValidationMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/base.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.base.ValidationMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>A mixin to tie a class and its valid colander schema together.</p>
-<dl class="classmethod">
-<dt id="ichnaea.models.base.ValidationMixin.validate">
-<em class="property">classmethod </em><code class="descname">validate</code><span class="sig-paren">(</span><em>entry</em>, <em>_raise_invalid=False</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/base.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.base.ValidationMixin.validate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a validated subset of the passed in entry dictionary,
-based on the classes _valid_schema, otherwise returns None.</p>
+<dt id="ichnaea.models.observation.CellReport">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">CellReport</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.CellReport" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for cell report data.</p>
+<dl class="method">
+<dt id="ichnaea.models.observation.CellReport.better">
+<code class="descname">better</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.CellReport.better" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is self better than the other?</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.base.CreationMixin">
-<em class="property">class </em><code class="descclassname">ichnaea.models.base.</code><code class="descname">CreationMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/base.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.base.CreationMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>A mixin with a custom create constructor that validates the
-keyword arguments before creating an instance of the class.</p>
-<dl class="classmethod">
-<dt id="ichnaea.models.base.CreationMixin.create">
-<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>_raise_invalid=False</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/base.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.base.CreationMixin.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an instance of this class, if the passed in keyword
-arguments passed schema validation, otherwise returns None.</p>
+<dt id="ichnaea.models.observation.ValidCellObservationSchema">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidCellObservationSchema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidCellObservationSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>A schema which validates the fields present in a cell observation.</p>
 </dd></dl>
 
+<dl class="class">
+<dt id="ichnaea.models.observation.CellObservation">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">CellObservation</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.CellObservation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for cell observation data.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.observation.ValidWifiReportSchema">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidWifiReportSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidWifiReportSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>A schema which validates the wifi specific fields in a report.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.observation.WifiReport">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">WifiReport</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.WifiReport" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for wifi report data.</p>
+<dl class="method">
+<dt id="ichnaea.models.observation.WifiReport.better">
+<code class="descname">better</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.WifiReport.better" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is self better than the other?</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.observation.ValidWifiObservationSchema">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidWifiObservationSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidWifiObservationSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>A schema which validates the fields in wifi observation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.observation.WifiObservation">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">WifiObservation</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.WifiObservation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for wifi observation data.</p>
 </dd></dl>
 
 </div>
@@ -236,10 +261,10 @@ arguments passed schema validation, otherwise returns None.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cell.html" class="btn btn-neutral float-right" title="ichnaea.models.cell" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sa_types.html" class="btn btn-neutral float-right" title="ichnaea.models.sa_types" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="api.html" class="btn btn-neutral" title="ichnaea.models.api" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="content.html" class="btn btn-neutral" title="ichnaea.models.content" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

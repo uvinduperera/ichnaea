@@ -33,7 +33,7 @@
     <link rel="top" title="Ichnaea 1.4 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.models" href="index.html"/>
         <link rel="next" title="ichnaea.queue" href="../queue.html"/>
-        <link rel="prev" title="ichnaea.models.hashkey" href="hashkey.html"/> 
+        <link rel="prev" title="ichnaea.models.station" href="station.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -109,10 +109,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="hashkey.html"><code class="docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="station.html"><code class="docutils literal"><span class="pre">ichnaea.models.station</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
 </ul>
 </li>
@@ -201,7 +206,148 @@ strength and quality.</p>
 <dl class="class">
 <dt id="ichnaea.models.wifi.ValidWifiShardSchema">
 <em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">ValidWifiShardSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.ValidWifiShardSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema which validates the fields in a wifi shard.</p>
+<dd><p>A schema which validates the fields in a WiFi shard.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.wifi.WifiShard.mac">
+<code class="descname">mac</code><em class="property"> = Column(None, MacColumn(length=6), table=None)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard.mac" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.models.wifi.WifiShard.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>_raise_invalid=False</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an instance of the correct shard model class, if the
+passed in keyword arguments pass schema validation,
+otherwise returns None.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.models.wifi.WifiShard.shard_id">
+<em class="property">classmethod </em><code class="descname">shard_id</code><span class="sig-paren">(</span><em>mac</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard.shard_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a BSSID/MAC return the correct shard id for this data.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.models.wifi.WifiShard.shard_model">
+<em class="property">classmethod </em><code class="descname">shard_model</code><span class="sig-paren">(</span><em>mac</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard.shard_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a BSSID/MAC return the correct DB model class for this
+shard of data.</p>
+<p>The shard id is based on the fifth hex character of the vendor
+prefix of the BSSID. This tends to be evenly distributed, but
+still keeps data from the same vendor inside the same table.</p>
+<p>It also allows us to later extend the sharding by taking in
+parts of the sixth hex char without having to do a complete
+re-sharding of everything, but merely breaking up each shard
+further.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.models.wifi.WifiShard.shards">
+<em class="property">classmethod </em><code class="descname">shards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard.shards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dict of shard id to model classes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard0">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard0</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard0" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 0.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard1">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard1</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard1" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 1.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard2">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard2</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard2" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 2.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard3">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard3</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard3" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 3.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard4">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard4</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard4" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 4.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard5">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard5</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard5" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 5.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard6">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard6</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard6" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 6.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard7">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard7</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard7" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 7.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard8">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard8</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard8" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 8.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShard9">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShard9</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShard9" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard 9.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShardA">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShardA</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShardA" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard A.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShardB">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShardB</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShardB" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard B.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShardC">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShardC</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShardC" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard C.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShardD">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShardD</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShardD" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard D.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShardE">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShardE</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShardE" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard E.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.wifi.WifiShardF">
+<em class="property">class </em><code class="descclassname">ichnaea.models.wifi.</code><code class="descname">WifiShardF</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.wifi.WifiShardF" title="Permalink to this definition">¶</a></dt>
+<dd><p>WiFi shard F.</p>
 </dd></dl>
 
 </div>
@@ -216,7 +362,7 @@ strength and quality.</p>
         <a href="../queue.html" class="btn btn-neutral float-right" title="ichnaea.queue" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="hashkey.html" class="btn btn-neutral" title="ichnaea.models.hashkey" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="station.html" class="btn btn-neutral" title="ichnaea.models.station" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

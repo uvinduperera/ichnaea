@@ -421,11 +421,11 @@ response code like 200, 400, etc.</div></blockquote>
 </div>
 <div class="section" id="internal-monitoring">
 <h2>Internal Monitoring<a class="headerlink" href="#internal-monitoring" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">api.limit#key:&lt;apikey_shortname&gt;</span></code> : gauge</p>
+<p><code class="docutils literal"><span class="pre">api.limit#key:&lt;apikey_shortname&gt;,#path:&lt;path&gt;</span></code> : gauge</p>
 <blockquote>
-<div>One gauge is created per API key that has rate limiting enabled on it.
-This gauge measures how many requests have been done for each such
-API key for the current day.</div></blockquote>
+<div>One gauge is created per API key and API path which has rate limiting
+enabled on it. This gauge measures how many requests have been done
+for each such API key and path combination for the current day.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">queue#queue:celery_cell</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_default</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_export</span></code>,
@@ -438,7 +438,9 @@ API key for the current day.</div></blockquote>
 <blockquote>
 <div>These gauges measure the number of tasks in each of the Redis queues.
 They are sampled at an approximate per-minute interval.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">queue#queue:update_cell</span></code>,
+<p><code class="docutils literal"><span class="pre">queue#queue:update_cell_gsm</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_cell_wcdma</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_cell_lte</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_cellarea</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_datamap_ne</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_datamap_nw</span></code>,

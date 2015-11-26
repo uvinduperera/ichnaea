@@ -109,10 +109,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="hashkey.html"><code class="docutils literal"><span class="pre">ichnaea.models.hashkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="station.html"><code class="docutils literal"><span class="pre">ichnaea.models.station</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="wifi.html"><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
 </ul>
 </li>
@@ -192,6 +197,42 @@ integers for the mcc, mnc and lac parts and a final 32 bit unsigned
 integer for the cid part.</p>
 </dd></dl>
 
+<dl class="class">
+<dt id="ichnaea.models.cell.Radio">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">Radio</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio" title="Permalink to this definition">¶</a></dt>
+<dd><p>An integer enum representing a radio type.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.cell.Radio.gsm">
+<code class="descname">gsm</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.gsm" title="Permalink to this definition">¶</a></dt>
+<dd><p>0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.cell.Radio.cdma">
+<code class="descname">cdma</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.cdma" title="Permalink to this definition">¶</a></dt>
+<dd><p>1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.cell.Radio.wcdma">
+<code class="descname">wcdma</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.wcdma" title="Permalink to this definition">¶</a></dt>
+<dd><p>2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.cell.Radio.umts">
+<code class="descname">umts</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.umts" title="Permalink to this definition">¶</a></dt>
+<dd><p>2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.cell.Radio.lte">
+<code class="descname">lte</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.lte" title="Permalink to this definition">¶</a></dt>
+<dd><p>3</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="function">
 <dt id="ichnaea.models.cell.decode_cellarea">
 <code class="descclassname">ichnaea.models.cell.</code><code class="descname">decode_cellarea</code><span class="sig-paren">(</span><em>value</em>, <em>codec=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.decode_cellarea" title="Permalink to this definition">¶</a></dt>
@@ -228,17 +269,6 @@ sequence representing the cell id.</p>
 <dt id="ichnaea.models.cell.CellAreaColumn">
 <em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellAreaColumn</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellAreaColumn" title="Permalink to this definition">¶</a></dt>
 <dd><p>A binary type storing Cell Area IDs.</p>
-<p>Construct a <code class="xref py py-class docutils literal"><span class="pre">TypeDecorator</span></code>.</p>
-<p>Arguments sent here are passed to the constructor
-of the class assigned to the <code class="docutils literal"><span class="pre">impl</span></code> class level attribute,
-assuming the <code class="docutils literal"><span class="pre">impl</span></code> is a callable, and the resulting
-object is assigned to the <code class="docutils literal"><span class="pre">self.impl</span></code> instance attribute
-(thus overriding the class attribute of the same name).</p>
-<p>If the class level <code class="docutils literal"><span class="pre">impl</span></code> is not a callable (the unusual case),
-it will be assigned to the same instance attribute &#8216;as-is&#8217;,
-ignoring those arguments passed to the constructor.</p>
-<p>Subclasses can override this to customize the generation
-of <code class="docutils literal"><span class="pre">self.impl</span></code> entirely.</p>
 <dl class="attribute">
 <dt id="ichnaea.models.cell.CellAreaColumn.impl">
 <code class="descname">impl</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellAreaColumn.impl" title="Permalink to this definition">¶</a></dt>
@@ -251,17 +281,6 @@ of <code class="docutils literal"><span class="pre">self.impl</span></code> enti
 <dt id="ichnaea.models.cell.CellIdColumn">
 <em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellIdColumn</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellIdColumn" title="Permalink to this definition">¶</a></dt>
 <dd><p>A binary type storing Cell IDs.</p>
-<p>Construct a <code class="xref py py-class docutils literal"><span class="pre">TypeDecorator</span></code>.</p>
-<p>Arguments sent here are passed to the constructor
-of the class assigned to the <code class="docutils literal"><span class="pre">impl</span></code> class level attribute,
-assuming the <code class="docutils literal"><span class="pre">impl</span></code> is a callable, and the resulting
-object is assigned to the <code class="docutils literal"><span class="pre">self.impl</span></code> instance attribute
-(thus overriding the class attribute of the same name).</p>
-<p>If the class level <code class="docutils literal"><span class="pre">impl</span></code> is not a callable (the unusual case),
-it will be assigned to the same instance attribute &#8216;as-is&#8217;,
-ignoring those arguments passed to the constructor.</p>
-<p>Subclasses can override this to customize the generation
-of <code class="docutils literal"><span class="pre">self.impl</span></code> entirely.</p>
 <dl class="attribute">
 <dt id="ichnaea.models.cell.CellIdColumn.impl">
 <code class="descname">impl</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellIdColumn.impl" title="Permalink to this definition">¶</a></dt>
@@ -277,22 +296,71 @@ of <code class="docutils literal"><span class="pre">self.impl</span></code> enti
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.cell.ValidCellSignalSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">ValidCellSignalSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.ValidCellSignalSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema which validates the fields related to cell signal
-strength and quality.</p>
+<dt id="ichnaea.models.cell.CellArea">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellArea</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>CellArea model.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.cell.ValidCellSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">ValidCellSchema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.ValidCellSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema which validates the fields in a cell.</p>
+<dt id="ichnaea.models.cell.CellAreaOCID">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellAreaOCID</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellAreaOCID" title="Permalink to this definition">¶</a></dt>
+<dd><p>CellArea OCID model.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.models.cell.ValidCellOCIDSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">ValidCellOCIDSchema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.ValidCellOCIDSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema which validates the fields present in a <a class="reference internal" href="../../glossary.html#term-ocid"><span class="xref std std-term">OCID</span></a> cell.</p>
+<dt id="ichnaea.models.cell.CellOCID">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellOCID</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellOCID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cell OCID model.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.cell.CellShard">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellShard</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cell shard.</p>
+<dl class="classmethod">
+<dt id="ichnaea.models.cell.CellShard.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>_raise_invalid=False</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShard.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an instance of the correct shard model class, if the
+passed in keyword arguments pass schema validation,
+otherwise returns None.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.models.cell.CellShard.shard_id">
+<em class="property">classmethod </em><code class="descname">shard_id</code><span class="sig-paren">(</span><em>radio</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShard.shard_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a radio type return the correct shard id.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.models.cell.CellShard.shard_model">
+<em class="property">classmethod </em><code class="descname">shard_model</code><span class="sig-paren">(</span><em>radio</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShard.shard_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a radio type return the correct DB model class.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.models.cell.CellShard.shards">
+<em class="property">classmethod </em><code class="descname">shards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShard.shards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dict of shard id to model classes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.cell.CellShardGsm">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellShardGsm</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShardGsm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shard for GSM cells.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.cell.CellShardWcdma">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellShardWcdma</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShardWcdma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shard for WCDMA cells.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.cell.CellShardLte">
+<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">CellShardLte</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.CellShardLte" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shard for LTE cells.</p>
 </dd></dl>
 
 <div class="section" id="cell-networks">
