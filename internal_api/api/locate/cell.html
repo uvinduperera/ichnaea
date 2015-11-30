@@ -107,6 +107,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../content/index.html"><code class="docutils literal"><span class="pre">ichnaea.content</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../data/index.html"><code class="docutils literal"><span class="pre">ichnaea.data</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
@@ -176,88 +178,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.api.locate.cell">
-<span id="ichnaea-api-locate-cell"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.cell" title="ichnaea.api.locate.cell"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.cell</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.cell" title="Permalink to this headline">¶</a></h1>
-<p>Search implementation using a cell database.</p>
-<dl class="function">
-<dt id="ichnaea.api.locate.cell.pick_best_cells">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">pick_best_cells</code><span class="sig-paren">(</span><em>cells</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.pick_best_cells" title="Permalink to this definition">¶</a></dt>
-<dd><p>Group cells by area, pick the best cell area. Either
-the one with the most values or the smallest radius.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.cell.pick_best_area">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">pick_best_area</code><span class="sig-paren">(</span><em>areas</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.pick_best_area" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sort areas by size, pick the smallest one.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.cell.aggregate_cell_position">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_cell_position</code><span class="sig-paren">(</span><em>cells</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_cell_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a list of cells from a single cell cluster,
-return the aggregate position of the user inside the cluster.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.cell.aggregate_area_position">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_area_position</code><span class="sig-paren">(</span><em>area</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_area_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a single area, return the position of the user inside it.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.cell.CellPositionMixin">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">CellPositionMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>A CellPositionMixin implements a position search using the cell models.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.CellPositionMixin.result_type">
-<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionMixin.result_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Position</span></code></p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.cell.CellRegionMixin">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">CellRegionMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellRegionMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>A CellRegionMixin implements a region search using the cell models.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.CellRegionMixin.result_type">
-<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellRegionMixin.result_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Region</span></code></p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.cell.CellPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">CellPositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implements a search using our cell data.</p>
-<p>This source is only used in tests and as a base for the
-OCIDPositionSource.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.CellPositionSource.fallback_field">
-<code class="descname">fallback_field</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionSource.fallback_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">OCIDPositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implements a search using the <a class="reference internal" href="../../../glossary.html#term-ocid"><span class="xref std std-term">OCID</span></a> cell data.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource.fallback_field">
-<code class="descname">fallback_field</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource.fallback_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource.source">
-<code class="descname">source</code><em class="property"> = &lt;DataSource.ocid: 2&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource.source" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="ichnaea-api-locate-cell">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.cell</span></code><a class="headerlink" href="#ichnaea-api-locate-cell" title="Permalink to this headline">¶</a></h1>
 </div>
 
 

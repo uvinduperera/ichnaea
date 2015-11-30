@@ -99,6 +99,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../content/index.html"><code class="docutils literal"><span class="pre">ichnaea.content</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data/index.html"><code class="docutils literal"><span class="pre">ichnaea.data</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
@@ -178,42 +180,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.models.schema">
-<span id="ichnaea-models-schema"></span><h1><a class="reference internal" href="#module-ichnaea.models.schema" title="ichnaea.models.schema"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.schema</span></code></a><a class="headerlink" href="#module-ichnaea.models.schema" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="ichnaea.models.schema.DateFromString">
-<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">DateFromString</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.DateFromString" title="Permalink to this definition">¶</a></dt>
-<dd><p>A DateFromString will return a date object
-from either a date object or a string.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.models.schema.DateTimeFromString">
-<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">DateTimeFromString</code><span class="sig-paren">(</span><em>default_tzinfo=&lt;object object&gt;</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.DateTimeFromString" title="Permalink to this definition">¶</a></dt>
-<dd><p>A DateTimeFromString will return a datetime object
-from either a datetime object or a string.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.models.schema.ValidatorNode">
-<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">ValidatorNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.ValidatorNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>A ValidatorNode is a schema node which defines validator as a callable
-method, so all subclasses can rely on calling it via super().</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.models.schema.DefaultNode">
-<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">DefaultNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.DefaultNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>A DefaultNode will use its <code class="docutils literal"><span class="pre">missing</span></code> value
-if it fails to validate during deserialization.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.models.schema.MacNode">
-<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">MacNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.MacNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>A node containing a valid mac address, ex: 01005e901000.</p>
-</dd></dl>
-
+  <div class="section" id="ichnaea-models-schema">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.schema</span></code><a class="headerlink" href="#ichnaea-models-schema" title="Permalink to this headline">¶</a></h1>
 </div>
 
 

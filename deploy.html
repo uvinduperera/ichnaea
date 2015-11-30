@@ -91,7 +91,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#amazon-s3">Amazon S3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#statsd-sentry">Statsd / Sentry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a></li>
@@ -156,7 +155,7 @@ just three changes you need to do. For example via the my.cnf:</p>
 <div class="highlight-ini"><div class="highlight"><pre><span class="k">[mysqld]</span>
 <span class="na">innodb_file_format</span><span class="o">=</span><span class="s">Barracuda</span>
 <span class="na">innodb_strict_mode</span><span class="o">=</span><span class="s">on</span>
-<span class="na">sql-mode</span><span class="o">=</span><span class="s">&quot;STRICT_TRANS_TABLES&quot;</span>
+<span class="na">sql-mode</span><span class="o">=</span><span class="s">&quot;NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -199,39 +198,6 @@ the other is <a class="reference external" href="http://pngquant.org/">pngquant<
 of them and make their binaries available on your system path. The datamaps
 package includes the <cite>encode</cite>, <cite>enumerate</cite> and <cite>render</cite> tools and the
 pngquant package includes a tool called <cite>pngquant</cite>.</p>
-</div>
-<div class="section" id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Run the following command to get the code:</p>
-<div class="highlight-bash"><div class="highlight"><pre>git clone https://github.com/mozilla/ichnaea
-<span class="nb">cd </span>ichnaea
-</pre></div>
-</div>
-<p>In order to run the code you need to have Python 2.6, 2.7 or 3.4 installed
-on your system. The default Makefile also assumes a <cite>virtualenv-2.6</cite>
-command is globally available. If this isn&#8217;t true for your system,
-please create a virtualenv manually inside the ichnaea folder before
-continuing (<code class="docutils literal"><span class="pre">/path/to/virtualenv</span> <span class="pre">.</span></code>).</p>
-<p>Specify the database connection string and run make:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">SQLURI</span><span class="o">=</span>mysql+pymysql://root:mysql@localhost/location make
-</pre></div>
-</div>
-<p>Adjust the location.ini file with your database connection strings.
-You can use the same database for the read-write and read-only connections.</p>
-<p>For the celery broker, result backend and API rate limit tracking you need
-to setup a Redis server via a connection string like <cite>redis://127.0.0.1/0</cite>.</p>
-<p>Now you can run the web app on for example port 7001:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/gunicorn -b 127.0.0.1:7001 <span class="se">\</span>
-    -c ichnaea.webapp.settings ichnaea.webapp.app:wsgi_app
-</pre></div>
-</div>
-<p>The celery processes are started via:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app beat
-
-<span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app worker <span class="se">\</span>
-    -Ofair --no-execv --without-mingle --without-gossip
-</pre></div>
-</div>
 </div>
 </div>
 

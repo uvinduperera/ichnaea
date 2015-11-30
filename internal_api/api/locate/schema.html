@@ -107,6 +107,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../cache.html"><code class="docutils literal"><span class="pre">ichnaea.cache</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config.html"><code class="docutils literal"><span class="pre">ichnaea.config</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constants.html"><code class="docutils literal"><span class="pre">ichnaea.constants</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../content/index.html"><code class="docutils literal"><span class="pre">ichnaea.content</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../data/index.html"><code class="docutils literal"><span class="pre">ichnaea.data</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
@@ -176,93 +178,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.api.locate.schema">
-<span id="ichnaea-api-locate-schema"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.schema" title="ichnaea.api.locate.schema"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.schema</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.schema" title="Permalink to this headline">¶</a></h1>
-<p>General locate specific colander schemata describing the public HTTP APIs.</p>
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.BaseLookup">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">BaseLookup</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.BaseLookup" title="Permalink to this definition">¶</a></dt>
-<dd><p>A base class for lookup models.</p>
-<dl class="method">
-<dt id="ichnaea.api.locate.schema.BaseLookup.better">
-<code class="descname">better</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.BaseLookup.better" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is self better than the other?</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.BaseCellLookup">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">BaseCellLookup</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.BaseCellLookup" title="Permalink to this definition">¶</a></dt>
-<dd><p>A base class for cell related lookup models.</p>
-<dl class="method">
-<dt id="ichnaea.api.locate.schema.BaseCellLookup.better">
-<code class="descname">better</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.BaseCellLookup.better" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is self better than the other?</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.ValidCellAreaLookupSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">ValidCellAreaLookupSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.ValidCellAreaLookupSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema which validates the fields in a cell area lookup.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.CellAreaLookup">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">CellAreaLookup</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.CellAreaLookup" title="Permalink to this definition">¶</a></dt>
-<dd><p>A model class representing a cell area lookup.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.ValidCellLookupSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">ValidCellLookupSchema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.ValidCellLookupSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema which validates the fields in a cell lookup.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.CellLookup">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">CellLookup</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.CellLookup" title="Permalink to this definition">¶</a></dt>
-<dd><p>A model class representing a cell lookup.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.ValidWifiLookupSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">ValidWifiLookupSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.ValidWifiLookupSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema which validates the fields in a wifi lookup.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.WifiLookup">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">WifiLookup</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.WifiLookup" title="Permalink to this definition">¶</a></dt>
-<dd><p>A model class representing a cell lookup.</p>
-<dl class="method">
-<dt id="ichnaea.api.locate.schema.WifiLookup.better">
-<code class="descname">better</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.WifiLookup.better" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is self better than the other?</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.FallbackSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">FallbackSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.FallbackSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A schema validating the fields present in fallback options.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.FallbackLookup">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">FallbackLookup</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.FallbackLookup" title="Permalink to this definition">¶</a></dt>
-<dd><p>A model class representing fallback lookup options.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.schema.BaseLocateSchema">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.schema.</code><code class="descname">BaseLocateSchema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.schema.BaseLocateSchema" title="Permalink to this definition">¶</a></dt>
-<dd><p>A base schema for all locate related schemata.</p>
-</dd></dl>
-
+  <div class="section" id="ichnaea-api-locate-schema">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.schema</span></code><a class="headerlink" href="#ichnaea-api-locate-schema" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
