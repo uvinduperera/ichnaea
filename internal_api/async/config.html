@@ -175,8 +175,65 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ichnaea-async-config">
-<h1><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.async.config</span></code><a class="headerlink" href="#ichnaea-async-config" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ichnaea.async.config">
+<span id="ichnaea-async-config"></span><h1><a class="reference internal" href="#module-ichnaea.async.config" title="ichnaea.async.config"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.async.config</span></code></a><a class="headerlink" href="#module-ichnaea.async.config" title="Permalink to this headline">¶</a></h1>
+<p>Contains celery specific one time configuration code.</p>
+<dl class="data">
+<dt id="ichnaea.async.config.CELERY_QUEUES">
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">CELERY_QUEUES</code><em class="property"> = (&lt;unbound Queue celery_cell -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_cell&gt;, &lt;unbound Queue celery_default -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_default&gt;, &lt;unbound Queue celery_export -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_export&gt;, &lt;unbound Queue celery_incoming -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_incoming&gt;, &lt;unbound Queue celery_monitor -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_monitor&gt;, &lt;unbound Queue celery_ocid -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_ocid&gt;, &lt;unbound Queue celery_reports -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_reports&gt;, &lt;unbound Queue celery_upload -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_upload&gt;, &lt;unbound Queue celery_wifi -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_wifi&gt;)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.CELERY_QUEUES" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of <a class="reference external" href="https://kombu.readthedocs.org/en/latest/reference/kombu.html#kombu.Queue" title="(in Kombu v3.0)"><code class="xref py py-class docutils literal"><span class="pre">kombu.Queue</span></code></a> instances.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ichnaea.async.config.configure_celery">
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">configure_celery</code><span class="sig-paren">(</span><em>celery_app</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.configure_celery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the celery app stored in <a class="reference internal" href="app.html#ichnaea.async.app.celery_app" title="ichnaea.async.app.celery_app"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.async.app.celery_app</span></code></a>.
+This is executed both inside the master worker process and once in
+each forked worker process.</p>
+<p>This parses the application ini and reads in the
+<a class="reference internal" href="settings.html#module-ichnaea.async.settings" title="ichnaea.async.settings"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.async.settings</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ichnaea.async.config.configure_data">
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">configure_data</code><span class="sig-paren">(</span><em>redis_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.configure_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure fixed set of data queues.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ichnaea.async.config.configure_export">
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">configure_export</code><span class="sig-paren">(</span><em>redis_client</em>, <em>app_config</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.configure_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure export queues, based on the <cite>[export:*]</cite> sections from
+the application ini file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ichnaea.async.config.init_worker">
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">init_worker</code><span class="sig-paren">(</span><em>celery_app</em>, <em>app_config</em>, <em>_db_rw=None</em>, <em>_db_ro=None</em>, <em>_geoip_db=None</em>, <em>_raven_client=None</em>, <em>_redis_client=None</em>, <em>_stats_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.init_worker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the passed in celery app, usually stored in
+<a class="reference internal" href="app.html#ichnaea.async.app.celery_app" title="ichnaea.async.app.celery_app"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.async.app.celery_app</span></code></a>.</p>
+<p>Does connection, settings and queue setup. Attaches some
+additional functionality to the <a class="reference external" href="https://celery.readthedocs.org/en/latest/reference/celery.html#celery.Celery" title="(in Celery v3.1)"><code class="xref py py-class docutils literal"><span class="pre">celery.Celery</span></code></a> instance.</p>
+<p>This is executed inside each forked worker process.</p>
+<p>The parameters starting with an underscore are test-only hooks
+to provide pre-configured connection objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>_db_ro</strong> &#8211; Ignored, read-only database connection isn&#8217;t used.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ichnaea.async.config.shutdown_worker">
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">shutdown_worker</code><span class="sig-paren">(</span><em>celery_app</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.shutdown_worker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close outbound connections and remove custom celery_app state.</p>
+<p>This is executed inside each forked worker process.</p>
+</dd></dl>
+
 </div>
 
 

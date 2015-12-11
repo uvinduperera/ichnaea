@@ -176,8 +176,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ichnaea-api-views">
-<h1><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.views</span></code><a class="headerlink" href="#ichnaea-api-views" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ichnaea.api.views">
+<span id="ichnaea-api-views"></span><h1><a class="reference internal" href="#module-ichnaea.api.views" title="ichnaea.api.views"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.views</span></code></a><a class="headerlink" href="#module-ichnaea.api.views" title="Permalink to this headline">¶</a></h1>
+<p>Implementation of a API specific HTTP service view.</p>
+<dl class="class">
+<dt id="ichnaea.api.views.BaseAPIView">
+<em class="property">class </em><code class="descclassname">ichnaea.api.views.</code><code class="descname">BaseAPIView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.views.BaseAPIView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common base class for all API related views.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.views.BaseAPIView.check_api_key">
+<code class="descname">check_api_key</code><em class="property"> = True</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.views.BaseAPIView.check_api_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should API keys be checked?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.views.BaseAPIView.error_on_invalidkey">
+<code class="descname">error_on_invalidkey</code><em class="property"> = True</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.views.BaseAPIView.error_on_invalidkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deny access for invalid API keys?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.views.BaseAPIView.metric_path">
+<code class="descname">metric_path</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.views.BaseAPIView.metric_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dotted URL path, for example v1.submit.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.views.BaseAPIView.schema">
+<code class="descname">schema</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.views.BaseAPIView.schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>An instance of a colander schema to validate the data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.views.BaseAPIView.view_type">
+<code class="descname">view_type</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.views.BaseAPIView.view_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The type of view, for example submit or locate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.api.views.BaseAPIView.__call__">
+<code class="descname">__call__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.views.BaseAPIView.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute the view and return a response.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
