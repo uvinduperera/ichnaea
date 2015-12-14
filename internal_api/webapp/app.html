@@ -126,8 +126,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../changes/index.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes/index.html">Changelog</a></li>
 </ul>
 
             
@@ -183,7 +183,7 @@
 <dt id="ichnaea.webapp.app.wsgi_app">
 <code class="descclassname">ichnaea.webapp.app.</code><code class="descname">wsgi_app</code><span class="sig-paren">(</span><em>environ</em>, <em>start_response</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/app.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.app.wsgi_app" title="Permalink to this definition">¶</a></dt>
 <dd><p>Actual WSGI application endpoint, used on the command line via:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/gunicorn -c ichnaea.webapp.settings ichnaea.webapp.app:wsgi_app
+<div class="highlight-bash"><div class="highlight"><pre>bin/gunicorn -c python:ichnaea.webapp.settings             ichnaea.webapp.app:wsgi_app
 </pre></div>
 </div>
 <p>At startup reads the app config and calls

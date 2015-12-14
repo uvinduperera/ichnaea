@@ -126,8 +126,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../changes/index.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes/index.html">Changelog</a></li>
 </ul>
 
             
@@ -180,7 +180,7 @@
 <span id="ichnaea-webapp-settings"></span><h1><a class="reference internal" href="#module-ichnaea.webapp.settings" title="ichnaea.webapp.settings"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a><a class="headerlink" href="#module-ichnaea.webapp.settings" title="Permalink to this headline">¶</a></h1>
 <p>Contains <a class="reference external" href="http://docs.gunicorn.org/en/latest/settings.html#settings" title="(in Gunicorn v19.4.1)"><span class="xref std std-ref">Gunicorn configuration settings</span></a>.</p>
 <p>This needs to be specified on the command line via the <cite>-c</cite> argument:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/gunicorn -c ichnaea.webapp.settings ichnaea.webapp.app:wsgi_app
+<div class="highlight-bash"><div class="highlight"><pre>bin/gunicorn -c python:ichnaea.webapp.settings         ichnaea.webapp.app:wsgi_app
 </pre></div>
 </div>
 </div>

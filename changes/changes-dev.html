@@ -93,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../calculation.html">Calculation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../internal_api/index.html">Internal Code API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Changelog</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#changelogs">Changelogs</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="">Changelog</a><ul>
@@ -107,7 +108,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 </ul>
 
             
@@ -164,6 +164,8 @@
 <h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>40d609897296: Add sharded cell tables.</li>
+<li>The command line for starting gunicorn has changed. The <cite>-c</cite> option now
+needs a <cite>python:</cite> prefix and has to be <cite>-c python:ichnaea.webapp.settings</cite>.</li>
 </ul>
 </div>
 <div class="section" id="changes">
