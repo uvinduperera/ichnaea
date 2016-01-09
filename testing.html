@@ -195,17 +195,12 @@ against all of them locally, we are using tox:</p>
 <div class="highlight-bash"><div class="highlight"><pre>bin/tox <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_util
 </pre></div>
 </div>
-<p>Once the tox environment is built and no changes to dependencies have
-taken place, you can speed up the build by skipping the <cite>make build</cite> step:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/tox <span class="nv">TOXBUILD</span><span class="o">=</span>no
-</pre></div>
-</div>
-<p>Or if the tox environment got into a weird state, just recreate it:</p>
+<p>If the tox environment got into a weird state, just recreate it:</p>
 <div class="highlight-bash"><div class="highlight"><pre>bin/tox --recreate
 </pre></div>
 </div>
 <p>Of course these options can be combined, for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/tox -e<span class="o">=</span>py<span class="o">{</span>34<span class="o">}</span> <span class="nv">TOXBUILD</span><span class="o">=</span>no <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_util
+<div class="highlight-bash"><div class="highlight"><pre>bin/tox -e<span class="o">=</span>py<span class="o">{</span>34<span class="o">}</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_util
 </pre></div>
 </div>
 <p>Since the project relies on a number of non-Python dependencies, each
