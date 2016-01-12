@@ -263,14 +263,6 @@ arguments preceded by a single session argument.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea.db.clear_result_on_pool_checkin">
-<code class="descclassname">ichnaea.db.</code><code class="descname">clear_result_on_pool_checkin</code><span class="sig-paren">(</span><em>conn</em>, <em>conn_record</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.clear_result_on_pool_checkin" title="Permalink to this definition">¶</a></dt>
-<dd><p>PyMySQL Connection objects hold a reference to their most recent
-result object, which can cause large datasets to remain in memory.
-Explicitly clear it when returning a connection to the pool.</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="ichnaea.db.check_connection">
 <code class="descclassname">ichnaea.db.</code><code class="descname">check_connection</code><span class="sig-paren">(</span><em>dbapi_conn</em>, <em>conn_record</em>, <em>conn_proxy</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.check_connection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Listener for pool checkout events that pings every connection before
