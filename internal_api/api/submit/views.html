@@ -180,7 +180,7 @@
             
   <div class="section" id="module-ichnaea.api.submit.views">
 <span id="ichnaea-api-submit-views"></span><h1><a class="reference internal" href="#module-ichnaea.api.submit.views" title="ichnaea.api.submit.views"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.submit.views</span></code></a><a class="headerlink" href="#module-ichnaea.api.submit.views" title="Permalink to this headline">¶</a></h1>
-<p>Implementation of a submit specific HTTP service view.</p>
+<p>Implementation of submit specific HTTP service views.</p>
 <dl class="class">
 <dt id="ichnaea.api.submit.views.BaseSubmitView">
 <em class="property">class </em><code class="descclassname">ichnaea.api.submit.views.</code><code class="descname">BaseSubmitView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.BaseSubmitView" title="Permalink to this definition">¶</a></dt>
@@ -211,71 +211,71 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="ichnaea.api.submit.views.SubmitV0View">
+<em class="property">class </em><code class="descclassname">ichnaea.api.submit.views.</code><code class="descname">SubmitV0View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV0View" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;Submit version 0 view for <cite>/v1/submit</cite>.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.submit.views.SubmitV0View.metric_path">
+<code class="descname">metric_path</code><em class="property"> = 'v1.submit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV0View.metric_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.submit.views.SubmitV0View.route">
+<code class="descname">route</code><em class="property"> = '/v1/submit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV0View.route" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.submit.views.SubmitV0View.schema">
+<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.submit.schema_v0.SubmitV0Schema object at 4451022224 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV0View.schema" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.submit.views.SubmitV0View.success">
+<code class="descname">success</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV0View.success" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="../exceptions.html#ichnaea.api.exceptions.UploadSuccessV0" title="ichnaea.api.exceptions.UploadSuccessV0"><code class="xref py py-exc docutils literal"><span class="pre">ichnaea.api.exceptions.UploadSuccessV0</span></code></a></p>
+<p>alias of <code class="xref py py-class docutils literal"><span class="pre">UploadSuccessV0</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="ichnaea.api.submit.views.SubmitV1View">
 <em class="property">class </em><code class="descclassname">ichnaea.api.submit.views.</code><code class="descname">SubmitV1View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;Submit version 1 view for <cite>/v1/submit</cite>.</p>
+<dd><p>&#8220;Submit version 1 view for <cite>/v1/geosubmit</cite>.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.submit.views.SubmitV1View.metric_path">
-<code class="descname">metric_path</code><em class="property"> = 'v1.submit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View.metric_path" title="Permalink to this definition">¶</a></dt>
+<code class="descname">metric_path</code><em class="property"> = 'v1.geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View.metric_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.api.submit.views.SubmitV1View.route">
-<code class="descname">route</code><em class="property"> = '/v1/submit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View.route" title="Permalink to this definition">¶</a></dt>
+<code class="descname">route</code><em class="property"> = '/v1/geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View.route" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.api.submit.views.SubmitV1View.schema">
-<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.submit.schema_v1.SubmitV1Schema object at 4604684048 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View.schema" title="Permalink to this definition">¶</a></dt>
+<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.submit.schema_v1.SubmitV1Schema object at 4451885968 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View.schema" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.submit.views.SubmitV1View.success">
-<code class="descname">success</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV1View.success" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="../exceptions.html#ichnaea.api.exceptions.UploadSuccessV1" title="ichnaea.api.exceptions.UploadSuccessV1"><code class="xref py py-exc docutils literal"><span class="pre">ichnaea.api.exceptions.UploadSuccessV1</span></code></a></p>
-<p>alias of <code class="xref py py-class docutils literal"><span class="pre">UploadSuccessV1</span></code></p>
-</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="ichnaea.api.submit.views.SubmitV2View">
 <em class="property">class </em><code class="descclassname">ichnaea.api.submit.views.</code><code class="descname">SubmitV2View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV2View" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;Submit version 2 view for <cite>/v1/geosubmit</cite>.</p>
+<dd><p>&#8220;Submit version 2 view for <cite>/v2/geosubmit</cite>.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.submit.views.SubmitV2View.metric_path">
-<code class="descname">metric_path</code><em class="property"> = 'v1.geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV2View.metric_path" title="Permalink to this definition">¶</a></dt>
+<code class="descname">metric_path</code><em class="property"> = 'v2.geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV2View.metric_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.api.submit.views.SubmitV2View.route">
-<code class="descname">route</code><em class="property"> = '/v1/geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV2View.route" title="Permalink to this definition">¶</a></dt>
+<code class="descname">route</code><em class="property"> = '/v2/geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV2View.route" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.api.submit.views.SubmitV2View.schema">
-<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.submit.schema_v2.SubmitV2Schema object at 4604686096 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV2View.schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.submit.views.SubmitV3View">
-<em class="property">class </em><code class="descclassname">ichnaea.api.submit.views.</code><code class="descname">SubmitV3View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV3View" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;Submit version 3 view for <cite>/v2/geosubmit</cite>.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.submit.views.SubmitV3View.metric_path">
-<code class="descname">metric_path</code><em class="property"> = 'v2.geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV3View.metric_path" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.submit.views.SubmitV3View.route">
-<code class="descname">route</code><em class="property"> = '/v2/geosubmit'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV3View.route" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.submit.views.SubmitV3View.schema">
-<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.submit.schema_v3.SubmitV3Schema object at 4604697168 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV3View.schema" title="Permalink to this definition">¶</a></dt>
+<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.submit.schema_v2.SubmitV2Schema object at 4451905104 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/submit/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.submit.views.SubmitV2View.schema" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

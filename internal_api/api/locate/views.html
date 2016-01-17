@@ -180,7 +180,7 @@
             
   <div class="section" id="module-ichnaea.api.locate.views">
 <span id="ichnaea-api-locate-views"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.views" title="ichnaea.api.locate.views"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.views</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.views" title="Permalink to this headline">¶</a></h1>
-<p>Implementation of a locate specific HTTP service view.</p>
+<p>Implementation of locate specific HTTP service views.</p>
 <dl class="class">
 <dt id="ichnaea.api.locate.views.BaseLocateView">
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.views.</code><code class="descname">BaseLocateView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.BaseLocateView" title="Permalink to this definition">¶</a></dt>
@@ -222,6 +222,177 @@
 <dl class="attribute">
 <dt id="ichnaea.api.locate.views.BasePositionView.view_type">
 <code class="descname">view_type</code><em class="property"> = 'locate'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.BasePositionView.view_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.views.LocateV0View">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.views.</code><code class="descname">LocateV0View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV0View" title="Permalink to this definition">¶</a></dt>
+<dd><p>View class for v1/search HTTP API.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.LocateV0View.metric_path">
+<code class="descname">metric_path</code><em class="property"> = 'v1.search'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV0View.metric_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.LocateV0View.not_found">
+<code class="descname">not_found</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV0View.not_found" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">LocationNotFoundV0</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.LocateV0View.route">
+<code class="descname">route</code><em class="property"> = '/v1/search'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV0View.route" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.LocateV0View.schema">
+<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.locate.schema_v0.LocateV0Schema object at 4393310480 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV0View.schema" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.views.LocateV1View">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.views.</code><code class="descname">LocateV1View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV1View" title="Permalink to this definition">¶</a></dt>
+<dd><p>View class for v1/geolocate HTTP API.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.LocateV1View.metric_path">
+<code class="descname">metric_path</code><em class="property"> = 'v1.geolocate'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV1View.metric_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.LocateV1View.route">
+<code class="descname">route</code><em class="property"> = '/v1/geolocate'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV1View.route" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.LocateV1View.schema">
+<code class="descname">schema</code><em class="property"> = &lt;ichnaea.api.locate.schema_v1.LocateV1Schema object at 4393319056 (named )&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.LocateV1View.schema" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.views.RegionV0BaseView">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.views.</code><code class="descname">RegionV0BaseView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0BaseView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of geodude compatibility API
+without allow_post support.</p>
+<p>See also <a class="reference external" href="https://github.com/mozilla/geodude">https://github.com/mozilla/geodude</a>.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0BaseView.check_api_key">
+<code class="descname">check_api_key</code><em class="property"> = False</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0BaseView.check_api_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0BaseView.error_on_invalidkey">
+<code class="descname">error_on_invalidkey</code><em class="property"> = False</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0BaseView.error_on_invalidkey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0BaseView.http_cache">
+<code class="descname">http_cache</code><em class="property"> = (60, {'proxy_revalidate': True, 's_maxage': 0, 'private': True})</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0BaseView.http_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0BaseView.view_type">
+<code class="descname">view_type</code><em class="property"> = 'region'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0BaseView.view_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.views.RegionV0JSView">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.views.</code><code class="descname">RegionV0JSView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSView" title="Permalink to this definition">¶</a></dt>
+<dd><p>View class for country.js HTTP API.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSView.not_found">
+<code class="descname">not_found</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSView.not_found" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">RegionNotFoundV0JS</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSView.metric_path">
+<code class="descname">metric_path</code><em class="property"> = 'v0.country_js'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSView.metric_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSView.renderer">
+<code class="descname">renderer</code><em class="property"> = 'js'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSView.renderer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSView.route">
+<code class="descname">route</code><em class="property"> = '/country.js'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSView.route" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.views.RegionV0JSONView">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.views.</code><code class="descname">RegionV0JSONView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSONView" title="Permalink to this definition">¶</a></dt>
+<dd><p>View class for country.json HTTP API.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSONView.not_found">
+<code class="descname">not_found</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSONView.not_found" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">RegionNotFoundV0</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSONView.metric_path">
+<code class="descname">metric_path</code><em class="property"> = 'v0.country_json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSONView.metric_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSONView.renderer">
+<code class="descname">renderer</code><em class="property"> = 'json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSONView.renderer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV0JSONView.route">
+<code class="descname">route</code><em class="property"> = '/country.json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV0JSONView.route" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.views.RegionV1View">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.views.</code><code class="descname">RegionV1View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View" title="Permalink to this definition">¶</a></dt>
+<dd><p>View class for v1/country HTTP API.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV1View.check_api_key">
+<code class="descname">check_api_key</code><em class="property"> = False</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View.check_api_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV1View.error_on_invalidkey">
+<code class="descname">error_on_invalidkey</code><em class="property"> = False</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View.error_on_invalidkey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV1View.metric_path">
+<code class="descname">metric_path</code><em class="property"> = 'v1.country'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View.metric_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV1View.renderer">
+<code class="descname">renderer</code><em class="property"> = 'json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View.renderer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV1View.route">
+<code class="descname">route</code><em class="property"> = '/v1/country'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View.route" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV1View.searcher">
+<code class="descname">searcher</code><em class="property"> = 'region_searcher'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View.searcher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.views.RegionV1View.view_type">
+<code class="descname">view_type</code><em class="property"> = 'region'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/views.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.views.RegionV1View.view_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
