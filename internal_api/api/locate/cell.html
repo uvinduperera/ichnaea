@@ -183,29 +183,29 @@
 <span id="ichnaea-api-locate-cell"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.cell" title="ichnaea.api.locate.cell"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.cell</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.cell" title="Permalink to this headline">¶</a></h1>
 <p>Search implementation using a cell database.</p>
 <dl class="function">
-<dt id="ichnaea.api.locate.cell.pick_best_cells">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">pick_best_cells</code><span class="sig-paren">(</span><em>cells</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.pick_best_cells" title="Permalink to this definition">¶</a></dt>
-<dd><p>Group cells by area, pick the best cell area. Either
-the one with the most values or the smallest radius.</p>
+<dt id="ichnaea.api.locate.cell.cluster_cells">
+<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">cluster_cells</code><span class="sig-paren">(</span><em>cells</em>, <em>lookups</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.cluster_cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cluster cells by area.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea.api.locate.cell.pick_best_area">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">pick_best_area</code><span class="sig-paren">(</span><em>areas</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.pick_best_area" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sort areas by size, pick the smallest one.</p>
+<dt id="ichnaea.api.locate.cell.cluster_areas">
+<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">cluster_areas</code><span class="sig-paren">(</span><em>areas</em>, <em>lookups</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.cluster_areas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cluster areas, treat each area as its own cluster.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="ichnaea.api.locate.cell.aggregate_cell_position">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_cell_position</code><span class="sig-paren">(</span><em>cells</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_cell_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a list of cells from a single cell cluster,
-return the aggregate position of the user inside the cluster.</p>
+<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_cell_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_cell_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a cell cluster, return the aggregate position of the user
+inside the cluster.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="ichnaea.api.locate.cell.aggregate_area_position">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_area_position</code><span class="sig-paren">(</span><em>area</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_area_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a single area, return the position of the user inside it.</p>
+<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_area_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_area_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an area cluster, return the aggregate position of the user
+inside the cluster.</p>
 </dd></dl>
 
 <dl class="class">
@@ -225,6 +225,12 @@ return the aggregate position of the user inside the cluster.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="ichnaea.api.locate.cell.CellPositionMixin.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionMixin.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">PositionResultList</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="ichnaea.api.locate.cell.CellPositionMixin.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionMixin.result_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Position</span></code></p>
@@ -236,6 +242,18 @@ return the aggregate position of the user inside the cluster.</p>
 <dt id="ichnaea.api.locate.cell.CellRegionMixin">
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">CellRegionMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellRegionMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>A CellRegionMixin implements a region search using the cell models.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.cell.CellRegionMixin.area_model">
+<code class="descname">area_model</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellRegionMixin.area_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">CellArea</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.cell.CellRegionMixin.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellRegionMixin.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">RegionResultList</span></code></p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="ichnaea.api.locate.cell.CellRegionMixin.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellRegionMixin.result_type" title="Permalink to this definition">¶</a></dt>

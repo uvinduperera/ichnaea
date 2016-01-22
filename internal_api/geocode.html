@@ -237,12 +237,20 @@ associated with the given mcc.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="ichnaea.geocode.Geocoder.region_for_code">
+<code class="descname">region_for_code</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocode.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocode.Geocoder.region_for_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a region instance with metadata for the code or None.</p>
+<p>The return list is filtered by the set of recognized
+region codes present in the GENC dataset.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ichnaea.geocode.Geocoder.regions_for_mcc">
 <code class="descname">regions_for_mcc</code><span class="sig-paren">(</span><em>mcc</em>, <em>metadata=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocode.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocode.Geocoder.regions_for_mcc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of region codes matching the passed in
 mobile country code.</p>
 <p>If the metadata argument is set to True, returns a list of
-dictionaries containing additional metadata instead.</p>
+region instances containing additional metadata instead.</p>
 <p>The return list is filtered by the set of recognized
 region codes present in the GENC dataset.</p>
 </dd></dl>

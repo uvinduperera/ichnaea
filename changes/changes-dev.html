@@ -169,6 +169,13 @@
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>Allow queries to the fallback source if the combined score is too low.</li>
+<li>#151: Choose best position result based on highest combined score.</li>
+<li>#481: Fix broken cell export.</li>
+<li>#151: Choose best region result based on highest combined score.</li>
+<li>#371: Extend region API to use wifi data.</li>
+<li>#371: Extend region API to use cell area data.</li>
+<li>#151: Choose best region result based on highest score.</li>
 <li>Remove migrations and tests for 1.2 to 1.3 upgrade.</li>
 <li>Enable <cite>shapely.speedups</cite> to speed up GeoJSON parsing.</li>
 <li>Ship buffered region file with the code.</li>
@@ -216,7 +223,7 @@ needs a <cite>python:</cite> prefix and has to be <cite>-c python:ichnaea.webapp
 <li>#469: Update to static tabzilla.</li>
 <li>#468: Add CORS headers and support OPTIONS requests.</li>
 <li>#467: Implement geodude compatibility API.</li>
-<li>Choose best WiFi cluster based on a data quality score.</li>
+<li>#151: Choose best WiFi cluster based on a data quality score.</li>
 <li>Use up to top 10 WiFi networks in WiFi location.</li>
 <li>Use proper agglomerative clustering in WiFi clustering.</li>
 <li>Remove arithmetic/hamming distance analysis of BSSIDs.</li>

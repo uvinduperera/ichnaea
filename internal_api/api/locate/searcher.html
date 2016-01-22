@@ -218,7 +218,13 @@ multiple sources to satisfy a given query.</p>
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">Searcher</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.Searcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Searcher will use a collection of data sources
 to attempt to satisfy a user&#8217;s query. It will loop over them
-in the order they are specified and use the most accurate result.</p>
+in the order they are specified and use the best possible result.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.searcher.Searcher.result_list">
+<code class="descname">result_list</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.Searcher.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="result.html#ichnaea.api.locate.result.ResultList" title="ichnaea.api.locate.result.ResultList"><code class="xref py py-class docutils literal"><span class="pre">ichnaea.api.locate.result.ResultList</span></code></a></p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="ichnaea.api.locate.searcher.Searcher.result_type">
 <code class="descname">result_type</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.Searcher.result_type" title="Permalink to this definition">¶</a></dt>
@@ -273,10 +279,21 @@ in the order they are specified and use the most accurate result.</p>
 <dd><p>A PositionSearcher will return a position defined by a latitude,
 a longitude and an accuracy in meters.</p>
 <dl class="attribute">
+<dt id="ichnaea.api.locate.searcher.PositionSearcher.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.PositionSearcher.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">PositionResultList</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="ichnaea.api.locate.searcher.PositionSearcher.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.PositionSearcher.result_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Position</span></code></p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.searcher.PositionSearcher.source_classes">
+<code class="descname">source_classes</code><em class="property"> = (('internal', &lt;class 'ichnaea.api.locate.internal.InternalPositionSource'&gt;), ('ocid', &lt;class 'ichnaea.api.locate.cell.OCIDPositionSource'&gt;), ('geoip', &lt;class 'ichnaea.api.locate.geoip.GeoIPPositionSource'&gt;), ('fallback', &lt;class 'ichnaea.api.locate.fallback.FallbackPositionSource'&gt;))</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.PositionSearcher.source_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -285,10 +302,21 @@ a longitude and an accuracy in meters.</p>
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">RegionSearcher</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>A RegionSearcher will return a region name and code.</p>
 <dl class="attribute">
+<dt id="ichnaea.api.locate.searcher.RegionSearcher.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">RegionResultList</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="ichnaea.api.locate.searcher.RegionSearcher.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher.result_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Region</span></code></p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.searcher.RegionSearcher.source_classes">
+<code class="descname">source_classes</code><em class="property"> = (('internal', &lt;class 'ichnaea.api.locate.internal.InternalRegionSource'&gt;), ('geoip', &lt;class 'ichnaea.api.locate.geoip.GeoIPRegionSource'&gt;))</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher.source_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 

@@ -194,6 +194,11 @@ crowd-sourced data collection.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="ichnaea.api.locate.source.Source.result_list">
+<code class="descname">result_list</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.Source.result_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="ichnaea.api.locate.source.Source.source">
 <code class="descname">source</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.Source.source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -206,7 +211,7 @@ crowd-sourced data collection.</p>
 <dl class="method">
 <dt id="ichnaea.api.locate.source.Source.should_search">
 <code class="descname">should_search</code><span class="sig-paren">(</span><em>query</em>, <em>results</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.Source.should_search" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a query and a possible result found by another source,
+<dd><p>Given a query and possible results found by other sources,
 check if this source should attempt to perform a search.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -228,7 +233,7 @@ check if this source should attempt to perform a search.</p>
 <dl class="method">
 <dt id="ichnaea.api.locate.source.Source.search">
 <code class="descname">search</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.Source.search" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provide a type specific possibly empty query result.</p>
+<dd><p>Provide a type specific possibly empty result list.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -247,6 +252,12 @@ check if this source should attempt to perform a search.</p>
 <dd><p>A PositionSource will return a position result with
 a latitude, a longitude and an accuracy in meters in it.</p>
 <dl class="attribute">
+<dt id="ichnaea.api.locate.source.PositionSource.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.PositionSource.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">PositionResultList</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="ichnaea.api.locate.source.PositionSource.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.PositionSource.result_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Position</span></code></p>
@@ -259,6 +270,12 @@ a latitude, a longitude and an accuracy in meters in it.</p>
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">RegionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.RegionSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>A RegionSource will return a region result with
 a region name and code in it.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.source.RegionSource.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.RegionSource.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">RegionResultList</span></code></p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="ichnaea.api.locate.source.RegionSource.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.RegionSource.result_type" title="Permalink to this definition">¶</a></dt>

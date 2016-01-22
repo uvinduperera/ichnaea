@@ -185,32 +185,37 @@
 a concrete position or region result.</p>
 <dl class="class">
 <dt id="ichnaea.api.locate.result.Result">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em>, <em>score=1.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Result" title="Permalink to this definition">¶</a></dt>
-<dd><p>An empty query result.</p>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em>, <em>score=0.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Result" title="Permalink to this definition">¶</a></dt>
+<dd><p>An abstract query result.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.locate.result.Result.data_accuracy">
 <code class="descname">data_accuracy</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Result.data_accuracy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the accuracy class of this result.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="ichnaea.api.locate.result.Result.empty">
-<code class="descname">empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Result.empty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Does this result include any data?</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="ichnaea.api.locate.result.Result.satisfies">
-<code class="descname">satisfies</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Result.satisfies" title="Permalink to this definition">¶</a></dt>
-<dd><p>Does this result match the expected query accuracy?</p>
+<dl class="class">
+<dt id="ichnaea.api.locate.result.Position">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Position</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em>, <em>score=0.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Position" title="Permalink to this definition">¶</a></dt>
+<dd><p>The position returned by a position query.</p>
 </dd></dl>
 
+<dl class="class">
+<dt id="ichnaea.api.locate.result.Region">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Region</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em>, <em>score=0.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Region" title="Permalink to this definition">¶</a></dt>
+<dd><p>The region returned by a region query.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.result.ResultList">
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">ResultList</code><span class="sig-paren">(</span><em>result=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.ResultList" title="Permalink to this definition">¶</a></dt>
-<dd><p>A collection of query results.</p>
+<dd><p>An abstract collection of query results.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.result.ResultList.result_type">
+<code class="descname">result_type</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.ResultList.result_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="ichnaea.api.locate.result.ResultList.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>results</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.ResultList.add" title="Permalink to this definition">¶</a></dt>
@@ -218,10 +223,9 @@ a concrete position or region result.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="ichnaea.api.locate.result.ResultList.satisfies">
-<code class="descname">satisfies</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.ResultList.satisfies" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is one of the results in the collection good enough to satisfy
-the expected query data accuracy.</p>
+<dt id="ichnaea.api.locate.result.ResultList.best_cluster">
+<code class="descname">best_cluster</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.ResultList.best_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best cluster from this collection.</p>
 </dd></dl>
 
 <dl class="method">
@@ -230,18 +234,75 @@ the expected query data accuracy.</p>
 <dd><p>Return the best result in the collection.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ichnaea.api.locate.result.ResultList.satisfies">
+<code class="descname">satisfies</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.ResultList.satisfies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the best cluster result from this collection good enough to
+satisfy the query?</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.api.locate.result.Position">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Position</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em>, <em>score=1.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Position" title="Permalink to this definition">¶</a></dt>
-<dd><p>The position returned by a position query.</p>
+<dt id="ichnaea.api.locate.result.PositionResultList">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">PositionResultList</code><span class="sig-paren">(</span><em>result=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.PositionResultList" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collection of position results.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.result.PositionResultList.result_type">
+<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.PositionResultList.result_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#ichnaea.api.locate.result.Position" title="ichnaea.api.locate.result.Position"><code class="xref py py-class docutils literal"><span class="pre">Position</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.api.locate.result.PositionResultList.best_cluster">
+<code class="descname">best_cluster</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.PositionResultList.best_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best cluster from this collection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.api.locate.result.PositionResultList.best">
+<code class="descname">best</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.PositionResultList.best" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best result in the collection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.api.locate.result.PositionResultList.satisfies">
+<code class="descname">satisfies</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.PositionResultList.satisfies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the best cluster result from this collection good enough to
+satisfy the query?</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.api.locate.result.Region">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">Region</code><span class="sig-paren">(</span><em>accuracy=None</em>, <em>region_code=None</em>, <em>region_name=None</em>, <em>fallback=None</em>, <em>lat=None</em>, <em>lon=None</em>, <em>source=None</em>, <em>score=1.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.Region" title="Permalink to this definition">¶</a></dt>
-<dd><p>The region returned by a region query.</p>
+<dt id="ichnaea.api.locate.result.RegionResultList">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.result.</code><code class="descname">RegionResultList</code><span class="sig-paren">(</span><em>result=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.RegionResultList" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collection of region results.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.result.RegionResultList.result_type">
+<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.RegionResultList.result_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#ichnaea.api.locate.result.Region" title="ichnaea.api.locate.result.Region"><code class="xref py py-class docutils literal"><span class="pre">Region</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.api.locate.result.RegionResultList.best_cluster">
+<code class="descname">best_cluster</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.RegionResultList.best_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best cluster from this collection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.api.locate.result.RegionResultList.best">
+<code class="descname">best</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.RegionResultList.best" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best result in the collection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.api.locate.result.RegionResultList.satisfies">
+<code class="descname">satisfies</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/result.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.result.RegionResultList.satisfies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the best cluster result from this collection good enough to
+satisfy the query?</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>

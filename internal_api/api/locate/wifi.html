@@ -183,24 +183,15 @@
 <span id="ichnaea-api-locate-wifi"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.wifi" title="ichnaea.api.locate.wifi"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.wifi</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.wifi" title="Permalink to this headline">¶</a></h1>
 <p>Search implementation using a wifi database.</p>
 <dl class="function">
-<dt id="ichnaea.api.locate.wifi.get_clusters">
-<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">get_clusters</code><span class="sig-paren">(</span><em>wifis</em>, <em>lookups</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.get_clusters" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.api.locate.wifi.cluster_wifis">
+<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">cluster_wifis</code><span class="sig-paren">(</span><em>wifis</em>, <em>lookups</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.cluster_wifis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a list of wifi models and wifi lookups, return
 a list of clusters of nearby wifi networks.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea.api.locate.wifi.pick_best_cluster">
-<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">pick_best_cluster</code><span class="sig-paren">(</span><em>clusters</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.pick_best_cluster" title="Permalink to this definition">¶</a></dt>
-<dd><p>Out of the list of possible clusters, pick the best one based
-on the sum of the individual network scores.</p>
-<p>In case of a tie, we use the cluster with the better median
-signal strength.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.wifi.aggregate_cluster_position">
-<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">aggregate_cluster_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.aggregate_cluster_position" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.api.locate.wifi.aggregate_wifi_position">
+<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">aggregate_wifi_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.aggregate_wifi_position" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a single cluster, return the aggregate position of the user
 inside the cluster.</p>
 <p>We take at most
@@ -220,9 +211,33 @@ so we&#8217;d have to underweight pretty heavily.</p>
 <dd><p>A WifiPositionMixin implements a position search using
 the WiFi models and a series of clustering algorithms.</p>
 <dl class="attribute">
+<dt id="ichnaea.api.locate.wifi.WifiPositionMixin.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiPositionMixin.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">PositionResultList</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="ichnaea.api.locate.wifi.WifiPositionMixin.result_type">
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiPositionMixin.result_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Position</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.api.locate.wifi.WifiRegionMixin">
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">WifiRegionMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiRegionMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>A WifiRegionMixin implements a region search using our wifi data.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.locate.wifi.WifiRegionMixin.result_list">
+<code class="descname">result_list</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiRegionMixin.result_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">RegionResultList</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.locate.wifi.WifiRegionMixin.result_type">
+<code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiRegionMixin.result_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Region</span></code></p>
 </dd></dl>
 
 </dd></dl>

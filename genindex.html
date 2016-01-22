@@ -237,11 +237,11 @@
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.aggregate_cluster_position">aggregate_cluster_position() (in module ichnaea.api.locate.wifi)</a>
+  <dt><a href="internal_api/geocalc.html#ichnaea.geocalc.aggregate_position">aggregate_position() (in module ichnaea.geocalc)</a>
   </dt>
 
       
-  <dt><a href="internal_api/geocalc.html#ichnaea.geocalc.aggregate_position">aggregate_position() (in module ichnaea.geocalc)</a>
+  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.aggregate_wifi_position">aggregate_wifi_position() (in module ichnaea.api.locate.wifi)</a>
   </dt>
 
   </dl></td>
@@ -275,6 +275,10 @@
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellRegionMixin.area_model">(ichnaea.api.locate.cell.CellRegionMixin attribute)</a>
+  </dt>
+
         
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.OCIDPositionSource.area_model">(ichnaea.api.locate.cell.OCIDPositionSource attribute)</a>
   </dt>
@@ -312,6 +316,10 @@
 
       
   <dt><a href="internal_api/exceptions.html#ichnaea.exceptions.BaseClientError">BaseClientError</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.BaseInternalSource">BaseInternalSource (class in ichnaea.api.locate.internal)</a>
   </dt>
 
       
@@ -365,9 +373,33 @@
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.ResultList.best">best() (ichnaea.api.locate.result.ResultList method)</a>
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.PositionResultList.best">best() (ichnaea.api.locate.result.PositionResultList method)</a>
   </dt>
 
+      <dd><dl>
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.RegionResultList.best">(ichnaea.api.locate.result.RegionResultList method)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.ResultList.best">(ichnaea.api.locate.result.ResultList method)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.PositionResultList.best_cluster">best_cluster() (ichnaea.api.locate.result.PositionResultList method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.RegionResultList.best_cluster">(ichnaea.api.locate.result.RegionResultList method)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.ResultList.best_cluster">(ichnaea.api.locate.result.ResultList method)</a>
+  </dt>
+
+      </dl></dd>
       
   <dt><a href="internal_api/api/locate/schema.html#ichnaea.api.locate.schema.BaseCellLookup.better">better() (ichnaea.api.locate.schema.BaseCellLookup method)</a>
   </dt>
@@ -570,12 +602,12 @@
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellPositionSource">CellPositionSource (class in ichnaea.api.locate.cell)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellRegionMixin">CellRegionMixin (class in ichnaea.api.locate.cell)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/models/observation.html#ichnaea.models.observation.CellReport">CellReport (class in ichnaea.models.observation)</a>
   </dt>
@@ -640,6 +672,18 @@
 
       
   <dt><a href="internal_api/geoip.html#ichnaea.geoip.CITY_RADIUS">CITY_RADIUS (in module ichnaea.geoip)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.cluster_areas">cluster_areas() (in module ichnaea.api.locate.cell)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.cluster_cells">cluster_cells() (in module ichnaea.api.locate.cell)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.cluster_wifis">cluster_wifis() (in module ichnaea.api.locate.wifi)</a>
   </dt>
 
       
@@ -929,10 +973,6 @@
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.Result.empty">empty() (ichnaea.api.locate.result.Result method)</a>
-  </dt>
-
-      
   <dt><a href="internal_api/api/exceptions.html#ichnaea.api.exceptions.JSONException.empty_body">empty_body (ichnaea.api.exceptions.JSONException attribute)</a>
   </dt>
 
@@ -1006,7 +1046,7 @@
   </dt>
 
         
-  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalPositionSource.fallback_field">(ichnaea.api.locate.internal.InternalPositionSource attribute)</a>
+  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.BaseInternalSource.fallback_field">(ichnaea.api.locate.internal.BaseInternalSource attribute)</a>
   </dt>
 
         
@@ -1110,10 +1150,6 @@
   </dt>
 
       </dl></dd>
-      
-  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.get_clusters">get_clusters() (in module ichnaea.api.locate.wifi)</a>
-  </dt>
-
       
   <dt><a href="internal_api/config.html#ichnaea.config.Config.get_map">get_map() (ichnaea.config.Config method)</a>
   </dt>
@@ -1711,6 +1747,10 @@
   </dt>
 
       
+  <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MAX_CELL_SIGNAL">MAX_CELL_SIGNAL (in module ichnaea.models.constants)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MAX_CID">MAX_CID (in module ichnaea.models.constants)</a>
   </dt>
 
@@ -1854,6 +1894,10 @@
       </dl></dd>
       
   <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MIN_ALTITUDE">MIN_ALTITUDE (in module ichnaea.models.constants)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MIN_CELL_SIGNAL">MIN_CELL_SIGNAL (in module ichnaea.models.constants)</a>
   </dt>
 
       
@@ -2019,18 +2063,6 @@
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.pick_best_area">pick_best_area() (in module ichnaea.api.locate.cell)</a>
-  </dt>
-
-      
-  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.pick_best_cells">pick_best_cells() (in module ichnaea.api.locate.cell)</a>
-  </dt>
-
-      
-  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.pick_best_cluster">pick_best_cluster() (in module ichnaea.api.locate.wifi)</a>
-  </dt>
-
-      
   <dt><a href="internal_api/cache.html#ichnaea.cache.RedisClient.ping">ping() (ichnaea.cache.RedisClient method)</a>
   </dt>
 
@@ -2056,12 +2088,16 @@
   <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.Position">Position (class in ichnaea.api.locate.result)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/models/station.html#ichnaea.models.station.PositionMixin">PositionMixin (class in ichnaea.models.station)</a>
   </dt>
 
+      
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.PositionResultList">PositionResultList (class in ichnaea.api.locate.result)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.PositionSearcher">PositionSearcher (class in ichnaea.api.locate.searcher)</a>
   </dt>
@@ -2218,12 +2254,16 @@
   <dt><a href="internal_api/geocode.html#ichnaea.geocode.Geocoder.region_for_cell">region_for_cell() (ichnaea.geocode.Geocoder method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="internal_api/geocode.html#ichnaea.geocode.Geocoder.region_for_code">region_for_code() (ichnaea.geocode.Geocoder method)</a>
+  </dt>
+
       
   <dt><a href="internal_api/geocode.html#ichnaea.geocode.Geocoder.region_max_radius">region_max_radius() (ichnaea.geocode.Geocoder method)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/geoip.html#ichnaea.geoip.REGION_RADIUS">REGION_RADIUS (in module ichnaea.geoip)</a>
   </dt>
@@ -2234,6 +2274,10 @@
 
       
   <dt><a href="internal_api/api/exceptions.html#ichnaea.api.exceptions.RegionNotFoundV0JS">RegionNotFoundV0JS</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.RegionResultList">RegionResultList (class in ichnaea.api.locate.result)</a>
   </dt>
 
       
@@ -2307,12 +2351,66 @@
   </dt>
 
       
+  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellPositionMixin.result_list">result_list (ichnaea.api.locate.cell.CellPositionMixin attribute)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellRegionMixin.result_list">(ichnaea.api.locate.cell.CellRegionMixin attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.PositionSearcher.result_list">(ichnaea.api.locate.searcher.PositionSearcher attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.RegionSearcher.result_list">(ichnaea.api.locate.searcher.RegionSearcher attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.Searcher.result_list">(ichnaea.api.locate.searcher.Searcher attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.PositionSource.result_list">(ichnaea.api.locate.source.PositionSource attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.RegionSource.result_list">(ichnaea.api.locate.source.RegionSource attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/source.html#ichnaea.api.locate.source.Source.result_list">(ichnaea.api.locate.source.Source attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.WifiPositionMixin.result_list">(ichnaea.api.locate.wifi.WifiPositionMixin attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.WifiRegionMixin.result_list">(ichnaea.api.locate.wifi.WifiRegionMixin attribute)</a>
+  </dt>
+
+      </dl></dd>
+      
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellPositionMixin.result_type">result_type (ichnaea.api.locate.cell.CellPositionMixin attribute)</a>
   </dt>
 
       <dd><dl>
         
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellRegionMixin.result_type">(ichnaea.api.locate.cell.CellRegionMixin attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.PositionResultList.result_type">(ichnaea.api.locate.result.PositionResultList attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.RegionResultList.result_type">(ichnaea.api.locate.result.RegionResultList attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.ResultList.result_type">(ichnaea.api.locate.result.ResultList attribute)</a>
   </dt>
 
         
@@ -2341,6 +2439,10 @@
 
         
   <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.WifiPositionMixin.result_type">(ichnaea.api.locate.wifi.WifiPositionMixin attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.WifiRegionMixin.result_type">(ichnaea.api.locate.wifi.WifiRegionMixin attribute)</a>
   </dt>
 
       </dl></dd>
@@ -2409,10 +2511,14 @@
   </dt>
 
       
-  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.Result.satisfies">satisfies() (ichnaea.api.locate.result.Result method)</a>
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.PositionResultList.satisfies">satisfies() (ichnaea.api.locate.result.PositionResultList method)</a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.RegionResultList.satisfies">(ichnaea.api.locate.result.RegionResultList method)</a>
+  </dt>
+
         
   <dt><a href="internal_api/api/locate/result.html#ichnaea.api.locate.result.ResultList.satisfies">(ichnaea.api.locate.result.ResultList method)</a>
   </dt>
@@ -2572,11 +2678,7 @@
 
       <dd><dl>
         
-  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalPositionSource.source">(ichnaea.api.locate.internal.InternalPositionSource attribute)</a>
-  </dt>
-
-        
-  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.InternalRegionSource.source">(ichnaea.api.locate.internal.InternalRegionSource attribute)</a>
+  <dt><a href="internal_api/api/locate/internal.html#ichnaea.api.locate.internal.BaseInternalSource.source">(ichnaea.api.locate.internal.BaseInternalSource attribute)</a>
   </dt>
 
         
@@ -2589,9 +2691,19 @@
 
       </dl></dd>
       
-  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.Searcher.source_classes">source_classes (ichnaea.api.locate.searcher.Searcher attribute)</a>
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.PositionSearcher.source_classes">source_classes (ichnaea.api.locate.searcher.PositionSearcher attribute)</a>
   </dt>
 
+      <dd><dl>
+        
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.RegionSearcher.source_classes">(ichnaea.api.locate.searcher.RegionSearcher attribute)</a>
+  </dt>
+
+        
+  <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.Searcher.source_classes">(ichnaea.api.locate.searcher.Searcher attribute)</a>
+  </dt>
+
+      </dl></dd>
       
   <dt><a href="internal_api/api/locate/searcher.html#ichnaea.api.locate.searcher.Searcher.sources">sources (ichnaea.api.locate.searcher.Searcher attribute)</a>
   </dt>
@@ -2896,6 +3008,10 @@
 
       
   <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.WifiPositionSource">WifiPositionSource (class in ichnaea.api.locate.wifi)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/api/locate/wifi.html#ichnaea.api.locate.wifi.WifiRegionMixin">WifiRegionMixin (class in ichnaea.api.locate.wifi)</a>
   </dt>
 
       
