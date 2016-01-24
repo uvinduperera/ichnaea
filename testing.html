@@ -169,14 +169,14 @@ in the code. The easiest way to test them is by writing unit tests and calling
 the task functions directly.</p>
 <p>In order to do more integration testing, you can also manually queue a task
 by using the celery <cite>call</cite> command. For example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>ICHNAEA_CFG=location.ini bin/celery -A ichnaea.async.app:celery_app call \
-ichnaea.data.tasks.update_cell --args=&#39;[1000, ]’
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app call <span class="se">\</span>
+    ichnaea.data.tasks.update_cell --args<span class="o">=</span><span class="s1">&#39;[1000, ]&#39;</span>
 </pre></div>
 </div>
 <p>You then need to run the celery worker process and it will pick up the task
 from the queue and execute it:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery <span class="se">\</span>
--A ichnaea.async.app:celery_app worker -c 1
+    -A ichnaea.async.app:celery_app worker -c 1
 </pre></div>
 </div>
 </div>
