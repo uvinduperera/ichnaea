@@ -184,6 +184,42 @@
   <div class="section" id="module-ichnaea.models.constants">
 <span id="ichnaea-models-constants"></span><h1><a class="reference internal" href="#module-ichnaea.models.constants" title="ichnaea.models.constants"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.constants</span></code></a><a class="headerlink" href="#module-ichnaea.models.constants" title="Permalink to this headline">¶</a></h1>
 <p>Contains model and schemata specific constants.</p>
+<dl class="class">
+<dt id="ichnaea.models.constants.Radio">
+<em class="property">class </em><code class="descclassname">ichnaea.models.constants.</code><code class="descname">Radio</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio" title="Permalink to this definition">¶</a></dt>
+<dd><p>An integer enum representing a radio type.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.constants.Radio.gsm">
+<code class="descname">gsm</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.gsm" title="Permalink to this definition">¶</a></dt>
+<dd><p>0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.constants.Radio.cdma">
+<code class="descname">cdma</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.cdma" title="Permalink to this definition">¶</a></dt>
+<dd><p>1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.constants.Radio.wcdma">
+<code class="descname">wcdma</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.wcdma" title="Permalink to this definition">¶</a></dt>
+<dd><p>2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.constants.Radio.umts">
+<code class="descname">umts</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.umts" title="Permalink to this definition">¶</a></dt>
+<dd><p>2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.constants.Radio.lte">
+<code class="descname">lte</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.lte" title="Permalink to this definition">¶</a></dt>
+<dd><p>3</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="data">
 <dt id="ichnaea.models.constants.MAX_ACCURACY">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ACCURACY</code><em class="property"> = 1000000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ACCURACY" title="Permalink to this definition">¶</a></dt>
@@ -277,7 +313,7 @@ as a test mac address and ignore data submissions with it.</p>
 
 <dl class="data">
 <dt id="ichnaea.models.constants.MAX_WIFI_SIGNAL">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_WIFI_SIGNAL</code><em class="property"> = -1</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_WIFI_SIGNAL" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_WIFI_SIGNAL</code><em class="property"> = -10</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_WIFI_SIGNAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum accepted WiFi signal strength value.</p>
 </dd></dl>
 
@@ -344,13 +380,13 @@ as a test mac address and ignore data submissions with it.</p>
 <dl class="data">
 <dt id="ichnaea.models.constants.MIN_PSC">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_PSC</code><em class="property"> = 0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_PSC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Minimum accepted psc.</p>
+<dd><p>Minimum accepted psc/pci.</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="ichnaea.models.constants.MAX_PSC">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_PSC</code><em class="property"> = 511</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_PSC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maximum accepted psc.</p>
+<dd><p>Maximum accepted psc/pci.</p>
 </dd></dl>
 
 <dl class="data">
@@ -360,15 +396,39 @@ as a test mac address and ignore data submissions with it.</p>
 </dd></dl>
 
 <dl class="data">
+<dt id="ichnaea.models.constants.MIN_CELL_TA">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_CELL_TA</code><em class="property"> = 0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_CELL_TA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accepted timing advance.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_CELL_TA">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_CELL_TA</code><em class="property"> = 63</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_CELL_TA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum accepted timing advance.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MIN_CELL_ASU">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_CELL_ASU</code><em class="property"> = {&lt;Radio.gsm: 0&gt;: 0, &lt;Radio.wcdma: 2&gt;: -5, &lt;Radio.lte: 3&gt;: 0}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_CELL_ASU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum arbitrary strength unit per radio type.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_CELL_ASU">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_CELL_ASU</code><em class="property"> = {&lt;Radio.gsm: 0&gt;: 31, &lt;Radio.wcdma: 2&gt;: 91, &lt;Radio.lte: 3&gt;: 97}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_CELL_ASU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum arbitrary strength unit per radio type.</p>
+</dd></dl>
+
+<dl class="data">
 <dt id="ichnaea.models.constants.MIN_CELL_SIGNAL">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_CELL_SIGNAL</code><em class="property"> = -150</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_CELL_SIGNAL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Minimum accepted cell signal strength value.</p>
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_CELL_SIGNAL</code><em class="property"> = {&lt;Radio.gsm: 0&gt;: -113, &lt;Radio.wcdma: 2&gt;: -121, &lt;Radio.lte: 3&gt;: -140}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_CELL_SIGNAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accepted cell signal strength value per radio type.</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="ichnaea.models.constants.MAX_CELL_SIGNAL">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_CELL_SIGNAL</code><em class="property"> = -1</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_CELL_SIGNAL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maximum accepted cell signal strength value.</p>
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_CELL_SIGNAL</code><em class="property"> = {&lt;Radio.gsm: 0&gt;: -51, &lt;Radio.wcdma: 2&gt;: -25, &lt;Radio.lte: 3&gt;: -43}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_CELL_SIGNAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum accepted cell signal strength value per radio type.</p>
 </dd></dl>
 
 </div>

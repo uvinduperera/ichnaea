@@ -200,42 +200,6 @@ integers for the mcc, mnc and lac parts and a final 32 bit unsigned
 integer for the cid part.</p>
 </dd></dl>
 
-<dl class="class">
-<dt id="ichnaea.models.cell.Radio">
-<em class="property">class </em><code class="descclassname">ichnaea.models.cell.</code><code class="descname">Radio</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio" title="Permalink to this definition">¶</a></dt>
-<dd><p>An integer enum representing a radio type.</p>
-<dl class="attribute">
-<dt id="ichnaea.models.cell.Radio.gsm">
-<code class="descname">gsm</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.gsm" title="Permalink to this definition">¶</a></dt>
-<dd><p>0</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.models.cell.Radio.cdma">
-<code class="descname">cdma</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.cdma" title="Permalink to this definition">¶</a></dt>
-<dd><p>1</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.models.cell.Radio.wcdma">
-<code class="descname">wcdma</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.wcdma" title="Permalink to this definition">¶</a></dt>
-<dd><p>2</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.models.cell.Radio.umts">
-<code class="descname">umts</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.umts" title="Permalink to this definition">¶</a></dt>
-<dd><p>2</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.models.cell.Radio.lte">
-<code class="descname">lte</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.Radio.lte" title="Permalink to this definition">¶</a></dt>
-<dd><p>3</p>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="function">
 <dt id="ichnaea.models.cell.decode_cellarea">
 <code class="descclassname">ichnaea.models.cell.</code><code class="descname">decode_cellarea</code><span class="sig-paren">(</span><em>value</em>, <em>codec=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.cell.decode_cellarea" title="Permalink to this definition">¶</a></dt>
@@ -410,6 +374,7 @@ values indicating a deleted state.</dd>
 -51 to -113 (optional).</dd>
 <dt>asu</dt>
 <dd>The arbitrary strength unit. An integer in the range of 0 to 31 (optional).
+Unknown values can be marked with a value of 99.
 The formula: <code class="docutils literal"><span class="pre">RSSI</span> <span class="pre">[dBm]</span> <span class="pre">=</span> <span class="pre">(2x</span> <span class="pre">ASU)</span> <span class="pre">–</span> <span class="pre">113</span></code>.</dd>
 <dt>ta</dt>
 <dd>The timing advance. An integer in the range of 0 to 63 (optional).</dd>
@@ -454,6 +419,7 @@ values indicating a deleted state.</dd>
 -25 to -121 (optional).</dd>
 <dt>asu</dt>
 <dd>The arbitrary strength unit. An integer in the range of -5 to 91 (optional).
+Unknown values can be marked with a value of 255.
 The formula: <code class="docutils literal"><span class="pre">RSCP</span> <span class="pre">[dBm]</span> <span class="pre">=</span> <span class="pre">ASU</span> <span class="pre">-</span> <span class="pre">116</span></code>.</dd>
 </dl>
 <p>A special case exists for WCDMA cells, to send data about neighboring cells.
@@ -493,9 +459,9 @@ values indicating a deleted state.</dd>
 <dd>The physical cell id as an integer in the range of 0 to 503 (optional).</dd>
 <dt>signal</dt>
 <dd>The received signal strength (RSRP) in dBm, typically in the range of
--45 to -137 (optional).</dd>
+-43 to -140 (optional).</dd>
 <dt>asu</dt>
-<dd>The arbitrary strength unit. An integer in the range of 0 to 95 (optional).
+<dd>The arbitrary strength unit. An integer in the range of 0 to 97 (optional).
 The formula: <code class="docutils literal"><span class="pre">RSRP</span> <span class="pre">[dBm]</span> <span class="pre">=</span> <span class="pre">ASU</span> <span class="pre">–</span> <span class="pre">140</span></code>.</dd>
 <dt>ta</dt>
 <dd>The timing advance. An integer in the range of 0 to 63 (optional).</dd>
