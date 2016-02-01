@@ -181,30 +181,7 @@
             
   <div class="section" id="module-ichnaea.api.locate.wifi">
 <span id="ichnaea-api-locate-wifi"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.wifi" title="ichnaea.api.locate.wifi"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.wifi</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.wifi" title="Permalink to this headline">¶</a></h1>
-<p>Search implementation using a wifi database.</p>
-<dl class="function">
-<dt id="ichnaea.api.locate.wifi.cluster_wifis">
-<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">cluster_wifis</code><span class="sig-paren">(</span><em>wifis</em>, <em>lookups</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.cluster_wifis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a list of wifi models and wifi lookups, return
-a list of clusters of nearby wifi networks.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.wifi.aggregate_wifi_position">
-<code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">aggregate_wifi_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.aggregate_wifi_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a single cluster, return the aggregate position of the user
-inside the cluster.</p>
-<p>We take at most
-<a class="reference internal" href="constants.html#ichnaea.api.locate.constants.MAX_WIFIS_IN_CLUSTER" title="ichnaea.api.locate.constants.MAX_WIFIS_IN_CLUSTER"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.api.locate.constants.MAX_WIFIS_IN_CLUSTER</span></code></a>
-of of the networks in the cluster when estimating the aggregate
-position.</p>
-<p>The reason is that we&#8217;re doing a (non-weighted) centroid calculation,
-which is itself unbalanced by distant elements. Even if we did a
-weighted centroid here, using radio intensity as a proxy for
-distance has an error that increases significantly with distance,
-so we&#8217;d have to underweight pretty heavily.</p>
-</dd></dl>
-
+<p>Search implementation using a database of WiFi networks.</p>
 <dl class="class">
 <dt id="ichnaea.api.locate.wifi.WifiPositionMixin">
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">WifiPositionMixin</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiPositionMixin" title="Permalink to this definition">¶</a></dt>
@@ -239,18 +216,6 @@ the WiFi models and a series of clustering algorithms.</p>
 <code class="descname">result_type</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiRegionMixin.result_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Region</span></code></p>
 </dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.wifi.WifiPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.wifi.</code><code class="descname">WifiPositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiPositionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implements a search using our wifi data.</p>
-<p>This source is only used in tests.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.wifi.WifiPositionSource.fallback_field">
-<code class="descname">fallback_field</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/wifi.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.wifi.WifiPositionSource.fallback_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 

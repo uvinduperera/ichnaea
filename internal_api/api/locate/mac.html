@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea.api.locate.internal &mdash; Ichnaea 1.4 documentation</title>
+  <title>ichnaea.api.locate.mac &mdash; Ichnaea 1.4 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="Ichnaea 1.4 documentation" href="../../../index.html"/>
         <link rel="up" title="ichnaea.api.locate" href="index.html"/>
-        <link rel="next" title="ichnaea.api.locate.mac" href="mac.html"/>
-        <link rel="prev" title="ichnaea.api.locate.geoip" href="geoip.html"/> 
+        <link rel="next" title="ichnaea.api.locate.query" href="query.html"/>
+        <link rel="prev" title="ichnaea.api.locate.internal" href="internal.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -165,11 +165,11 @@
       
           <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea.api.locate.internal</span></code></li>
+    <li><code class="docutils literal"><span class="pre">ichnaea.api.locate.mac</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/internal_api/api/locate/internal.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/internal_api/api/locate/mac.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -179,35 +179,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.api.locate.internal">
-<span id="ichnaea-api-locate-internal"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.internal" title="ichnaea.api.locate.internal"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.internal</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.internal" title="Permalink to this headline">¶</a></h1>
-<p>Implementation of a search source based on our internal data.</p>
-<dl class="class">
-<dt id="ichnaea.api.locate.internal.BaseInternalSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.internal.</code><code class="descname">BaseInternalSource</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/internal.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.internal.BaseInternalSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>A source based on our own crowd-sourced internal data.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.internal.BaseInternalSource.fallback_field">
-<code class="descname">fallback_field</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/internal.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.internal.BaseInternalSource.fallback_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.internal.BaseInternalSource.source">
-<code class="descname">source</code><em class="property"> = &lt;DataSource.internal: 1&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/internal.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.internal.BaseInternalSource.source" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+  <div class="section" id="module-ichnaea.api.locate.mac">
+<span id="ichnaea-api-locate-mac"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.mac" title="ichnaea.api.locate.mac"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.mac</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.mac" title="Permalink to this headline">¶</a></h1>
+<p>Search implementation using a mac based source.</p>
+<dl class="function">
+<dt id="ichnaea.api.locate.mac.cluster_networks">
+<code class="descclassname">ichnaea.api.locate.mac.</code><code class="descname">cluster_networks</code><span class="sig-paren">(</span><em>models</em>, <em>lookups</em>, <em>min_signal=None</em>, <em>max_distance=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/mac.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.mac.cluster_networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of database models and lookups, return
+a list of clusters of nearby networks.</p>
 </dd></dl>
 
-<dl class="class">
-<dt id="ichnaea.api.locate.internal.InternalPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.internal.</code><code class="descname">InternalPositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/internal.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.internal.InternalPositionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>A position source based on our own crowd-sourced internal data.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.internal.InternalRegionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.internal.</code><code class="descname">InternalRegionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/internal.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.internal.InternalRegionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>A region source based on our own crowd-sourced internal data.</p>
+<dl class="function">
+<dt id="ichnaea.api.locate.mac.aggregate_cluster_position">
+<code class="descclassname">ichnaea.api.locate.mac.</code><code class="descname">aggregate_cluster_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em>, <em>max_networks=None</em>, <em>min_accuracy=None</em>, <em>max_accuracy=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/mac.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.mac.aggregate_cluster_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a single cluster, return the aggregate position of the user
+inside the cluster.</p>
 </dd></dl>
 
 </div>
@@ -219,10 +205,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mac.html" class="btn btn-neutral float-right" title="ichnaea.api.locate.mac" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="query.html" class="btn btn-neutral float-right" title="ichnaea.api.locate.query" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geoip.html" class="btn btn-neutral" title="ichnaea.api.locate.geoip" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="internal.html" class="btn btn-neutral" title="ichnaea.api.locate.internal" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

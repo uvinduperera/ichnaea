@@ -163,12 +163,18 @@
 <div class="section" id="migrations">
 <h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>4b11500c9014: Add Bluetooth region stat.</li>
+<li>b247526b9501: Add sharded Bluetooth tables.</li>
+<li>0987336d9d63: Add weight and last_seen columns to station tables.</li>
 <li>44e1b53944ee: Remove old cell tables.</li>
 </ul>
 </div>
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>Accept and use Bluetooth networks in public HTTP APIs.</li>
+<li>Weight observations by their accuracy and signal strength values.</li>
+<li>Add stricter validation of asu, signal and ta values.</li>
 <li>Restrict observations to maximum accepted accuracy values.</li>
 <li>Allow queries to the fallback source if the combined score is too low.</li>
 <li>#151: Choose best position result based on highest combined score.</li>

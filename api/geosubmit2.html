@@ -193,7 +193,7 @@ different and less extensive field list.</p>
     <span class="p">},</span>
     <span class="s2">&quot;bluetoothBeacons&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">&quot;macAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;ff:74:27:89:5a:77&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;macAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;ff:23:45:67:89:ab&quot;</span><span class="p">,</span>
             <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">2000</span><span class="p">,</span>
             <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;beacon&quot;</span><span class="p">,</span>
             <span class="s2">&quot;signalStrength&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">110</span>
@@ -234,9 +234,9 @@ different and less extensive field list.</p>
 </div>
 <div class="section" id="field-definition">
 <h2>Field Definition<a class="headerlink" href="#field-definition" title="Permalink to this headline">¶</a></h2>
-<p>Requests always need to contain a batch of reports. Each report
-must contain at least one entry in the <cite>bluetoothBeacons</cite>, <cite>cellTowers</cite> or
-<cite>wifiAccessPoints</cite> arrays.</p>
+<p>Requests always need to contain a batch of <a class="reference internal" href="../glossary.html#term-reports"><span class="xref std std-term">reports</span></a>. Each
+<a class="reference internal" href="../glossary.html#term-report"><span class="xref std std-term">report</span></a> must contain at least one entry in the <cite>bluetoothBeacons</cite>
+or <cite>cellTowers</cite> array or two entries in the <cite>wifiAccessPoints</cite> array.</p>
 <p>Almost all of the fields are optional. For Bluetooth and WiFi records only
 the <cite>macAddress</cite> field is required.</p>
 <div class="section" id="global-fields">
@@ -287,11 +287,11 @@ other sensors or outside service queries.</dd>
 <h3>Bluetooth Beacon Fields<a class="headerlink" href="#bluetooth-beacon-fields" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>macAddress</dt>
-<dd>The address of the BLE beacon.</dd>
+<dd>The address of the Bluetooth Low Energy (BLE) beacon.</dd>
 <dt>name</dt>
 <dd>The name of the BLE beacon.</dd>
 <dt>age</dt>
-<dd>The number of milliseconds since this Bluetooth beacon was last seen.</dd>
+<dd>The number of milliseconds since this BLE beacon was last seen.</dd>
 <dt>signalStrength</dt>
 <dd>The measured signal strength of the BLE beacon in dBm.</dd>
 </dl>

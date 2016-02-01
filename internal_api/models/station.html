@@ -113,9 +113,11 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="blue.html"><code class="docutils literal"><span class="pre">ichnaea.models.blue</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mac.html"><code class="docutils literal"><span class="pre">ichnaea.models.mac</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
@@ -353,6 +355,16 @@ a better quality of the observation data that went into this
 <dl class="attribute">
 <dt id="ichnaea.models.station.StationMixin.source">
 <code class="descname">source</code><em class="property"> = Column(None, TinyIntEnum(), table=None)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/station.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.station.StationMixin.source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.station.StationMixin.weight">
+<code class="descname">weight</code><em class="property"> = Column(None, DOUBLE(), table=None)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/station.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.station.StationMixin.weight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.station.StationMixin.last_seen">
+<code class="descname">last_seen</code><em class="property"> = Column(None, Date(), table=None)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/station.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.station.StationMixin.last_seen" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">

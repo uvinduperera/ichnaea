@@ -33,7 +33,7 @@
     <link rel="top" title="Ichnaea 1.4 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.models" href="index.html"/>
         <link rel="next" title="ichnaea.models.sa_types" href="sa_types.html"/>
-        <link rel="prev" title="ichnaea.models.content" href="content.html"/> 
+        <link rel="prev" title="ichnaea.models.mac" href="mac.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -113,9 +113,11 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="blue.html"><code class="docutils literal"><span class="pre">ichnaea.models.blue</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mac.html"><code class="docutils literal"><span class="pre">ichnaea.models.mac</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
@@ -196,6 +198,36 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="ichnaea.models.observation.ValidBlueReportSchema">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidBlueReportSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidBlueReportSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>A schema which validates the Bluetooth specific fields in a report.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.observation.BlueReport">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">BlueReport</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.BlueReport" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for Bluetooth report data.</p>
+<dl class="method">
+<dt id="ichnaea.models.observation.BlueReport.better">
+<code class="descname">better</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.BlueReport.better" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is self better than the other?</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.observation.ValidBlueObservationSchema">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidBlueObservationSchema</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidBlueObservationSchema" title="Permalink to this definition">¶</a></dt>
+<dd><p>A schema which validates the fields in a Bluetooth observation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.observation.BlueObservation">
+<em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">BlueObservation</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.BlueObservation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for Bluetooth observation data.</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="ichnaea.models.observation.ValidCellReportSchema">
 <em class="property">class </em><code class="descclassname">ichnaea.models.observation.</code><code class="descname">ValidCellReportSchema</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/observation.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.observation.ValidCellReportSchema" title="Permalink to this definition">¶</a></dt>
 <dd><p>A schema which validates the cell specific fields in a report.</p>
@@ -267,7 +299,7 @@
         <a href="sa_types.html" class="btn btn-neutral float-right" title="ichnaea.models.sa_types" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="content.html" class="btn btn-neutral" title="ichnaea.models.content" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mac.html" class="btn btn-neutral" title="ichnaea.models.mac" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

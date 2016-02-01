@@ -222,12 +222,13 @@ in it:</p>
 <div>This tag only gets added if there was no valid client IP address
 for this query. Since almost all queries contain a client IP address
 we usually skip this tag.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">#cell:none</span></code>, <code class="docutils literal"><span class="pre">#cell:one</span></code>, <code class="docutils literal"><span class="pre">#cell:many</span></code>,
+<p><code class="docutils literal"><span class="pre">#blue:none</span></code>, <code class="docutils literal"><span class="pre">#blue:one</span></code>, <code class="docutils literal"><span class="pre">#blue:many</span></code>,
+<code class="docutils literal"><span class="pre">#cell:none</span></code>, <code class="docutils literal"><span class="pre">#cell:one</span></code>, <code class="docutils literal"><span class="pre">#cell:many</span></code>,
 <code class="docutils literal"><span class="pre">#wifi:none</span></code>, <code class="docutils literal"><span class="pre">#wifi:one</span></code>, <code class="docutils literal"><span class="pre">#wifi:many</span></code> : tags</p>
 <blockquote>
-<div>If the query contained any cell or wifi networks, one cell and one
-wifi tag get added. The tags depend on the number of valid
-<a class="reference internal" href="glossary.html#term-stations"><span class="xref std std-term">stations</span></a> for each of the two.</div></blockquote>
+<div>If the query contained any Bluetooth, cell or WiFi networks,
+one blue, cell and wifi tag get added. The tags depend on the
+number of valid <a class="reference internal" href="glossary.html#term-stations"><span class="xref std std-term">stations</span></a> for each of the three.</div></blockquote>
 </div>
 <div class="section" id="api-result-metrics">
 <h2>API Result Metrics<a class="headerlink" href="#api-result-metrics" title="Permalink to this headline">¶</a></h2>
@@ -237,16 +238,17 @@ region rules under the prefix / tag combination:</p>
 <p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.result#key:&lt;api_shortname&gt;,region:&lt;region_code&gt;</span></code></p>
 <p>The result metrics measure if we satisfied the incoming API query in
 the best possible fashion. Incoming queries can generally contain
-an IP address, cell networks, WiFi networks or any combination thereof.
+an IP address, Bluetooth, cell, WiFi networks or any combination thereof.
 If the query contained only cell networks, we do not expect to get a
 high accuracy result, as there is too little data in the query to do so.</p>
 <p>We express this by classifying each incoming query into one of four
 categories:</p>
 <dl class="docutils">
 <dt>High Accuracy (<code class="docutils literal"><span class="pre">#accuracy:high</span></code>)</dt>
-<dd>A query containing at least two WiFi networks.</dd>
+<dd>A query containing at least two Bluetooth or WiFi networks.</dd>
 <dt>Medium Accuracy (<code class="docutils literal"><span class="pre">#accuracy:medium</span></code>)</dt>
-<dd>A query containing no WiFi networks but at least one cell network.</dd>
+<dd>A query containing neither Bluetooth nor WiFi networks but at
+least one cell network.</dd>
 <dt>Low Accuracy (<code class="docutils literal"><span class="pre">#accuracy:low</span></code>)</dt>
 <dd>A query containing no networks but only the IP address of the client.</dd>
 <dt>No Accuracy (<code class="docutils literal"><span class="pre">#accuracy:none</span></code>)</dt>
@@ -361,47 +363,55 @@ everything else without a key tag.</div></blockquote>
 <blockquote>
 <div>Count incoming <a class="reference internal" href="glossary.html#term-reports"><span class="xref std std-term">reports</span></a> that were discarded due to some internal
 consistency, range or validity-condition error.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.observation.upload#type:cell</span></code>,
+<p><code class="docutils literal"><span class="pre">data.observation.upload#type:blue</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.upload#type:blue,key:&lt;api_shortname&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.upload#type:cell</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.upload#type:cell,key:&lt;api_shortname&gt;</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.upload#type:wifi</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.upload#type:wifi,key:&lt;api_shortname&gt;</span></code> : counters</p>
 <blockquote>
-<div><p>Count the number of cell or wifi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> entering the data
-processing pipeline; before normalization and blocklist processing
-have been applied. In other words this metric counts &#8220;total cell or
-wifi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> inside each submitted batch&#8221;, as each batch is
-decomposed into individual <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a>.</p>
+<div><p>Count the number of Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> entering
+the data processing pipeline; before normalization and blocklist processing
+have been applied. In other words this metric counts &#8220;total Bluetooth,
+cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> inside each submitted batch&#8221;, as each
+batch is composed of individual <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a>.</p>
 <p>The metrics are either emitted per tracked API key, or for everything
 else without a key tag.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed</span></code>,
+<p><code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:malformed</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:malformed,key:&lt;api_shortname&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed,key:&lt;api_shortname&gt;</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:malformed</span></code>
 <code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:malformed,key:&lt;api_shortname&gt;</span></code> : counters</p>
 <blockquote>
-<div>Count incoming cell or wifi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that were discarded before
-integration due to some internal consistency, range or
+<div>Count incoming Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that were
+discarded before integration due to some internal consistency, range or
 validity-condition error encountered while attempting to normalize the
 <a class="reference internal" href="glossary.html#term-observation"><span class="xref std std-term">observation</span></a>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:blocklisted</span></code>,
+<p><code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:blocklisted</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:blocklisted</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:blocklisted</span></code> : counters</p>
 <blockquote>
-<div>Count incoming cell or wifi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that were discarded before
-integration due to the presence of a blocklist record for the
-<a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> (see next metric).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.observation.insert#type:cell</span></code>,
+<div>Count incoming Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that were
+discarded before integration due to the presence of a blocklist record
+for the <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> (see next metric).</div></blockquote>
+<p><code class="docutils literal"><span class="pre">data.observation.insert#type:blue</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.insert#type:cell</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.insert#type:wifi</span></code> : counters</p>
 <blockquote>
-<div>Count cell or wifi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that are successfully normalized,
-integrated and not discarded due to consistency errors.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.station.blocklist#type:cell,action:add,reason:moving</span></code>,
+<div>Count Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that are successfully
+normalized, integrated and not discarded due to consistency errors.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">data.station.blocklist#type:blue,action:add,reason:moving</span></code>,
+<code class="docutils literal"><span class="pre">data.station.blocklist#type:cell,action:add,reason:moving</span></code>,
 <code class="docutils literal"><span class="pre">data.station.blocklist#type:wifi,action:add,reason:moving</span></code> : counters</p>
 <blockquote>
-<div>Count any cell or wifi that is blocklisted due to the acceptance of
-multiple <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> at sufficiently different locations. In
-these cases, we decide that the <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> is &#8220;moving&#8221; (such as a
-picocell or mobile hotspot on a public transit vehicle) and blocklist
-it, to avoid estimating query positions using the <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a>.</div></blockquote>
+<div>Count any Bluetooth, cell or WiFi network that is blocklisted due to
+the acceptance of multiple <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> at sufficiently different
+locations. In these cases, we decide that the <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> is &#8220;moving&#8221;
+(such as a picocell or mobile hotspot on a public transit vehicle) and
+blocklist it, to avoid estimating query positions using the
+<a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a>.</div></blockquote>
 </div>
 <div class="section" id="data-pipeline-export-metrics">
 <h2>Data Pipeline Export Metrics<a class="headerlink" href="#data-pipeline-export-metrics" title="Permalink to this headline">¶</a></h2>
@@ -426,7 +436,8 @@ response code like 200, 400, etc.</div></blockquote>
 <div>One gauge is created per API key and API path which has rate limiting
 enabled on it. This gauge measures how many requests have been done
 for each such API key and path combination for the current day.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">queue#queue:celery_cell</span></code>,
+<p><code class="docutils literal"><span class="pre">queue#queue:celery_blue</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:celery_cell</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_default</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_export</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_incoming</span></code>,
@@ -438,7 +449,9 @@ for each such API key and path combination for the current day.</div></blockquot
 <blockquote>
 <div>These gauges measure the number of tasks in each of the Redis queues.
 They are sampled at an approximate per-minute interval.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">queue#queue:update_cell_gsm</span></code>,
+<p><code class="docutils literal"><span class="pre">queue#queue:update_blue_0</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_blue_f</span></code>,
+<code class="docutils literal"><span class="pre">queue#queue:update_cell_gsm</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_cell_wcdma</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_cell_lte</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_cellarea</span></code>,

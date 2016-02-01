@@ -113,9 +113,11 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="blue.html"><code class="docutils literal"><span class="pre">ichnaea.models.blue</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mac.html"><code class="docutils literal"><span class="pre">ichnaea.models.mac</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
@@ -227,6 +229,12 @@
 </dd></dl>
 
 <dl class="data">
+<dt id="ichnaea.models.constants.MAX_ACCURACY_BLUE">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ACCURACY_BLUE</code><em class="property"> = 100.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ACCURACY_BLUE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum accepted accuracy for Bluetooth.</p>
+</dd></dl>
+
+<dl class="data">
 <dt id="ichnaea.models.constants.MAX_ACCURACY_CELL">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ACCURACY_CELL</code><em class="property"> = 200.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ACCURACY_CELL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum accepted accuracy for cells.</p>
@@ -266,6 +274,12 @@
 <dt id="ichnaea.models.constants.MAX_SPEED">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_SPEED</code><em class="property"> = 300.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_SPEED" title="Permalink to this definition">¶</a></dt>
 <dd><p>A bit less than speed of sound, in meters per second.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.BLUE_MAX_RADIUS">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">BLUE_MAX_RADIUS</code><em class="property"> = 100</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.BLUE_MAX_RADIUS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Max radius of a single Bluetooth network.</p>
 </dd></dl>
 
 <dl class="data">
@@ -315,6 +329,18 @@ as a test mac address and ignore data submissions with it.</p>
 <dt id="ichnaea.models.constants.MAX_WIFI_SIGNAL">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_WIFI_SIGNAL</code><em class="property"> = -10</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_WIFI_SIGNAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum accepted WiFi signal strength value.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MIN_BLUE_SIGNAL">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_BLUE_SIGNAL</code><em class="property"> = -127</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_BLUE_SIGNAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accepted Bluetooth signal strength value.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_BLUE_SIGNAL">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_BLUE_SIGNAL</code><em class="property"> = 0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_BLUE_SIGNAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum accepted Bluetooth signal strength value.</p>
 </dd></dl>
 
 <dl class="data">

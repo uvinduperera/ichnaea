@@ -168,8 +168,8 @@
 <dl class="docutils">
 <dt>Purpose</dt>
 <dd>Determine the current location based on data provided about nearby
-cell or WiFi networks and based on the IP address used to access
-the service.</dd>
+Bluetooth, cell or WiFi networks and based on the IP address used
+to access the service.</dd>
 </dl>
 <div class="section" id="request">
 <h2>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h2>
@@ -177,11 +177,20 @@ the service.</dd>
 <div class="highlight-python"><div class="highlight"><pre>https://location.services.mozilla.com/v1/search?key=&lt;API_KEY&gt;
 </pre></div>
 </div>
-<p>A search record can contain a list of cell records and a list of WiFi
-records.</p>
+<p>A search record can contain a list of Bluetooth, cell and WiFi records.</p>
 <p>A example of a well formed JSON search request :</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;radio&quot;</span><span class="o">:</span> <span class="s2">&quot;gsm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;blue&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;ff:23:45:67:89:ab&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">110</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;ff:23:45:67:89:cd&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">105</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
     <span class="s2">&quot;cell&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;radio&quot;</span><span class="o">:</span> <span class="s2">&quot;umts&quot;</span><span class="p">,</span>
@@ -213,6 +222,20 @@ records.</p>
 </div>
 <div class="section" id="field-definition">
 <h2>Field Definition<a class="headerlink" href="#field-definition" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bluetooth-fields">
+<h3>Bluetooth Fields<a class="headerlink" href="#bluetooth-fields" title="Permalink to this headline">¶</a></h3>
+<p>For <cite>blue</cite> entries, the <cite>key</cite> field is required.</p>
+<dl class="docutils">
+<dt>key <strong>(required)</strong></dt>
+<dd>The <cite>key</cite> is the mac address of the Bluetooth network. So for example
+a valid key would look similar to <cite>ff:23:45:67:89:ab</cite>.</dd>
+<dt>signal</dt>
+<dd>The received signal strength (RSSI) in dBm, typically in the range of
+-10 to -127.</dd>
+<dt>name</dt>
+<dd>The name of the Bluetooth network.</dd>
+</dl>
+</div>
 <div class="section" id="cell-fields">
 <h3>Cell Fields<a class="headerlink" href="#cell-fields" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
@@ -280,11 +303,12 @@ small band of frequencies.</dd>
 </div>
 <div class="section" id="mapping-records-into-a-search-request">
 <h3>Mapping records into a search request<a class="headerlink" href="#mapping-records-into-a-search-request" title="Permalink to this headline">¶</a></h3>
-<p>The mapping can contain zero or more WiFi records and zero or more
-cell records. If either list of records is empty, it can be omitted entirely.</p>
-<p>For WiFi lookups you need to provide at least two WiFi keys of
-nearby WiFi networks. This is an industry standard that is meant to
-prevent you from looking up the position of a single WiFi over time.</p>
+<p>The mapping can contain zero or more Bluetooth records, zero or more WiFi
+records and zero or more cell records. If any list of records is empty,
+it can be omitted entirely.</p>
+<p>For Bluetooth and WiFi lookups at least two keys of nearby networks need
+to be provided. This is an industry standard that is meant to prevent you
+from looking up the position of a single network over time.</p>
 </div>
 </div>
 <div class="section" id="response">
