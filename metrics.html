@@ -173,18 +173,16 @@ is used and which clients identified by their API keys do so. They are
 grouped by the type of the API, where type is one of <cite>locate</cite>, <cite>region</cite>
 and <cite>submit</cite>, independent of the specific version of that API.</p>
 <p>These metrics can help in deciding when to remove a deprecated API.</p>
-<p><code class="docutils literal"><span class="pre">locate.request#path:v1.search,key:&lt;apikey_shortname&gt;</span></code>,
-<code class="docutils literal"><span class="pre">locate.request#path:v1.geolocate,key:&lt;apikey_shortname&gt;</span></code>,
-<code class="docutils literal"><span class="pre">region.request#path:v1.country,key:&lt;apikey_shortname&gt;</span></code>,
-<code class="docutils literal"><span class="pre">submit.request#path:v1.submit,key:&lt;apikey_shortname&gt;</span></code>,
-<code class="docutils literal"><span class="pre">submit.request#path:v1.geosubmit,key:&lt;apikey_shortname&gt;</span></code>,
-<code class="docutils literal"><span class="pre">submit.request#path:v2.geosubmit,key:&lt;apikey_shortname&gt;</span></code> : counters</p>
+<p><code class="docutils literal"><span class="pre">locate.request#path:v1.search,key:&lt;apikey&gt;</span></code>,
+<code class="docutils literal"><span class="pre">locate.request#path:v1.geolocate,key:&lt;apikey&gt;</span></code>,
+<code class="docutils literal"><span class="pre">region.request#path:v1.country,key:&lt;apikey&gt;</span></code>,
+<code class="docutils literal"><span class="pre">submit.request#path:v1.submit,key:&lt;apikey&gt;</span></code>,
+<code class="docutils literal"><span class="pre">submit.request#path:v1.geosubmit,key:&lt;apikey&gt;</span></code>,
+<code class="docutils literal"><span class="pre">submit.request#path:v2.geosubmit,key:&lt;apikey&gt;</span></code> : counters</p>
 <blockquote>
 <div><p>These metrics count how many times a specific API was called by a
 specific API key expressed via the API keys short name. The API key
-short name is a human readable alias that can be configured for each
-API key. If no alias is configured, this will use the actual API key,
-often a UUID.</p>
+is the actual API key, often a UUID.</p>
 <p>Two special short names exist for tracking invalid (<code class="docutils literal"><span class="pre">invalid</span></code>)
 and no (<code class="docutils literal"><span class="pre">none</span></code>) provided API keys.</p>
 </div></blockquote>
@@ -194,7 +192,7 @@ and no (<code class="docutils literal"><span class="pre">none</span></code>) pro
 <p>For all API requests including the submit-type APIs we gather metrics
 about the number of unique users based on the users IP addresses.</p>
 <p>These metrics are gathered under the metric prefix:</p>
-<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.user#key&lt;api_shortname&gt;</span></code> : gauge</p>
+<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.user#key&lt;apikey&gt;</span></code> : gauge</p>
 <p>They have an additional tag to determine the time interval for which
 the unique users are aggregated for:</p>
 <p><code class="docutils literal"><span class="pre">#interval:1d</span></code>, <code class="docutils literal"><span class="pre">interval:7d</span></code> : tags</p>
@@ -208,7 +206,7 @@ the actual number.</p>
 <h2>API Query Metrics<a class="headerlink" href="#api-query-metrics" title="Permalink to this headline">¶</a></h2>
 <p>For each incoming API query we log metrics about the data contained in
 the query with the metric name and tags:</p>
-<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.query#key&lt;api_shortname&gt;,region:&lt;region_code&gt;</span></code> : counter</p>
+<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.query#key&lt;apikey&gt;,region:&lt;region_code&gt;</span></code> : counter</p>
 <p><cite>api_type</cite> describes the type of API being used, independent of the
 version number of the API. So <cite>v1/country</cite> gets logged as <cite>region</cite>
 and both <cite>v1/search</cite> and <cite>v1/geolocate</cite> get logged as <cite>locate</cite>.</p>
@@ -235,7 +233,7 @@ number of valid <a class="reference internal" href="glossary.html#term-stations"
 <p>Similar to the API query metrics we also collect metrics about each
 result of an API query. This follows the same per API type and per
 region rules under the prefix / tag combination:</p>
-<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.result#key:&lt;api_shortname&gt;,region:&lt;region_code&gt;</span></code></p>
+<p><code class="docutils literal"><span class="pre">&lt;api_type&gt;.result#key:&lt;apikey&gt;,region:&lt;region_code&gt;</span></code></p>
 <p>The result metrics measure if we satisfied the incoming API query in
 the best possible fashion. Incoming queries can generally contain
 an IP address, Bluetooth, cell, WiFi networks or any combination thereof.
@@ -303,7 +301,7 @@ to use the fallback source.</p>
 <h2>API Source Metrics<a class="headerlink" href="#api-source-metrics" title="Permalink to this headline">¶</a></h2>
 <p>In addition to the final API result, we also collect metrics about each
 individual data source we use to answer queries under the
-<code class="docutils literal"><span class="pre">&lt;api_type&gt;.source#key:&lt;api_shortname&gt;,region:&lt;region_code&gt;</span></code> metric.</p>
+<code class="docutils literal"><span class="pre">&lt;api_type&gt;.source#key:&lt;apikey&gt;,region:&lt;region_code&gt;</span></code> metric.</p>
 <p>Each request may use one or multiple of these sources to deliver a result.
 We log the same metrics as mentioned above for the result.</p>
 <p>All of this combined might lead to a tagged metric like:</p>
@@ -341,7 +339,7 @@ normalization, consistency-checking and eventually (possibly) integration
 into aggregate <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> estimates held in the main database tables.
 Along the way several counters measure the steps involved:</p>
 <p><code class="docutils literal"><span class="pre">data.batch.upload</span></code>,
-<code class="docutils literal"><span class="pre">data.batch.upload#key:&lt;api_shortname&gt;</span></code> : counters</p>
+<code class="docutils literal"><span class="pre">data.batch.upload#key:&lt;apikey&gt;</span></code> : counters</p>
 <blockquote>
 <div><p>Counts the number of &#8220;batches&#8221; of <a class="reference internal" href="glossary.html#term-reports"><span class="xref std std-term">reports</span></a> accepted to the data
 processing pipeline by an API endpoint. A batch generally
@@ -353,22 +351,22 @@ and JSON schema validity checking.</p>
 else without a key tag.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">data.report.upload</span></code>,
-<code class="docutils literal"><span class="pre">data.report.upload#key:&lt;api_shortname&gt;</span></code> : counters</p>
+<code class="docutils literal"><span class="pre">data.report.upload#key:&lt;apikey&gt;</span></code> : counters</p>
 <blockquote>
 <div>Counts the number of <a class="reference internal" href="glossary.html#term-reports"><span class="xref std std-term">reports</span></a> accepted into the data processing
 pipeline. The metric is either emitted per tracked API key, or for
 everything else without a key tag.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">data.report.drop#reason:malformed</span></code>,
-<code class="docutils literal"><span class="pre">data.report.drop#reason:malformed,key:&lt;api_shortname&gt;</span></code> : counter</p>
+<code class="docutils literal"><span class="pre">data.report.drop#reason:malformed,key:&lt;apikey&gt;</span></code> : counter</p>
 <blockquote>
 <div>Count incoming <a class="reference internal" href="glossary.html#term-reports"><span class="xref std std-term">reports</span></a> that were discarded due to some internal
 consistency, range or validity-condition error.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">data.observation.upload#type:blue</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.upload#type:blue,key:&lt;api_shortname&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.upload#type:blue,key:&lt;apikey&gt;</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.upload#type:cell</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.upload#type:cell,key:&lt;api_shortname&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.upload#type:cell,key:&lt;apikey&gt;</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.upload#type:wifi</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.upload#type:wifi,key:&lt;api_shortname&gt;</span></code> : counters</p>
+<code class="docutils literal"><span class="pre">data.observation.upload#type:wifi,key:&lt;apikey&gt;</span></code> : counters</p>
 <blockquote>
 <div><p>Count the number of Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> entering
 the data processing pipeline; before normalization and blocklist processing
@@ -379,11 +377,11 @@ batch is composed of individual <a class="reference internal" href="glossary.htm
 else without a key tag.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:malformed</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:malformed,key:&lt;api_shortname&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:malformed,key:&lt;apikey&gt;</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed,key:&lt;api_shortname&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed,key:&lt;apikey&gt;</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:malformed</span></code>
-<code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:malformed,key:&lt;api_shortname&gt;</span></code> : counters</p>
+<code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:malformed,key:&lt;apikey&gt;</span></code> : counters</p>
 <blockquote>
 <div>Count incoming Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that were
 discarded before integration due to some internal consistency, range or
@@ -431,7 +429,7 @@ response code like 200, 400, etc.</div></blockquote>
 </div>
 <div class="section" id="internal-monitoring">
 <h2>Internal Monitoring<a class="headerlink" href="#internal-monitoring" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">api.limit#key:&lt;apikey_shortname&gt;,#path:&lt;path&gt;</span></code> : gauge</p>
+<p><code class="docutils literal"><span class="pre">api.limit#key:&lt;apikey&gt;,#path:&lt;path&gt;</span></code> : gauge</p>
 <blockquote>
 <div>One gauge is created per API key and API path which has rate limiting
 enabled on it. This gauge measures how many requests have been done
