@@ -172,7 +172,7 @@
 <p>Functionality related to custom Redis based queues.</p>
 <dl class="class">
 <dt id="ichnaea.queue.BaseQueue">
-<em class="property">class </em><code class="descclassname">ichnaea.queue.</code><code class="descname">BaseQueue</code><span class="sig-paren">(</span><em>name</em>, <em>redis_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.queue.</code><code class="descname">BaseQueue</code><span class="sig-paren">(</span><em>name</em>, <em>redis_client</em>, <em>compress=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Redis based queue which stores items formatted via internaljson
 in lists.</p>
 <p>The lists maintain a TTL value corresponding to the time data has
