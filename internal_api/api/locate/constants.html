@@ -99,6 +99,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.api.exceptions</span></code></a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../rate_limit.html"><code class="docutils literal"><span class="pre">ichnaea.api.rate_limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../schema.html"><code class="docutils literal"><span class="pre">ichnaea.api.schema</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../submit/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.submit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../views.html"><code class="docutils literal"><span class="pre">ichnaea.api.views</span></code></a></li>
 </ul>
@@ -210,7 +211,7 @@ the aggregate result.</p>
 
 <dl class="data">
 <dt id="ichnaea.api.locate.constants.MAX_WIFI_CLUSTER_METERS">
-<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">MAX_WIFI_CLUSTER_METERS</code><em class="property"> = 1000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.MAX_WIFI_CLUSTER_METERS" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">MAX_WIFI_CLUSTER_METERS</code><em class="property"> = 500.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.MAX_WIFI_CLUSTER_METERS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum distance between WiFi networks to be considered close enough
 to be from one consistent observation.</p>
 </dd></dl>
@@ -224,7 +225,7 @@ based on WiFi information.</p>
 
 <dl class="data">
 <dt id="ichnaea.api.locate.constants.MAX_WIFIS_IN_CLUSTER">
-<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">MAX_WIFIS_IN_CLUSTER</code><em class="property"> = 10</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.MAX_WIFIS_IN_CLUSTER" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">MAX_WIFIS_IN_CLUSTER</code><em class="property"> = 20</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.MAX_WIFIS_IN_CLUSTER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum number of WiFi networks used from one combined cluster to form
 the aggregate result.</p>
 </dd></dl>
@@ -238,12 +239,12 @@ the aggregate result.</p>
 <dl class="data">
 <dt id="ichnaea.api.locate.constants.BLUE_MAX_ACCURACY">
 <code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">BLUE_MAX_ACCURACY</code><em class="property"> = 100.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.BLUE_MAX_ACCURACY" title="Permalink to this definition">¶</a></dt>
-<dd><p>Minimum accuracy returned for Bluetooth queries.</p>
+<dd><p>Maximum accuracy returned for Bluetooth queries.</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="ichnaea.api.locate.constants.WIFI_MIN_ACCURACY">
-<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">WIFI_MIN_ACCURACY</code><em class="property"> = 100.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.WIFI_MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.api.locate.constants.</code><code class="descname">WIFI_MIN_ACCURACY</code><em class="property"> = 10.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.constants.WIFI_MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum accuracy returned for Wifi queries.</p>
 </dd></dl>
 

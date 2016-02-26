@@ -172,33 +172,9 @@
 <p>Contains helper functions for various geo related calculations.</p>
 <p>These are implemented in Cython / C using NumPy.</p>
 <dl class="function">
-<dt id="ichnaea.geocalc.aggregate_position">
-<code class="descclassname">ichnaea.geocalc.</code><code class="descname">aggregate_position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.aggregate_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the aggregate position based on a number of circles
-(numpy 3-column arrays of lat/lon/radius).</p>
-<p>Return the position and an accuracy estimate, but at least
-use the minimum_accuracy.</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="ichnaea.geocalc.bbox">
 <code class="descclassname">ichnaea.geocalc.</code><code class="descname">bbox</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.bbox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a bounding box around the passed in lat/lon position.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.geocalc.centroid">
-<code class="descclassname">ichnaea.geocalc.</code><code class="descname">centroid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.centroid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the centroid (average lat and lon) from a set of points
-(two-dimensional lat/lon array).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.geocalc.centroid_weighted">
-<code class="descclassname">ichnaea.geocalc.</code><code class="descname">centroid_weighted</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.centroid_weighted" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the weighted centroid from a 2-d array of points and
-a 1-d array of weights.</p>
-<p>Returns a two-tuple of (lat, lon).</p>
 </dd></dl>
 
 <dl class="function">

@@ -99,6 +99,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.api.exceptions</span></code></a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../rate_limit.html"><code class="docutils literal"><span class="pre">ichnaea.api.rate_limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../schema.html"><code class="docutils literal"><span class="pre">ichnaea.api.schema</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../submit/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.submit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../views.html"><code class="docutils literal"><span class="pre">ichnaea.api.views</span></code></a></li>
 </ul>
@@ -196,16 +197,11 @@
 
 <dl class="function">
 <dt id="ichnaea.api.locate.cell.aggregate_cell_position">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_cell_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_cell_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a cell cluster, return the aggregate position of the user
-inside the cluster.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.api.locate.cell.aggregate_area_position">
-<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_area_position</code><span class="sig-paren">(</span><em>cluster</em>, <em>result_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_area_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given an area cluster, return the aggregate position of the user
-inside the cluster.</p>
+<code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">aggregate_cell_position</code><span class="sig-paren">(</span><em>networks</em>, <em>min_accuracy</em>, <em>max_accuracy</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.aggregate_cell_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the aggregate position of the user inside the given
+cluster of networks.</p>
+<p>Return the position, an accuracy estimate and a combined score.
+The accuracy is bounded by the min_accuracy and max_accuracy.</p>
 </dd></dl>
 
 <dl class="class">

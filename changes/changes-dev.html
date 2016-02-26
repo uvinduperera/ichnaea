@@ -158,10 +158,27 @@
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="unreleased">
 <h2>1.4 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>20160218132400<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="untagged">
+<h3>Untagged<a class="headerlink" href="#untagged" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="migrations">
+<h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
+</div>
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Improve readability of downloads page.</li>
+<li>Restrict valid characters in API keys.</li>
+<li>Take signal strength into account for location queries.</li>
+<li>Decrease database session times in data tasks.</li>
+<li>Retry station updates on deadlocks and lock timeouts.</li>
+<li>Simplify and speed up InternalUploader.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>20160218132400<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>Changes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Display region specific BLE statistics.</li>
 <li>Remove geodude compatibility API again.</li>
@@ -172,19 +189,19 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>20160202154300<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id3">
-<h4>Changes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h3>20160202154300<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>Changes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Avoid fancy syntax in build requirements.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>20160202101600<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="migrations">
-<h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h3>20160202101600<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>Migrations<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>4b11500c9014: Add Bluetooth region stat.</li>
 <li>b247526b9501: Add sharded Bluetooth tables.</li>
@@ -192,8 +209,8 @@
 <li>44e1b53944ee: Remove old cell tables.</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h4>Changes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4>Changes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>#476: Emit basic request metrics for region API.</li>
 <li>Remove internal API key human readable metric names.</li>
@@ -215,10 +232,10 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>20160112143200<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id7">
-<h4>Migrations<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h3>20160112143200<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>Migrations<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>9743e7b8a17a: Add allow_locate column to API key table.</li>
 <li>5d245a440c6f: Remove unused user email field.</li>
@@ -228,8 +245,8 @@
 needs a <cite>python:</cite> prefix and has to be <cite>-c python:ichnaea.webapp.settings</cite>.</li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h4>Changes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4>Changes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>#478: Restrict some API keys from using the locate API.</li>
 <li>Register OCID import tasks based on the configuration file.</li>
@@ -241,16 +258,16 @@ needs a <cite>python:</cite> prefix and has to be <cite>-c python:ichnaea.webapp
 </ul>
 </div>
 </div>
-<div class="section" id="id9">
-<h3>20151118134500<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id10">
-<h4>Migrations<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h3>20151118134500<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h4>Migrations<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>91fb41d12c5: Drop mapstat table.</li>
 </ul>
 </div>
-<div class="section" id="id11">
-<h4>Changes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h4>Changes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>#469: Update to static tabzilla.</li>
 <li>#468: Add CORS headers and support OPTIONS requests.</li>
@@ -263,17 +280,17 @@ needs a <cite>python:</cite> prefix and has to be <cite>-c python:ichnaea.webapp
 </ul>
 </div>
 </div>
-<div class="section" id="id12">
-<h3>20151105120300<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id13">
-<h4>Migrations<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id14">
+<h3>20151105120300<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h4>Migrations<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>78e6322b4d9: Copy mapstat data to sharded datamap tables.</li>
 <li>4e8635b0f4cf: Add sharded datamap tables.</li>
 </ul>
 </div>
-<div class="section" id="id14">
-<h4>Changes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id16">
+<h4>Changes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Use new sharded datamap tables.</li>
 <li>Parallelize datamap CSV export, Quadtree generation and upload.</li>
@@ -284,10 +301,10 @@ needs a <cite>python:</cite> prefix and has to be <cite>-c python:ichnaea.webapp
 </ul>
 </div>
 </div>
-<div class="section" id="id15">
-<h3>20151021143400<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id16">
-<h4>Migrations<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id17">
+<h3>20151021143400<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h4>Migrations<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>450f02b5e1ca: Update cell_area regions.</li>
 <li>582ef9419c6a: Add region stat table.</li>
@@ -297,8 +314,8 @@ needs a <cite>python:</cite> prefix and has to be <cite>-c python:ichnaea.webapp
 <li>2c709f81a660: Rename cell/area columns to radius/samples.</li>
 </ul>
 </div>
-<div class="section" id="id17">
-<h4>Changes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id19">
+<h4>Changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Maintain <cite>block_first</cite> column.</li>
 <li>Introduce upper bound for Wifi based accuracy numbers.</li>
@@ -311,10 +328,10 @@ and requests.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id18">
-<h3>20151013115000<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id19">
-<h4>Migrations<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id20">
+<h3>20151013115000<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h4>Migrations<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>33d0f7fb4da0: Add api_type specific logging flags to api keys.</li>
 <li>460ce3d4fe09: Rename columns to region.</li>
@@ -322,8 +339,8 @@ and requests.</li>
 <li>All OCID data has to be manually imported again into the new tables.</li>
 </ul>
 </div>
-<div class="section" id="id20">
-<h4>Changes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id22">
+<h4>Changes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Add new <cite>fallback_allowed</cite> tag to locate metrics.</li>
 <li>Calculate region radii based on precise shapefiles.</li>
@@ -349,17 +366,17 @@ pyasn1, PyMySQL, requests, Shapely, six and WebOb.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id21">
-<h3>20150928100200<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id22">
-<h4>Migrations<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id23">
+<h3>20150928100200<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h4>Migrations<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>26c4b3a7bc51: Add new datamap table.</li>
 <li>47ed7a40413b: Add cell area id columns.</li>
 </ul>
 </div>
-<div class="section" id="id23">
-<h4>Changes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id25">
+<h4>Changes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Improve locate accuracy by taking station circle radius into account.</li>
 <li>Split out OCID cell area updates to their own queue.</li>
