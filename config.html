@@ -133,7 +133,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -173,7 +173,7 @@ different sections.</p>
 <p>These are used to store and serve both the image tiles generated for
 the data map and the public export files available via the downloads
 section of the website.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[assets]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[assets]</span>
 <span class="na">bucket</span> <span class="o">=</span> <span class="s">amazon_s3_bucket_name</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">https://some_distribution_id.cloudfront.net</span>
 </pre></div>
@@ -184,7 +184,7 @@ section of the website.</p>
 <p>The cache section contains a <code class="docutils literal"><span class="pre">cache_url</span></code> pointing to a Redis server.</p>
 <p>The cache is used as a classic cache by the webapp code, as a backend
 to store rate-limiting counters and as a custom queuing backend.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[cache]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[cache]</span>
 <span class="na">cache_url</span> <span class="o">=</span> <span class="s">redis://localhost:6379/0</span>
 </pre></div>
 </div>
@@ -193,7 +193,7 @@ to store rate-limiting counters and as a custom queuing backend.</p>
 <h2>Celery<a class="headerlink" href="#celery" title="Permalink to this headline">¶</a></h2>
 <p>The celery section contains connection settings for the Celery asynchronous
 task system.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[celery]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[celery]</span>
 <span class="na">broker_url</span> <span class="o">=</span> <span class="s">redis://localhost:6379/0</span>
 <span class="na">result_url</span> <span class="o">=</span> <span class="s">redis://localhost:6379/0</span>
 </pre></div>
@@ -208,7 +208,7 @@ while the asynchronous celery workers only use the read-write connection.</p>
 as neither needs DDL (data-definition) rights.</p>
 <p>DDL changes are only done via the alembic database migration system,
 which has a separate <code class="docutils literal"><span class="pre">alembic.ini</span></code> configuration file.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[database]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[database]</span>
 <span class="na">rw_url</span> <span class="o">=</span> <span class="s">mysql+pymysql://rw_user:password@localhost/location</span>
 <span class="na">ro_url</span> <span class="o">=</span> <span class="s">mysql+pymysql://ro_user:password@localhost/location</span>
 </pre></div>
@@ -219,7 +219,7 @@ which has a separate <code class="docutils literal"><span class="pre">alembic.in
 <p>The geoip section contains settings related to the maxmind GeoIP database.</p>
 <p>The <code class="docutils literal"><span class="pre">db_path</span></code> setting needs to point to a maxmind GeoIP city database
 in version 2 format. Both GeoLite and commercial databases will work.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[geoip]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[geoip]</span>
 <span class="na">db_path</span> <span class="o">=</span> <span class="s">/path/to/GeoIP2-City.mmdb</span>
 </pre></div>
 </div>
@@ -228,7 +228,7 @@ in version 2 format. Both GeoLite and commercial databases will work.</p>
 <h2>Sentry<a class="headerlink" href="#sentry" title="Permalink to this headline">¶</a></h2>
 <p>The sentry section contains settings related to a Sentry server.</p>
 <p>The <code class="docutils literal"><span class="pre">dsn</span></code> setting needs to contain a valid DSN project entry.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[sentry]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[sentry]</span>
 <span class="na">dsn</span> <span class="o">=</span> <span class="s">https://public_key:secret_key@localhost/project_id</span>
 </pre></div>
 </div>
@@ -248,7 +248,7 @@ whether or not the StatsD service supports metric tags.
 <a class="reference external" href="https://www.datadoghq.com/">Datadog</a> is an example of a service that
 supports tags. If <code class="docutils literal"><span class="pre">tag_support</span></code> is false, the tags will be emitted as
 part of the standard metric name.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[statsd]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[statsd]</span>
 <span class="na">host</span> <span class="o">=</span> <span class="s">localhost</span>
 <span class="na">port</span> <span class="o">=</span> <span class="s">8125</span>
 <span class="na">metric_prefix</span> <span class="o">=</span> <span class="s">location</span>
@@ -281,7 +281,7 @@ but only one instance of the internal export.</p>
 <h3>Bucket Export<a class="headerlink" href="#bucket-export" title="Permalink to this headline">¶</a></h3>
 <p>The Amazon S3 bucket export combines reports into a gzipped JSON file
 and uploads them to the specified bucket <code class="docutils literal"><span class="pre">url</span></code>.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[export:backup]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:backup]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">s3://amazon_s3_bucket_name/directory/{api_key}/{year}/{month}/{day}</span>
 <span class="na">skip_keys</span> <span class="o">=</span> <span class="s">test</span>
 <span class="na">batch</span> <span class="o">=</span> <span class="s">10000</span>
@@ -292,7 +292,7 @@ bucket root. The <code class="docutils literal"><span class="pre">{api_key}/{yea
 replaced by the <cite>api_key</cite> used to upload the data, and the date when the
 backup took place. The files use a random UUID4 as the filename.</p>
 <p>An example filename might be:</p>
-<div class="highlight-python"><div class="highlight"><pre>/directory/test/2015/07/15/554d8d3c-5b28-48bb-9aa8-196543235cf2.json.gz
+<div class="highlight-python"><div class="highlight"><pre><span></span>/directory/test/2015/07/15/554d8d3c-5b28-48bb-9aa8-196543235cf2.json.gz
 </pre></div>
 </div>
 </div>
@@ -301,7 +301,7 @@ backup took place. The files use a random UUID4 as the filename.</p>
 <p>The internal export forwards the incoming data into the internal data
 pipeline. The url must be the exact string <code class="docutils literal"><span class="pre">internal://</span></code> and the
 <code class="docutils literal"><span class="pre">metadata</span></code> setting must have a value of <code class="docutils literal"><span class="pre">true</span></code>.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[export:internal]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:internal]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">internal://</span>
 <span class="na">metadata</span> <span class="o">=</span> <span class="s">true</span>
 <span class="na">batch</span> <span class="o">=</span> <span class="s">1000</span>
@@ -313,7 +313,7 @@ pipeline. The url must be the exact string <code class="docutils literal"><span 
 <p>The HTTPS export buffers incoming data into batches of <code class="docutils literal"><span class="pre">batch</span></code> size
 and then submits them using the <a class="reference internal" href="api/geosubmit2.html#api-geosubmit-latest"><span>Geosubmit Version 2</span></a> API to the
 specified <code class="docutils literal"><span class="pre">url</span></code> endpoint.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[export:test]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:test]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">https://localhost/some/api/url?key=export</span>
 <span class="na">skip_keys</span> <span class="o">=</span> <span class="s">test</span>
 <span class="na">batch</span> <span class="o">=</span> <span class="s">1000</span>
@@ -329,7 +329,7 @@ and send back to the same partner that it came from.</p>
 <p>The project supports importing cell data on a regular basis from the
 <a class="reference internal" href="glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> (OCID) project, using the
 <a class="reference internal" href="import_export.html#import-export"><span>cell import/export</span></a> data format.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[import:ocid]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[import:ocid]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">https://localhost:7001/downloads/</span>
 <span class="na">apikey</span> <span class="o">=</span> <span class="s">some_key</span>
 </pre></div>
@@ -347,7 +347,7 @@ cell data and GeoIP database, but also an external web service to answer
 location queries.</p>
 <p>The exactly named <code class="docutils literal"><span class="pre">locate:fallback</span></code> section describes settings related
 to this external fallback service.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span class="k">[locate:fallback]</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[locate:fallback]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">https://localhost/some/api/url?key=external</span>
 <span class="na">ratelimit</span> <span class="o">=</span> <span class="s">60</span>
 <span class="na">ratelimit_expire</span> <span class="o">=</span> <span class="s">120</span>

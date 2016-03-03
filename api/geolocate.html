@@ -135,7 +135,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -170,7 +170,7 @@ to access the service.</dd>
 <div class="section" id="request">
 <h2>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h2>
 <p>Geolocate requests are submitted using a POST request to the URL:</p>
-<div class="highlight-python"><div class="highlight"><pre>https://location.services.mozilla.com/v1/geolocate?key=&lt;API_KEY&gt;
+<div class="highlight-python"><div class="highlight"><pre><span></span>https://location.services.mozilla.com/v1/geolocate?key=&lt;API_KEY&gt;
 </pre></div>
 </div>
 <p>This implements almost the same interface as the <a class="reference external" href="https://developers.google.com/maps/documentation/business/geolocation/">Google Maps Geolocation
@@ -179,7 +179,7 @@ endpoint, hence referred to as <cite>GLS</cite> or Google Location Service API. 
 service implements all of the standard GLS API with a couple of additions.</p>
 <p>Geolocate requests are submitted using a POST request with a JSON body.</p>
 <p>A minimal example using only WiFi networks:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;wifiAccessPoints&quot;</span><span class="o">:</span> <span class="p">[{</span>
         <span class="s2">&quot;macAddress&quot;</span><span class="o">:</span> <span class="s2">&quot;01:23:45:67:89:ab&quot;</span><span class="p">,</span>
         <span class="s2">&quot;signalStrength&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">51</span>
@@ -190,7 +190,7 @@ service implements all of the standard GLS API with a couple of additions.</p>
 </pre></div>
 </div>
 <p>A minimal example using a cell network:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;cellTowers&quot;</span><span class="o">:</span> <span class="p">[{</span>
         <span class="s2">&quot;radioType&quot;</span><span class="o">:</span> <span class="s2">&quot;wcdma&quot;</span><span class="p">,</span>
         <span class="s2">&quot;mobileCountryCode&quot;</span><span class="o">:</span> <span class="mi">208</span><span class="p">,</span>
@@ -203,7 +203,7 @@ service implements all of the standard GLS API with a couple of additions.</p>
 </pre></div>
 </div>
 <p>A complete example including all possible fields:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;carrier&quot;</span><span class="o">:</span> <span class="s2">&quot;Telecom&quot;</span><span class="p">,</span>
     <span class="s2">&quot;considerIp&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="s2">&quot;homeMobileCountryCode&quot;</span><span class="o">:</span> <span class="mi">208</span><span class="p">,</span>
@@ -406,7 +406,7 @@ may just see an arbitrary location that they don&#8217;t recognize at all.
 This typically happens when GeoIP based results are returned and the
 returned position is the center of a city or the center of a region.</p>
 <p>A successful response will be:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">22.7539192</span><span class="p">,</span>
         <span class="s2">&quot;lng&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">43.4371081</span>
@@ -416,7 +416,7 @@ returned position is the center of a city or the center of a region.</p>
 </pre></div>
 </div>
 <p>Should the response be based on a GeoIP estimate:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">51.0</span><span class="p">,</span>
         <span class="s2">&quot;lng&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">0.1</span>
@@ -430,7 +430,7 @@ returned position is the center of a city or the center of a region.</p>
 based on a cell location area.</p>
 <p>If no position information could be determined, a HTTP status code 404 will
 be returned:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[{</span>
             <span class="s2">&quot;domain&quot;</span><span class="o">:</span> <span class="s2">&quot;geolocation&quot;</span><span class="p">,</span>

@@ -135,7 +135,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -172,7 +172,7 @@ using one of the <a class="reference internal" href="region.html#api-region-late
 APIs.</p>
 <p>If you want or need to specify an API key, you need to be provide
 it as a query argument in the request URI in the form:</p>
-<div class="highlight-python"><div class="highlight"><pre>https://location.services.mozilla.com/&lt;API&gt;?key=&lt;API_KEY&gt;
+<div class="highlight-python"><div class="highlight"><pre><span></span>https://location.services.mozilla.com/&lt;API&gt;?key=&lt;API_KEY&gt;
 </pre></div>
 </div>
 <p>Each API key can be rate limited per calendar day, but the default is
@@ -186,7 +186,7 @@ In addition there are some general error responses.</p>
 <h3>Invalid API Key<a class="headerlink" href="#invalid-api-key" title="Permalink to this headline">¶</a></h3>
 <p>If an API key was required but none or no valid key was given, the service
 responds with a <cite>keyInvalid</cite> message with a HTTP 400 error code:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[{</span>
             <span class="s2">&quot;domain&quot;</span><span class="o">:</span> <span class="s2">&quot;usageLimits&quot;</span><span class="p">,</span>
@@ -205,7 +205,7 @@ responds with a <cite>keyInvalid</cite> message with a HTTP 400 error code:</p>
 <p>API keys can optionally be rate limited. If the limit for a specific
 API key is exceeded, the service responds with a <cite>dailyLimitExceeded</cite>
 message with a HTTP 403 error code:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[{</span>
             <span class="s2">&quot;domain&quot;</span><span class="o">:</span> <span class="s2">&quot;usageLimits&quot;</span><span class="p">,</span>
@@ -224,7 +224,7 @@ message with a HTTP 403 error code:</p>
 <p>If the client sends a malformed request, typically sending malformed
 or invalid JSON, the service will respond with a <cite>parseError</cite> message
 with a HTTP 400 error code:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[{</span>
             <span class="s2">&quot;domain&quot;</span><span class="o">:</span> <span class="s2">&quot;global&quot;</span><span class="p">,</span>

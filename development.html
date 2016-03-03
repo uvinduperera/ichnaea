@@ -125,7 +125,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -155,7 +155,7 @@
 have a Linux or Mac OS X machine and
 <a class="reference external" href="https://docs.docker.com/installation/">install docker</a>.</p>
 <p>On Mac OS X you can use Homebrew to install docker:</p>
-<div class="highlight-bash"><div class="highlight"><pre>brew install caskroom/cask/brew-cask
+<div class="highlight-bash"><div class="highlight"><pre><span></span>brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew install docker
 brew install docker-machine
@@ -163,7 +163,7 @@ brew install docker-compose
 </pre></div>
 </div>
 <p>Then you need to create a docker machine:</p>
-<div class="highlight-bash"><div class="highlight"><pre>docker-machine create --driver virtualbox --virtualbox-memory <span class="m">2048</span> <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker-machine create --driver virtualbox --virtualbox-memory <span class="m">2048</span> <span class="se">\</span>
     --virtualbox-cpu-count -1 default
 </pre></div>
 </div>
@@ -171,24 +171,24 @@ brew install docker-compose
 <code class="docutils literal"><span class="pre">docker-machine</span> <span class="pre">start</span> <span class="pre">default</span></code>.</p>
 <p>Next configure your shell, so the docker command knows how to connect
 to the docker daemon:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>docker-machine env default<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>docker-machine env default<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>You also need to add an entry into your <code class="docutils literal"><span class="pre">/etc/hosts</span></code> file. On Mac OS X
 you need to specify the IP of the running docker machine, on Linux use
 <cite>127.0.0.1</cite>:</p>
-<div class="highlight-bash"><div class="highlight"><pre>docker-machine ip default
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker-machine ip default
 </pre></div>
 </div>
 <p>Put the value into the hosts file, for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>192.168.99.100 ichnaea.dev
+<div class="highlight-bash"><div class="highlight"><pre><span></span>192.168.99.100 ichnaea.dev
 </pre></div>
 </div>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
 <p>Now run the following command to get the code:</p>
-<div class="highlight-bash"><div class="highlight"><pre>git clone https://github.com/mozilla/ichnaea
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/mozilla/ichnaea
 <span class="nb">cd</span> ichnaea
 </pre></div>
 </div>
@@ -199,20 +199,20 @@ please create a virtualenv manually inside the ichnaea folder before
 continuing (<code class="docutils literal"><span class="pre">/path/to/virtualenv</span> <span class="pre">.</span></code>).</p>
 <p>The first time you need to download some shared docker images. You can
 manually trigger this by calling:</p>
-<div class="highlight-bash"><div class="highlight"><pre>docker-compose up -d
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker-compose up -d
 </pre></div>
 </div>
 <p>Then run make:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make
 </pre></div>
 </div>
 <p>Now you can run the web app on for example port 7001:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/gunicorn -b 127.0.0.1:7001 <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/gunicorn -b 127.0.0.1:7001 <span class="se">\</span>
     -c python:ichnaea.webapp.settings ichnaea.webapp.app:wsgi_app
 </pre></div>
 </div>
 <p>The celery processes are started via:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app beat
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app beat
 
 <span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app worker <span class="se">\</span>
     -Ofair --no-execv --without-mingle --without-gossip
@@ -222,7 +222,7 @@ manually trigger this by calling:</p>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <p>In order to create and test the documentation locally run:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make docs
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make docs
 </pre></div>
 </div>
 <p>The documentation will be available in <code class="docutils literal"><span class="pre">docs/build/html/index.html</span></code>.</p>
@@ -240,7 +240,7 @@ requirements have changed.</p>
 <p>The project depends on a number of external web assets. Those dependencies
 are tracked via npm and bower.</p>
 <p>In order to install them, run:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make css
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make css
 make js
 </pre></div>
 </div>
@@ -248,11 +248,11 @@ make js
 assets under <cite>bower_components</cite>. It will also copy, compile and minify
 files into various folders under <cite>ichnaea/content/static/</cite>.</p>
 <p>To check if the external assets are outdated run:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./node_modules/.bin/bower list
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./node_modules/.bin/bower list
 </pre></div>
 </div>
 <p>To force-update the build tools run:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make node_modules -B
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make node_modules -B
 </pre></div>
 </div>
 </div>
@@ -260,7 +260,7 @@ files into various folders under <cite>ichnaea/content/static/</cite>.</p>
 <h2>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this headline">¶</a></h2>
 <p>In case the local environment gets into a weird or broken state, it can
 be cleaned up by running:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make clean
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make clean
 </pre></div>
 </div>
 <p>Of course one can also delete the entire git repository and start from
@@ -271,7 +271,7 @@ a fresh checkout.</p>
 <p>The default <cite>make</cite> / <cite>make build</cite> target installs a local development
 version including database setup and testing tools. For a production
 environment or release pipeline one can instead use:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make release
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make release
 </pre></div>
 </div>
 <p>This will not do any database setup and only install production

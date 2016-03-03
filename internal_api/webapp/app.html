@@ -108,7 +108,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../geocode.html"><code class="docutils literal"><span class="pre">ichnaea.geocode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
@@ -151,7 +150,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -184,7 +183,7 @@
 <dt id="ichnaea.webapp.app.wsgi_app">
 <code class="descclassname">ichnaea.webapp.app.</code><code class="descname">wsgi_app</code><span class="sig-paren">(</span><em>environ</em>, <em>start_response</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/app.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.app.wsgi_app" title="Permalink to this definition">¶</a></dt>
 <dd><p>Actual WSGI application endpoint, used on the command line via:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/gunicorn -c python:ichnaea.webapp.settings             ichnaea.webapp.app:wsgi_app
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/gunicorn -c python:ichnaea.webapp.settings             ichnaea.webapp.app:wsgi_app
 </pre></div>
 </div>
 <p>At startup reads the app config and calls

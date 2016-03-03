@@ -121,7 +121,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -154,11 +154,11 @@ you cannot parallelize any tests.</p>
 <h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
 <p>If you have a local development environment setup, you can run all tests
 including coverage tests via:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make <span class="nb">test</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make <span class="nb">test</span>
 </pre></div>
 </div>
 <p>Or run individual test modules or functions via for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>make <span class="nb">test</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_geoip:TestDatabase.test_open
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make <span class="nb">test</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_geoip:TestDatabase.test_open
 </pre></div>
 </div>
 </div>
@@ -169,13 +169,13 @@ in the code. The easiest way to test them is by writing unit tests and calling
 the task functions directly.</p>
 <p>In order to do more integration testing, you can also manually queue a task
 by using the celery <cite>call</cite> command. For example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app call <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app call <span class="se">\</span>
     ichnaea.data.tasks.update_cell --args<span class="o">=</span><span class="s1">&#39;[1000, ]&#39;</span>
 </pre></div>
 </div>
 <p>You then need to run the celery worker process and it will pick up the task
 from the queue and execute it:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery <span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery <span class="se">\</span>
     -A ichnaea.async.app:celery_app worker -c 1
 </pre></div>
 </div>
@@ -184,23 +184,23 @@ from the queue and execute it:</p>
 <h2>Testing Multiple Python Versions<a class="headerlink" href="#testing-multiple-python-versions" title="Permalink to this headline">¶</a></h2>
 <p>The project supports multiple Python versions. In order to run the tests
 against all of them locally, we are using tox:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/tox
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/tox
 </pre></div>
 </div>
 <p>You can explicitly state what Python versions to test:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/tox -e<span class="o">=</span>py<span class="o">{</span>26,27,34<span class="o">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/tox -e<span class="o">=</span>py<span class="o">{</span>26,27,34<span class="o">}</span>
 </pre></div>
 </div>
 <p>You can also run a subset of all tests, the same way as via <cite>make test</cite>:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/tox <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_util
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/tox <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_util
 </pre></div>
 </div>
 <p>If the tox environment got into a weird state, just recreate it:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/tox --recreate
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/tox --recreate
 </pre></div>
 </div>
 <p>Of course these options can be combined, for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>bin/tox -e<span class="o">=</span>py<span class="o">{</span>34<span class="o">}</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_util
+<div class="highlight-bash"><div class="highlight"><pre><span></span>bin/tox -e<span class="o">=</span>py<span class="o">{</span>34<span class="o">}</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_util
 </pre></div>
 </div>
 <p>Since the project relies on a number of non-Python dependencies, each

@@ -108,7 +108,6 @@
 <li class="toctree-l3"><a class="reference internal" href="geocode.html"><code class="docutils literal"><span class="pre">ichnaea.geocode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
@@ -143,7 +142,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -173,7 +172,7 @@
 <dl class="class">
 <dt id="ichnaea.queue.BaseQueue">
 <em class="property">class </em><code class="descclassname">ichnaea.queue.</code><code class="descname">BaseQueue</code><span class="sig-paren">(</span><em>name</em>, <em>redis_client</em>, <em>compress=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Redis based queue which stores items formatted via internaljson
+<dd><p>A Redis based queue which stores binary or JSON encoded items
 in lists.</p>
 <p>The lists maintain a TTL value corresponding to the time data has
 been last put into the queue.</p>

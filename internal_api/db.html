@@ -108,7 +108,6 @@
 <li class="toctree-l3"><a class="reference internal" href="geocode.html"><code class="docutils literal"><span class="pre">ichnaea.geocode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="internaljson.html"><code class="docutils literal"><span class="pre">ichnaea.internaljson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="models/index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="queue.html"><code class="docutils literal"><span class="pre">ichnaea.queue</span></code></a></li>
@@ -143,7 +142,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -244,20 +243,12 @@ On success returns <cite>True</cite>, otherwise <cite>False</cite>.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.db.HookedSession">
-<em class="property">class </em><code class="descclassname">ichnaea.db.</code><code class="descname">HookedSession</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.HookedSession" title="Permalink to this definition">¶</a></dt>
-<dd><p>A custom database session providing a post commit hook.</p>
+<dt id="ichnaea.db.PingableSession">
+<em class="property">class </em><code class="descclassname">ichnaea.db.</code><code class="descname">PingableSession</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.PingableSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>A custom pingable database session.</p>
 <dl class="method">
-<dt id="ichnaea.db.HookedSession.on_post_commit">
-<code class="descname">on_post_commit</code><span class="sig-paren">(</span><em>function</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.HookedSession.on_post_commit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register a post commit (after-transaction-end) hook.</p>
-<p>The function will be called with all the arguments and keywords
-arguments preceded by a single session argument.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ichnaea.db.HookedSession.ping">
-<code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.HookedSession.ping" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.db.PingableSession.ping">
+<code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.PingableSession.ping" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this active session to check the database connectivity.</p>
 </dd></dl>
 
