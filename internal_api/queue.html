@@ -170,25 +170,56 @@
 <span id="ichnaea-queue"></span><h1><a class="reference internal" href="#module-ichnaea.queue" title="ichnaea.queue"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.queue</span></code></a><a class="headerlink" href="#module-ichnaea.queue" title="Permalink to this headline">¶</a></h1>
 <p>Functionality related to custom Redis based queues.</p>
 <dl class="class">
-<dt id="ichnaea.queue.BaseQueue">
-<em class="property">class </em><code class="descclassname">ichnaea.queue.</code><code class="descname">BaseQueue</code><span class="sig-paren">(</span><em>name</em>, <em>redis_client</em>, <em>compress=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.queue.DataQueue">
+<em class="property">class </em><code class="descclassname">ichnaea.queue.</code><code class="descname">DataQueue</code><span class="sig-paren">(</span><em>key</em>, <em>redis_client</em>, <em>batch=0</em>, <em>compress=False</em>, <em>json=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Redis based queue which stores binary or JSON encoded items
-in lists.</p>
+in lists. The queue uses a single static queue key.</p>
 <p>The lists maintain a TTL value corresponding to the time data has
 been last put into the queue.</p>
-<p>The enough_data function checks if a queue has either more than a
-certain batch number of items in it, or if the last time it has
-seen new data was more than an hour ago.</p>
 <dl class="attribute">
-<dt id="ichnaea.queue.BaseQueue.queue_ttl">
-<code class="descname">queue_ttl</code><em class="property"> = 86400</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue.queue_ttl" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.queue.DataQueue.queue_ttl">
+<code class="descname">queue_ttl</code><em class="property"> = 86400</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue.queue_ttl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum TTL value for the Redis list.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="ichnaea.queue.BaseQueue.queue_max_age">
-<code class="descname">queue_max_age</code><em class="property"> = 3600</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.BaseQueue.queue_max_age" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.queue.DataQueue.queue_max_age">
+<code class="descname">queue_max_age</code><em class="property"> = 3600</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue.queue_max_age" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum age that data can sit in the queue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.queue.DataQueue.dequeue">
+<code class="descname">dequeue</code><span class="sig-paren">(</span><em>batch=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue.dequeue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get batch number of items from the queue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.queue.DataQueue.enqueue">
+<code class="descname">enqueue</code><span class="sig-paren">(</span><em>items</em>, <em>batch=None</em>, <em>pipe=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue.enqueue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put items into the queue.</p>
+<p>The items will be pushed into Redis as part of a single (given)
+pipe in batches corresponding to the given batch argument.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.queue.DataQueue.monitor_name">
+<code class="descname">monitor_name</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue.monitor_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queue name used in monitoring metrics.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.queue.DataQueue.ready">
+<code class="descname">ready</code><span class="sig-paren">(</span><em>batch=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue.ready" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the queue has either more than a certain
+batch number of items in it, or if the last time it has seen
+new data was more than an hour ago (queue_max_age).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.queue.DataQueue.size">
+<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/queue.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.queue.DataQueue.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the size of the queue.</p>
 </dd></dl>
 
 </dd></dl>

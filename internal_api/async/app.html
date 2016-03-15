@@ -98,7 +98,6 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.async</span></code></a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.async.app</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.async.config</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="schedule.html"><code class="docutils literal"><span class="pre">ichnaea.async.schedule</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="settings.html"><code class="docutils literal"><span class="pre">ichnaea.async.settings</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="task.html"><code class="docutils literal"><span class="pre">ichnaea.async.task</span></code></a></li>
 </ul>
@@ -192,7 +191,7 @@
 <code class="descclassname">ichnaea.async.app.</code><code class="descname">init_worker_process</code><span class="sig-paren">(</span><em>signal</em>, <em>sender</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/app.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.app.init_worker_process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called automatically when <cite>celery worker</cite> is started. This is executed
 inside each forked worker process.</p>
-<p>Reads the app config and calls <a class="reference internal" href="config.html#ichnaea.async.config.init_worker" title="ichnaea.async.config.init_worker"><code class="xref py py-func docutils literal"><span class="pre">ichnaea.async.config.init_worker()</span></code></a>.</p>
+<p>Calls <a class="reference internal" href="config.html#ichnaea.async.config.init_worker" title="ichnaea.async.config.init_worker"><code class="xref py py-func docutils literal"><span class="pre">ichnaea.async.config.init_worker()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="function">

@@ -32,7 +32,7 @@
   
     <link rel="top" title="Ichnaea 1.5 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.async" href="index.html"/>
-        <link rel="next" title="ichnaea.async.schedule" href="schedule.html"/>
+        <link rel="next" title="ichnaea.async.settings" href="settings.html"/>
         <link rel="prev" title="ichnaea.async.app" href="app.html"/> 
 
   
@@ -98,7 +98,6 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.async</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="app.html"><code class="docutils literal"><span class="pre">ichnaea.async.app</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.async.config</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="schedule.html"><code class="docutils literal"><span class="pre">ichnaea.async.schedule</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="settings.html"><code class="docutils literal"><span class="pre">ichnaea.async.settings</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="task.html"><code class="docutils literal"><span class="pre">ichnaea.async.task</span></code></a></li>
 </ul>
@@ -208,8 +207,15 @@ the application ini file.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="ichnaea.async.config.init_beat">
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">init_beat</code><span class="sig-paren">(</span><em>beat</em>, <em>celery_app</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.init_beat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the passed in celery beat app, usually stored in
+<a class="reference internal" href="app.html#ichnaea.async.app.celery_app" title="ichnaea.async.app.celery_app"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.async.app.celery_app</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="ichnaea.async.config.init_worker">
-<code class="descclassname">ichnaea.async.config.</code><code class="descname">init_worker</code><span class="sig-paren">(</span><em>celery_app</em>, <em>app_config</em>, <em>_db_rw=None</em>, <em>_db_ro=None</em>, <em>_geoip_db=None</em>, <em>_raven_client=None</em>, <em>_redis_client=None</em>, <em>_stats_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.init_worker" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">init_worker</code><span class="sig-paren">(</span><em>celery_app</em>, <em>_db_rw=None</em>, <em>_db_ro=None</em>, <em>_geoip_db=None</em>, <em>_raven_client=None</em>, <em>_redis_client=None</em>, <em>_stats_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.init_worker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure the passed in celery app, usually stored in
 <a class="reference internal" href="app.html#ichnaea.async.app.celery_app" title="ichnaea.async.app.celery_app"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.async.app.celery_app</span></code></a>.</p>
 <p>Does connection, settings and queue setup. Attaches some
@@ -243,7 +249,7 @@ to provide pre-configured connection objects.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="schedule.html" class="btn btn-neutral float-right" title="ichnaea.async.schedule" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="settings.html" class="btn btn-neutral float-right" title="ichnaea.async.settings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="app.html" class="btn btn-neutral" title="ichnaea.async.app" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

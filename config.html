@@ -299,11 +299,9 @@ backup took place. The files use a random UUID4 as the filename.</p>
 <div class="section" id="internal-export">
 <h3>Internal Export<a class="headerlink" href="#internal-export" title="Permalink to this headline">¶</a></h3>
 <p>The internal export forwards the incoming data into the internal data
-pipeline. The url must be the exact string <code class="docutils literal"><span class="pre">internal://</span></code> and the
-<code class="docutils literal"><span class="pre">metadata</span></code> setting must have a value of <code class="docutils literal"><span class="pre">true</span></code>.</p>
+pipeline. The url must be the exact string <code class="docutils literal"><span class="pre">internal://</span></code>.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:internal]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">internal://</span>
-<span class="na">metadata</span> <span class="o">=</span> <span class="s">true</span>
 <span class="na">batch</span> <span class="o">=</span> <span class="s">1000</span>
 </pre></div>
 </div>

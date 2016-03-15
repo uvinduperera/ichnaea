@@ -98,7 +98,6 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.async</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="app.html"><code class="docutils literal"><span class="pre">ichnaea.async.app</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.async.config</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="schedule.html"><code class="docutils literal"><span class="pre">ichnaea.async.schedule</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="settings.html"><code class="docutils literal"><span class="pre">ichnaea.async.settings</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ichnaea.async.task</span></code></a></li>
 </ul>
@@ -202,10 +201,17 @@
 <code class="descname">max_retries</code><em class="property"> = 3</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.max_retries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="classmethod">
 <dt id="ichnaea.async.task.BaseTask.shortname">
-<code class="descname">shortname</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.shortname" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">shortname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.shortname" title="Permalink to this definition">¶</a></dt>
 <dd><p>A short name for the task, used in statsd metric names.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.async.task.BaseTask.beat_config">
+<em class="property">classmethod </em><code class="descname">beat_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.beat_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the beat schedule for this task, taking into account
+the optional shard_model to create multiple schedule entries.</p>
 </dd></dl>
 
 <dl class="method">
@@ -223,6 +229,12 @@ on them. It&#8217;s also used if always_eager is set, like in tests.</p>
 <p>If always_eager is set, we feed the task arguments through the
 de/serialization process to make sure the arguments can indeed
 be serialized into JSON.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.async.task.BaseTask.apply_countdown">
+<code class="descname">apply_countdown</code><span class="sig-paren">(</span><em>args=None</em>, <em>kwargs=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.apply_countdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the task again after the task&#8217;s default countdown.</p>
 </dd></dl>
 
 <dl class="method">
