@@ -83,7 +83,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Services API</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Services API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#api-access-keys">API Access Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#errors">Errors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#invalid-api-key">Invalid API Key</a></li>
@@ -161,18 +161,18 @@
 <span id="service-api"></span><h1>Services API<a class="headerlink" href="#services-api" title="Permalink to this headline">¶</a></h1>
 <p>The service APIs accept data submission for geolocation stumbling as
 well as reporting a location based on IP addresses, cell or WiFi networks.</p>
-<p>New client developments should use the <a class="reference internal" href="region.html#api-region-latest"><span>Region</span></a>,
-<a class="reference internal" href="geolocate.html#api-geolocate-latest"><span>Geolocate</span></a> or <a class="reference internal" href="geosubmit2.html#api-geosubmit-latest"><span>Geosubmit Version 2</span></a> APIs.</p>
+<p>New client developments should use the <a class="reference internal" href="region.html#api-region-latest"><span class="std std-ref">Region</span></a>,
+<a class="reference internal" href="geolocate.html#api-geolocate-latest"><span class="std std-ref">Geolocate</span></a> or <a class="reference internal" href="geosubmit2.html#api-geosubmit-latest"><span class="std std-ref">Geosubmit Version 2</span></a> APIs.</p>
 <div class="section" id="api-access-keys">
 <h2>API Access Keys<a class="headerlink" href="#api-access-keys" title="Permalink to this headline">¶</a></h2>
 <p>You can anonymously submit data to the service without an API key via
 any of the submission APIs.</p>
 <p>You must identify your client to the service using an API key when
-using one of the <a class="reference internal" href="region.html#api-region-latest"><span>Region</span></a> or <a class="reference internal" href="geolocate.html#api-geolocate-latest"><span>Geolocate</span></a>
+using one of the <a class="reference internal" href="region.html#api-region-latest"><span class="std std-ref">Region</span></a> or <a class="reference internal" href="geolocate.html#api-geolocate-latest"><span class="std std-ref">Geolocate</span></a>
 APIs.</p>
 <p>If you want or need to specify an API key, you need to be provide
 it as a query argument in the request URI in the form:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>https://location.services.mozilla.com/&lt;API&gt;?key=&lt;API_KEY&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>https://location.services.mozilla.com/&lt;API&gt;?key=&lt;API_KEY&gt;
 </pre></div>
 </div>
 <p>Each API key can be rate limited per calendar day, but the default is
@@ -251,13 +251,13 @@ first time and a couple of hours later if there&#8217;s still a problem.</p>
 </div>
 <div class="section" id="apis">
 <h2>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h2>
-<p>Historically the service first offered the custom <a class="reference internal" href="search.html#api-search"><span>Search (Deprecated)</span></a> and
-<a class="reference internal" href="submit.html#api-submit"><span>Submit (Deprecated)</span></a> APIs. Later it was decided to also implement the
-<a class="reference internal" href="geolocate.html#api-geolocate"><span>Geolocate</span></a> API to lessen the burden on clients that want to
+<p>Historically the service first offered the custom <a class="reference internal" href="search.html#api-search"><span class="std std-ref">Search (Deprecated)</span></a> and
+<a class="reference internal" href="submit.html#api-submit"><span class="std std-ref">Submit (Deprecated)</span></a> APIs. Later it was decided to also implement the
+<a class="reference internal" href="geolocate.html#api-geolocate"><span class="std std-ref">Geolocate</span></a> API to lessen the burden on clients that want to
 support multiple location services. As an extension to this the
-<a class="reference internal" href="geosubmit.html#api-geosubmit"><span>Geosubmit (Deprecated)</span></a> was added to offer a consistent way to contribute
-back data to the service. Finally the <a class="reference internal" href="region.html#api-region"><span>Region</span></a> was added and
-<a class="reference internal" href="geosubmit2.html#api-geosubmit2"><span>Geosubmit Version 2</span></a> superseded its version 1 counterpart.</p>
+<a class="reference internal" href="geosubmit.html#api-geosubmit"><span class="std std-ref">Geosubmit (Deprecated)</span></a> was added to offer a consistent way to contribute
+back data to the service. Finally the <a class="reference internal" href="region.html#api-region"><span class="std std-ref">Region</span></a> was added and
+<a class="reference internal" href="geosubmit2.html#api-geosubmit2"><span class="std std-ref">Geosubmit Version 2</span></a> superseded its version 1 counterpart.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="geolocate.html">Geolocate</a></li>

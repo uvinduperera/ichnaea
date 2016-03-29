@@ -86,7 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">Services API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deploy.html">Installing / Deploying</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Application Configuration</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#celery">Celery</a></li>
@@ -159,7 +159,7 @@
 <span id="config"></span><h1>Application Configuration<a class="headerlink" href="#application-configuration" title="Permalink to this headline">¶</a></h1>
 <p>As part of deploying the application, you need to create an application
 configuration file, commonly called <code class="docutils literal"><span class="pre">location.ini</span></code>.</p>
-<p>As explained in the <a class="reference internal" href="deploy.html#deploy"><span>the deployment documentation</span></a> the
+<p>As explained in the <a class="reference internal" href="deploy.html#deploy"><span class="std std-ref">the deployment documentation</span></a> the
 processes find this configuration file via the <code class="docutils literal"><span class="pre">ICHNAEA_CFG</span></code>
 environment variable. The variable should contain an absolute path,
 for example <code class="docutils literal"><span class="pre">/etc/location.ini</span></code>.</p>
@@ -237,7 +237,7 @@ in version 2 format. Both GeoLite and commercial databases will work.</p>
 <h2>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h2>
 <p>The statsd section contains settings related to a StatsD service. The
 project uses a lot of metrics as further detailed in
-<a class="reference internal" href="metrics.html#metrics"><span>the metrics documentation</span></a>.</p>
+<a class="reference internal" href="metrics.html#metrics"><span class="std std-ref">the metrics documentation</span></a>.</p>
 <p>The <code class="docutils literal"><span class="pre">host</span></code> and <code class="docutils literal"><span class="pre">port</span></code> settings determine how to connect to the service
 via UDP.</p>
 <p>Since a single StatsD service usually supports multiple different projects,
@@ -292,7 +292,7 @@ bucket root. The <code class="docutils literal"><span class="pre">{api_key}/{yea
 replaced by the <cite>api_key</cite> used to upload the data, and the date when the
 backup took place. The files use a random UUID4 as the filename.</p>
 <p>An example filename might be:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>/directory/test/2015/07/15/554d8d3c-5b28-48bb-9aa8-196543235cf2.json.gz
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">directory</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="mi">2015</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">15</span><span class="o">/</span><span class="mi">554</span><span class="n">d8d3c</span><span class="o">-</span><span class="mi">5</span><span class="n">b28</span><span class="o">-</span><span class="mi">48</span><span class="n">bb</span><span class="o">-</span><span class="mi">9</span><span class="n">aa8</span><span class="o">-</span><span class="mi">196543235</span><span class="n">cf2</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">gz</span>
 </pre></div>
 </div>
 </div>
@@ -309,7 +309,7 @@ pipeline. The url must be the exact string <code class="docutils literal"><span 
 <div class="section" id="https-export">
 <h3>HTTPS Export<a class="headerlink" href="#https-export" title="Permalink to this headline">¶</a></h3>
 <p>The HTTPS export buffers incoming data into batches of <code class="docutils literal"><span class="pre">batch</span></code> size
-and then submits them using the <a class="reference internal" href="api/geosubmit2.html#api-geosubmit-latest"><span>Geosubmit Version 2</span></a> API to the
+and then submits them using the <a class="reference internal" href="api/geosubmit2.html#api-geosubmit-latest"><span class="std std-ref">Geosubmit Version 2</span></a> API to the
 specified <code class="docutils literal"><span class="pre">url</span></code> endpoint.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:test]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">https://localhost/some/api/url?key=export</span>
@@ -326,7 +326,7 @@ and send back to the same partner that it came from.</p>
 <h2>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
 <p>The project supports importing cell data on a regular basis from the
 <a class="reference internal" href="glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> (OCID) project, using the
-<a class="reference internal" href="import_export.html#import-export"><span>cell import/export</span></a> data format.</p>
+<a class="reference internal" href="import_export.html#import-export"><span class="std std-ref">cell import/export</span></a> data format.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[import:ocid]</span>
 <span class="na">url</span> <span class="o">=</span> <span class="s">https://localhost:7001/downloads/</span>
 <span class="na">apikey</span> <span class="o">=</span> <span class="s">some_key</span>
@@ -354,7 +354,7 @@ to this external fallback service.</p>
 </pre></div>
 </div>
 <p>The url specifies the external endpoint supporting the
-<a class="reference internal" href="api/geolocate.html#api-geolocate-latest"><span>Geolocate</span></a> API.</p>
+<a class="reference internal" href="api/geolocate.html#api-geolocate-latest"><span class="std std-ref">Geolocate</span></a> API.</p>
 <p>Requests to the fallback service can optionally be rate limited. Three
 settings exist to configure the rate limit. <code class="docutils literal"><span class="pre">ratelimit</span></code> specifies how
 many requests are allowed to be made. <code class="docutils literal"><span class="pre">ratelimit_interval</span></code> specifies
