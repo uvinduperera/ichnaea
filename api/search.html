@@ -184,6 +184,7 @@ to access the service.</dd>
     <span class="s2">&quot;blue&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;ff:23:45:67:89:ab&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
             <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">110</span>
         <span class="p">},</span>
         <span class="p">{</span>
@@ -199,12 +200,14 @@ to access the service.</dd>
             <span class="s2">&quot;lac&quot;</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
             <span class="s2">&quot;cid&quot;</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
             <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">61</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">1500</span><span class="p">,</span>
             <span class="s2">&quot;asu&quot;</span><span class="o">:</span> <span class="mi">26</span>
         <span class="p">}</span>
     <span class="p">],</span>
     <span class="s2">&quot;wifi&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;01:23:45:67:89:ab&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
             <span class="s2">&quot;channel&quot;</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
             <span class="s2">&quot;frequency&quot;</span><span class="o">:</span> <span class="mi">2412</span><span class="p">,</span>
             <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">50</span>
@@ -229,6 +232,8 @@ to access the service.</dd>
 <dt>key <strong>(required)</strong></dt>
 <dd>The <cite>key</cite> is the mac address of the Bluetooth network. So for example
 a valid key would look similar to <cite>ff:23:45:67:89:ab</cite>.</dd>
+<dt>age</dt>
+<dd>The number of milliseconds since this BLE beacon was last seen.</dd>
 <dt>signal</dt>
 <dd>The received signal strength (RSSI) in dBm, typically in the range of
 -10 to -127.</dd>
@@ -250,6 +255,8 @@ a valid key would look similar to <cite>ff:23:45:67:89:ab</cite>.</dd>
 code for LTE networks.</dd>
 <dt>cid</dt>
 <dd>The cell id or cell identity.</dd>
+<dt>age</dt>
+<dd>The number of milliseconds since this networks was last detected.</dd>
 <dt>psc</dt>
 <dd>The primary scrambling code for WCDMA and physical cell id for LTE.</dd>
 <dt>signal</dt>
@@ -275,6 +282,8 @@ server either.</p>
 <p class="last">The <cite>key</cite> is the BSSID of the WiFi network. So for example
 a valid key would look similar to <cite>01:23:45:67:89:ab</cite>.</p>
 </dd>
+<dt>age</dt>
+<dd>The number of milliseconds since this network was last detected.</dd>
 <dt>frequency</dt>
 <dd>The frequency in MHz of the channel over which the client is
 communicating with the access point.</dd>
@@ -293,6 +302,7 @@ small band of frequencies.</dd>
 <p>An example of a valid WiFi record is below:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;01:23:45:67:89:ab&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">1500</span><span class="p">,</span>
     <span class="s2">&quot;channel&quot;</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
     <span class="s2">&quot;frequency&quot;</span><span class="o">:</span> <span class="mi">2412</span><span class="p">,</span>
     <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span>

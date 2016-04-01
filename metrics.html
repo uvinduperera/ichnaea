@@ -322,13 +322,15 @@ the query should not be cached, a <cite>bypassed</cite> status is used.
 If the cached values couldn&#8217;t be read, a <cite>failure</cite> status is used.
 If the cached values didn&#8217;t agree on a consistent position,
 a <cite>inconsistent</cite> status is used.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">locate.fallback.lookup</span></code> : timer</p>
+<p><code class="docutils literal"><span class="pre">locate.fallback.lookup#name:&lt;fallback_name&gt;</span></code> : timer</p>
 <blockquote>
-<div>Measures the time it takes to do each outbound network request.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">locate.fallback.lookup#status:&lt;code&gt;</span></code> : counter</p>
+<div>Measures the time it takes to do each outbound network request.
+The fallback name tag specifies which fallback service is used.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">locate.fallback.lookup#name:&lt;fallback_name&gt;,status:&lt;code&gt;</span></code> : counter</p>
 <blockquote>
-<div>Counts the HTTP response codes for all outbound requests. There is
-one counter per HTTP response code, for example <cite>200</cite>.</div></blockquote>
+<div>Counts the HTTP response codes for all outbound requests per named
+fallback service. There is one counter per HTTP response code,
+for example <cite>200</cite>.</div></blockquote>
 </div>
 <div class="section" id="data-pipeline-metrics">
 <h2>Data Pipeline Metrics<a class="headerlink" href="#data-pipeline-metrics" title="Permalink to this headline">¶</a></h2>

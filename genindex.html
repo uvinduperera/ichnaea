@@ -251,6 +251,10 @@
   </dt>
 
       
+  <dt><a href="internal_api/models/api.html#ichnaea.models.api.ApiKey.allowed">allowed() (ichnaea.models.api.ApiKey method)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/geocode.html#ichnaea.geocode.Geocoder.any_region">any_region() (ichnaea.geocode.Geocoder method)</a>
   </dt>
 
@@ -412,23 +416,7 @@
   </dt>
 
         
-  <dt><a href="internal_api/api/locate/schema.html#ichnaea.api.locate.schema.BlueLookup.better">(ichnaea.api.locate.schema.BlueLookup method)</a>
-  </dt>
-
-        
-  <dt><a href="internal_api/api/locate/schema.html#ichnaea.api.locate.schema.WifiLookup.better">(ichnaea.api.locate.schema.WifiLookup method)</a>
-  </dt>
-
-        
-  <dt><a href="internal_api/models/observation.html#ichnaea.models.observation.BlueReport.better">(ichnaea.models.observation.BlueReport method)</a>
-  </dt>
-
-        
-  <dt><a href="internal_api/models/observation.html#ichnaea.models.observation.CellReport.better">(ichnaea.models.observation.CellReport method)</a>
-  </dt>
-
-        
-  <dt><a href="internal_api/models/observation.html#ichnaea.models.observation.WifiReport.better">(ichnaea.models.observation.WifiReport method)</a>
+  <dt><a href="internal_api/models/observation.html#ichnaea.models.observation.BaseReport.better">(ichnaea.models.observation.BaseReport method)</a>
   </dt>
 
       </dl></dd>
@@ -568,6 +556,10 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="internal_api/models/api.html#ichnaea.models.api.ApiKey.can_fallback">can_fallback() (ichnaea.models.api.ApiKey method)</a>
+  </dt>
+
       
   <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.Radio.cdma">cdma (ichnaea.models.constants.Radio attribute)</a>
   </dt>
@@ -722,8 +714,6 @@
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellRegionMixin">CellRegionMixin (class in ichnaea.api.locate.cell)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/models/observation.html#ichnaea.models.observation.CellReport">CellReport (class in ichnaea.models.observation)</a>
   </dt>
@@ -732,8 +722,14 @@
   <dt><a href="internal_api/models/cell.html#ichnaea.models.cell.CellShard">CellShard (class in ichnaea.models.cell)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/models/cell.html#ichnaea.models.cell.CellShardGsm">CellShardGsm (class in ichnaea.models.cell)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/models/cell.html#ichnaea.models.cell.CellShardGsmOCID">CellShardGsmOCID (class in ichnaea.models.cell)</a>
   </dt>
 
       
@@ -741,7 +737,19 @@
   </dt>
 
       
+  <dt><a href="internal_api/models/cell.html#ichnaea.models.cell.CellShardLteOCID">CellShardLteOCID (class in ichnaea.models.cell)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/models/cell.html#ichnaea.models.cell.CellShardOCID">CellShardOCID (class in ichnaea.models.cell)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/models/cell.html#ichnaea.models.cell.CellShardWcdma">CellShardWcdma (class in ichnaea.models.cell)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/models/cell.html#ichnaea.models.cell.CellShardWcdmaOCID">CellShardWcdmaOCID (class in ichnaea.models.cell)</a>
   </dt>
 
       
@@ -994,12 +1002,12 @@
   <dt><a href="internal_api/db.html#ichnaea.db.db_tween_factory">db_tween_factory() (in module ichnaea.db)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/db.html#ichnaea.db.db_worker_session">db_worker_session() (in module ichnaea.db)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/scripts/initdb.html#ichnaea.scripts.initdb.DBCreds">DBCreds (class in ichnaea.scripts.initdb)</a>
   </dt>
@@ -1050,10 +1058,6 @@
 
       
   <dt><a href="internal_api/queue.html#ichnaea.queue.DataQueue.dequeue">dequeue() (ichnaea.queue.DataQueue method)</a>
-  </dt>
-
-      
-  <dt><a href="internal_api/api/locate/fallback.html#ichnaea.api.locate.fallback.DisabledCache">DisabledCache (class in ichnaea.api.locate.fallback)</a>
   </dt>
 
       
@@ -1149,6 +1153,10 @@
   </dt>
 
       
+  <dt><a href="internal_api/models/api.html#ichnaea.models.api.ApiKey.fallback_cache_expire">fallback_cache_expire (ichnaea.models.api.ApiKey attribute)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/api/locate/cell.html#ichnaea.api.locate.cell.CellPositionSource.fallback_field">fallback_field (ichnaea.api.locate.cell.CellPositionSource attribute)</a>
   </dt>
 
@@ -1167,9 +1175,27 @@
 
       </dl></dd>
       
+  <dt><a href="internal_api/models/api.html#ichnaea.models.api.ApiKey.fallback_name">fallback_name (ichnaea.models.api.ApiKey attribute)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/models/api.html#ichnaea.models.api.ApiKey.fallback_ratelimit">fallback_ratelimit (ichnaea.models.api.ApiKey attribute)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/models/api.html#ichnaea.models.api.ApiKey.fallback_ratelimit_interval">fallback_ratelimit_interval (ichnaea.models.api.ApiKey attribute)</a>
+  </dt>
+
+      
+  <dt><a href="internal_api/models/api.html#ichnaea.models.api.ApiKey.fallback_url">fallback_url (ichnaea.models.api.ApiKey attribute)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/api/locate/fallback.html#ichnaea.api.locate.fallback.FallbackCache">FallbackCache (class in ichnaea.api.locate.fallback)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/api/locate/schema.html#ichnaea.api.locate.schema.FallbackLookup">FallbackLookup (class in ichnaea.api.locate.schema)</a>
   </dt>
@@ -1182,8 +1208,6 @@
   <dt><a href="internal_api/api/locate/schema.html#ichnaea.api.locate.schema.FallbackSchema">FallbackSchema (class in ichnaea.api.locate.schema)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/models/station.html#ichnaea.models.station.StationSource.fixed">fixed (ichnaea.models.station.StationSource attribute)</a>
   </dt>
@@ -1849,6 +1873,10 @@
   </dt>
 
       
+  <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MAX_AGE">MAX_AGE (in module ichnaea.models.constants)</a>
+  </dt>
+
+      
   <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MAX_ALTITUDE">MAX_ALTITUDE (in module ichnaea.models.constants)</a>
   </dt>
 
@@ -1936,12 +1964,12 @@
   <dt><a href="internal_api/async/task.html#ichnaea.async.task.BaseTask.max_retries">max_retries (ichnaea.async.task.BaseTask attribute)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MAX_SPEED">MAX_SPEED (in module ichnaea.models.constants)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="internal_api/models/constants.html#ichnaea.models.constants.MAX_WIFI_CHANNEL">MAX_WIFI_CHANNEL (in module ichnaea.models.constants)</a>
   </dt>

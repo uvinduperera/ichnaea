@@ -184,7 +184,7 @@
 <p>Base implementation of a search source.</p>
 <dl class="class">
 <dt id="ichnaea.api.locate.source.Source">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">Source</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.Source" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">Source</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.Source" title="Permalink to this definition">¶</a></dt>
 <dd><p>A source represents data from the same data source or
 collection effort, for example a GeoIP database or our own
 crowd-sourced data collection.</p>
@@ -248,7 +248,7 @@ check if this source should attempt to perform a search.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.source.PositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">PositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.PositionSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">PositionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.PositionSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>A PositionSource will return a position result with
 a latitude, a longitude and an accuracy in meters in it.</p>
 <dl class="attribute">
@@ -267,7 +267,7 @@ a latitude, a longitude and an accuracy in meters in it.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.source.RegionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">RegionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.RegionSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.source.</code><code class="descname">RegionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/source.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.source.RegionSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>A RegionSource will return a region result with
 a region name and code in it.</p>
 <dl class="attribute">

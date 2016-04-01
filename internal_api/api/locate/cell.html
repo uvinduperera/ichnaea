@@ -259,7 +259,7 @@ The accuracy is bounded by the min_accuracy and max_accuracy.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.cell.CellPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">CellPositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">CellPositionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements a search using our cell data.</p>
 <p>This source is only used in tests and as a base for the
 OCIDPositionSource.</p>
@@ -272,12 +272,12 @@ OCIDPositionSource.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.cell.OCIDPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">OCIDPositionSource</code><span class="sig-paren">(</span><em>settings</em>, <em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">OCIDPositionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements a search using the <a class="reference internal" href="../../../glossary.html#term-ocid"><span class="xref std std-term">OCID</span></a> cell data.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.locate.cell.OCIDPositionSource.cell_model">
 <code class="descname">cell_model</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource.cell_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">CellOCID</span></code></p>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">CellShardOCID</span></code></p>
 </dd></dl>
 
 <dl class="attribute">

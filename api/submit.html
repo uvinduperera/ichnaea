@@ -187,6 +187,14 @@
     <span class="s2">&quot;heading&quot;</span><span class="o">:</span> <span class="mf">45.0</span><span class="p">,</span>
     <span class="s2">&quot;speed&quot;</span><span class="o">:</span> <span class="mf">13.88</span><span class="p">,</span>
     <span class="s2">&quot;radio&quot;</span><span class="o">:</span> <span class="s2">&quot;gsm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;blue&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;ff:74:27:89:5a:77&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">2000</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;beacon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">110</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
     <span class="s2">&quot;cell&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;radio&quot;</span><span class="o">:</span> <span class="s2">&quot;umts&quot;</span><span class="p">,</span>
@@ -194,12 +202,14 @@
             <span class="s2">&quot;mnc&quot;</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
             <span class="s2">&quot;lac&quot;</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
             <span class="s2">&quot;cid&quot;</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
             <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">60</span>
         <span class="p">}</span>
     <span class="p">],</span>
     <span class="s2">&quot;wifi&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;01:23:45:67:89:ab&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">2000</span><span class="p">,</span>
             <span class="s2">&quot;channel&quot;</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
             <span class="s2">&quot;frequency&quot;</span><span class="o">:</span> <span class="mi">2412</span><span class="p">,</span>
             <span class="s2">&quot;signal&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mi">51</span>
@@ -215,9 +225,9 @@
 <h2>Field Definition<a class="headerlink" href="#field-definition" title="Permalink to this headline">¶</a></h2>
 <p>The record fields have the same meaning and requirements as explained
 in the <a class="reference internal" href="search.html#api-search"><span class="std std-ref">Search (Deprecated)</span></a>.</p>
-<p>The only required fields are <cite>lat</cite> and <cite>lon</cite> and at least one cell or WiFi
-entry. If either <cite>lat</cite> or <cite>lon</cite> are not included, the record will
-not be accepted.</p>
+<p>The only required fields are <cite>lat</cite> and <cite>lon</cite> and at least one Bluetooth,
+cell or WiFi entry. If neither <cite>lat</cite> nor <cite>lon</cite> are included, the record
+will be discarded.</p>
 <p>The altitude, accuracy and altitude_accuracy fields are all measured in
 meters. Altitude measures the height above or below the mean sea level,
 as defined by WGS84.</p>
