@@ -322,11 +322,11 @@ the query should not be cached, a <cite>bypassed</cite> status is used.
 If the cached values couldn&#8217;t be read, a <cite>failure</cite> status is used.
 If the cached values didn&#8217;t agree on a consistent position,
 a <cite>inconsistent</cite> status is used.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">locate.fallback.lookup#name:&lt;fallback_name&gt;</span></code> : timer</p>
+<p><code class="docutils literal"><span class="pre">locate.fallback.lookup#fallback_name:&lt;fallback_name&gt;</span></code> : timer</p>
 <blockquote>
 <div>Measures the time it takes to do each outbound network request.
 The fallback name tag specifies which fallback service is used.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">locate.fallback.lookup#name:&lt;fallback_name&gt;,status:&lt;code&gt;</span></code> : counter</p>
+<p><code class="docutils literal"><span class="pre">locate.fallback.lookup#fallback_name:&lt;fallback_name&gt;,status:&lt;code&gt;</span></code> : counter</p>
 <blockquote>
 <div>Counts the HTTP response codes for all outbound requests per named
 fallback service. There is one counter per HTTP response code,
@@ -358,8 +358,8 @@ else without a key tag.</p>
 <div>Counts the number of <a class="reference internal" href="glossary.html#term-reports"><span class="xref std std-term">reports</span></a> accepted into the data processing
 pipeline. The metric is either emitted per tracked API key, or for
 everything else without a key tag.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.report.drop#reason:malformed</span></code>,
-<code class="docutils literal"><span class="pre">data.report.drop#reason:malformed,key:&lt;apikey&gt;</span></code> : counter</p>
+<p><code class="docutils literal"><span class="pre">data.report.drop</span></code>,
+<code class="docutils literal"><span class="pre">data.report.drop#key:&lt;apikey&gt;</span></code> : counter</p>
 <blockquote>
 <div>Count incoming <a class="reference internal" href="glossary.html#term-reports"><span class="xref std std-term">reports</span></a> that were discarded due to some internal
 consistency, range or validity-condition error.</div></blockquote>
@@ -378,12 +378,12 @@ batch is composed of individual <a class="reference internal" href="glossary.htm
 <p>The metrics are either emitted per tracked API key, or for everything
 else without a key tag.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:malformed</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:malformed,key:&lt;apikey&gt;</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:malformed,key:&lt;apikey&gt;</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:malformed</span></code>
-<code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:malformed,key:&lt;apikey&gt;</span></code> : counters</p>
+<p><code class="docutils literal"><span class="pre">data.observation.drop#type:blue</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:blue,key:&lt;apikey&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:cell</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,key:&lt;apikey&gt;</span></code>,
+<code class="docutils literal"><span class="pre">data.observation.drop#type:wifi</span></code>
+<code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,key:&lt;apikey&gt;</span></code> : counters</p>
 <blockquote>
 <div>Count incoming Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that were
 discarded before integration due to some internal consistency, range or
@@ -459,7 +459,6 @@ They are sampled at an approximate per-minute interval.</div></blockquote>
 <code class="docutils literal"><span class="pre">queue#queue:update_datamap_nw</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_datamap_se</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_datamap_sw</span></code>,
-<code class="docutils literal"><span class="pre">queue#queue:update_score</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_wifi_0</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:update_wifi_f</span></code> : gauges</p>
 <blockquote>
