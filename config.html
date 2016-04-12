@@ -94,12 +94,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#geoip">GeoIP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sentry">Sentry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#statsd">StatsD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#export">Export</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#bucket-export">Bucket Export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internal-export">Internal Export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#https-export">HTTPS Export</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#import">Import</a></li>
 </ul>
 </li>
@@ -253,72 +247,6 @@ part of the standard metric name.</p>
 <span class="na">metric_prefix</span> <span class="o">=</span> <span class="s">location</span>
 <span class="na">tag_support</span> <span class="o">=</span> <span class="s">true</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="export">
-<h2>Export<a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h2>
-<p>The project supports exporting all data that its gets via the submit-style
-APIs to different backends.</p>
-<p>Currently three different kinds of backends are supported:</p>
-<ul class="simple">
-<li>Amazon S3 buckets</li>
-<li>The projects own internal data processing pipeline</li>
-<li>A HTTPS POST endpoint accepting the geosubmit v2 format</li>
-</ul>
-<p>The type of target is determined by the URL prefix of each section.
-The section name must start with <code class="docutils literal"><span class="pre">export:</span></code> but the name postfix can
-be anything.</p>
-<p>All export targets can be configured with a <code class="docutils literal"><span class="pre">batch</span></code> setting that determines
-how many reports have to be available before data is submitted to the
-backend. Data is buffered in the Redis cache configured in the cache section.</p>
-<p>All exports take an additional <code class="docutils literal"><span class="pre">skip_keys</span></code> setting as a whitespace
-separated list of API keys. Data submitted using one of these API keys
-will not be exported to the target.</p>
-<p>There can be multiple instances of the bucket and HTTP POST export targets,
-but only one instance of the internal export.</p>
-<div class="section" id="bucket-export">
-<h3>Bucket Export<a class="headerlink" href="#bucket-export" title="Permalink to this headline">¶</a></h3>
-<p>The Amazon S3 bucket export combines reports into a gzipped JSON file
-and uploads them to the specified bucket <code class="docutils literal"><span class="pre">url</span></code>.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:backup]</span>
-<span class="na">url</span> <span class="o">=</span> <span class="s">s3://amazon_s3_bucket_name/directory/{api_key}/{year}/{month}/{day}</span>
-<span class="na">skip_keys</span> <span class="o">=</span> <span class="s">test</span>
-<span class="na">batch</span> <span class="o">=</span> <span class="s">10000</span>
-</pre></div>
-</div>
-<p>The url can contain any level of additional static directories under the
-bucket root. The <code class="docutils literal"><span class="pre">{api_key}/{year}/{month}/{day}</span></code> parts will be dynamically
-replaced by the <cite>api_key</cite> used to upload the data, and the date when the
-backup took place. The files use a random UUID4 as the filename.</p>
-<p>An example filename might be:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">directory</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="mi">2015</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">15</span><span class="o">/</span><span class="mi">554</span><span class="n">d8d3c</span><span class="o">-</span><span class="mi">5</span><span class="n">b28</span><span class="o">-</span><span class="mi">48</span><span class="n">bb</span><span class="o">-</span><span class="mi">9</span><span class="n">aa8</span><span class="o">-</span><span class="mi">196543235</span><span class="n">cf2</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">gz</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="internal-export">
-<h3>Internal Export<a class="headerlink" href="#internal-export" title="Permalink to this headline">¶</a></h3>
-<p>The internal export forwards the incoming data into the internal data
-pipeline. The url must be the exact string <code class="docutils literal"><span class="pre">internal://</span></code>.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:internal]</span>
-<span class="na">url</span> <span class="o">=</span> <span class="s">internal://</span>
-<span class="na">batch</span> <span class="o">=</span> <span class="s">1000</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="https-export">
-<h3>HTTPS Export<a class="headerlink" href="#https-export" title="Permalink to this headline">¶</a></h3>
-<p>The HTTPS export buffers incoming data into batches of <code class="docutils literal"><span class="pre">batch</span></code> size
-and then submits them using the <a class="reference internal" href="api/geosubmit2.html#api-geosubmit-latest"><span class="std std-ref">Geosubmit Version 2</span></a> API to the
-specified <code class="docutils literal"><span class="pre">url</span></code> endpoint.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[export:test]</span>
-<span class="na">url</span> <span class="o">=</span> <span class="s">https://localhost/some/api/url?key=export</span>
-<span class="na">skip_keys</span> <span class="o">=</span> <span class="s">test</span>
-<span class="na">batch</span> <span class="o">=</span> <span class="s">1000</span>
-</pre></div>
-</div>
-<p>If the project is taking in data from a partner in a data exchange,
-the <code class="docutils literal"><span class="pre">skip_keys</span></code> setting can be used to prevent data being roundtripped
-and send back to the same partner that it came from.</p>
 </div>
 </div>
 <div class="section" id="import">

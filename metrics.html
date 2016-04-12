@@ -444,7 +444,6 @@ for each such API key and path combination for the current day.</div></blockquot
 <code class="docutils literal"><span class="pre">queue#queue:celery_monitor</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_ocid</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_reports</span></code>,
-<code class="docutils literal"><span class="pre">queue#queue:celery_upload</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_wifi</span></code> : gauges</p>
 <blockquote>
 <div>These gauges measure the number of tasks in each of the Redis queues.
@@ -502,8 +501,8 @@ emits a timer indicating its execution time.</p>
 <p>For example:</p>
 <blockquote>
 <div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">task#task:data.export_reports</span></code></li>
 <li><code class="docutils literal"><span class="pre">task#task:data.update_statcounter</span></code></li>
-<li><code class="docutils literal"><span class="pre">task#task:data.upload_reports</span></code></li>
 </ul>
 </div></blockquote>
 </div>

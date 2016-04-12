@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea.models &mdash; Ichnaea 1.5 documentation</title>
+  <title>ichnaea.models.config &mdash; Ichnaea 1.5 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="Ichnaea 1.5 documentation" href="../../index.html"/>
-        <link rel="up" title="Internal Code API" href="../index.html"/>
-        <link rel="next" title="ichnaea.models.api" href="api.html"/>
-        <link rel="prev" title="ichnaea.log" href="../log.html"/> 
+        <link rel="up" title="ichnaea.models" href="index.html"/>
+        <link rel="next" title="ichnaea.models.constants" href="constants.html"/>
+        <link rel="prev" title="ichnaea.models.cell" href="cell.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -109,12 +109,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../http.html"><code class="docutils literal"><span class="pre">ichnaea.http</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../log.html"><code class="docutils literal"><span class="pre">ichnaea.log</span></code></a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="blue.html"><code class="docutils literal"><span class="pre">ichnaea.models.blue</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.models.config</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">ichnaea.models.config</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mac.html"><code class="docutils literal"><span class="pre">ichnaea.models.mac</span></code></a></li>
@@ -167,11 +167,13 @@
       
           <li><a href="../index.html">Internal Code API</a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea.models</span></code></li>
+          <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.models</span></code></a> &raquo;</li>
+      
+    <li><code class="docutils literal"><span class="pre">ichnaea.models.config</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/models/index.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/models/config.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -181,25 +183,95 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.models">
-<span id="ichnaea-models"></span><h1><a class="reference internal" href="#module-ichnaea.models" title="ichnaea.models"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models</span></code></a><a class="headerlink" href="#module-ichnaea.models" title="Permalink to this headline">¶</a></h1>
-<p>Contains SQLAlchemy database models and colander validation schemata.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html"><code class="docutils literal"><span class="pre">ichnaea.models.api</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="blue.html"><code class="docutils literal"><span class="pre">ichnaea.models.blue</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.models.config</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="mac.html"><code class="docutils literal"><span class="pre">ichnaea.models.mac</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="observation.html"><code class="docutils literal"><span class="pre">ichnaea.models.observation</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="sa_types.html"><code class="docutils literal"><span class="pre">ichnaea.models.sa_types</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.models.schema</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="station.html"><code class="docutils literal"><span class="pre">ichnaea.models.station</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="wifi.html"><code class="docutils literal"><span class="pre">ichnaea.models.wifi</span></code></a></li>
+  <div class="section" id="module-ichnaea.models.config">
+<span id="ichnaea-models-config"></span><h1><a class="reference internal" href="#module-ichnaea.models.config" title="ichnaea.models.config"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.models.config</span></code></a><a class="headerlink" href="#module-ichnaea.models.config" title="Permalink to this headline">¶</a></h1>
+<p>This module contains database models for tables storing configuration.</p>
+<dl class="class">
+<dt id="ichnaea.models.config.ExportConfig">
+<em class="property">class </em><code class="descclassname">ichnaea.models.config.</code><code class="descname">ExportConfig</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.config.ExportConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>ExportConfig database model.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.config.ExportConfig.name">
+<code class="descname">name</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.config.ExportConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.config.ExportConfig.batch">
+<code class="descname">batch</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.config.ExportConfig.batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export batch size.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.config.ExportConfig.schema">
+<code class="descname">schema</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.config.ExportConfig.schema" title="Permalink to this definition">¶</a></dt>
+<dd><p>The export schema.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.config.ExportConfig.url">
+<code class="descname">url</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.config.ExportConfig.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export URL.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.config.ExportConfig.skip_keys">
+<code class="descname">skip_keys</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.config.ExportConfig.skip_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set of API keys to skip.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="export-configuration">
+<h2>Export Configuration<a class="headerlink" href="#export-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The project supports exporting all data that its gets via the
+submit-style APIs to different backends.</p>
+<p>Currently three different kinds of backends are supported:</p>
+<ul class="simple">
+<li>Amazon S3 buckets</li>
+<li>The projects own internal data processing pipeline</li>
+<li>A HTTPS POST endpoint accepting the geosubmit v2 format</li>
 </ul>
+<p>The type of the target is determined by the <cite>schema</cite> column of each entry.</p>
+<p>All export targets can be configured with a <code class="docutils literal"><span class="pre">batch</span></code> setting that
+determines how many reports have to be available before data is
+submitted to the backend.</p>
+<p>All exports have an additional <code class="docutils literal"><span class="pre">skip_keys</span></code> setting as a set of
+API keys. Data submitted using one of these API keys will not be
+exported to the target.</p>
+<p>There can be multiple instances of the bucket and HTTP POST export
+targets, but only one instance of the internal export.</p>
+<div class="section" id="bucket-export">
+<h3>Bucket Export<a class="headerlink" href="#bucket-export" title="Permalink to this headline">¶</a></h3>
+<p>The Amazon S3 bucket export combines reports into a gzipped JSON file
+and uploads them to the specified bucket <code class="docutils literal"><span class="pre">url</span></code>, for example:</p>
+<p><code class="docutils literal"><span class="pre">s3://amazon_s3_bucket_name/directory/{api_key}/{year}/{month}/{day}</span></code></p>
+<p>The schema column must be set to <cite>s3</cite>.</p>
+<p>The url can contain any level of additional static directories under
+the bucket root. The <code class="docutils literal"><span class="pre">{api_key}/{year}/{month}/{day}</span></code> parts will
+be dynamically replaced by the <cite>api_key</cite> used to upload the data,
+and the date when the backup took place. The files use a random
+UUID4 as the filename.</p>
+<p>An example filename might be:</p>
+<p><code class="docutils literal"><span class="pre">/directory/test/2015/07/15/554d8d3c-5b28-48bb-9aa8-196543235cf2.json.gz</span></code></p>
+</div>
+<div class="section" id="internal-export">
+<h3>Internal Export<a class="headerlink" href="#internal-export" title="Permalink to this headline">¶</a></h3>
+<p>The internal export forwards the incoming data into the internal
+data pipeline.</p>
+<p>The schema column must be set to <cite>internal</cite>.</p>
+</div>
+<div class="section" id="https-export">
+<h3>HTTPS Export<a class="headerlink" href="#https-export" title="Permalink to this headline">¶</a></h3>
+<p>The HTTPS export buffers incoming data into batches of <code class="docutils literal"><span class="pre">batch</span></code>
+size and then submits them using the <a class="reference internal" href="../../api/geosubmit2.html#api-geosubmit-latest"><span class="std std-ref">Geosubmit Version 2</span></a>
+API to the specified <code class="docutils literal"><span class="pre">url</span></code> endpoint, for example:</p>
+<p><code class="docutils literal"><span class="pre">https://localhost/some/api/url?key=export</span></code></p>
+<p>The schema column must be set to <cite>geosubmit</cite>.</p>
+<p>If the project is taking in data from a partner in a data exchange,
+the <code class="docutils literal"><span class="pre">skip_keys</span></code> setting can be used to prevent data being
+round tripped and send back to the same partner that it came from.</p>
+</div>
 </div>
 </div>
 
@@ -210,10 +282,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api.html" class="btn btn-neutral float-right" title="ichnaea.models.api" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="constants.html" class="btn btn-neutral float-right" title="ichnaea.models.constants" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../log.html" class="btn btn-neutral" title="ichnaea.log" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cell.html" class="btn btn-neutral" title="ichnaea.models.cell" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
