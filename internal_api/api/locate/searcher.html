@@ -185,7 +185,7 @@
 multiple sources to satisfy a given query.</p>
 <dl class="function">
 <dt id="ichnaea.api.locate.searcher.configure_region_searcher">
-<code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">configure_region_searcher</code><span class="sig-paren">(</span><em>geoip_db=None</em>, <em>raven_client=None</em>, <em>redis_client=None</em>, <em>stats_client=None</em>, <em>_searcher=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.configure_region_searcher" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">configure_region_searcher</code><span class="sig-paren">(</span><em>geoip_db=None</em>, <em>raven_client=None</em>, <em>redis_client=None</em>, <em>stats_client=None</em>, <em>data_queues=None</em>, <em>_searcher=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.configure_region_searcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure and return a configured
 <a class="reference internal" href="#ichnaea.api.locate.searcher.RegionSearcher" title="ichnaea.api.locate.searcher.RegionSearcher"><code class="xref py py-class docutils literal"><span class="pre">RegionSearcher</span></code></a> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -200,7 +200,7 @@ multiple sources to satisfy a given query.</p>
 
 <dl class="function">
 <dt id="ichnaea.api.locate.searcher.configure_position_searcher">
-<code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">configure_position_searcher</code><span class="sig-paren">(</span><em>geoip_db=None</em>, <em>raven_client=None</em>, <em>redis_client=None</em>, <em>stats_client=None</em>, <em>_searcher=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.configure_position_searcher" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">configure_position_searcher</code><span class="sig-paren">(</span><em>geoip_db=None</em>, <em>raven_client=None</em>, <em>redis_client=None</em>, <em>stats_client=None</em>, <em>data_queues=None</em>, <em>_searcher=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.configure_position_searcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure and return a configured
 <a class="reference internal" href="#ichnaea.api.locate.searcher.PositionSearcher" title="ichnaea.api.locate.searcher.PositionSearcher"><code class="xref py py-class docutils literal"><span class="pre">PositionSearcher</span></code></a> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -215,7 +215,7 @@ multiple sources to satisfy a given query.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.searcher.Searcher">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">Searcher</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.Searcher" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">Searcher</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.Searcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Searcher will use a collection of data sources
 to attempt to satisfy a user&#8217;s query. It will loop over them
 in the order they are specified and use the best possible result.</p>
@@ -275,7 +275,7 @@ in the order they are specified and use the best possible result.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.searcher.PositionSearcher">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">PositionSearcher</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.PositionSearcher" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">PositionSearcher</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.PositionSearcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>A PositionSearcher will return a position defined by a latitude,
 a longitude and an accuracy in meters.</p>
 <dl class="attribute">
@@ -299,7 +299,7 @@ a longitude and an accuracy in meters.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.locate.searcher.RegionSearcher">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">RegionSearcher</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.locate.searcher.</code><code class="descname">RegionSearcher</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/searcher.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.searcher.RegionSearcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>A RegionSearcher will return a region name and code.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.locate.searcher.RegionSearcher.result_list">

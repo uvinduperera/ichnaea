@@ -184,10 +184,26 @@ to any of the extreme points of a bounding box.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea.geocalc.distance">
-<code class="descclassname">ichnaea.geocalc.</code><code class="descname">distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.distance" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.geocalc.destination">
+<code class="descclassname">ichnaea.geocalc.</code><code class="descname">destination</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.destination" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an initial point, a bearing and a distance in meters,
+compute the destination point using the Vincenty formula.</p>
+<dl class="docutils">
+<dt>References:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Vincenty's_formulae">https://en.wikipedia.org/wiki/Vincenty&#8217;s_formulae</a></li>
+<li><a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong-vincenty.html">http://www.movable-type.co.uk/scripts/latlong-vincenty.html</a></li>
+<li><a class="reference external" href="https://github.com/geopy/geopy/blob/master/geopy/distance.py">https://github.com/geopy/geopy/blob/master/geopy/distance.py</a></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ichnaea.geocalc.haversine_distance">
+<code class="descclassname">ichnaea.geocalc.</code><code class="descname">haversine_distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.haversine_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the distance between a pair of lat/longs in meters using
-the haversine calculation. The output distance is in meters.</p>
+the Haversine calculation. The output distance is in meters.</p>
 <dl class="docutils">
 <dt>References:</dt>
 <dd><ul class="first last simple">
@@ -205,10 +221,7 @@ meridian) to 6399km (polar). 6371 km is the generally accepted
 value for the Earth&#8217;s mean radius. This means that errors from
 assuming spherical geometry might be up to 0.55% crossing the
 equator, though generally below 0.3%, depending on latitude and
-direction of travel. An accuracy of better than 3m in 1km is
-mostly good enough for me, but if you want greater accuracy, you
-could use the Vincenty formula for calculating geodesic distances
-on ellipsoids, which gives results accurate to within 1mm.</p>
+direction of travel.</p>
 </dd></dl>
 
 <dl class="function">
@@ -219,8 +232,6 @@ distance in meters.</p>
 <p>The new latitude is bounded by our globally defined
 <a class="reference internal" href="constants.html#ichnaea.constants.MIN_LAT" title="ichnaea.constants.MIN_LAT"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.constants.MIN_LAT</span></code></a> and
 <a class="reference internal" href="constants.html#ichnaea.constants.MAX_LAT" title="ichnaea.constants.MAX_LAT"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.constants.MAX_LAT</span></code></a>.</p>
-<p>A suitable estimate for surface level calculations is
-111,111m = 1 degree latitude</p>
 </dd></dl>
 
 <dl class="function">
@@ -253,6 +264,22 @@ change. The randomness needs to be good enough to not show clear
 visual patterns for adjacent grid cells, so a change in one of
 the input arguments by 1 needs to result in a large change in
 the pattern.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ichnaea.geocalc.vincenty_distance">
+<code class="descclassname">ichnaea.geocalc.</code><code class="descname">vincenty_distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geocalc.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geocalc.vincenty_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the distance between a pair of lat/longs in meters using
+the Vincenty formula.</p>
+<dl class="docutils">
+<dt>References:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Vincenty's_formulae">https://en.wikipedia.org/wiki/Vincenty&#8217;s_formulae</a></li>
+<li><a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong-vincenty.html">http://www.movable-type.co.uk/scripts/latlong-vincenty.html</a></li>
+<li><a class="reference external" href="https://github.com/geopy/geopy/blob/master/geopy/distance.py">https://github.com/geopy/geopy/blob/master/geopy/distance.py</a></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

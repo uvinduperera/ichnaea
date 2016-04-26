@@ -220,6 +220,12 @@
 <dd><p>Set of API keys to skip.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="ichnaea.models.config.ExportConfig.skip_sources">
+<code class="descname">skip_sources</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.config.ExportConfig.skip_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set of export sources to skip.</p>
+</dd></dl>
+
 </dd></dl>
 
 <div class="section" id="export-configuration">
@@ -245,13 +251,13 @@ targets, but only one instance of the internal export.</p>
 <h3>Bucket Export<a class="headerlink" href="#bucket-export" title="Permalink to this headline">¶</a></h3>
 <p>The Amazon S3 bucket export combines reports into a gzipped JSON file
 and uploads them to the specified bucket <code class="docutils literal"><span class="pre">url</span></code>, for example:</p>
-<p><code class="docutils literal"><span class="pre">s3://amazon_s3_bucket_name/directory/{api_key}/{year}/{month}/{day}</span></code></p>
+<p><code class="docutils literal"><span class="pre">s3://amazon_s3_bucket_name/directory/{source}{api_key}/{year}/{month}/{day}</span></code></p>
 <p>The schema column must be set to <cite>s3</cite>.</p>
 <p>The url can contain any level of additional static directories under
 the bucket root. The <code class="docutils literal"><span class="pre">{api_key}/{year}/{month}/{day}</span></code> parts will
 be dynamically replaced by the <cite>api_key</cite> used to upload the data,
-and the date when the backup took place. The files use a random
-UUID4 as the filename.</p>
+the source of the report (e.g. gnss) and the date when the backup took place.
+The files use a random UUID4 as the filename.</p>
 <p>An example filename might be:</p>
 <p><code class="docutils literal"><span class="pre">/directory/test/2015/07/15/554d8d3c-5b28-48bb-9aa8-196543235cf2.json.gz</span></code></p>
 </div>

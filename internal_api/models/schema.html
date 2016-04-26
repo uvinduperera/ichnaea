@@ -114,6 +114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="blue.html"><code class="docutils literal"><span class="pre">ichnaea.models.blue</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.models.config</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="constants.html"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mac.html"><code class="docutils literal"><span class="pre">ichnaea.models.mac</span></code></a></li>
@@ -210,6 +211,18 @@ method, so all subclasses can rely on calling it via super().</p>
 <em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">DefaultNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.DefaultNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>A DefaultNode will use its <code class="docutils literal"><span class="pre">missing</span></code> value
 if it fails to validate during deserialization.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.schema.ReportSourceNode">
+<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">ReportSourceNode</code><span class="sig-paren">(</span><em>*arg</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.ReportSourceNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A node containing a valid report source.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ichnaea.models.schema.ReportSourceType">
+<em class="property">class </em><code class="descclassname">ichnaea.models.schema.</code><code class="descname">ReportSourceType</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.schema.ReportSourceType" title="Permalink to this definition">¶</a></dt>
+<dd><p>A ReportSourceType will return a ReportSource IntEnum object.</p>
 </dd></dl>
 
 </div>

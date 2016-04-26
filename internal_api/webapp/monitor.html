@@ -189,10 +189,8 @@
 <dt id="ichnaea.webapp.monitor.HeartbeatView">
 <em class="property">class </em><code class="descclassname">ichnaea.webapp.monitor.</code><code class="descname">HeartbeatView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.HeartbeatView" title="Permalink to this definition">¶</a></dt>
 <dd><p>A heartbeat view which returns a successful response if the service
-is reachable and works at all. If any of the backend connections are
-broken, this view will still respond with a success, allowing the
-service to operate in a degraded mode.</p>
-<p>This view is typically used in load balancer health checks.</p>
+and all its backend connections work.</p>
+<p>The view actively checks the database, geoip and redis connections.</p>
 <dl class="attribute">
 <dt id="ichnaea.webapp.monitor.HeartbeatView.route">
 <code class="descname">route</code><em class="property"> = '/__heartbeat__'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.HeartbeatView.route" title="Permalink to this definition">¶</a></dt>
@@ -201,28 +199,30 @@ service to operate in a degraded mode.</p>
 <dl class="method">
 <dt id="ichnaea.webapp.monitor.HeartbeatView.__call__">
 <code class="descname">__call__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.HeartbeatView.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a response with a 200 or 503 status.</p>
+<dd><p>Return a response with a 200 or 503 status, including
+a JSON body listing the status and timing information for
+most outbound connections.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="ichnaea.webapp.monitor.MonitorView">
-<em class="property">class </em><code class="descclassname">ichnaea.webapp.monitor.</code><code class="descname">MonitorView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.MonitorView" title="Permalink to this definition">¶</a></dt>
-<dd><p>A monitor view which returns a successful response if the service
-and all its backend connections work.</p>
-<p>The view actively checks the database, geoip and redis connections.</p>
+<dt id="ichnaea.webapp.monitor.LBHeartbeatView">
+<em class="property">class </em><code class="descclassname">ichnaea.webapp.monitor.</code><code class="descname">LBHeartbeatView</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.LBHeartbeatView" title="Permalink to this definition">¶</a></dt>
+<dd><p>A loadbalancer heartbeat view which returns a successful response if
+the service is reachable and works at all. If any of the backend
+connections are broken, this view will still respond with a success,
+allowing the service to operate in a degraded mode.</p>
+<p>This view is typically used in load balancer health checks.</p>
 <dl class="attribute">
-<dt id="ichnaea.webapp.monitor.MonitorView.route">
-<code class="descname">route</code><em class="property"> = '/__monitor__'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.MonitorView.route" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.webapp.monitor.LBHeartbeatView.route">
+<code class="descname">route</code><em class="property"> = '/__lbheartbeat__'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.LBHeartbeatView.route" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ichnaea.webapp.monitor.MonitorView.__call__">
-<code class="descname">__call__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.MonitorView.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a response with a 200 or 503 status, including
-a JSON body listing the status and timing information for
-most outbound connections.</p>
+<dt id="ichnaea.webapp.monitor.LBHeartbeatView.__call__">
+<code class="descname">__call__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/monitor.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.monitor.LBHeartbeatView.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a response with a 200 or 503 status.</p>
 </dd></dl>
 
 </dd></dl>

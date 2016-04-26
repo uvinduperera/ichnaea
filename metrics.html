@@ -389,22 +389,15 @@ else without a key tag.</p>
 discarded before integration due to some internal consistency, range or
 validity-condition error encountered while attempting to normalize the
 <a class="reference internal" href="glossary.html#term-observation"><span class="xref std std-term">observation</span></a>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.observation.drop#type:blue,reason:blocklisted</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:cell,reason:blocklisted</span></code>,
-<code class="docutils literal"><span class="pre">data.observation.drop#type:wifi,reason:blocklisted</span></code> : counters</p>
-<blockquote>
-<div>Count incoming Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that were
-discarded before integration due to the presence of a blocklist record
-for the <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> (see next metric).</div></blockquote>
 <p><code class="docutils literal"><span class="pre">data.observation.insert#type:blue</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.insert#type:cell</span></code>,
 <code class="docutils literal"><span class="pre">data.observation.insert#type:wifi</span></code> : counters</p>
 <blockquote>
 <div>Count Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> that are successfully
 normalized, integrated and not discarded due to consistency errors.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">data.station.blocklist#type:blue,action:add,reason:moving</span></code>,
-<code class="docutils literal"><span class="pre">data.station.blocklist#type:cell,action:add,reason:moving</span></code>,
-<code class="docutils literal"><span class="pre">data.station.blocklist#type:wifi,action:add,reason:moving</span></code> : counters</p>
+<p><code class="docutils literal"><span class="pre">data.station.blocklist#type:blue</span></code>,
+<code class="docutils literal"><span class="pre">data.station.blocklist#type:cell</span></code>,
+<code class="docutils literal"><span class="pre">data.station.blocklist#type:wifi</span></code> : counters</p>
 <blockquote>
 <div>Count any Bluetooth, cell or WiFi network that is blocklisted due to
 the acceptance of multiple <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a> at sufficiently different
@@ -412,6 +405,18 @@ locations. In these cases, we decide that the <a class="reference internal" href
 (such as a picocell or mobile hotspot on a public transit vehicle) and
 blocklist it, to avoid estimating query positions using the
 <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a>.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">data.station.confirm#type:blue</span></code>,
+<code class="docutils literal"><span class="pre">data.station.confirm#type:cell</span></code>,
+<code class="docutils literal"><span class="pre">data.station.confirm#type:wifi</span></code> : counters</p>
+<blockquote>
+<div>Count the number of Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> that were
+successfully confirmed by any type of <a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a>.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">data.station.new#type:blue</span></code>,
+<code class="docutils literal"><span class="pre">data.station.new#type:cell</span></code>,
+<code class="docutils literal"><span class="pre">data.station.new#type:wifi</span></code> : counters</p>
+<blockquote>
+<div>Count the number of Bluetooth, cell or WiFi <a class="reference internal" href="glossary.html#term-station"><span class="xref std std-term">station</span></a> that were
+discovered for the first time.</div></blockquote>
 </div>
 <div class="section" id="data-pipeline-export-metrics">
 <h2>Data Pipeline Export Metrics<a class="headerlink" href="#data-pipeline-export-metrics" title="Permalink to this headline">¶</a></h2>

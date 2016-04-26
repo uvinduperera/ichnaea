@@ -195,17 +195,27 @@ representation with all fields being present and missing values of
 </dd></dl>
 
 <dl class="class">
+<dt id="ichnaea.api.schema.StringVocabularyNode">
+<em class="property">class </em><code class="descclassname">ichnaea.api.schema.</code><code class="descname">StringVocabularyNode</code><span class="sig-paren">(</span><em>encoding=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.schema.StringVocabularyNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A StringVocabularyNode takes a string and checks it against a
+vocabulary of known values. It removes the value if it isn&#8217;t in
+the vocabulary. It also lowercases all values.</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="ichnaea.api.schema.UnixTimeFromInteger">
 <em class="property">class </em><code class="descclassname">ichnaea.api.schema.</code><code class="descname">UnixTimeFromInteger</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.schema.UnixTimeFromInteger" title="Permalink to this definition">¶</a></dt>
-<dd><p>A UnixTimeFromInteger will return a float representing
-a time value from a unixtime integer or default to now.</p>
+<dd><p>A UnixTimeFromInteger will return an integer representing
+a time value in milliseconds from a unixtime integer
+or default to now.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="ichnaea.api.schema.UnixTimeFromString">
 <em class="property">class </em><code class="descclassname">ichnaea.api.schema.</code><code class="descname">UnixTimeFromString</code><span class="sig-paren">(</span><em>encoding=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.schema.UnixTimeFromString" title="Permalink to this definition">¶</a></dt>
 <dd><p>A UnixTimeFromString will return an integer representing
-a time value from a ISO datetime string or default to now.</p>
+a time value in milliseconds from a ISO datetime string
+or default to now.</p>
 </dd></dl>
 
 <dl class="class">

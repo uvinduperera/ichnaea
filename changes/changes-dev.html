@@ -164,12 +164,34 @@
 <div class="section" id="migrations">
 <h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>1bdf1028a085: Extend export config table.</li>
 <li>6ec824122610: Add export config table.</li>
 <li>4255b858a37e: Remove user/score tables.</li>
+<li>In service checks, change anything that checked the <cite>/__heartbeat__</cite>
+view to check <cite>/__lbheartbeat__</cite> instead. Change <cite>/__monitor__</cite> to
+<cite>/__heartbeat__</cite>.</li>
 </ul>
 </div>
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Use GNSS observations to replace purely query-based stations.</li>
+<li>Use query observations to confirm, blocklist and insert new stations.</li>
+<li>Configure release for raven/sentry client.</li>
+<li>Change hearbeat/monitor view to lbhearbeat/hearbeat views.</li>
+<li>Update last_seen column on each station update.</li>
+<li>Use Vincenty formula for lat/lon additions.</li>
+<li>Use Vincenty instead of Haversine formula for distance calculations.</li>
+<li>Take age into account during locate lookups.</li>
+<li>Filter out observations with too little weight.</li>
+<li>Take age and speed into account in observation weights.</li>
+<li>Pass queries into internal data pipeline.</li>
+<li>Allow stations to be blocklisted once per 30 days of their lifespan.</li>
+<li>Normalize age fields for internal observations to GPS time difference.</li>
+<li>Add stricter validation of radio, source and timestamp fields.</li>
+<li>Pass pressure and source data into internal data pipeline.</li>
+<li>Read export config from database instead of ini file.</li>
+</ul>
 </div>
 </div>
 <div class="section" id="id1">

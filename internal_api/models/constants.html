@@ -33,7 +33,7 @@
     <link rel="top" title="Ichnaea 1.5 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.models" href="index.html"/>
         <link rel="next" title="ichnaea.models.content" href="content.html"/>
-        <link rel="prev" title="ichnaea.models.cell" href="cell.html"/> 
+        <link rel="prev" title="ichnaea.models.config" href="config.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -114,6 +114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="base.html"><code class="docutils literal"><span class="pre">ichnaea.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="blue.html"><code class="docutils literal"><span class="pre">ichnaea.models.blue</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cell.html"><code class="docutils literal"><span class="pre">ichnaea.models.cell</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="config.html"><code class="docutils literal"><span class="pre">ichnaea.models.config</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">ichnaea.models.constants</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="content.html"><code class="docutils literal"><span class="pre">ichnaea.models.content</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mac.html"><code class="docutils literal"><span class="pre">ichnaea.models.mac</span></code></a></li>
@@ -221,6 +222,44 @@
 
 </dd></dl>
 
+<dl class="class">
+<dt id="ichnaea.models.constants.ReportSource">
+<em class="property">class </em><code class="descclassname">ichnaea.models.constants.</code><code class="descname">ReportSource</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>The report source states on what kind of data the record is based on.
+A lower integer value hints at a better quality of the report data.</p>
+<dl class="attribute">
+<dt id="ichnaea.models.constants.ReportSource.fixed">
+<code class="descname">fixed</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.fixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outside knowledge about the true position of the station.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.constants.ReportSource.gnss">
+<code class="descname">gnss</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.gnss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Global navigation satellite system based data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.constants.ReportSource.fused">
+<code class="descname">fused</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.fused" title="Permalink to this definition">¶</a></dt>
+<dd><p>Observation data positioned based on fused data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.constants.ReportSource.query">
+<code class="descname">query</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position estimate based on query data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.TEMPORARY_BLOCKLIST_DURATION">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">TEMPORARY_BLOCKLIST_DURATION</code><em class="property"> = datetime.timedelta(2)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.TEMPORARY_BLOCKLIST_DURATION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time during which each temporary blocklisting (detection of
+<a class="reference internal" href="../../glossary.html#term-station"><span class="xref std std-term">station</span></a> movement) causes observations to be dropped on the floor.</p>
+</dd></dl>
+
 <dl class="data">
 <dt id="ichnaea.models.constants.MAX_AGE">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_AGE</code><em class="property"> = 3600000</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_AGE" title="Permalink to this definition">¶</a></dt>
@@ -228,27 +267,14 @@
 </dd></dl>
 
 <dl class="data">
+<dt id="ichnaea.models.constants.MIN_ACCURACY">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_ACCURACY</code><em class="property"> = 0.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
 <dt id="ichnaea.models.constants.MAX_ACCURACY">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ACCURACY</code><em class="property"> = 1000000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ACCURACY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accuracy is arbitrarily bounded to (0, 1000km).</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="ichnaea.models.constants.MAX_ACCURACY_BLUE">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ACCURACY_BLUE</code><em class="property"> = 100.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ACCURACY_BLUE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maximum accepted accuracy for Bluetooth.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="ichnaea.models.constants.MAX_ACCURACY_CELL">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ACCURACY_CELL</code><em class="property"> = 200.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ACCURACY_CELL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maximum accepted accuracy for cells.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="ichnaea.models.constants.MAX_ACCURACY_WIFI">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ACCURACY_WIFI</code><em class="property"> = 100.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ACCURACY_WIFI" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maximum accepted accuracy for WiFis.</p>
 </dd></dl>
 
 <dl class="data">
@@ -264,10 +290,14 @@
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.models.constants.MAX_ALTITUDE_ACCURACY">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_ALTITUDE_ACCURACY</code><em class="property"> = 110911.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_ALTITUDE_ACCURACY" title="Permalink to this definition">¶</a></dt>
-<dd><p>Combination of max/min altitude.</p>
-</dd></dl>
+<dt id="ichnaea.models.constants.MIN_ALTITUDE_ACCURACY">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_ALTITUDE_ACCURACY</code><em class="property"> = 0.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_ALTITUDE_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MIN_HEADING">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_HEADING</code><em class="property"> = 0.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_HEADING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="data">
 <dt id="ichnaea.models.constants.MAX_HEADING">
@@ -276,9 +306,38 @@
 </dd></dl>
 
 <dl class="data">
+<dt id="ichnaea.models.constants.MIN_PRESSURE">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_PRESSURE</code><em class="property"> = 100.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_PRESSURE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum pressure in hPA.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_PRESSURE">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_PRESSURE</code><em class="property"> = 1200.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_PRESSURE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum pressure in hPA.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MIN_SPEED">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_SPEED</code><em class="property"> = 0.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_SPEED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
 <dt id="ichnaea.models.constants.MAX_SPEED">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_SPEED</code><em class="property"> = 300.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_SPEED" title="Permalink to this definition">¶</a></dt>
 <dd><p>A bit less than speed of sound, in meters per second.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MIN_TIMESTAMP">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_TIMESTAMP</code><em class="property"> = 1000000000000</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_TIMESTAMP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum allowed time stamp, 2001.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_TIMESTAMP">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_TIMESTAMP</code><em class="property"> = 10000000000000</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_TIMESTAMP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum allowed time stamp, 2286.</p>
 </dd></dl>
 
 <dl class="data">
@@ -306,6 +365,24 @@
 </dd></dl>
 
 <dl class="data">
+<dt id="ichnaea.models.constants.MAX_OBSERVATION_AGE">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_OBSERVATION_AGE</code><em class="property"> = 20000.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_OBSERVATION_AGE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum observation age.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_OBSERVATION_ACCURACY">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_OBSERVATION_ACCURACY</code><em class="property"> = 200.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_OBSERVATION_ACCURACY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum observation accuracy.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_OBSERVATION_SPEED">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_OBSERVATION_SPEED</code><em class="property"> = 50.0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_OBSERVATION_SPEED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum observation speed.</p>
+</dd></dl>
+
+<dl class="data">
 <dt id="ichnaea.models.constants.WIFI_TEST_MAC">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">WIFI_TEST_MAC</code><em class="property"> = '01005e901000'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.WIFI_TEST_MAC" title="Permalink to this definition">¶</a></dt>
 <dd><p>We use a <a class="reference external" href="http://tools.ietf.org/html/rfc7042#section-2.1.1">documentation-only multi-cast address</a>
@@ -314,13 +391,13 @@ as a test mac address and ignore data submissions with it.</p>
 
 <dl class="data">
 <dt id="ichnaea.models.constants.MIN_WIFI_CHANNEL">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_WIFI_CHANNEL</code><em class="property"> = 0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_WIFI_CHANNEL" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_WIFI_CHANNEL</code><em class="property"> = 1</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_WIFI_CHANNEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum accepted WiFi channel.</p>
 </dd></dl>
 
 <dl class="data">
 <dt id="ichnaea.models.constants.MAX_WIFI_CHANNEL">
-<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_WIFI_CHANNEL</code><em class="property"> = 166</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_WIFI_CHANNEL" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_WIFI_CHANNEL</code><em class="property"> = 165</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_WIFI_CHANNEL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum accepted WiFi channel.</p>
 </dd></dl>
 
@@ -334,6 +411,18 @@ as a test mac address and ignore data submissions with it.</p>
 <dt id="ichnaea.models.constants.MAX_WIFI_SIGNAL">
 <code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_WIFI_SIGNAL</code><em class="property"> = -10</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_WIFI_SIGNAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum accepted WiFi signal strength value.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MIN_WIFI_SNR">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MIN_WIFI_SNR</code><em class="property"> = 1</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MIN_WIFI_SNR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum accepted WiFi signal to noise ratio.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.models.constants.MAX_WIFI_SNR">
+<code class="descclassname">ichnaea.models.constants.</code><code class="descname">MAX_WIFI_SNR</code><em class="property"> = 100</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.MAX_WIFI_SNR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum accepted WiFi signal to noise ratio.</p>
 </dd></dl>
 
 <dl class="data">
@@ -474,7 +563,7 @@ as a test mac address and ignore data submissions with it.</p>
         <a href="content.html" class="btn btn-neutral float-right" title="ichnaea.models.content" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cell.html" class="btn btn-neutral" title="ichnaea.models.cell" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="config.html" class="btn btn-neutral" title="ichnaea.models.config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
