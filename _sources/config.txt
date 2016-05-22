@@ -40,25 +40,12 @@ Cache
 The cache section contains a ``cache_url`` pointing to a Redis server.
 
 The cache is used as a classic cache by the webapp code, as a backend
-to store rate-limiting counters and as a custom queuing backend.
+to store rate-limiting counters, as a custom and a celery queuing backend.
 
 .. code-block:: ini
 
     [cache]
     cache_url = redis://localhost:6379/0
-
-
-Celery
-------
-
-The celery section contains connection settings for the Celery asynchronous
-task system.
-
-.. code-block:: ini
-
-    [celery]
-    broker_url = redis://localhost:6379/0
-    result_url = redis://localhost:6379/0
 
 
 Database
@@ -136,6 +123,28 @@ part of the standard metric name.
     port = 8125
     metric_prefix = location
     tag_support = true
+
+
+Web
+---
+
+The web section contains settings related to the non-API website content.
+
+If the ``enabled`` setting is set to ``false`` the website content pages
+aren't made available and the web functionality is limited to the
+public HTTP API.
+
+The ``map_id_base`` and ``map_id_labels`` settings specify Mapbox map
+ids for a base map and a map containing only labels. The ``map_token``
+specifies a Mapbox access token.
+
+.. code-block:: ini
+
+    [web]
+    enabled = true
+    map_id_base = example_base.map-123
+    map_id_labels = example_labels.map-234
+    map_token = pk.example_public_access_token
 
 
 Import

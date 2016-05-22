@@ -89,11 +89,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Application Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#celery">Celery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#database">Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#geoip">GeoIP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sentry">Sentry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#statsd">StatsD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#web">Web</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#import">Import</a></li>
 </ul>
 </li>
@@ -176,19 +176,9 @@ section of the website.</p>
 <h2>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h2>
 <p>The cache section contains a <code class="docutils literal"><span class="pre">cache_url</span></code> pointing to a Redis server.</p>
 <p>The cache is used as a classic cache by the webapp code, as a backend
-to store rate-limiting counters and as a custom queuing backend.</p>
+to store rate-limiting counters, as a custom and a celery queuing backend.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[cache]</span>
 <span class="na">cache_url</span> <span class="o">=</span> <span class="s">redis://localhost:6379/0</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="celery">
-<h2>Celery<a class="headerlink" href="#celery" title="Permalink to this headline">¶</a></h2>
-<p>The celery section contains connection settings for the Celery asynchronous
-task system.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[celery]</span>
-<span class="na">broker_url</span> <span class="o">=</span> <span class="s">redis://localhost:6379/0</span>
-<span class="na">result_url</span> <span class="o">=</span> <span class="s">redis://localhost:6379/0</span>
 </pre></div>
 </div>
 </div>
@@ -246,6 +236,23 @@ part of the standard metric name.</p>
 <span class="na">port</span> <span class="o">=</span> <span class="s">8125</span>
 <span class="na">metric_prefix</span> <span class="o">=</span> <span class="s">location</span>
 <span class="na">tag_support</span> <span class="o">=</span> <span class="s">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="web">
+<h2>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<p>The web section contains settings related to the non-API website content.</p>
+<p>If the <code class="docutils literal"><span class="pre">enabled</span></code> setting is set to <code class="docutils literal"><span class="pre">false</span></code> the website content pages
+aren&#8217;t made available and the web functionality is limited to the
+public HTTP API.</p>
+<p>The <code class="docutils literal"><span class="pre">map_id_base</span></code> and <code class="docutils literal"><span class="pre">map_id_labels</span></code> settings specify Mapbox map
+ids for a base map and a map containing only labels. The <code class="docutils literal"><span class="pre">map_token</span></code>
+specifies a Mapbox access token.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[web]</span>
+<span class="na">enabled</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">map_id_base</span> <span class="o">=</span> <span class="s">example_base.map-123</span>
+<span class="na">map_id_labels</span> <span class="o">=</span> <span class="s">example_labels.map-234</span>
+<span class="na">map_token</span> <span class="o">=</span> <span class="s">pk.example_public_access_token</span>
 </pre></div>
 </div>
 </div>

@@ -261,6 +261,16 @@
 <dt id="ichnaea.log.DebugRavenClient">
 <em class="property">class </em><code class="descclassname">ichnaea.log.</code><code class="descname">DebugRavenClient</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.DebugRavenClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>An in-memory raven client with an inspectable message queue.</p>
+<dl class="method">
+<dt id="ichnaea.log.DebugRavenClient.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>expected=()</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.DebugRavenClient.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks the raven message stream looking for the expected messages.</p>
+<p>The expected argument should be a list of either names or tuples.</p>
+<p>If it is a tuple, it should be a tuple of name and an expected count.</p>
+<p>The names are matched via startswith against the captured exception
+messages.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -273,6 +283,13 @@
 <dt id="ichnaea.log.DebugStatsClient">
 <em class="property">class </em><code class="descclassname">ichnaea.log.</code><code class="descname">DebugStatsClient</code><span class="sig-paren">(</span><em>host='localhost'</em>, <em>port=8125</em>, <em>max_buffer_size=50</em>, <em>namespace=None</em>, <em>constant_tags=None</em>, <em>use_ms=False</em>, <em>tag_support=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.DebugStatsClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>An in-memory statsd client with an inspectable message queue.</p>
+<dl class="method">
+<dt id="ichnaea.log.DebugStatsClient.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>total=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.DebugStatsClient.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks a partial specification of messages to be found in
+the stats message stream.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="function">

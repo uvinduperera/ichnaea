@@ -171,7 +171,7 @@
 <p>Contains helper functionality for reading and parsing configuration files.</p>
 <dl class="class">
 <dt id="ichnaea.config.Config">
-<em class="property">class </em><code class="descclassname">ichnaea.config.</code><code class="descname">Config</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.config.</code><code class="descname">Config</code><span class="sig-paren">(</span><em>filename</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config" title="Permalink to this definition">¶</a></dt>
 <dd><p>A <code class="xref py py-class docutils literal"><span class="pre">configparser.ConfigParser</span></code> subclass with added
 functionality.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -184,7 +184,7 @@ functionality.</p>
 </table>
 <dl class="method">
 <dt id="ichnaea.config.Config.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config.get" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>default=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>A get method which returns the default argument when the option
 cannot be found instead of raising an exception.</p>
 </dd></dl>

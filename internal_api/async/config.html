@@ -208,7 +208,7 @@ each forked worker process.</p>
 
 <dl class="function">
 <dt id="ichnaea.async.config.init_worker">
-<code class="descclassname">ichnaea.async.config.</code><code class="descname">init_worker</code><span class="sig-paren">(</span><em>celery_app</em>, <em>_db_rw=None</em>, <em>_db_ro=None</em>, <em>_geoip_db=None</em>, <em>_raven_client=None</em>, <em>_redis_client=None</em>, <em>_stats_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.init_worker" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.async.config.</code><code class="descname">init_worker</code><span class="sig-paren">(</span><em>celery_app</em>, <em>_db_rw=None</em>, <em>_geoip_db=None</em>, <em>_raven_client=None</em>, <em>_redis_client=None</em>, <em>_stats_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.init_worker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure the passed in celery app, usually stored in
 <a class="reference internal" href="app.html#ichnaea.async.app.celery_app" title="ichnaea.async.app.celery_app"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.async.app.celery_app</span></code></a>.</p>
 <p>Does connection, settings and queue setup. Attaches some
@@ -216,14 +216,6 @@ additional functionality to the <a class="reference external" href="https://cele
 <p>This is executed inside each forked worker process.</p>
 <p>The parameters starting with an underscore are test-only hooks
 to provide pre-configured connection objects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>_db_ro</strong> &#8211; Ignored, read-only database connection isn&#8217;t used.</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="function">
