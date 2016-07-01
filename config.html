@@ -87,14 +87,20 @@
 <li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deploy.html">Installing / Deploying</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Application Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cache">Cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#database">Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#geoip">GeoIP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sentry">Sentry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statsd">StatsD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#web">Web</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#import">Import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#required-sections">Required Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cache">Cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geoip">GeoIP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sentry">Sentry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statsd">StatsD</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-sections">Optional Sections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#assets">Assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import">Import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web">Web</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
@@ -158,22 +164,10 @@ environment variable. The variable should contain an absolute path,
 for example <code class="docutils literal"><span class="pre">/etc/location.ini</span></code>.</p>
 <p>The configuration file is an ini-style file and contains a number of
 different sections.</p>
-<div class="section" id="assets">
-<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
-<p>The assets section contains settings for a static file repository
-(Amazon S3) and a public DNS to access those files via HTTPS
-(Amazon CloudFront).</p>
-<p>These are used to store and serve both the image tiles generated for
-the data map and the public export files available via the downloads
-section of the website.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[assets]</span>
-<span class="na">bucket</span> <span class="o">=</span> <span class="s">amazon_s3_bucket_name</span>
-<span class="na">url</span> <span class="o">=</span> <span class="s">https://some_distribution_id.cloudfront.net</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="required-sections">
+<h2>Required Sections<a class="headerlink" href="#required-sections" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cache">
-<h2>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h2>
+<h3>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h3>
 <p>The cache section contains a <code class="docutils literal"><span class="pre">cache_url</span></code> pointing to a Redis server.</p>
 <p>The cache is used as a classic cache by the webapp code, as a backend
 to store rate-limiting counters, as a custom and a celery queuing backend.</p>
@@ -183,7 +177,7 @@ to store rate-limiting counters, as a custom and a celery queuing backend.</p>
 </div>
 </div>
 <div class="section" id="database">
-<h2>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h2>
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
 <p>The database section contains settings for accessing the MySQL database.</p>
 <p>The web application only requires and uses the read-only connection,
 while the asynchronous celery workers only use the read-write connection.</p>
@@ -198,7 +192,7 @@ which has a separate <code class="docutils literal"><span class="pre">alembic.in
 </div>
 </div>
 <div class="section" id="geoip">
-<h2>GeoIP<a class="headerlink" href="#geoip" title="Permalink to this headline">¶</a></h2>
+<h3>GeoIP<a class="headerlink" href="#geoip" title="Permalink to this headline">¶</a></h3>
 <p>The geoip section contains settings related to the maxmind GeoIP database.</p>
 <p>The <code class="docutils literal"><span class="pre">db_path</span></code> setting needs to point to a maxmind GeoIP city database
 in version 2 format. Both GeoLite and commercial databases will work.</p>
@@ -208,7 +202,7 @@ in version 2 format. Both GeoLite and commercial databases will work.</p>
 </div>
 </div>
 <div class="section" id="sentry">
-<h2>Sentry<a class="headerlink" href="#sentry" title="Permalink to this headline">¶</a></h2>
+<h3>Sentry<a class="headerlink" href="#sentry" title="Permalink to this headline">¶</a></h3>
 <p>The sentry section contains settings related to a Sentry server.</p>
 <p>The <code class="docutils literal"><span class="pre">dsn</span></code> setting needs to contain a valid DSN project entry.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[sentry]</span>
@@ -217,7 +211,7 @@ in version 2 format. Both GeoLite and commercial databases will work.</p>
 </div>
 </div>
 <div class="section" id="statsd">
-<h2>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h2>
+<h3>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h3>
 <p>The statsd section contains settings related to a StatsD service. The
 project uses a lot of metrics as further detailed in
 <a class="reference internal" href="metrics.html#metrics"><span class="std std-ref">the metrics documentation</span></a>.</p>
@@ -239,25 +233,25 @@ part of the standard metric name.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="web">
-<h2>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
-<p>The web section contains settings related to the non-API website content.</p>
-<p>If the <code class="docutils literal"><span class="pre">enabled</span></code> setting is set to <code class="docutils literal"><span class="pre">false</span></code> the website content pages
-aren&#8217;t made available and the web functionality is limited to the
-public HTTP API.</p>
-<p>The <code class="docutils literal"><span class="pre">map_id_base</span></code> and <code class="docutils literal"><span class="pre">map_id_labels</span></code> settings specify Mapbox map
-ids for a base map and a map containing only labels. The <code class="docutils literal"><span class="pre">map_token</span></code>
-specifies a Mapbox access token.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[web]</span>
-<span class="na">enabled</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">map_id_base</span> <span class="o">=</span> <span class="s">example_base.map-123</span>
-<span class="na">map_id_labels</span> <span class="o">=</span> <span class="s">example_labels.map-234</span>
-<span class="na">map_token</span> <span class="o">=</span> <span class="s">pk.example_public_access_token</span>
+</div>
+<div class="section" id="optional-sections">
+<h2>Optional Sections<a class="headerlink" href="#optional-sections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="assets">
+<h3>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h3>
+<p>The assets section contains settings for a static file repository
+(Amazon S3) and a public DNS to access those files via HTTPS
+(Amazon CloudFront).</p>
+<p>These are used to store and serve both the image tiles generated for
+the data map and the public export files available via the downloads
+section of the website.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[assets]</span>
+<span class="na">bucket</span> <span class="o">=</span> <span class="s">amazon_s3_bucket_name</span>
+<span class="na">url</span> <span class="o">=</span> <span class="s">https://some_distribution_id.cloudfront.net</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="import">
-<h2>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
+<h3>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h3>
 <p>The project supports importing cell data on a regular basis from the
 <a class="reference internal" href="glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> (OCID) project, using the
 <a class="reference internal" href="import_export.html#import-export"><span class="std std-ref">cell import/export</span></a> data format.</p>
@@ -271,6 +265,24 @@ and an <code class="docutils literal"><span class="pre">apikey</span></code> nee
 page listing the available download files using a specific file name pattern
 for daily full and hourly differential files.</p>
 <p>For the <a class="reference internal" href="glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> service, the URL must end with a slash.</p>
+</div>
+<div class="section" id="web">
+<h3>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h3>
+<p>The web section contains settings related to the non-API website content.</p>
+<p>The web functionality by default is limited to the public HTTP API.
+If the <code class="docutils literal"><span class="pre">enabled</span></code> setting is set to <code class="docutils literal"><span class="pre">true</span></code> the website content pages
+are also made available.</p>
+<p>The <code class="docutils literal"><span class="pre">map_id_base</span></code> and <code class="docutils literal"><span class="pre">map_id_labels</span></code> settings specify Mapbox map
+ids for a base map and a map containing only labels. The <code class="docutils literal"><span class="pre">map_token</span></code>
+specifies a Mapbox access token.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[web]</span>
+<span class="na">enabled</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">map_id_base</span> <span class="o">=</span> <span class="s">example_base.map-123</span>
+<span class="na">map_id_labels</span> <span class="o">=</span> <span class="s">example_labels.map-234</span>
+<span class="na">map_token</span> <span class="o">=</span> <span class="s">pk.example_public_access_token</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
