@@ -180,7 +180,7 @@
 <dl class="data">
 <dt id="ichnaea.async.config.CELERY_QUEUES">
 <code class="descclassname">ichnaea.async.config.</code><code class="descname">CELERY_QUEUES</code><em class="property"> = (&lt;unbound Queue celery_blue -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_blue&gt;, &lt;unbound Queue celery_cell -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_cell&gt;, &lt;unbound Queue celery_content -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_content&gt;, &lt;unbound Queue celery_default -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_default&gt;, &lt;unbound Queue celery_export -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_export&gt;, &lt;unbound Queue celery_incoming -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_incoming&gt;, &lt;unbound Queue celery_monitor -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_monitor&gt;, &lt;unbound Queue celery_ocid -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_ocid&gt;, &lt;unbound Queue celery_reports -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_reports&gt;, &lt;unbound Queue celery_wifi -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_wifi&gt;)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.config.CELERY_QUEUES" title="Permalink to this definition">¶</a></dt>
-<dd><p>List of <a class="reference external" href="https://kombu.readthedocs.org/en/latest/reference/kombu.html#kombu.Queue" title="(in Kombu v3.0)"><code class="xref py py-class docutils literal"><span class="pre">kombu.Queue</span></code></a> instances.</p>
+<dd><p>List of <a class="reference external" href="https://kombu.readthedocs.io/en/latest/reference/kombu.html#kombu.Queue" title="(in Kombu v3.0)"><code class="xref py py-class docutils literal"><span class="pre">kombu.Queue</span></code></a> instances.</p>
 </dd></dl>
 
 <dl class="function">
@@ -212,7 +212,7 @@ each forked worker process.</p>
 <dd><p>Configure the passed in celery app, usually stored in
 <a class="reference internal" href="app.html#ichnaea.async.app.celery_app" title="ichnaea.async.app.celery_app"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.async.app.celery_app</span></code></a>.</p>
 <p>Does connection, settings and queue setup. Attaches some
-additional functionality to the <a class="reference external" href="https://celery.readthedocs.org/en/latest/reference/celery.html#celery.Celery" title="(in Celery v3.1)"><code class="xref py py-class docutils literal"><span class="pre">celery.Celery</span></code></a> instance.</p>
+additional functionality to the <a class="reference external" href="https://celery.readthedocs.io/en/latest/reference/celery.html#celery.Celery" title="(in Celery v3.1)"><code class="xref py py-class docutils literal"><span class="pre">celery.Celery</span></code></a> instance.</p>
 <p>This is executed inside each forked worker process.</p>
 <p>The parameters starting with an underscore are test-only hooks
 to provide pre-configured connection objects.</p>

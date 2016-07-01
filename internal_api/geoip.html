@@ -219,7 +219,7 @@ a <a class="reference internal" href="#ichnaea.geoip.GeoIPNull" title="ichnaea.g
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>raven_client</strong> (<a class="reference external" href="https://raven.readthedocs.org/en/latest/usage.html#raven.base.Client" title="(in Raven v5.4.0.dev0)"><code class="xref py py-class docutils literal"><span class="pre">raven.base.Client</span></code></a>) &#8211; A configured raven/sentry client.</li>
+<li><strong>raven_client</strong> (<a class="reference external" href="https://raven.readthedocs.io/en/latest/usage.html#raven.base.Client" title="(in Raven v5.4.0.dev0)"><code class="xref py py-class docutils literal"><span class="pre">raven.base.Client</span></code></a>) &#8211; A configured raven/sentry client.</li>
 <li><strong>_client</strong> &#8211; Test-only hook to provide a pre-configured client.</li>
 </ul>
 </td>
@@ -231,7 +231,7 @@ a <a class="reference internal" href="#ichnaea.geoip.GeoIPNull" title="ichnaea.g
 <dl class="class">
 <dt id="ichnaea.geoip.GeoIPWrapper">
 <em class="property">class </em><code class="descclassname">ichnaea.geoip.</code><code class="descname">GeoIPWrapper</code><span class="sig-paren">(</span><em>filename</em>, <em>mode=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geoip.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geoip.GeoIPWrapper" title="Permalink to this definition">¶</a></dt>
-<dd><p>A wrapper around the <a class="reference external" href="https://geoip2.readthedocs.org/en/latest/index.html#geoip2.database.Reader" title="(in geoip2 v2.3.0)"><code class="xref py py-class docutils literal"><span class="pre">geoip2.database.Reader</span></code></a> class with a lookup
+<dd><p>A wrapper around the <a class="reference external" href="https://geoip2.readthedocs.io/en/latest/index.html#geoip2.database.Reader" title="(in geoip2 v2.4.0)"><code class="xref py py-class docutils literal"><span class="pre">geoip2.database.Reader</span></code></a> class with a lookup
 function which returns <cite>None</cite> instead of raising exceptions.</p>
 <p>Takes the absolute path to a geoip database on the local filesystem
 and an additional mode, which defaults to
@@ -309,7 +309,7 @@ and an additional mode, which defaults to
 
 <dl class="method">
 <dt id="ichnaea.geoip.GeoIPWrapper.radius">
-<code class="descname">radius</code><span class="sig-paren">(</span><em>code</em>, <em>subs=None</em>, <em>city=None</em>, <em>default=5000000.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geoip.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geoip.GeoIPWrapper.radius" title="Permalink to this definition">¶</a></dt>
+<code class="descname">radius</code><span class="sig-paren">(</span><em>code</em>, <em>location</em>, <em>subs=None</em>, <em>city=None</em>, <em>default=5000000.0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/geoip.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.geoip.GeoIPWrapper.radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the best radius guess for the given region code.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

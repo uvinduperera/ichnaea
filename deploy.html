@@ -86,11 +86,12 @@
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">Services API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installing / Deploying</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#diagram">Diagram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mysql-amazon-rds">MySQL / Amazon RDS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#redis-amazon-elasticache">Redis / Amazon ElastiCache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#amazon-s3">Amazon S3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statsd-sentry">Statsd / Sentry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datadog-statsd-sentry">Datadog / Statsd / Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-tiles">Image Tiles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a></li>
@@ -147,6 +148,17 @@
             
   <div class="section" id="installing-deploying">
 <span id="deploy"></span><h1>Installing / Deploying<a class="headerlink" href="#installing-deploying" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="diagram">
+<h2>Diagram<a class="headerlink" href="#diagram" title="Permalink to this headline">¶</a></h2>
+<p>A full deployment of the application in an AWS environment can include all
+of the parts shown in the diagram, but various of these parts are optional:</p>
+<a class="reference internal image-reference" href="_images/deployment.png"><img alt="Deployment Diagram" src="_images/deployment.png" style="width: 462.0px; height: 348.0px;" /></a>
+<p>Specifically Amazon CloudFront and S3 are only used for backup and serving
+image tiles and public data downloads for the public website.
+Using Combain, Datadog, OpenCellID and Sentry is also optional.
+Finally there doesn&#8217;t have to be a <cite>admin</cite> EC2 box, but it can be helpful
+for debug access and running database migrations.</p>
+</div>
 <div class="section" id="mysql-amazon-rds">
 <h2>MySQL / Amazon RDS<a class="headerlink" href="#mysql-amazon-rds" title="Permalink to this headline">¶</a></h2>
 <p>The application is written and tested against MySQL 5.6.x or Amazon RDS of the
@@ -158,6 +170,13 @@ just three changes you need to do. For example via the my.cnf:</p>
 <span class="na">sql-mode</span><span class="o">=</span><span class="s">&quot;NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES&quot;</span>
 </pre></div>
 </div>
+<p>The web app frontend role only needs access to a read-only read-replica
+of the database. The async worker backend role needs access to a read-write
+primary database. You can use load balancers like haproxy to distribute
+load from the web app frontends over multiple read-replicas. The diagram
+shows a final fallback connection, where the web app frontends fall back
+to talking to the primary database if all read-replicas are down.
+An example of such a haproxy configuration is included in the source code.</p>
 </div>
 <div class="section" id="redis-amazon-elasticache">
 <h2>Redis / Amazon ElastiCache<a class="headerlink" href="#redis-amazon-elasticache" title="Permalink to this headline">¶</a></h2>
@@ -177,8 +196,8 @@ if you are not hosted in an Amazon environment.</p>
 delete old export files after a couple of days and <a class="reference internal" href="glossary.html#term-observation"><span class="xref std std-term">observation</span></a>
 data after one year.</p>
 </div>
-<div class="section" id="statsd-sentry">
-<h2>Statsd / Sentry<a class="headerlink" href="#statsd-sentry" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="datadog-statsd-sentry">
+<h2>Datadog / Statsd / Sentry<a class="headerlink" href="#datadog-statsd-sentry" title="Permalink to this headline">¶</a></h2>
 <p>The application uses Statsd to aggregate stats and Sentry to log
 exception messages.</p>
 <p>The default configuration in location.ini assumes that you are running
@@ -188,8 +207,8 @@ DSN for your Sentry instance. Edit location.ini and in the <cite>sentry</cite> s
 put your real DSN into the <cite>dsn</cite> setting.</p>
 <p>Installation of Statsd and Sentry are outside the scope of this documentation.</p>
 </div>
-<div class="section" id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="image-tiles">
+<h2>Image Tiles<a class="headerlink" href="#image-tiles" title="Permalink to this headline">¶</a></h2>
 <p>The code includes functionality to render out image tiles for a data map
 of places where observations have been made. This part of the code relies
 on two external projects. One is the
@@ -197,7 +216,9 @@ on two external projects. One is the
 the other is <a class="reference external" href="http://pngquant.org/">pngquant</a>. Make sure to install both
 of them and make their binaries available on your system path. The datamaps
 package includes the <cite>encode</cite>, <cite>enumerate</cite> and <cite>render</cite> tools and the
-pngquant package includes a tool called <cite>pngquant</cite>.</p>
+pngquant package includes a tool called <cite>pngquant</cite>. You can install these
+tools on the server running the celery scheduler (celerybeat) as it is
+otherwise underutilized.</p>
 </div>
 </div>
 
