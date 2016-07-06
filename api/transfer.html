@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Region &mdash; Ichnaea 1.5 documentation</title>
+  <title>Transfer (private) &mdash; Ichnaea 1.5 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="Ichnaea 1.5 documentation" href="../index.html"/>
         <link rel="up" title="Services API" href="index.html"/>
-        <link rel="next" title="Geosubmit Version 2" href="geosubmit2.html"/>
-        <link rel="prev" title="Geolocate" href="geolocate.html"/> 
+        <link rel="next" title="Data Import / Export" href="../import_export.html"/>
+        <link rel="prev" title="Submit (Deprecated)" href="submit.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -89,16 +89,17 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#errors">Errors</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#apis">APIs</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="geolocate.html">Geolocate</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Region</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#request">Request</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#response">Response</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="region.html">Region</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geosubmit2.html">Geosubmit Version 2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geosubmit.html">Geosubmit (Deprecated)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="search.html">Search (Deprecated)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="submit.html">Submit (Deprecated)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="transfer.html">Transfer (private)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Transfer (private)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#field-definition">Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#response">Response</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -145,11 +146,11 @@
       
           <li><a href="index.html">Services API</a> &raquo;</li>
       
-    <li>Region</li>
+    <li>Transfer (private)</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/region.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/transfer.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,63 +160,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="region">
-<span id="api-region-latest"></span><span id="api-region"></span><h1>Region<a class="headerlink" href="#region" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="transfer-private">
+<span id="api-transfer-latest"></span><span id="api-transfer"></span><h1>Transfer (private)<a class="headerlink" href="#transfer-private" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a private API for synchronizing multiple instances
+of the service and not open to the public.</p>
+</div>
 <dl class="docutils">
 <dt>Purpose</dt>
-<dd>Determine the current region based on data provided about nearby
-Bluetooth, cell or WiFi networks and based on the IP address used
-to access the service.</dd>
+<dd>Transfer aggregated area and station data from one instance of
+ichnaea to another.</dd>
 </dl>
-<p>The responses use region codes and names from the
-<a class="reference external" href="http://www.gwg.nga.mil/ccwg.php">GENC dataset</a>, which is for the
-most part compatible with the ISO 3166 standard. While the API
-endpoint and JSON payload refers to <cite>country</cite>, no claim about the
-political status of any region is made by this service.</p>
 <div class="section" id="request">
 <h2>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h2>
-<p>Requests are submitted using a POST request to the URL:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>https://location.services.mozilla.com/v1/country?key=&lt;API_KEY&gt;
+<p>Transfer requests are submitted using a POST request to the URL:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>https://location.services.mozilla.com/v1/transfer?key=&lt;API_KEY&gt;
 </pre></div>
 </div>
-<p>This implements the same interface as the <a class="reference internal" href="geolocate.html#api-geolocate"><span class="std std-ref">Geolocate</span></a> API.</p>
-<p>The simplest request contains no extra information and simply relies
-on the IP address to provide a response:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{}</span>
+<p>The requests must contain a JSON body:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;items&quot;</span><span class="o">:</span> <span class="p">[</span>
+
+<span class="p">]}</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="field-definition">
+<h2>Field Definition<a class="headerlink" href="#field-definition" title="Permalink to this headline">¶</a></h2>
+<p>Requests always need to contain a batch of items.</p>
 </div>
 <div class="section" id="response">
 <h2>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h2>
-<p>A successful response will be:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;country_code&quot;</span><span class="o">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;country_name&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Should the response be based on a GeoIP estimate:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;country_code&quot;</span><span class="o">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;country_name&quot;</span><span class="o">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;fallback&quot;</span><span class="o">:</span> <span class="s2">&quot;ipf&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>If no region could be determined, a HTTP status code 404 will be returned:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;errors&quot;</span><span class="o">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;domain&quot;</span><span class="o">:</span> <span class="s2">&quot;geolocation&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;reason&quot;</span><span class="o">:</span> <span class="s2">&quot;notFound&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Not found&quot;</span><span class="p">,</span>
-        <span class="p">}],</span>
-        <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="mi">404</span><span class="p">,</span>
-        <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Not found&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<p>Successful requests return a HTTP 200 response with a body of an empty
+JSON object.</p>
 </div>
 </div>
 
@@ -226,10 +203,10 @@ on the IP address to provide a response:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="geosubmit2.html" class="btn btn-neutral float-right" title="Geosubmit Version 2" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../import_export.html" class="btn btn-neutral float-right" title="Data Import / Export" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geolocate.html" class="btn btn-neutral" title="Geolocate" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="submit.html" class="btn btn-neutral" title="Submit (Deprecated)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

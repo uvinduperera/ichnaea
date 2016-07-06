@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ichnaea.api.locate.geoip &mdash; Ichnaea 1.5 documentation</title>
+  <title>ichnaea.api.transfer.schema &mdash; Ichnaea 1.5 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="Ichnaea 1.5 documentation" href="../../../index.html"/>
-        <link rel="up" title="ichnaea.api.locate" href="index.html"/>
-        <link rel="next" title="ichnaea.api.locate.internal" href="internal.html"/>
-        <link rel="prev" title="ichnaea.api.locate.fallback" href="fallback.html"/> 
+        <link rel="up" title="ichnaea.api.transfer" href="index.html"/>
+        <link rel="next" title="ichnaea.api.transfer.views" href="views.html"/>
+        <link rel="prev" title="ichnaea.api.transfer" href="index.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -97,11 +97,11 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html"><code class="docutils literal"><span class="pre">ichnaea.api</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../config.html"><code class="docutils literal"><span class="pre">ichnaea.api.config</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.api.exceptions</span></code></a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../locate/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../rate_limit.html"><code class="docutils literal"><span class="pre">ichnaea.api.rate_limit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../schema.html"><code class="docutils literal"><span class="pre">ichnaea.api.schema</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../submit/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.submit</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../transfer/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.transfer</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html"><code class="docutils literal"><span class="pre">ichnaea.api.transfer</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../views.html"><code class="docutils literal"><span class="pre">ichnaea.api.views</span></code></a></li>
 </ul>
 </li>
@@ -164,13 +164,13 @@
       
           <li><a href="../index.html"><code class="docutils literal"><span class="pre">ichnaea.api</span></code></a> &raquo;</li>
       
-          <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.api.locate</span></code></a> &raquo;</li>
+          <li><a href="index.html"><code class="docutils literal"><span class="pre">ichnaea.api.transfer</span></code></a> &raquo;</li>
       
-    <li><code class="docutils literal"><span class="pre">ichnaea.api.locate.geoip</span></code></li>
+    <li><code class="docutils literal"><span class="pre">ichnaea.api.transfer.schema</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/internal_api/api/locate/geoip.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/internal_api/api/transfer/schema.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -180,27 +180,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ichnaea.api.locate.geoip">
-<span id="ichnaea-api-locate-geoip"></span><h1><a class="reference internal" href="#module-ichnaea.api.locate.geoip" title="ichnaea.api.locate.geoip"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.locate.geoip</span></code></a><a class="headerlink" href="#module-ichnaea.api.locate.geoip" title="Permalink to this headline">¶</a></h1>
-<p>Implementation of a GeoIP based search source.</p>
-<dl class="class">
-<dt id="ichnaea.api.locate.geoip.GeoIPSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.geoip.</code><code class="descname">GeoIPSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/geoip.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.geoip.GeoIPSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>A GeoIPSource returns search results based on a GeoIP database.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.geoip.GeoIPPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.geoip.</code><code class="descname">GeoIPPositionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/geoip.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.geoip.GeoIPPositionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>A GeoIPSource returning position results.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.geoip.GeoIPRegionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.geoip.</code><code class="descname">GeoIPRegionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/geoip.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.geoip.GeoIPRegionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>A GeoIPSource returning region results.</p>
-</dd></dl>
-
+  <div class="section" id="module-ichnaea.api.transfer.schema">
+<span id="ichnaea-api-transfer-schema"></span><h1><a class="reference internal" href="#module-ichnaea.api.transfer.schema" title="ichnaea.api.transfer.schema"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.api.transfer.schema</span></code></a><a class="headerlink" href="#module-ichnaea.api.transfer.schema" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -210,10 +191,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="internal.html" class="btn btn-neutral float-right" title="ichnaea.api.locate.internal" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="views.html" class="btn btn-neutral float-right" title="ichnaea.api.transfer.views" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="fallback.html" class="btn btn-neutral" title="ichnaea.api.locate.fallback" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="ichnaea.api.transfer" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

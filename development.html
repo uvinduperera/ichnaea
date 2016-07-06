@@ -197,6 +197,20 @@ on your system. The default Makefile also assumes a <cite>virtualenv</cite>
 command is globally available. If this isn&#8217;t true for your system,
 please create a virtualenv manually inside the ichnaea folder before
 continuing (<code class="docutils literal"><span class="pre">/path/to/virtualenv</span> <span class="pre">--python=python2.6</span> <span class="pre">.</span></code>).</p>
+<p>In the next step you are going to install a good number of Python libraries,
+which depend on various OS level C libraries. These C libraries are best
+installed via the OS level package management system. On CentOS/Redhat
+these are:</p>
+<p>Runtime requirements:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>openssl, python, libmaxminddb, libffi, atlas-sse3, geos, spatialindex-devel
+</pre></div>
+</div>
+<p>Build requirements:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>openssl-devel, gcc, gcc-c++, gcc-gfortran, make, python, python-pip,
+python-virtualenv, git, libmaxminddb, libffi-devel, atlas-devel,
+geos-devel, spatialindex-devel
+</pre></div>
+</div>
 <p>Then run make which is going to take quite a while the first time:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>make
 </pre></div>

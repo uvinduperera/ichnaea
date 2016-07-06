@@ -101,6 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="rate_limit.html"><code class="docutils literal"><span class="pre">ichnaea.api.rate_limit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="schema.html"><code class="docutils literal"><span class="pre">ichnaea.api.schema</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="submit/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.submit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="transfer/index.html"><code class="docutils literal"><span class="pre">ichnaea.api.transfer</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="views.html"><code class="docutils literal"><span class="pre">ichnaea.api.views</span></code></a></li>
 </ul>
 </li>
@@ -209,9 +210,43 @@ a JSON body.</p>
 </dd></dl>
 
 <dl class="exception">
+<dt id="ichnaea.api.exceptions.TransferSuccess">
+<em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">TransferSuccess</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.TransferSuccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>A successful transfer response.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.TransferSuccess.code">
+<code class="descname">code</code><em class="property"> = 200</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.TransferSuccess.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.api.exceptions.TransferSuccess.json_body">
+<em class="property">classmethod </em><code class="descname">json_body</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.TransferSuccess.json_body" title="Permalink to this definition">¶</a></dt>
+<dd><p>A JSON representation of this response.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ichnaea.api.exceptions.UploadSuccess">
+<em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">UploadSuccess</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.UploadSuccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>A successful upload response.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.UploadSuccess.code">
+<code class="descname">code</code><em class="property"> = 200</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.UploadSuccess.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="ichnaea.api.exceptions.UploadSuccess.json_body">
+<em class="property">classmethod </em><code class="descname">json_body</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.UploadSuccess.json_body" title="Permalink to this definition">¶</a></dt>
+<dd><p>A JSON representation of this response.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
 <dt id="ichnaea.api.exceptions.UploadSuccessV0">
 <em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">UploadSuccessV0</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.UploadSuccessV0" title="Permalink to this definition">¶</a></dt>
-<dd><p>A variant of <code class="xref py py-exc docutils literal"><span class="pre">UploadSuccess</span></code> used
+<dd><p>A variant of <a class="reference internal" href="#ichnaea.api.exceptions.UploadSuccess" title="ichnaea.api.exceptions.UploadSuccess"><code class="xref py py-exc docutils literal"><span class="pre">UploadSuccess</span></code></a> used
 in earlier version 0 HTTP APIs.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.exceptions.UploadSuccessV0.code">
@@ -311,9 +346,87 @@ and have a similar JSON body.</p>
 </dd></dl>
 
 <dl class="exception">
+<dt id="ichnaea.api.exceptions.DailyLimitExceeded">
+<em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">DailyLimitExceeded</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.DailyLimitExceeded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response given when daily quota was exceeded.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.DailyLimitExceeded.code">
+<code class="descname">code</code><em class="property"> = 403</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.DailyLimitExceeded.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.DailyLimitExceeded.domain">
+<code class="descname">domain</code><em class="property"> = 'usageLimits'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.DailyLimitExceeded.domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.DailyLimitExceeded.reason">
+<code class="descname">reason</code><em class="property"> = 'dailyLimitExceeded'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.DailyLimitExceeded.reason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.DailyLimitExceeded.message">
+<code class="descname">message</code><em class="property"> = 'You have exceeded your daily limit.'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.DailyLimitExceeded.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ichnaea.api.exceptions.InvalidAPIKey">
+<em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">InvalidAPIKey</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.InvalidAPIKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response for missing or invalid API keys.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.InvalidAPIKey.code">
+<code class="descname">code</code><em class="property"> = 400</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.InvalidAPIKey.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.InvalidAPIKey.domain">
+<code class="descname">domain</code><em class="property"> = 'usageLimits'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.InvalidAPIKey.domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.InvalidAPIKey.reason">
+<code class="descname">reason</code><em class="property"> = 'keyInvalid'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.InvalidAPIKey.reason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.InvalidAPIKey.message">
+<code class="descname">message</code><em class="property"> = 'Missing or invalid API key.'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.InvalidAPIKey.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ichnaea.api.exceptions.LocationNotFound">
+<em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">LocationNotFound</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.LocationNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response given when mo location could be found.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.LocationNotFound.code">
+<code class="descname">code</code><em class="property"> = 404</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.LocationNotFound.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.LocationNotFound.domain">
+<code class="descname">domain</code><em class="property"> = 'geolocation'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.LocationNotFound.domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.LocationNotFound.reason">
+<code class="descname">reason</code><em class="property"> = 'notFound'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.LocationNotFound.reason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.LocationNotFound.message">
+<code class="descname">message</code><em class="property"> = 'Not found'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.LocationNotFound.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
 <dt id="ichnaea.api.exceptions.LocationNotFoundV0">
 <em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">LocationNotFoundV0</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.LocationNotFoundV0" title="Permalink to this definition">¶</a></dt>
-<dd><p>A variant of <code class="xref py py-exc docutils literal"><span class="pre">LocationNotFound</span></code> used
+<dd><p>A variant of <a class="reference internal" href="#ichnaea.api.exceptions.LocationNotFound" title="ichnaea.api.exceptions.LocationNotFound"><code class="xref py py-exc docutils literal"><span class="pre">LocationNotFound</span></code></a> used
 in earlier version 0 HTTP APIs.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.exceptions.LocationNotFoundV0.code">
@@ -325,6 +438,58 @@ in earlier version 0 HTTP APIs.</p>
 <em class="property">classmethod </em><code class="descname">json_body</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.LocationNotFoundV0.json_body" title="Permalink to this definition">¶</a></dt>
 <dd><p>A JSON representation of this response.</p>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ichnaea.api.exceptions.ParseError">
+<em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">ParseError</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ParseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response given when the request couldn&#8217;t be parsed.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ParseError.code">
+<code class="descname">code</code><em class="property"> = 400</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ParseError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ParseError.domain">
+<code class="descname">domain</code><em class="property"> = 'global'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ParseError.domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ParseError.reason">
+<code class="descname">reason</code><em class="property"> = 'parseError'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ParseError.reason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ParseError.message">
+<code class="descname">message</code><em class="property"> = 'Parse Error'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ParseError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ichnaea.api.exceptions.ServiceUnavailable">
+<em class="property">exception </em><code class="descclassname">ichnaea.api.exceptions.</code><code class="descname">ServiceUnavailable</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ServiceUnavailable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Response given when the service is (partially) unavailable.</p>
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ServiceUnavailable.code">
+<code class="descname">code</code><em class="property"> = 503</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ServiceUnavailable.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ServiceUnavailable.domain">
+<code class="descname">domain</code><em class="property"> = 'global'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ServiceUnavailable.domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ServiceUnavailable.reason">
+<code class="descname">reason</code><em class="property"> = 'serviceUnavailable'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ServiceUnavailable.reason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.api.exceptions.ServiceUnavailable.message">
+<code class="descname">message</code><em class="property"> = 'Service Unavailable'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/exceptions.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.exceptions.ServiceUnavailable.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
