@@ -71,8 +71,8 @@ continuing (``/path/to/virtualenv --python=python2.6 .``).
 
 In the next step you are going to install a good number of Python libraries,
 which depend on various OS level C libraries. These C libraries are best
-installed via the OS level package management system. On CentOS/Redhat
-these are:
+installed via the OS level package management system. We list the
+CentOS/Redhat names, but they should be similar on other OS.
 
 Runtime requirements:
 
