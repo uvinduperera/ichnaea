@@ -88,6 +88,8 @@
 <li class="toctree-l1"><a class="reference internal" href="deploy.html">Installing / Deploying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-machine">Docker Machine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
@@ -149,12 +151,14 @@
             
   <div class="section" id="development">
 <span id="id1"></span><h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>In order to install a development version of the service, you need to
 have a Linux or Mac OS X machine and
-<a class="reference external" href="https://docs.docker.com/installation/">install docker</a>.</p>
-<p>On Mac OS X you can use Homebrew to install docker:</p>
+<a class="reference external" href="https://docs.docker.com/installation/">install docker</a>,
+docker-compose and docker-machine.</p>
+<p>On Linux you can use your OS level package manager to install them.</p>
+<p>On Mac OS X you can use Homebrew to install them:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew install docker
@@ -162,8 +166,13 @@ brew install docker-machine
 brew install docker-compose
 </pre></div>
 </div>
-<p>Then you need to create a docker machine:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>docker-machine create --driver virtualbox --virtualbox-memory <span class="m">2048</span> <span class="se">\</span>
+</div>
+<div class="section" id="docker-machine">
+<h2>Docker Machine<a class="headerlink" href="#docker-machine" title="Permalink to this headline">¶</a></h2>
+<p>We use docker machine to run additional development dependencies like
+Redis and MySQL with the exact versions we want to test against.</p>
+<p>You need to create a docker machine:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker-machine create --driver virtualbox --virtualbox-memory <span class="m">512</span> <span class="se">\</span>
     --virtualbox-cpu-count -1 default
 </pre></div>
 </div>
@@ -185,15 +194,10 @@ you need to specify the IP of the running docker machine, on Linux use
 </pre></div>
 </div>
 </div>
-<div class="section" id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Now run the following command to get the code:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/mozilla/ichnaea
-<span class="nb">cd</span> ichnaea
-</pre></div>
-</div>
-<p>In order to run the code you need to have Python 2.6, 2.7 or 3.4 installed
-on your system. The default Makefile also assumes a <cite>virtualenv</cite>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>In order to run the code you need to have Python 2.6, 2.7, 3.4 or 3.5
+installed on your system. The default Makefile also assumes a <cite>virtualenv</cite>
 command is globally available. If this isn&#8217;t true for your system,
 please create a virtualenv manually inside the ichnaea folder before
 continuing (<code class="docutils literal"><span class="pre">/path/to/virtualenv</span> <span class="pre">--python=python2.6</span> <span class="pre">.</span></code>).</p>
@@ -209,6 +213,14 @@ CentOS/Redhat names, but they should be similar on other OS.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>openssl-devel, gcc, gcc-c++, gcc-gfortran, make, python, python-pip,
 python-virtualenv, git, libmaxminddb, libffi-devel, atlas-devel,
 geos-devel, spatialindex-devel
+</pre></div>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>Now run the following command to get the code:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/mozilla/ichnaea
+<span class="nb">cd</span> ichnaea
 </pre></div>
 </div>
 <p>Then run make which is going to take quite a while the first time:</p>
