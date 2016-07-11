@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installing / Deploying &mdash; Ichnaea 1.5 documentation</title>
+  <title>Deployment &mdash; Ichnaea 1.5 documentation</title>
   
 
   
@@ -24,18 +24,19 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
   
 
   
-    <link rel="top" title="Ichnaea 1.5 documentation" href="index.html"/>
-        <link rel="next" title="Application Configuration" href="config.html"/>
-        <link rel="prev" title="Data Import / Export" href="import_export.html"/> 
+    <link rel="top" title="Ichnaea 1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Installation" href="index.html"/>
+        <link rel="next" title="Development" href="devel.html"/>
+        <link rel="prev" title="Configuration" href="config.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Ichnaea
+            <a href="../index.html" class="icon icon-home"> Ichnaea
           
 
           
@@ -67,7 +68,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -82,26 +83,28 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Using the Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing / Deploying</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#diagram">Diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mysql-amazon-rds">MySQL / Amazon RDS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#redis-amazon-elasticache">Redis / Amazon ElastiCache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#amazon-s3">Amazon S3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#datadog-statsd-sentry">Datadog / Statsd / Sentry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#image-tiles">Image Tiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#production">Production</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#development">Development</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#indices-and-tables">Indices and Tables</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="devel.html">Development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calculation.html">Calculation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="internal_api/index.html">Internal Code API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes/index.html">Changelog</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../calculation.html">Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internal_api/index.html">Internal Code API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changes/index.html">Changelog</a></li>
 </ul>
 
             
@@ -115,7 +118,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Ichnaea</a>
+        <a href="../index.html">Ichnaea</a>
       </nav>
 
 
@@ -130,13 +133,15 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
+    <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Installing / Deploying</li>
+          <li><a href="index.html">Installation</a> &raquo;</li>
+      
+    <li>Deployment</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/deploy.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/install/deploy.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -146,13 +151,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installing-deploying">
-<span id="deploy"></span><h1>Installing / Deploying<a class="headerlink" href="#installing-deploying" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="deployment">
+<span id="deploy"></span><h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="diagram">
 <h2>Diagram<a class="headerlink" href="#diagram" title="Permalink to this headline">¶</a></h2>
 <p>A full deployment of the application in an AWS environment can include all
 of the parts shown in the diagram, but various of these parts are optional:</p>
-<a class="reference internal image-reference" href="_images/deployment.png"><img alt="Deployment Diagram" src="_images/deployment.png" style="width: 462.0px; height: 348.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/deploy.png"><img alt="Deployment Diagram" src="../_images/deploy.png" style="width: 462.0px; height: 348.0px;" /></a>
 <p>Specifically Amazon CloudFront and S3 are only used for backup and serving
 image tiles and public data downloads for the public website.
 Using Combain, Datadog, OpenCellID and Sentry is also optional.
@@ -188,12 +193,12 @@ The application is also compatible with Amazon ElastiCache (Redis).</p>
 <div class="section" id="amazon-s3">
 <h2>Amazon S3<a class="headerlink" href="#amazon-s3" title="Permalink to this headline">¶</a></h2>
 <p>The application uses Amazon S3 for various tasks, including backup of
-<a class="reference internal" href="glossary.html#term-observations"><span class="xref std std-term">observations</span></a>, export of the aggregated cell table and hosting of
+<a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a>, export of the aggregated cell table and hosting of
 the data map image tiles.</p>
 <p>All of these are triggered by asynchronous jobs and you can disable them
 if you are not hosted in an Amazon environment.</p>
 <p>If you use Amazon S3 you might want to configure a lifecycle policy to
-delete old export files after a couple of days and <a class="reference internal" href="glossary.html#term-observation"><span class="xref std std-term">observation</span></a>
+delete old export files after a couple of days and <a class="reference internal" href="../glossary.html#term-observation"><span class="xref std std-term">observation</span></a>
 data after one year.</p>
 </div>
 <div class="section" id="datadog-statsd-sentry">
@@ -229,10 +234,10 @@ the <cite>location_map</cite> script via a cron job.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="config.html" class="btn btn-neutral float-right" title="Application Configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="devel.html" class="btn btn-neutral float-right" title="Development" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="import_export.html" class="btn btn-neutral" title="Data Import / Export" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="config.html" class="btn btn-neutral" title="Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -262,22 +267,22 @@ the <cite>location_map</cite> script via a cron job.</p>
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
+            URL_ROOT:'../',
             VERSION:'1.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
   

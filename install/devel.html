@@ -24,18 +24,19 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
   
 
   
-    <link rel="top" title="Ichnaea 1.5 documentation" href="index.html"/>
+    <link rel="top" title="Ichnaea 1.5 documentation" href="../index.html"/>
+        <link rel="up" title="Installation" href="index.html"/>
         <link rel="next" title="Testing" href="testing.html"/>
-        <link rel="prev" title="Application Configuration" href="config.html"/> 
+        <link rel="prev" title="Deployment" href="deploy.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Ichnaea
+            <a href="../index.html" class="icon icon-home"> Ichnaea
           
 
           
@@ -67,7 +68,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -82,29 +83,28 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Using the Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import_export.html">Data Import / Export</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deploy.html">Installing / Deploying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Application Configuration</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#docker-machine">Docker Machine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python-dependencies">Python Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#css-js-images">CSS / JS / Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cleanup">Cleanup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#release-build">Release Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#production">Production</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#development">Development</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#indices-and-tables">Indices and Tables</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="deploy.html">Deployment</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calculation.html">Calculation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="internal_api/index.html">Internal Code API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes/index.html">Changelog</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../calculation.html">Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internal_api/index.html">Internal Code API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changes/index.html">Changelog</a></li>
 </ul>
 
             
@@ -118,7 +118,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Ichnaea</a>
+        <a href="../index.html">Ichnaea</a>
       </nav>
 
 
@@ -133,13 +133,15 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Installation</a> &raquo;</li>
       
     <li>Development</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/development.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/install/devel.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -150,7 +152,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="development">
-<span id="id1"></span><h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<span id="devel"></span><h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>In order to install a development version of the service, you need to
@@ -313,7 +315,7 @@ files.</p>
         <a href="testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="config.html" class="btn btn-neutral" title="Application Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="deploy.html" class="btn btn-neutral" title="Deployment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -343,22 +345,22 @@ files.</p>
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
+            URL_ROOT:'../',
             VERSION:'1.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
   
