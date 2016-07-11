@@ -87,8 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Services API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Import / Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../calculation.html">Calculation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../metrics.html">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Internal Code API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#overview">Overview</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#indices-and-tables">Indices and Tables</a><ul class="current">
@@ -226,57 +225,6 @@
 
 </dd></dl>
 
-<div class="section" id="export-configuration">
-<h2>Export Configuration<a class="headerlink" href="#export-configuration" title="Permalink to this headline">¶</a></h2>
-<p>The project supports exporting all data that its gets via the
-submit-style APIs to different backends.</p>
-<p>Currently three different kinds of backends are supported:</p>
-<ul class="simple">
-<li>Amazon S3 buckets</li>
-<li>The projects own internal data processing pipeline</li>
-<li>A HTTPS POST endpoint accepting the geosubmit v2 format</li>
-</ul>
-<p>The type of the target is determined by the <cite>schema</cite> column of each entry.</p>
-<p>All export targets can be configured with a <code class="docutils literal"><span class="pre">batch</span></code> setting that
-determines how many reports have to be available before data is
-submitted to the backend.</p>
-<p>All exports have an additional <code class="docutils literal"><span class="pre">skip_keys</span></code> setting as a set of
-API keys. Data submitted using one of these API keys will not be
-exported to the target.</p>
-<p>There can be multiple instances of the bucket and HTTP POST export
-targets, but only one instance of the internal export.</p>
-<div class="section" id="bucket-export">
-<h3>Bucket Export<a class="headerlink" href="#bucket-export" title="Permalink to this headline">¶</a></h3>
-<p>The Amazon S3 bucket export combines reports into a gzipped JSON file
-and uploads them to the specified bucket <code class="docutils literal"><span class="pre">url</span></code>, for example:</p>
-<p><code class="docutils literal"><span class="pre">s3://amazon_s3_bucket_name/directory/{source}{api_key}/{year}/{month}/{day}</span></code></p>
-<p>The schema column must be set to <cite>s3</cite>.</p>
-<p>The url can contain any level of additional static directories under
-the bucket root. The <code class="docutils literal"><span class="pre">{api_key}/{year}/{month}/{day}</span></code> parts will
-be dynamically replaced by the <cite>api_key</cite> used to upload the data,
-the source of the report (e.g. gnss) and the date when the backup took place.
-The files use a random UUID4 as the filename.</p>
-<p>An example filename might be:</p>
-<p><code class="docutils literal"><span class="pre">/directory/test/2015/07/15/554d8d3c-5b28-48bb-9aa8-196543235cf2.json.gz</span></code></p>
-</div>
-<div class="section" id="internal-export">
-<h3>Internal Export<a class="headerlink" href="#internal-export" title="Permalink to this headline">¶</a></h3>
-<p>The internal export forwards the incoming data into the internal
-data pipeline.</p>
-<p>The schema column must be set to <cite>internal</cite>.</p>
-</div>
-<div class="section" id="https-export">
-<h3>HTTPS Export<a class="headerlink" href="#https-export" title="Permalink to this headline">¶</a></h3>
-<p>The HTTPS export buffers incoming data into batches of <code class="docutils literal"><span class="pre">batch</span></code>
-size and then submits them using the <a class="reference internal" href="../../api/geosubmit2.html#api-geosubmit-latest"><span class="std std-ref">Geosubmit Version 2</span></a>
-API to the specified <code class="docutils literal"><span class="pre">url</span></code> endpoint, for example:</p>
-<p><code class="docutils literal"><span class="pre">https://localhost/some/api/url?key=export</span></code></p>
-<p>The schema column must be set to <cite>geosubmit</cite>.</p>
-<p>If the project is taking in data from a partner in a data exchange,
-the <code class="docutils literal"><span class="pre">skip_keys</span></code> setting can be used to prevent data being
-round tripped and send back to the same partner that it came from.</p>
-</div>
-</div>
 </div>
 
 

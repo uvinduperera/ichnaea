@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; Ichnaea 1.5 documentation</title>
+  <title>Algorithms &mdash; Ichnaea 1.5 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="Ichnaea 1.5 documentation" href="../index.html"/>
-        <link rel="next" title="Changelog" href="changes-dev.html"/>
-        <link rel="prev" title="Glossary" href="../glossary.html"/> 
+        <link rel="next" title="Accuracy" href="accuracy.html"/>
+        <link rel="prev" title="Testing" href="../install/testing.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -86,21 +86,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accuracy.html">Accuracy</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../internal_api/index.html">Internal Code API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#changelogs">Changelogs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="changes-dev.html">Changelog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="changes-1.4.html">Changelog 1.4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="changes-1.3.html">Changelog 1.3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="changes-1.2.html">Changelog 1.2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="changes-1.1.html">Changelog 1.1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="changes-1.0.html">Changelog 1.0</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../changes/index.html">Changelog</a></li>
 </ul>
 
             
@@ -131,11 +123,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Changelog</li>
+    <li>Algorithms</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/changes/index.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/algo/index.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -145,20 +137,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="changelog">
-<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="changelogs">
-<h2>Changelogs<a class="headerlink" href="#changelogs" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="algorithms">
+<span id="algo"></span><h1>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h1>
+<p>The project uses a couple of different approaches and algorithms.</p>
+<p>There&#8217;s two general approaches to calculate positions from signal sources,
+without the cooperation of the signal sources or mobile networks.</p>
+<ol class="arabic simple">
+<li>Determine the location of signal sources from <a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a>,
+then compare / trilaterate user locations.</li>
+<li>Generate signal fingerprints for a fine-grained grid of the world.
+Find best match for a observed fingerprint.</li>
+</ol>
+<p>The second approach has a much better accuracy, but relies on a lot more
+available and constantly updated data. For most of the world this
+approach is not practical, so we currently focus on approach one.</p>
+<p>In theory one would assume that one could use signal strength data to
+infer a distance measure from it. The further a device is away from the
+signal source, the weaker the signal should get.</p>
+<p>Unfortunately the signal strength is more dependent on the device type,
+how a user holds a device and changing environmental factors like trucks in
+the way. Even worse modern networks adjust their signal strength to the number
+of devices inside their reception area. This makes this data highly
+unreliable while looking up a user&#8217;s position via a single reading.</p>
+<p>In aggregate over many data points this information can still be valuable
+in determining the actual position of the signal source. While observing
+multiple signals at once, their relative strengths can also be used, as
+this keeps some of the changing factors constant, like the device type.</p>
+<p>One other approach is using time of flight data as a distance metric.
+While there are some reflection and multipath problems, it&#8217;s a much more
+accurate distance predictor. Fine grained enough timing data is
+unfortunately almost never available to the application or operating
+system layer in client devices. Some LTE networks and really modern
+WiFi networks with support for 802.11v are the rare exception to this.
+But these are so rare, that we currently ignore timing data.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="changes-dev.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes-1.4.html">Changelog 1.4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes-1.3.html">Changelog 1.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes-1.2.html">Changelog 1.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes-1.1.html">Changelog 1.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes-1.0.html">Changelog 1.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accuracy.html">Accuracy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accuracy.html#bluetooth-wifi">Bluetooth / WiFi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accuracy.html#gsm-cells">GSM Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accuracy.html#wcdma-cells">WCDMA Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accuracy.html#lte-cells">LTE Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accuracy.html#geoip">GeoIP</a></li>
 </ul>
-</div>
+</li>
+</ul>
 </div>
 </div>
 
@@ -169,10 +191,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="changes-dev.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="accuracy.html" class="btn btn-neutral float-right" title="Accuracy" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../glossary.html" class="btn btn-neutral" title="Glossary" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../install/testing.html" class="btn btn-neutral" title="Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

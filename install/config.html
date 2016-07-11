@@ -87,21 +87,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#production">Production</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#development">Development</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="index.html#indices-and-tables">Indices and Tables</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="deploy.html">Deployment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="devel.html">Development</a></li>
-<li class="toctree-l4"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-file">Configuration File</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-sections">Required Sections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-sections">Optional Sections</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#database-configuration">Database Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#api-keys">API Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#export-configuration">Export Configuration</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devel.html">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../calculation.html">Calculation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../internal_api/index.html">Internal Code API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changes/index.html">Changelog</a></li>
@@ -154,7 +159,10 @@
   <div class="section" id="configuration">
 <span id="config"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
 <p>As part of deploying the application, you need to create an application
-configuration file, commonly called <code class="docutils literal"><span class="pre">location.ini</span></code>.</p>
+configuration file, commonly called <code class="docutils literal"><span class="pre">location.ini</span></code> and insert a couple
+of rows into various database tables.</p>
+<div class="section" id="configuration-file">
+<h2>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
 <p>As explained in the <a class="reference internal" href="deploy.html#deploy"><span class="std std-ref">the deployment documentation</span></a> the
 processes find this configuration file via the <code class="docutils literal"><span class="pre">ICHNAEA_CFG</span></code>
 environment variable. The variable should contain an absolute path,
@@ -162,9 +170,9 @@ for example <code class="docutils literal"><span class="pre">/etc/location.ini</
 <p>The configuration file is an ini-style file and contains a number of
 different sections.</p>
 <div class="section" id="required-sections">
-<h2>Required Sections<a class="headerlink" href="#required-sections" title="Permalink to this headline">¶</a></h2>
+<h3>Required Sections<a class="headerlink" href="#required-sections" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="cache">
-<h3>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h3>
+<h4>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h4>
 <p>The cache section contains a <code class="docutils literal"><span class="pre">cache_url</span></code> pointing to a Redis server.</p>
 <p>The cache is used as a classic cache by the webapp code, as a backend
 to store rate-limiting counters, as a custom and a celery queuing backend.</p>
@@ -174,7 +182,7 @@ to store rate-limiting counters, as a custom and a celery queuing backend.</p>
 </div>
 </div>
 <div class="section" id="database">
-<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<h4>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h4>
 <p>The database section contains settings for accessing the MySQL database.</p>
 <p>The web application only requires and uses the read-only connection,
 while the asynchronous celery workers only use the read-write connection.</p>
@@ -189,7 +197,7 @@ which has a separate <code class="docutils literal"><span class="pre">alembic.in
 </div>
 </div>
 <div class="section" id="geoip">
-<h3>GeoIP<a class="headerlink" href="#geoip" title="Permalink to this headline">¶</a></h3>
+<h4>GeoIP<a class="headerlink" href="#geoip" title="Permalink to this headline">¶</a></h4>
 <p>The geoip section contains settings related to the maxmind GeoIP database.</p>
 <p>The <code class="docutils literal"><span class="pre">db_path</span></code> setting needs to point to a maxmind GeoIP city database
 in version 2 format. Both GeoLite and commercial databases will work.</p>
@@ -200,9 +208,9 @@ in version 2 format. Both GeoLite and commercial databases will work.</p>
 </div>
 </div>
 <div class="section" id="optional-sections">
-<h2>Optional Sections<a class="headerlink" href="#optional-sections" title="Permalink to this headline">¶</a></h2>
+<h3>Optional Sections<a class="headerlink" href="#optional-sections" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="assets">
-<h3>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h3>
+<h4>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h4>
 <p>The assets section contains settings for a static file repository
 (Amazon S3) and a public DNS to access those files via HTTPS
 (Amazon CloudFront).</p>
@@ -216,7 +224,7 @@ section of the website.</p>
 </div>
 </div>
 <div class="section" id="import">
-<h3>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h3>
+<h4>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h4>
 <p>The project supports importing cell data on a regular basis from the
 <a class="reference internal" href="../glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> (OCID) project, using the
 <a class="reference internal" href="../import_export.html#import-export"><span class="std std-ref">cell import/export</span></a> data format.</p>
@@ -232,7 +240,7 @@ for daily full and hourly differential files.</p>
 <p>For the <a class="reference internal" href="../glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> service, the URL must end with a slash.</p>
 </div>
 <div class="section" id="sentry">
-<h3>Sentry<a class="headerlink" href="#sentry" title="Permalink to this headline">¶</a></h3>
+<h4>Sentry<a class="headerlink" href="#sentry" title="Permalink to this headline">¶</a></h4>
 <p>The sentry section contains settings related to a Sentry server.</p>
 <p>The <code class="docutils literal"><span class="pre">dsn</span></code> setting needs to contain a valid DSN project entry.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[sentry]</span>
@@ -241,10 +249,10 @@ for daily full and hourly differential files.</p>
 </div>
 </div>
 <div class="section" id="statsd">
-<h3>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h3>
+<h4>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h4>
 <p>The statsd section contains settings related to a StatsD service. The
 project uses a lot of metrics as further detailed in
-<a class="reference internal" href="../metrics.html#metrics"><span class="std std-ref">the metrics documentation</span></a>.</p>
+<a class="reference internal" href="metrics.html#metrics"><span class="std std-ref">the metrics documentation</span></a>.</p>
 <p>The <code class="docutils literal"><span class="pre">host</span></code> and <code class="docutils literal"><span class="pre">port</span></code> settings determine how to connect to the service
 via UDP.</p>
 <p>Since a single StatsD service usually supports multiple different projects,
@@ -268,7 +276,7 @@ without running an actual statsd daemon. To do so you can use the
 all incoming data on the console.</p>
 </div>
 <div class="section" id="web">
-<h3>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h3>
+<h4>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h4>
 <p>The web section contains settings related to the non-API website content.</p>
 <p>The web functionality by default is limited to the public HTTP API.
 If the <code class="docutils literal"><span class="pre">enabled</span></code> setting is set to <code class="docutils literal"><span class="pre">true</span></code> the website content pages
@@ -282,6 +290,84 @@ specifies a Mapbox access token.</p>
 <span class="na">map_id_labels</span> <span class="o">=</span> <span class="s">example_labels.map-234</span>
 <span class="na">map_token</span> <span class="o">=</span> <span class="s">pk.example_public_access_token</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="database-configuration">
+<h2>Database Configuration<a class="headerlink" href="#database-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api-keys">
+<h3>API Keys<a class="headerlink" href="#api-keys" title="Permalink to this headline">¶</a></h3>
+<p>The project requires API keys to access the locate APIs. You need to add
+API keys manually to the database by direct SQL inserts.</p>
+<p>API keys can be any string of up to 40 characters, though random UUID4s
+in hex representation are commonly used, for example
+<code class="docutils literal"><span class="pre">329694ac-a337-4856-af30-66162bc8187a</span></code>.</p>
+<p>But to start off, you can add a simple literal <cite>test</cite> API key:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">api_key</span>
+<span class="p">(</span><span class="o">`</span><span class="n">valid_key</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">allow_locate</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;test&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="export-configuration">
+<h3>Export Configuration<a class="headerlink" href="#export-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The project supports exporting all data that its gets via the submit-style
+APIs to different backends. This configuration lives in the <cite>export_config</cite>
+database table.</p>
+<p>Currently three different kinds of backends are supported:</p>
+<ul class="simple">
+<li>Amazon S3 buckets</li>
+<li>The projects own internal data processing pipeline</li>
+<li>A HTTPS POST endpoint accepting the geosubmit v2 format</li>
+</ul>
+<p>The type of the target is determined by the <cite>schema</cite> column of each entry.</p>
+<p>All export targets can be configured with a <code class="docutils literal"><span class="pre">batch</span></code> setting that
+determines how many reports have to be available before data is
+submitted to the backend.</p>
+<p>All exports have an additional <code class="docutils literal"><span class="pre">skip_keys</span></code> setting as a set of
+API keys. Data submitted using one of these API keys will not be
+exported to the target.</p>
+<p>There can be multiple instances of the bucket and HTTP POST export
+targets, but only one instance of the internal export.</p>
+<p>In the simplest case, you insert one row to send data to the internal
+data pipeline via:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">export_config</span>
+<span class="p">(</span><span class="o">`</span><span class="n">name</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">batch</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="k">schema</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;internal&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">&quot;internal&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For a production setup you want to set the batch column to something
+like <cite>100</cite> or <cite>1000</cite> to get more efficiency. For initial testing its
+easier to set it to <cite>1</cite> so you immediately process any incoming data.</p>
+<div class="section" id="bucket-export">
+<h4>Bucket Export<a class="headerlink" href="#bucket-export" title="Permalink to this headline">¶</a></h4>
+<p>The Amazon S3 bucket export combines reports into a gzipped JSON file
+and uploads them to the specified bucket <code class="docutils literal"><span class="pre">url</span></code>, for example:</p>
+<p><code class="docutils literal"><span class="pre">s3://amazon_s3_bucket_name/directory/{source}{api_key}/{year}/{month}/{day}</span></code></p>
+<p>The schema column must be set to <cite>s3</cite>.</p>
+<p>The url can contain any level of additional static directories under
+the bucket root. The <code class="docutils literal"><span class="pre">{api_key}/{year}/{month}/{day}</span></code> parts will
+be dynamically replaced by the <cite>api_key</cite> used to upload the data,
+the source of the report (e.g. gnss) and the date when the backup took place.
+The files use a random UUID4 as the filename.</p>
+<p>An example filename might be:</p>
+<p><code class="docutils literal"><span class="pre">/directory/test/2015/07/15/554d8d3c-5b28-48bb-9aa8-196543235cf2.json.gz</span></code></p>
+</div>
+<div class="section" id="internal-export">
+<h4>Internal Export<a class="headerlink" href="#internal-export" title="Permalink to this headline">¶</a></h4>
+<p>The internal export forwards the incoming data into the internal
+data pipeline.</p>
+<p>The schema column must be set to <cite>internal</cite>.</p>
+</div>
+<div class="section" id="https-export">
+<h4>HTTPS Export<a class="headerlink" href="#https-export" title="Permalink to this headline">¶</a></h4>
+<p>The HTTPS export buffers incoming data into batches of <code class="docutils literal"><span class="pre">batch</span></code>
+size and then submits them using the <a class="reference internal" href="../api/geosubmit2.html#api-geosubmit-latest"><span class="std std-ref">Geosubmit Version 2</span></a>
+API to the specified <code class="docutils literal"><span class="pre">url</span></code> endpoint, for example:</p>
+<p><code class="docutils literal"><span class="pre">https://localhost/some/api/url?key=export</span></code></p>
+<p>The schema column must be set to <cite>geosubmit</cite>.</p>
+<p>If the project is taking in data from a partner in a data exchange,
+the <code class="docutils literal"><span class="pre">skip_keys</span></code> setting can be used to prevent data being
+round tripped and send back to the same partner that it came from.</p>
 </div>
 </div>
 </div>
