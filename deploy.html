@@ -200,8 +200,8 @@ data after one year.</p>
 <h2>Datadog / Statsd / Sentry<a class="headerlink" href="#datadog-statsd-sentry" title="Permalink to this headline">¶</a></h2>
 <p>The application uses Statsd to aggregate stats and Sentry to log
 exception messages.</p>
-<p>The default configuration in location.ini assumes that you are running
-a Statsd instance listening for UDP messages on port 8125.</p>
+<p>To use Statsd, you need to configure it in the config file, specifying
+a host and port, for example localhost port 8125.</p>
 <p>To get the app to log exceptions to Sentry, you will need to obtain the
 DSN for your Sentry instance. Edit location.ini and in the <cite>sentry</cite> section
 put your real DSN into the <cite>dsn</cite> setting.</p>
@@ -217,8 +217,8 @@ the other is <a class="reference external" href="http://pngquant.org/">pngquant<
 of them and make their binaries available on your system path. The datamaps
 package includes the <cite>encode</cite>, <cite>enumerate</cite> and <cite>render</cite> tools and the
 pngquant package includes a tool called <cite>pngquant</cite>. You can install these
-tools on the server running the celery scheduler (celerybeat) as it is
-otherwise underutilized.</p>
+tools on the server running the celery scheduler (celerybeat) and trigger
+the <cite>location_map</cite> script via a cron job.</p>
 </div>
 </div>
 

@@ -154,11 +154,11 @@
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>In order to install a development version of the service, you need to
-have a Linux or Mac OS X machine and
+have a Linux or Mac OS machine and
 <a class="reference external" href="https://docs.docker.com/installation/">install docker</a>,
 docker-compose and docker-machine.</p>
 <p>On Linux you can use your OS level package manager to install them.</p>
-<p>On Mac OS X you can use Homebrew to install them:</p>
+<p>On Mac OS you can use Homebrew to install them:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew install docker
@@ -183,9 +183,8 @@ to the docker daemon:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>docker-machine env default<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<p>You also need to add an entry into your <code class="docutils literal"><span class="pre">/etc/hosts</span></code> file. On Mac OS X
-you need to specify the IP of the running docker machine, on Linux use
-<cite>127.0.0.1</cite>:</p>
+<p>You also need to add an entry into your <code class="docutils literal"><span class="pre">/etc/hosts</span></code> file.
+Specify the IP of the running docker machine:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>docker-machine ip default
 </pre></div>
 </div>
@@ -223,11 +222,11 @@ geos-devel, spatialindex-devel
 <span class="nb">cd</span> ichnaea
 </pre></div>
 </div>
-<p>Then run make which is going to take quite a while the first time:</p>
+<p>Then run make, which is going to take quite a while the first time:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>make
 </pre></div>
 </div>
-<p>Now you can run the web app on for example port 7001:</p>
+<p>Now you can run the web app for example on port 7001:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/gunicorn -b 127.0.0.1:7001 <span class="se">\</span>
     -c python:ichnaea.webapp.settings ichnaea.webapp.app:wsgi_app
 </pre></div>
