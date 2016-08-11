@@ -97,7 +97,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#python-dependencies">Python Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#css-js-images">CSS / JS / Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cleanup">Cleanup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#release-build">Release Build</a></li>
 </ul>
 </li>
@@ -255,19 +254,9 @@ make js
 It will also copy, compile and minify files in various folders under
 <cite>ichnaea/content/static/</cite>.</p>
 <p>To check if the external assets are outdated run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>docker run --rm -it mozilla-ichnaea/node:latest bower list
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker run --rm -it mozilla/ichnaea_node:latest bower list
 </pre></div>
 </div>
-</div>
-<div class="section" id="cleanup">
-<h2>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this headline">¶</a></h2>
-<p>In case the local environment gets into a weird or broken state, it can
-be cleaned up by running:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>make clean
-</pre></div>
-</div>
-<p>Of course one can also delete the entire git repository and start from
-a fresh checkout.</p>
 </div>
 <div class="section" id="release-build">
 <h2>Release Build<a class="headerlink" href="#release-build" title="Permalink to this headline">¶</a></h2>
