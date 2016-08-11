@@ -175,18 +175,6 @@
 <span id="ichnaea-async-settings"></span><h1><a class="reference internal" href="#module-ichnaea.async.settings" title="ichnaea.async.settings"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.async.settings</span></code></a><a class="headerlink" href="#module-ichnaea.async.settings" title="Permalink to this headline">¶</a></h1>
 <p>Contains <a class="reference external" href="https://celery.readthedocs.io/en/latest/configuration.html#configuration" title="(in Celery v3.1)"><span class="xref std std-ref">celery settings</span></a>.</p>
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_ALWAYS_EAGER">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_ALWAYS_EAGER</code><em class="property"> = False</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_ALWAYS_EAGER" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set based on the environment variable of the same name.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="ichnaea.async.settings.CELERY_EAGER_PROPAGATES_EXCEPTIONS">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_EAGER_PROPAGATES_EXCEPTIONS</code><em class="property"> = False</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_EAGER_PROPAGATES_EXCEPTIONS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set to the same value as CELERY_ALWAYS_EAGER.</p>
-</dd></dl>
-
-<dl class="data">
 <dt id="ichnaea.async.settings.BROKER_TRANSPORT_OPTIONS">
 <code class="descclassname">ichnaea.async.settings.</code><code class="descname">BROKER_TRANSPORT_OPTIONS</code><em class="property"> = {'fanout_prefix': True, 'visibility_timeout': 3600, 'fanout_patterns': True}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.BROKER_TRANSPORT_OPTIONS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Based on <a class="reference external" href="celery.rtfd.org/en/latest/getting-started/brokers/redis.html#caveats">Celery / Redis caveats</a>.</p>
@@ -196,6 +184,12 @@
 <dt id="ichnaea.async.settings.CELERY_DEFAULT_QUEUE">
 <code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_DEFAULT_QUEUE</code><em class="property"> = 'celery_default'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_DEFAULT_QUEUE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the default queue.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.async.settings.CELERY_QUEUES">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_QUEUES</code><em class="property"> = (&lt;unbound Queue celery_blue -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_blue&gt;, &lt;unbound Queue celery_cell -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_cell&gt;, &lt;unbound Queue celery_content -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_content&gt;, &lt;unbound Queue celery_default -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_default&gt;, &lt;unbound Queue celery_export -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_export&gt;, &lt;unbound Queue celery_incoming -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_incoming&gt;, &lt;unbound Queue celery_monitor -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_monitor&gt;, &lt;unbound Queue celery_ocid -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_ocid&gt;, &lt;unbound Queue celery_reports -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_reports&gt;, &lt;unbound Queue celery_wifi -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_wifi&gt;)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_QUEUES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definition of all queues.</p>
 </dd></dl>
 
 <dl class="data">
