@@ -93,7 +93,6 @@
 <li class="toctree-l2"><a class="reference internal" href="metrics.html">Metrics</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#testing-tasks">Testing Tasks</a></li>
 </ul>
 </li>
 </ul>
@@ -157,31 +156,13 @@ you cannot parallelize any tests.</p>
 </div>
 <div class="section" id="unit-tests">
 <h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
-<p>If you have a local development environment setup, you can run all tests
+<p>If you have a local development environment, you can run all tests
 including coverage tests via:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>make <span class="nb">test</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./server <span class="nb">test</span>
 </pre></div>
 </div>
 <p>Or run individual test modules via for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>make <span class="nb">test</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_geoip
-</pre></div>
-</div>
-</div>
-<div class="section" id="testing-tasks">
-<h2>Testing Tasks<a class="headerlink" href="#testing-tasks" title="Permalink to this headline">¶</a></h2>
-<p>The project includes a good number of asynchronous tasks, executed by Celery
-in the code. The easiest way to test them is by writing unit tests and calling
-the task functions directly.</p>
-<p>In order to do more integration testing, you can also manually queue a task
-by using the celery <cite>call</cite> command. For example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery -A ichnaea.async.app:celery_app call <span class="se">\</span>
-    ichnaea.data.tasks.update_cell --args<span class="o">=</span><span class="s1">&#39;[1000, ]&#39;</span>
-</pre></div>
-</div>
-<p>You then need to run the celery worker process and it will pick up the task
-from the queue and execute it:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ICHNAEA_CFG</span><span class="o">=</span>location.ini bin/celery <span class="se">\</span>
-    -A ichnaea.async.app:celery_app worker -c 1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./server <span class="nb">test</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_geoip
 </pre></div>
 </div>
 </div>

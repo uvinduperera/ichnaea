@@ -110,7 +110,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../data/index.html"><code class="docutils literal"><span class="pre">ichnaea.data</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geocalc.html"><code class="docutils literal"><span class="pre">ichnaea.geocalc</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geocode.html"><code class="docutils literal"><span class="pre">ichnaea.geocode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
@@ -194,7 +193,7 @@ representation with all fields being present and missing values of
 
 <dl class="class">
 <dt id="ichnaea.api.schema.StringVocabularyNode">
-<em class="property">class </em><code class="descclassname">ichnaea.api.schema.</code><code class="descname">StringVocabularyNode</code><span class="sig-paren">(</span><em>encoding=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.schema.StringVocabularyNode" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.schema.</code><code class="descname">StringVocabularyNode</code><span class="sig-paren">(</span><em>encoding=None</em>, <em>allow_empty=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.schema.StringVocabularyNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>A StringVocabularyNode takes a string and checks it against a
 vocabulary of known values. It removes the value if it isn&#8217;t in
 the vocabulary. It also lowercases all values.</p>
@@ -210,7 +209,7 @@ or default to now.</p>
 
 <dl class="class">
 <dt id="ichnaea.api.schema.UnixTimeFromString">
-<em class="property">class </em><code class="descclassname">ichnaea.api.schema.</code><code class="descname">UnixTimeFromString</code><span class="sig-paren">(</span><em>encoding=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.schema.UnixTimeFromString" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.api.schema.</code><code class="descname">UnixTimeFromString</code><span class="sig-paren">(</span><em>encoding=None</em>, <em>allow_empty=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/schema.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.schema.UnixTimeFromString" title="Permalink to this definition">¶</a></dt>
 <dd><p>A UnixTimeFromString will return an integer representing
 a time value in milliseconds from a ISO datetime string
 or default to now.</p>

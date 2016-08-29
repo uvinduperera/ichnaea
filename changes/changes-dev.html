@@ -32,7 +32,7 @@
   
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Changelog" href="index.html"/>
-        <link rel="next" title="Changelog 1.4" href="changes-1.4.html"/>
+        <link rel="next" title="Changelog 1.5" href="changes-1.5.html"/>
         <link rel="prev" title="Changelog" href="index.html"/> 
 
   
@@ -94,9 +94,9 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#changelogs">Changelogs</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Changelog</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#unreleased">2.0 (unreleased)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">1.5 (unreleased)</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="changes-1.5.html">Changelog 1.5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="changes-1.4.html">Changelog 1.4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="changes-1.3.html">Changelog 1.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="changes-1.2.html">Changelog 1.2</a></li>
@@ -158,6 +158,12 @@
 <h2>2.0 (unreleased)<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="untagged">
 <h3>Untagged<a class="headerlink" href="#untagged" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="compatibility">
+<h4>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Drop support for Python 2.6.</li>
+</ul>
+</div>
 <div class="section" id="migrations">
 <h4>Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h4>
 </div>
@@ -165,170 +171,6 @@
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Add a workaround for a bug in the RTree library.</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>1.5 (unreleased)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>20160810110400<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id3">
-<h4>Migrations<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>385f842b2526: Add allow_transfer column to api_key table.</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h4>Changes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Use a docker volume for the css/js build pipeline.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id5">
-<h3>20160809152200<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id6">
-<h4>Changes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Add a new <cite>location_dump</cite> command line script to dump/export networks.</li>
-<li>#491: Add an alternate homepage if the web content is disabled.</li>
-<li>Reduce datamap detail.</li>
-<li>No longer log sentry messages for client errors.</li>
-<li>Replace station data for old stations with new conflicting observations.</li>
-<li>Make statsd and sentry optional service dependencies.</li>
-<li>Disable the web site content by default.</li>
-<li>#490: Limit full cell export to cells which were modified in the last year.</li>
-<li>Use the accuracy_radius field from the GeoIP database.</li>
-<li>Remove ipf fallback from responses for queries based only on GeoIP data.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id7">
-<h3>20160525130100<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id8">
-<h4>Migrations<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Remove the celery section from the config file, add the web section.</li>
-</ul>
-</div>
-<div class="section" id="id9">
-<h4>Changes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Lower maximum accuracy values returned from locate queries.</li>
-<li>Accept observations with slightly worse accuracy values.</li>
-<li>The website content can be disabled via a setting in the config file.</li>
-<li>Make map related settings configurable via the config file.</li>
-<li>Use the first of the month, to display stats for the entire month.</li>
-<li>Calculate and display stats for today.</li>
-<li>Preserve or derive both WiFi channel and frequency values.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id10">
-<h3>20160429092200<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id11">
-<h4>Changes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Allow report submissions without any position data.</li>
-<li>#485: Fix development documentation.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id12">
-<h3>20160427100000<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id13">
-<h4>Migrations<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>1bdf1028a085: Extend export config table.</li>
-<li>6ec824122610: Add export config table.</li>
-<li>4255b858a37e: Remove user/score tables.</li>
-<li>In service checks, change anything that checked the <cite>/__heartbeat__</cite>
-view to check <cite>/__lbheartbeat__</cite> instead. Change <cite>/__monitor__</cite> to
-<cite>/__heartbeat__</cite>.</li>
-</ul>
-</div>
-<div class="section" id="id14">
-<h4>Changes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Be more explicit about closing socket connections.</li>
-<li>Use GNSS observations to replace purely query-based stations.</li>
-<li>Use query observations to confirm, blocklist and insert new stations.</li>
-<li>Configure release for raven/sentry client.</li>
-<li>Change hearbeat/monitor view to lbhearbeat/hearbeat views.</li>
-<li>Update last_seen column on each station update.</li>
-<li>Use Vincenty formula for lat/lon additions.</li>
-<li>Use Vincenty instead of Haversine formula for distance calculations.</li>
-<li>Take age into account during locate lookups.</li>
-<li>Filter out observations with too little weight.</li>
-<li>Take age and speed into account in observation weights.</li>
-<li>Pass queries into internal data pipeline.</li>
-<li>Allow stations to be blocklisted once per 30 days of their lifespan.</li>
-<li>Normalize age fields for internal observations to GPS time difference.</li>
-<li>Add stricter validation of radio, source and timestamp fields.</li>
-<li>Pass pressure and source data into internal data pipeline.</li>
-<li>Read export config from database instead of ini file.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id15">
-<h3>20160412083700<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id16">
-<h4>Migrations<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>27400b0c8b42: Drop api_key log columns.</li>
-<li>88d1704f1aef: Drop cell_ocid table.</li>
-</ul>
-</div>
-<div class="section" id="id17">
-<h4>Changes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Remove intermediate schedule_export_reports task.</li>
-<li>#456: Retire old leaderboard.</li>
-<li>Remove intermediate upload_report task.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id18">
-<h3>20160401185900<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id19">
-<h4>Changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Downgrade numpy to 1.10.4 due to build failures.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id20">
-<h3>20160401110200<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id21">
-<h4>Migrations<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>e23ba53ab89b: Add sharded OCID cell tables.</li>
-<li>fdd0b256cecc: Add fallback options to API key table.</li>
-</ul>
-</div>
-<div class="section" id="id22">
-<h4>Changes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>Tag location fallback metrics with the fallback name.</li>
-<li>#484: Allow per API key fallback configuration.</li>
-<li>Document and forward age argument through all layers of abstraction.</li>
-<li>Limit the columns loaded for API keys.</li>
-<li>Prevent errors when receiving invalid timestamps.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id23">
-<h3>20160323102800<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id24">
-<h4>Changes<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>#456: Deprecate weekly leaderboard.</li>
-<li>Remove the implied metadata setting from the config file.</li>
-<li>Enable extended metrics for all API keys.</li>
-<li>Speed up full cell export.</li>
-<li>Rename internal blue/wifi observation key to mac.</li>
-<li>Removed migrations before version 1.4.</li>
 </ul>
 </div>
 </div>
@@ -342,7 +184,7 @@ view to check <cite>/__lbheartbeat__</cite> instead. Change <cite>/__monitor__</
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="changes-1.4.html" class="btn btn-neutral float-right" title="Changelog 1.4" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="changes-1.5.html" class="btn btn-neutral float-right" title="Changelog 1.5" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Changelog" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

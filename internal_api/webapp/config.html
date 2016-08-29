@@ -100,7 +100,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../data/index.html"><code class="docutils literal"><span class="pre">ichnaea.data</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../db.html"><code class="docutils literal"><span class="pre">ichnaea.db</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions.html"><code class="docutils literal"><span class="pre">ichnaea.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../floatjson.html"><code class="docutils literal"><span class="pre">ichnaea.floatjson</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geocalc.html"><code class="docutils literal"><span class="pre">ichnaea.geocalc</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geocode.html"><code class="docutils literal"><span class="pre">ichnaea.geocode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../geoip.html"><code class="docutils literal"><span class="pre">ichnaea.geoip</span></code></a></li>
@@ -181,7 +180,7 @@
 <code class="descclassname">ichnaea.webapp.config.</code><code class="descname">main</code><span class="sig-paren">(</span><em>app_config</em>, <em>ping_connections=False</em>, <em>_db_ro=None</em>, <em>_geoip_db=None</em>, <em>_http_session=None</em>, <em>_raven_client=None</em>, <em>_redis_client=None</em>, <em>_stats_client=None</em>, <em>_position_searcher=None</em>, <em>_region_searcher=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/webapp/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.webapp.config.main" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure the web app stored in <a class="reference internal" href="app.html#ichnaea.webapp.app._APP" title="ichnaea.webapp.app._APP"><code class="xref py py-data docutils literal"><span class="pre">ichnaea.webapp.app._APP</span></code></a>.</p>
 <p>Does connection, logging and view config setup. Attaches some
-additional functionality to the <a class="reference external" href="https://pyramid.readthedocs.io/en/latest/api/registry.html#pyramid.registry.Registry" title="(in The Pyramid Web Framework v1.7.1)"><code class="xref py py-class docutils literal"><span class="pre">pyramid.registry.Registry</span></code></a>
+additional functionality to the <a class="reference external" href="https://pyramid.readthedocs.io/en/latest/api/registry.html#pyramid.registry.Registry" title="(in The Pyramid Web Framework v1.7.3)"><code class="xref py py-class docutils literal"><span class="pre">pyramid.registry.Registry</span></code></a>
 instance.</p>
 <p>At startup ping all outbound connections like the database
 once, to ensure they are actually up and responding.</p>
@@ -198,7 +197,7 @@ to provide pre-configured connection objects.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A configured WSGI app, the result of calling
-<a class="reference external" href="https://pyramid.readthedocs.io/en/latest/api/config.html#pyramid.config.Configurator.make_wsgi_app" title="(in The Pyramid Web Framework v1.7.1)"><code class="xref py py-meth docutils literal"><span class="pre">pyramid.config.Configurator.make_wsgi_app()</span></code></a>.</p>
+<a class="reference external" href="https://pyramid.readthedocs.io/en/latest/api/config.html#pyramid.config.Configurator.make_wsgi_app" title="(in The Pyramid Web Framework v1.7.3)"><code class="xref py py-meth docutils literal"><span class="pre">pyramid.config.Configurator.make_wsgi_app()</span></code></a>.</p>
 </td>
 </tr>
 </tbody>
