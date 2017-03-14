@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Internal Code API" href="index.html"/>
         <link rel="next" title="ichnaea.config" href="config.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Internal Code API</a><ul class="current">
@@ -152,7 +155,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/internal_api/cache.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/internal_api/cache.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -167,7 +170,7 @@
 <p>Functionality related to using Redis as a cache and a queue.</p>
 <dl class="function">
 <dt id="ichnaea.cache.configure_redis">
-<code class="descclassname">ichnaea.cache.</code><code class="descname">configure_redis</code><span class="sig-paren">(</span><em>cache_url='redis://172.17.0.3:6379/0'</em>, <em>_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/cache.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.cache.configure_redis" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.cache.</code><code class="descname">configure_redis</code><span class="sig-paren">(</span><em>cache_url='redis://172.17.0.2:6379/0'</em>, <em>_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/cache.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.cache.configure_redis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure and return a <a class="reference internal" href="#ichnaea.cache.RedisClient" title="ichnaea.cache.RedisClient"><code class="xref py py-class docutils literal"><span class="pre">RedisClient</span></code></a> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

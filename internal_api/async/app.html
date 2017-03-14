@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.async" href="index.html"/>
         <link rel="next" title="ichnaea.async.config" href="config.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Internal Code API</a><ul class="current">
@@ -160,7 +163,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/async/app.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/async/app.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -176,7 +179,45 @@
 <dl class="data">
 <dt id="ichnaea.async.app.celery_app">
 <code class="descclassname">ichnaea.async.app.</code><code class="descname">celery_app</code><em class="property"> = Internal module global holding the celery app.</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/app.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.app.celery_app" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Celery application.</p>
+<dl class="docutils">
+<dt>Arguments:</dt>
+<dd><dl class="first last docutils">
+<dt>main (str): Name of the main module if running as <cite>__main__</cite>.</dt>
+<dd>This is used as the prefix for auto-generated task names.</dd>
+</dl>
+</dd>
+<dt>Keyword Arguments:</dt>
+<dd><p class="first">broker (str): URL of the default broker used.
+backend (Union[str, type]): The result store backend class,</p>
+<blockquote>
+<div><p>or the name of the backend class to use.</p>
+<p>Default is the value of the <a href="#id1"><span class="problematic" id="id2">:setting:`result_backend`</span></a> setting.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>autofinalize (bool): If set to False a <code class="xref py py-exc docutils literal"><span class="pre">RuntimeError</span></code></dt>
+<dd>will be raised if the task registry or tasks are used before
+the app is finalized.</dd>
+</dl>
+<p>set_as_current (bool):  Make this the global current app.
+include (List[str]): List of modules every worker should import.</p>
+<p>amqp (Union[str, type]): AMQP object or class name.
+events (Union[str, type]): Events object or class name.
+log (Union[str, type]): Log object or class name.
+control (Union[str, type]): Control object or class name.
+tasks (Union[str, type]): A task registry, or the name of</p>
+<blockquote>
+<div>a registry class.</div></blockquote>
+<dl class="last docutils">
+<dt>fixups (List[str]): List of fix-up plug-ins (e.g., see</dt>
+<dd><code class="xref py py-mod docutils literal"><span class="pre">celery.fixups.django</span></code>).</dd>
+<dt>config_source (Union[str, type]): Take configuration from a class,</dt>
+<dd>or object.  Attributes may include any setings described in
+the documentation.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <p>This is also the Celery app public endpoint, used on the command line via:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>bin/celery -A ichnaea.async.app:celery_app &lt;worker, beat&gt;

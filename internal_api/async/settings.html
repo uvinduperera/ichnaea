@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.async" href="index.html"/>
         <link rel="next" title="ichnaea.async.task" href="task.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Internal Code API</a><ul class="current">
@@ -160,7 +163,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/async/settings.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/async/settings.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -172,71 +175,71 @@
             
   <div class="section" id="module-ichnaea.async.settings">
 <span id="ichnaea-async-settings"></span><h1><a class="reference internal" href="#module-ichnaea.async.settings" title="ichnaea.async.settings"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.async.settings</span></code></a><a class="headerlink" href="#module-ichnaea.async.settings" title="Permalink to this headline">¶</a></h1>
-<p>Contains <a class="reference external" href="https://celery.readthedocs.io/en/latest/configuration.html#configuration" title="(in Celery v3.1)"><span class="xref std std-ref">celery settings</span></a>.</p>
+<p>Contains <a class="reference external" href="https://celery.readthedocs.io/en/latest/userguide/configuration.html#configuration" title="(in Celery v4.0)"><span class="xref std std-ref">celery settings</span></a>.</p>
 <dl class="data">
-<dt id="ichnaea.async.settings.BROKER_TRANSPORT_OPTIONS">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">BROKER_TRANSPORT_OPTIONS</code><em class="property"> = {'fanout_prefix': True, 'visibility_timeout': 3600, 'fanout_patterns': True}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.BROKER_TRANSPORT_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.broker_transport_options">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">broker_transport_options</code><em class="property"> = {'socket_keepalive': True, 'socket_timeout': 30, 'visibility_timeout': 43200, 'socket_connect_timeout': 60}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.broker_transport_options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Based on <a class="reference external" href="celery.rtfd.org/en/latest/getting-started/brokers/redis.html#caveats">Celery / Redis caveats</a>.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_DEFAULT_QUEUE">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_DEFAULT_QUEUE</code><em class="property"> = 'celery_default'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_DEFAULT_QUEUE" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.task_default_queue">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">task_default_queue</code><em class="property"> = 'celery_default'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.task_default_queue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the default queue.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_QUEUES">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_QUEUES</code><em class="property"> = (&lt;unbound Queue celery_blue -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_blue&gt;, &lt;unbound Queue celery_cell -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_cell&gt;, &lt;unbound Queue celery_content -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_content&gt;, &lt;unbound Queue celery_default -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_default&gt;, &lt;unbound Queue celery_export -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_export&gt;, &lt;unbound Queue celery_incoming -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_incoming&gt;, &lt;unbound Queue celery_monitor -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_monitor&gt;, &lt;unbound Queue celery_ocid -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_ocid&gt;, &lt;unbound Queue celery_reports -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_reports&gt;, &lt;unbound Queue celery_wifi -&gt; &lt;unbound Exchange ''(direct)&gt; -&gt; celery_wifi&gt;)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_QUEUES" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.task_queues">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">task_queues</code><em class="property"> = (&lt;unbound Queue celery_blue -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_blue&gt;, &lt;unbound Queue celery_cell -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_cell&gt;, &lt;unbound Queue celery_content -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_content&gt;, &lt;unbound Queue celery_default -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_default&gt;, &lt;unbound Queue celery_export -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_export&gt;, &lt;unbound Queue celery_incoming -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_incoming&gt;, &lt;unbound Queue celery_monitor -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_monitor&gt;, &lt;unbound Queue celery_reports -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_reports&gt;, &lt;unbound Queue celery_wifi -&gt; &lt;unbound Exchange u''(direct)&gt; -&gt; celery_wifi&gt;)</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.task_queues" title="Permalink to this definition">¶</a></dt>
 <dd><p>Definition of all queues.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_IMPORTS">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_IMPORTS</code><em class="property"> = ['ichnaea.data.tasks']</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_IMPORTS" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.imports">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">imports</code><em class="property"> = ['ichnaea.data.tasks']</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.imports" title="Permalink to this definition">¶</a></dt>
 <dd><p>All modules being searched for &#64;task decorators.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERYD_PREFETCH_MULTIPLIER">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERYD_PREFETCH_MULTIPLIER</code><em class="property"> = 8</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERYD_PREFETCH_MULTIPLIER" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.task_ignore_result">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">task_ignore_result</code><em class="property"> = True</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.task_ignore_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable task results.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ichnaea.async.settings.worker_max_tasks_per_child">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">worker_max_tasks_per_child</code><em class="property"> = 100000</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.worker_max_tasks_per_child" title="Permalink to this definition">¶</a></dt>
 <dd><p>Optimization for a mix of fast and slow tasks.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_DISABLE_RATE_LIMITS">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_DISABLE_RATE_LIMITS</code><em class="property"> = True</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_DISABLE_RATE_LIMITS" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.worker_disable_rate_limits">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">worker_disable_rate_limits</code><em class="property"> = True</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.worker_disable_rate_limits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Optimization</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_MESSAGE_COMPRESSION">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_MESSAGE_COMPRESSION</code><em class="property"> = 'gzip'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_MESSAGE_COMPRESSION" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.task_compression">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">task_compression</code><em class="property"> = 'gzip'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.task_compression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Optimization</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_ACCEPT_CONTENT">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_ACCEPT_CONTENT</code><em class="property"> = ['json', 'internal_json']</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_ACCEPT_CONTENT" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.accept_content">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">accept_content</code><em class="property"> = ['json', 'internal_json']</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.accept_content" title="Permalink to this definition">¶</a></dt>
 <dd><p>Internal data format, only accept JSON variants.</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_RESULT_SERIALIZER">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_RESULT_SERIALIZER</code><em class="property"> = 'internal_json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_RESULT_SERIALIZER" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.result_serializer">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">result_serializer</code><em class="property"> = 'internal_json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.result_serializer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Internal data format</p>
 </dd></dl>
 
 <dl class="data">
-<dt id="ichnaea.async.settings.CELERY_TASK_SERIALIZER">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERY_TASK_SERIALIZER</code><em class="property"> = 'internal_json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERY_TASK_SERIALIZER" title="Permalink to this definition">¶</a></dt>
+<dt id="ichnaea.async.settings.task_serializer">
+<code class="descclassname">ichnaea.async.settings.</code><code class="descname">task_serializer</code><em class="property"> = 'internal_json'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.task_serializer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Internal data format</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="ichnaea.async.settings.CELERYBEAT_LOG_LEVEL">
-<code class="descclassname">ichnaea.async.settings.</code><code class="descname">CELERYBEAT_LOG_LEVEL</code><em class="property"> = 'WARNING'</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/settings.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.settings.CELERYBEAT_LOG_LEVEL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Silence celery beat.</p>
 </dd></dl>
 
 </div>

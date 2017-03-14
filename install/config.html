@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Installation" href="index.html"/>
         <link rel="next" title="Metrics" href="metrics.html"/>
@@ -85,14 +88,15 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="devel.html">Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy.html">Deployment</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-file">Configuration File</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#required-sections">Required Sections</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optional-sections">Optional Sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-variables">Required Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-variables">Optional Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#feature-specfic-variables">Feature Specfic Variables</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#database-configuration">Database Configuration</a><ul>
@@ -146,7 +150,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/install/config.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/install/config.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -158,56 +162,78 @@
             
   <div class="section" id="configuration">
 <span id="config"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
-<p>As part of deploying the application, you need to create an application
-configuration file, commonly called <code class="docutils literal"><span class="pre">location.ini</span></code> and insert a couple
-of rows into various database tables.</p>
-<div class="section" id="configuration-file">
-<h2>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
-<p>The processes find the configuration file via the <code class="docutils literal"><span class="pre">ICHNAEA_CFG</span></code>
-environment variable. The variable should contain an absolute path,
-for example <code class="docutils literal"><span class="pre">/etc/location.ini</span></code>.</p>
-<p>The configuration file is an ini-style file and contains a number of
-different sections.</p>
-<div class="section" id="required-sections">
-<h3>Required Sections<a class="headerlink" href="#required-sections" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="cache">
-<h4>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h4>
-<p>The cache section contains a <code class="docutils literal"><span class="pre">cache_url</span></code> pointing to a Redis server.</p>
-<p>The cache is used as a classic cache by the webapp code, as a backend
-to store rate-limiting counters, as a custom and a celery queuing backend.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[cache]</span>
-<span class="na">cache_url</span> <span class="o">=</span> <span class="s">redis://localhost:6379/0</span>
-</pre></div>
-</div>
-</div>
+<p>The application takes a number of different settings and reads them
+from environment variables. There are also a small number of settings
+inside database tables.</p>
+<div class="section" id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="required-variables">
+<h3>Required Variables<a class="headerlink" href="#required-variables" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="database">
 <h4>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h4>
-<p>The database section contains settings for accessing the MySQL database.</p>
-<p>The web application only requires and uses the read-only connection,
-while the asynchronous celery workers only use the read-write connection.</p>
+<p>The MySQL compatible database is used for storing configuration and
+application data.</p>
+<p>The web role only requires a read-only connection, while the
+worker role need a read-write connection.</p>
 <p>Both of them can be restricted to only DML (data-manipulation) permissions,
 as neither needs DDL (data-definition) rights.</p>
-<p>DDL changes are only done via the alembic database migration system,
-which has a separate <code class="docutils literal"><span class="pre">alembic.ini</span></code> configuration file.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[database]</span>
-<span class="na">rw_url</span> <span class="o">=</span> <span class="s">mysql+pymysql://rw_user:password@localhost/location</span>
-<span class="na">ro_url</span> <span class="o">=</span> <span class="s">mysql+pymysql://ro_user:password@localhost/location</span>
+<p>DDL changes are only done via the alembic database migration system.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">DB_HOST</span> <span class="o">=</span> <span class="s">localhost</span>
+
+<span class="na">DB_RO_USER</span> <span class="o">=</span> <span class="s">location_ro</span>
+<span class="na">DB_RO_PWD</span> <span class="o">=</span> <span class="s">password</span>
+<span class="na">DB_RW_USER</span> <span class="o">=</span> <span class="s">location_rw</span>
+<span class="na">DB_RW_PWD</span> <span class="o">=</span> <span class="s">password</span>
+<span class="na">DB_DDL_USER</span> <span class="o">=</span> <span class="s">location_admin</span>
+<span class="na">DB_DDL_PWD</span> <span class="o">=</span> <span class="s">password</span>
 </pre></div>
 </div>
+<p>The database name is <cite>location</cite> and the port number is the default <cite>3306</cite>.</p>
 </div>
 <div class="section" id="geoip">
 <h4>GeoIP<a class="headerlink" href="#geoip" title="Permalink to this headline">¶</a></h4>
-<p>The geoip section contains settings related to the maxmind GeoIP database.</p>
-<p>The <code class="docutils literal"><span class="pre">db_path</span></code> setting needs to point to a maxmind GeoIP city database
+<p>The web and worker roles need access to a maxmind GeoIP City database
 in version 2 format. Both GeoLite and commercial databases will work.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[geoip]</span>
-<span class="na">db_path</span> <span class="o">=</span> <span class="s">/path/to/GeoIP2-City.mmdb</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">GEOIP_PATH</span> <span class="o">=</span> <span class="s">/path/to/GeoIP2-City.mmdb</span>
 </pre></div>
 </div>
 </div>
+<div class="section" id="redis">
+<h4>Redis<a class="headerlink" href="#redis" title="Permalink to this headline">¶</a></h4>
+<p>The Redis cache is used as a classic cache by the web role, as a backend
+to store rate-limiting counters, as a custom and a worker queuing backend.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">REDIS_HOST</span> <span class="o">=</span> <span class="s">localhost</span>
+</pre></div>
 </div>
-<div class="section" id="optional-sections">
-<h3>Optional Sections<a class="headerlink" href="#optional-sections" title="Permalink to this headline">¶</a></h3>
+<p>The port number is the default <cite>6379</cite>.</p>
+</div>
+</div>
+<div class="section" id="optional-variables">
+<h3>Optional Variables<a class="headerlink" href="#optional-variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sentry">
+<h4>Sentry<a class="headerlink" href="#sentry" title="Permalink to this headline">¶</a></h4>
+<p>All roles and command line scripts use an optional Sentry server
+to log application exception data.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">SENTRY_DSN</span> <span class="o">=</span> <span class="s">https://public_key:secret_key@localhost/project_id</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="statsd">
+<h4>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h4>
+<p>All roles and command line scripts use an optional StatsD service
+to log application specific metrics. The StatsD service needs to
+support metric tags.</p>
+<p>The project uses a lot of metrics as further detailed in
+<a class="reference internal" href="metrics.html#metrics"><span class="std std-ref">the metrics documentation</span></a>.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">STATSD_HOST</span> <span class="o">=</span> <span class="s">localhost</span>
+</pre></div>
+</div>
+<p>The port number is the default <cite>8125</cite>. All metrics are prefixed with
+a <cite>location</cite> namespace.</p>
+</div>
+</div>
+<div class="section" id="feature-specfic-variables">
+<h3>Feature Specfic Variables<a class="headerlink" href="#feature-specfic-variables" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="assets">
 <h4>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h4>
 <p>The assets section contains settings for a static file repository
@@ -221,58 +247,6 @@ section of the website.</p>
 <span class="na">url</span> <span class="o">=</span> <span class="s">https://some_distribution_id.cloudfront.net</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="import">
-<h4>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h4>
-<p>The project supports importing cell data on a regular basis from the
-<a class="reference internal" href="../glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> (OCID) project, using the
-<a class="reference internal" href="../import_export.html#import-export"><span class="std std-ref">cell import/export</span></a> data format.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[import:ocid]</span>
-<span class="na">url</span> <span class="o">=</span> <span class="s">https://localhost:7001/downloads/</span>
-<span class="na">apikey</span> <span class="o">=</span> <span class="s">some_key</span>
-</pre></div>
-</div>
-<p>The section name must be the exact string <code class="docutils literal"><span class="pre">import:ocid</span></code>. Both a <code class="docutils literal"><span class="pre">url</span></code>
-and an <code class="docutils literal"><span class="pre">apikey</span></code> need to be configured for accessing an HTML overview
-page listing the available download files using a specific file name pattern
-for daily full and hourly differential files.</p>
-<p>For the <a class="reference internal" href="../glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> service, the URL must end with a slash.</p>
-</div>
-<div class="section" id="sentry">
-<h4>Sentry<a class="headerlink" href="#sentry" title="Permalink to this headline">¶</a></h4>
-<p>The sentry section contains settings related to a Sentry server.</p>
-<p>The <code class="docutils literal"><span class="pre">dsn</span></code> setting needs to contain a valid DSN project entry.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[sentry]</span>
-<span class="na">dsn</span> <span class="o">=</span> <span class="s">https://public_key:secret_key@localhost/project_id</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="statsd">
-<h4>StatsD<a class="headerlink" href="#statsd" title="Permalink to this headline">¶</a></h4>
-<p>The statsd section contains settings related to a StatsD service. The
-project uses a lot of metrics as further detailed in
-<a class="reference internal" href="metrics.html#metrics"><span class="std std-ref">the metrics documentation</span></a>.</p>
-<p>The <code class="docutils literal"><span class="pre">host</span></code> and <code class="docutils literal"><span class="pre">port</span></code> settings determine how to connect to the service
-via UDP.</p>
-<p>Since a single StatsD service usually supports multiple different projects,
-the <code class="docutils literal"><span class="pre">metric_prefix</span></code> setting can be used to prefix all metrics emitted
-by this project with a unique name.</p>
-<p>The <code class="docutils literal"><span class="pre">tag_support</span></code> setting can either be <code class="docutils literal"><span class="pre">false</span></code> or <code class="docutils literal"><span class="pre">true</span></code> and declares
-whether or not the StatsD service supports metric tags.
-<a class="reference external" href="https://www.datadoghq.com/">Datadog</a> is an example of a service that
-supports tags. If <code class="docutils literal"><span class="pre">tag_support</span></code> is false, the tags will be emitted as
-part of the standard metric name.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[statsd]</span>
-<span class="na">host</span> <span class="o">=</span> <span class="s">localhost</span>
-<span class="na">port</span> <span class="o">=</span> <span class="s">8125</span>
-<span class="na">metric_prefix</span> <span class="o">=</span> <span class="s">location</span>
-<span class="na">tag_support</span> <span class="o">=</span> <span class="s">true</span>
-</pre></div>
-</div>
-<p>For initial testing it can be useful to simply capture the statsd metrics
-without running an actual statsd daemon. To do so you can use the
-<code class="docutils literal"><span class="pre">nc</span> <span class="pre">-lku</span> <span class="pre">localhost</span> <span class="pre">8125</span></code> command to run a UDP service and print out
-all incoming data on the console.</p>
 </div>
 <div class="section" id="web">
 <h4>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h4>

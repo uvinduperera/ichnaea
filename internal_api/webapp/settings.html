@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.webapp" href="index.html"/>
         <link rel="next" title="ichnaea.webapp.view" href="view.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Internal Code API</a><ul class="current">
@@ -162,7 +165,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/webapp/settings.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/webapp/settings.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,7 +177,7 @@
             
   <div class="section" id="module-ichnaea.webapp.settings">
 <span id="ichnaea-webapp-settings"></span><h1><a class="reference internal" href="#module-ichnaea.webapp.settings" title="ichnaea.webapp.settings"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.webapp.settings</span></code></a><a class="headerlink" href="#module-ichnaea.webapp.settings" title="Permalink to this headline">¶</a></h1>
-<p>Contains <a class="reference external" href="http://docs.gunicorn.org/en/latest/settings.html#settings" title="(in Gunicorn v19.6.0)"><span class="xref std std-ref">Gunicorn configuration settings</span></a>.</p>
+<p>Contains <a class="reference external" href="http://docs.gunicorn.org/en/latest/settings.html#settings" title="(in Gunicorn v19.7.0)"><span class="xref std std-ref">Gunicorn configuration settings</span></a>.</p>
 <p>This needs to be specified on the command line via the <cite>-c</cite> argument:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>bin/gunicorn -c python:ichnaea.webapp.settings         ichnaea.webapp.app:wsgi_app
 </pre></div>

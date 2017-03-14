@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.models" href="index.html"/>
         <link rel="next" title="ichnaea.models.base" href="base.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Internal Code API</a><ul class="current">
@@ -169,7 +172,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/models/api.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/models/api.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -266,6 +269,18 @@ of seconds for which entries are allowed to be cached.</p>
 <dd><p>Cache expiry in seconds.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="ichnaea.models.api.ApiKey.store_sample_locate">
+<code class="descname">store_sample_locate</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/api.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.api.ApiKey.store_sample_locate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample rate 0-100.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ichnaea.models.api.ApiKey.store_sample_submit">
+<code class="descname">store_sample_submit</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/api.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.api.ApiKey.store_sample_submit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample rate 0-100.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="ichnaea.models.api.ApiKey.allowed">
 <code class="descname">allowed</code><span class="sig-paren">(</span><em>api_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/api.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.api.ApiKey.allowed" title="Permalink to this definition">¶</a></dt>
@@ -277,6 +292,15 @@ of seconds for which entries are allowed to be cached.</p>
 <code class="descname">can_fallback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/api.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.api.ApiKey.can_fallback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is this API key allowed to use the fallback location provider
 and is its configuration complete?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ichnaea.models.api.ApiKey.store_sample">
+<code class="descname">store_sample</code><span class="sig-paren">(</span><em>api_type</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/api.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.api.ApiKey.store_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if an API request should result in the data to be
+stored for further processing.</p>
+<p>This allows one to store only some percentage of the incoming
+locate or submit requests for a given API key.</p>
 </dd></dl>
 
 </dd></dl>

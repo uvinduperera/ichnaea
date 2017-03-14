@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Internal Code API" href="index.html"/>
         <link rel="next" title="ichnaea.constants" href="constants.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Internal Code API</a><ul class="current">
@@ -152,7 +155,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/internal_api/config.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/internal_api/config.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -223,12 +226,8 @@ settings.</td>
 
 <dl class="function">
 <dt id="ichnaea.config.read_config">
-<code class="descclassname">ichnaea.config.</code><code class="descname">read_config</code><span class="sig-paren">(</span><em>filename=None</em>, <em>envvar='ICHNAEA_CFG'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.read_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read a configuration file from one of two possible locations:</p>
-<ol class="arabic simple">
-<li>from the passed in filename,</li>
-<li>from the environment variable passed as <cite>envvar</cite>.</li>
-</ol>
+<code class="descclassname">ichnaea.config.</code><code class="descname">read_config</code><span class="sig-paren">(</span><em>filename='/app/ichnaea/tests/data/test.ini'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.read_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a configuration file from a passed in filename.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

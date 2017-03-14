@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Installation" href="index.html"/>
         <link rel="next" title="Configuration" href="config.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="devel.html">Development</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Deployment</a><ul>
@@ -93,7 +96,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#mysql-amazon-rds">MySQL / Amazon RDS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#redis-amazon-elasticache">Redis / Amazon ElastiCache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amazon-s3">Amazon S3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#datadog-statsd-sentry">Datadog / Statsd / Sentry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statsd-sentry">Statsd / Sentry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#image-tiles">Image Tiles</a></li>
 </ul>
 </li>
@@ -142,7 +145,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/install/deploy.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/install/deploy.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,24 +174,26 @@ for debug access and running database migrations.</p>
 </div>
 <div class="section" id="mysql-amazon-rds">
 <h2>MySQL / Amazon RDS<a class="headerlink" href="#mysql-amazon-rds" title="Permalink to this headline">¶</a></h2>
-<p>The application is written and tested against MySQL 5.6.x or Amazon RDS of the
-same version. The default configuration works for the most part. There are
-just three changes you need to do. For example via the my.cnf:</p>
+<p>The application is written and tested against MySQL 5.7.x or Amazon RDS
+of the same versions. The default configuration works for the most part.
+There are just a couple of changes you need to do.</p>
+<p>For example via the my.cnf:</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[mysqld]</span>
-<span class="na">innodb_file_format</span><span class="o">=</span><span class="s">Barracuda</span>
-<span class="na">innodb_strict_mode</span><span class="o">=</span><span class="s">on</span>
-<span class="na">sql-mode</span><span class="o">=</span><span class="s">&quot;NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES&quot;</span>
+<span class="na">character-set-server</span> <span class="o">=</span> <span class="s">utf8</span>
+<span class="na">collation-server</span> <span class="o">=</span> <span class="s">utf8_general_ci</span>
+<span class="na">init-connect</span><span class="o">=</span><span class="s">&#39;SET NAMES utf8&#39;</span>
 </pre></div>
 </div>
-<p>The web app frontend role only needs access to a read-only version of
-the database, for example a read-replica. The async worker backend role
+<p>The web frontend role only needs access to a read-only version of
+the database, for example a read-replica. The worker backend role
 needs access to the read-write primary database.</p>
 </div>
 <div class="section" id="redis-amazon-elasticache">
 <h2>Redis / Amazon ElastiCache<a class="headerlink" href="#redis-amazon-elasticache" title="Permalink to this headline">¶</a></h2>
 <p>The application uses Redis as a queue for the asynchronous task workers and
 also uses it directly as a cache and to track API key rate limitations.</p>
-<p>You can install a standard Redis or use Amazon ElastiCache (Redis).</p>
+<p>You can install a standard Redis or use Amazon ElastiCache (Redis).
+The application is tested against Redis 3.2.</p>
 </div>
 <div class="section" id="amazon-s3">
 <h2>Amazon S3<a class="headerlink" href="#amazon-s3" title="Permalink to this headline">¶</a></h2>
@@ -201,15 +206,12 @@ if you are not hosted in an AWS environment.</p>
 delete old export files after a couple of days and <a class="reference internal" href="../glossary.html#term-observation"><span class="xref std std-term">observation</span></a>
 data after one year.</p>
 </div>
-<div class="section" id="datadog-statsd-sentry">
-<h2>Datadog / Statsd / Sentry<a class="headerlink" href="#datadog-statsd-sentry" title="Permalink to this headline">¶</a></h2>
-<p>The application uses Statsd to aggregate stats and Sentry to log
+<div class="section" id="statsd-sentry">
+<h2>Statsd / Sentry<a class="headerlink" href="#statsd-sentry" title="Permalink to this headline">¶</a></h2>
+<p>The application uses Statsd to aggregate metrics and Sentry to log
 exception messages.</p>
-<p>To use Statsd, you need to configure it in the config file, specifying
-a host and port, for example localhost port 8125.</p>
-<p>To get the app to log exceptions to Sentry, you will need to obtain the
-DSN for your Sentry instance. Edit location.ini and in the <cite>sentry</cite> section
-put your real DSN into the <cite>dsn</cite> setting.</p>
+<p>To use Statsd and Sentry, you need to configure them via environment
+variables as detailed in <a class="reference internal" href="config.html#config"><span class="std std-ref">the config section</span></a>.</p>
 <p>Installation of Statsd and Sentry are outside the scope of this documentation.</p>
 </div>
 <div class="section" id="image-tiles">

@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Internal Code API" href="index.html"/>
         <link rel="next" title="ichnaea.exceptions" href="exceptions.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Internal Code API</a><ul class="current">
@@ -152,7 +155,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/internal_api/db.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/internal_api/db.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -173,7 +176,7 @@
 
 <dl class="function">
 <dt id="ichnaea.db.configure_db">
-<code class="descclassname">ichnaea.db.</code><code class="descname">configure_db</code><span class="sig-paren">(</span><em>uri</em>, <em>_db=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.configure_db" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ichnaea.db.</code><code class="descname">configure_db</code><span class="sig-paren">(</span><em>type_=None</em>, <em>uri=None</em>, <em>_db=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.configure_db" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure and return a <a class="reference internal" href="#ichnaea.db.Database" title="ichnaea.db.Database"><code class="xref py py-class docutils literal"><span class="pre">Database</span></code></a> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -186,9 +189,9 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="ichnaea.db.db_ro_session">
-<code class="descclassname">ichnaea.db.</code><code class="descname">db_ro_session</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.db_ro_session" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attach a database read-only session to the request.</p>
+<dt id="ichnaea.db.db_session">
+<code class="descclassname">ichnaea.db.</code><code class="descname">db_session</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.db_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach a database session to the request.</p>
 </dd></dl>
 
 <dl class="function">
@@ -213,7 +216,7 @@
 
 <dl class="class">
 <dt id="ichnaea.db.Database">
-<em class="property">class </em><code class="descclassname">ichnaea.db.</code><code class="descname">Database</code><span class="sig-paren">(</span><em>uri</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.Database" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.db.</code><code class="descname">Database</code><span class="sig-paren">(</span><em>uri</em>, <em>pool=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/db.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.db.Database" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class representing an active database.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

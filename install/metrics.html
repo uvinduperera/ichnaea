@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Installation" href="index.html"/>
         <link rel="next" title="Testing" href="testing.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="devel.html">Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy.html">Deployment</a></li>
@@ -149,7 +152,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/install/metrics.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/install/metrics.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -168,10 +171,7 @@ aggregating and viewing them on a compatible dashboard.</p>
 <p>The code emits most metrics using the statsd tags extension. A metric
 name of <code class="docutils literal"><span class="pre">task#name:function,version:old</span></code> therefor means a statsd metric
 called <code class="docutils literal"><span class="pre">task</span></code> will be emitted with two tags <code class="docutils literal"><span class="pre">name:function</span></code> and
-<code class="docutils literal"><span class="pre">version:old</span></code>. If the statsd backend does not support tags, the
-statsd client can be configured with a <code class="docutils literal"><span class="pre">tag_support</span> <span class="pre">=</span> <span class="pre">false</span></code> option.
-In this case the above metric would be emitted as:
-<code class="docutils literal"><span class="pre">task.name_function.version_old</span></code>.</p>
+<code class="docutils literal"><span class="pre">version:old</span></code>.</p>
 <div class="section" id="api-request-metrics">
 <h2>API Request Metrics<a class="headerlink" href="#api-request-metrics" title="Permalink to this headline">¶</a></h2>
 <p>These are metrics that track how many times each specific public API
@@ -453,7 +453,6 @@ for each such API key and path combination for the current day.</div></blockquot
 <code class="docutils literal"><span class="pre">queue#queue:celery_export</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_incoming</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_monitor</span></code>,
-<code class="docutils literal"><span class="pre">queue#queue:celery_ocid</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_reports</span></code>,
 <code class="docutils literal"><span class="pre">queue#queue:celery_wifi</span></code> : gauges</p>
 <blockquote>
@@ -473,12 +472,6 @@ They are sampled at an approximate per-minute interval.</div></blockquote>
 <code class="docutils literal"><span class="pre">queue#queue:update_wifi_f</span></code> : gauges</p>
 <blockquote>
 <div>These gauges measure the number of items in the Redis update queues.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">table#table:cell_ocid_age</span></code> : gauge</p>
-<blockquote>
-<div>This gauge measures when the last entry was added to the <a class="reference internal" href="../glossary.html#term-ocid"><span class="xref std std-term">OCID</span></a>
-table. It represents this as <cite>now() - max(created)</cite> and converts it
-to a millisecond value. This metric is useful to see if the
-ocid_import jobs are run on a regular basis.</div></blockquote>
 </div>
 <div class="section" id="http-counters">
 <h2>HTTP Counters<a class="headerlink" href="#http-counters" title="Permalink to this headline">¶</a></h2>

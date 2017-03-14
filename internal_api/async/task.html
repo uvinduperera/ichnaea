@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.async" href="index.html"/>
         <link rel="next" title="ichnaea.cache" href="../cache.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Internal Code API</a><ul class="current">
@@ -160,7 +163,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/async/task.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/async/task.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -177,26 +180,6 @@
 <dt id="ichnaea.async.task.BaseTask">
 <em class="property">class </em><code class="descclassname">ichnaea.async.task.</code><code class="descname">BaseTask</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask" title="Permalink to this definition">¶</a></dt>
 <dd><p>A base task giving access to various outside connections.</p>
-<dl class="attribute">
-<dt id="ichnaea.async.task.BaseTask.abstract">
-<code class="descname">abstract</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.abstract" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.async.task.BaseTask.acks_late">
-<code class="descname">acks_late</code><em class="property"> = False</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.acks_late" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.async.task.BaseTask.ignore_result">
-<code class="descname">ignore_result</code><em class="property"> = True</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.ignore_result" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.async.task.BaseTask.max_retries">
-<code class="descname">max_retries</code><em class="property"> = 3</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.max_retries" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="classmethod">
 <dt id="ichnaea.async.task.BaseTask.shortname">
 <em class="property">classmethod </em><code class="descname">shortname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/async/task.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.async.task.BaseTask.shortname" title="Permalink to this definition">¶</a></dt>

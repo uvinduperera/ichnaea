@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
         <link rel="up" title="Internal Code API" href="index.html"/>
         <link rel="next" title="ichnaea.models" href="models/index.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Internal Code API</a><ul class="current">
@@ -152,7 +155,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/internal_api/log.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/internal_api/log.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -166,27 +169,21 @@
 <span id="ichnaea-log"></span><h1><a class="reference internal" href="#module-ichnaea.log" title="ichnaea.log"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.log</span></code></a><a class="headerlink" href="#module-ichnaea.log" title="Permalink to this headline">¶</a></h1>
 <p>Functionality related to statsd, sentry and freeform logging.</p>
 <dl class="data">
-<dt id="ichnaea.log.RAVEN_CLIENT">
-<code class="descclassname">ichnaea.log.</code><code class="descname">RAVEN_CLIENT</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.RAVEN_CLIENT" title="Permalink to this definition">¶</a></dt>
-<dd><p>The globally configured raven client.</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="ichnaea.log.STATS_CLIENT">
-<code class="descclassname">ichnaea.log.</code><code class="descname">STATS_CLIENT</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.STATS_CLIENT" title="Permalink to this definition">¶</a></dt>
-<dd><p>The globally configured statsd client.</p>
-</dd></dl>
-
-<dl class="data">
 <dt id="ichnaea.log.RAVEN_TRANSPORTS">
 <code class="descclassname">ichnaea.log.</code><code class="descname">RAVEN_TRANSPORTS</code><em class="property"> = {'gevent': &lt;class 'raven.transport.gevent.GeventedHTTPTransport'&gt;, 'sync': &lt;class 'raven.transport.http.HTTPTransport'&gt;, 'threaded': &lt;class 'raven.transport.threaded.ThreadedHTTPTransport'&gt;}</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.RAVEN_TRANSPORTS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mapping of raven transport names to classes.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="ichnaea.log.configure_logging">
+<code class="descclassname">ichnaea.log.</code><code class="descname">configure_logging</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.configure_logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure basic Python logging.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="ichnaea.log.configure_raven">
-<code class="descclassname">ichnaea.log.</code><code class="descname">configure_raven</code><span class="sig-paren">(</span><em>app_config</em>, <em>transport=None</em>, <em>_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.configure_raven" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure, globally set and return a <code class="xref py py-class docutils literal"><span class="pre">raven.Client</span></code> instance.</p>
+<code class="descclassname">ichnaea.log.</code><code class="descname">configure_raven</code><span class="sig-paren">(</span><em>transport=None</em>, <em>_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.configure_raven" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure and return a <code class="xref py py-class docutils literal"><span class="pre">raven.Client</span></code> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -204,9 +201,8 @@
 
 <dl class="function">
 <dt id="ichnaea.log.configure_stats">
-<code class="descclassname">ichnaea.log.</code><code class="descname">configure_stats</code><span class="sig-paren">(</span><em>app_config</em>, <em>_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.configure_stats" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure, globally set and return a
-<a class="reference internal" href="#ichnaea.log.StatsClient" title="ichnaea.log.StatsClient"><code class="xref py py-class docutils literal"><span class="pre">StatsClient</span></code></a> instance.</p>
+<code class="descclassname">ichnaea.log.</code><code class="descname">configure_stats</code><span class="sig-paren">(</span><em>_client=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.configure_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure and return a <a class="reference internal" href="#ichnaea.log.StatsClient" title="ichnaea.log.StatsClient"><code class="xref py py-class docutils literal"><span class="pre">StatsClient</span></code></a> instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -215,12 +211,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.log.configure_logging">
-<code class="descclassname">ichnaea.log.</code><code class="descname">configure_logging</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.configure_logging" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure basic Python logging.</p>
 </dd></dl>
 
 <dl class="function">
@@ -247,13 +237,13 @@ messages.</p>
 
 <dl class="class">
 <dt id="ichnaea.log.StatsClient">
-<em class="property">class </em><code class="descclassname">ichnaea.log.</code><code class="descname">StatsClient</code><span class="sig-paren">(</span><em>host='localhost'</em>, <em>port=8125</em>, <em>max_buffer_size=50</em>, <em>namespace=None</em>, <em>constant_tags=None</em>, <em>use_ms=False</em>, <em>tag_support=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.StatsClient" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.log.</code><code class="descname">StatsClient</code><span class="sig-paren">(</span><em>host='localhost'</em>, <em>port=8125</em>, <em>max_buffer_size=50</em>, <em>namespace=None</em>, <em>constant_tags=None</em>, <em>use_ms=False</em>, <em>use_default_route=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.StatsClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>A statsd client.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="ichnaea.log.DebugStatsClient">
-<em class="property">class </em><code class="descclassname">ichnaea.log.</code><code class="descname">DebugStatsClient</code><span class="sig-paren">(</span><em>host='localhost'</em>, <em>port=8125</em>, <em>max_buffer_size=50</em>, <em>namespace=None</em>, <em>constant_tags=None</em>, <em>use_ms=False</em>, <em>tag_support=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.DebugStatsClient" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ichnaea.log.</code><code class="descname">DebugStatsClient</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.DebugStatsClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>An in-memory statsd client with an inspectable message queue.</p>
 <dl class="method">
 <dt id="ichnaea.log.DebugStatsClient.check">
@@ -263,11 +253,6 @@ the stats message stream.</p>
 </dd></dl>
 
 </dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.log.random">
-<code class="descclassname">ichnaea.log.</code><code class="descname">random</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; x in the interval [0, 1).<a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/log.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.log.random" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </div>
 

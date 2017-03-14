@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Ichnaea 2.0 documentation" href="../../index.html"/>
         <link rel="up" title="ichnaea.models" href="index.html"/>
         <link rel="next" title="ichnaea.models.content" href="content.html"/>
@@ -85,7 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using the Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Services API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Data Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../algo/index.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Internal Code API</a><ul class="current">
@@ -169,7 +172,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/internal_api/models/constants.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/internal_api/models/constants.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -188,31 +191,31 @@
 <dd><p>An integer enum representing a radio type.</p>
 <dl class="attribute">
 <dt id="ichnaea.models.constants.Radio.gsm">
-<code class="descname">gsm</code><em class="property"> = &lt;Radio.gsm: 0&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.gsm" title="Permalink to this definition">¶</a></dt>
+<code class="descname">gsm</code><em class="property"> = 0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.gsm" title="Permalink to this definition">¶</a></dt>
 <dd><p>0</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.models.constants.Radio.cdma">
-<code class="descname">cdma</code><em class="property"> = &lt;Radio.cdma: 1&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.cdma" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cdma</code><em class="property"> = 1</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.cdma" title="Permalink to this definition">¶</a></dt>
 <dd><p>1</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.models.constants.Radio.wcdma">
-<code class="descname">wcdma</code><em class="property"> = &lt;Radio.wcdma: 2&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.wcdma" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wcdma</code><em class="property"> = 2</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.wcdma" title="Permalink to this definition">¶</a></dt>
 <dd><p>2</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.models.constants.Radio.umts">
-<code class="descname">umts</code><em class="property"> = &lt;Radio.wcdma: 2&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.umts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">umts</code><em class="property"> = 2</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.umts" title="Permalink to this definition">¶</a></dt>
 <dd><p>2</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.models.constants.Radio.lte">
-<code class="descname">lte</code><em class="property"> = &lt;Radio.lte: 3&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.lte" title="Permalink to this definition">¶</a></dt>
+<code class="descname">lte</code><em class="property"> = 3</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.Radio.lte" title="Permalink to this definition">¶</a></dt>
 <dd><p>3</p>
 </dd></dl>
 
@@ -225,25 +228,25 @@
 A lower integer value hints at a better quality of the report data.</p>
 <dl class="attribute">
 <dt id="ichnaea.models.constants.ReportSource.fixed">
-<code class="descname">fixed</code><em class="property"> = &lt;ReportSource.fixed: 0&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.fixed" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fixed</code><em class="property"> = 0</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.fixed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Outside knowledge about the true position of the station.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.models.constants.ReportSource.gnss">
-<code class="descname">gnss</code><em class="property"> = &lt;ReportSource.gnss: 3&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.gnss" title="Permalink to this definition">¶</a></dt>
+<code class="descname">gnss</code><em class="property"> = 3</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.gnss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Global navigation satellite system based data.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.models.constants.ReportSource.fused">
-<code class="descname">fused</code><em class="property"> = &lt;ReportSource.fused: 6&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.fused" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fused</code><em class="property"> = 6</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.fused" title="Permalink to this definition">¶</a></dt>
 <dd><p>Observation data positioned based on fused data.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="ichnaea.models.constants.ReportSource.query">
-<code class="descname">query</code><em class="property"> = &lt;ReportSource.query: 9&gt;</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.query" title="Permalink to this definition">¶</a></dt>
+<code class="descname">query</code><em class="property"> = 9</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/models/constants.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.models.constants.ReportSource.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Position estimate based on query data.</p>
 </dd></dl>
 
