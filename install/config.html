@@ -236,32 +236,28 @@ a <cite>location</cite> namespace.</p>
 <h3>Feature Specfic Variables<a class="headerlink" href="#feature-specfic-variables" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="assets">
 <h4>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h4>
-<p>The assets section contains settings for a static file repository
-(Amazon S3) and a public DNS to access those files via HTTPS
-(Amazon CloudFront).</p>
-<p>These are used to store and serve both the image tiles generated for
-the data map and the public export files available via the downloads
-section of the website.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[assets]</span>
-<span class="na">bucket</span> <span class="o">=</span> <span class="s">amazon_s3_bucket_name</span>
-<span class="na">url</span> <span class="o">=</span> <span class="s">https://some_distribution_id.cloudfront.net</span>
+<p>The application can optionally generate image tiles for a data map
+and public export files available via the downloads section of the
+website.</p>
+<p>These assets are stored in a static file repository (Amazon S3)
+and made available via a HTTPS frontend (Amazon CloudFront).</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">ASSET_BUCKET</span> <span class="o">=</span> <span class="s">amazon_s3_bucket_name</span>
+<span class="na">ASSET_URL</span> <span class="o">=</span> <span class="s">https://some_distribution_id.cloudfront.net</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="web">
 <h4>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h4>
-<p>The web section contains settings related to the non-API website content.</p>
+<p>The application contains both the HTTP API and some website content.</p>
 <p>The web functionality by default is limited to the public HTTP API.
-If the <code class="docutils literal"><span class="pre">enabled</span></code> setting is set to <code class="docutils literal"><span class="pre">true</span></code> the website content pages
-are also made available.</p>
-<p>The <code class="docutils literal"><span class="pre">map_id_base</span></code> and <code class="docutils literal"><span class="pre">map_id_labels</span></code> settings specify Mapbox map
-ids for a base map and a map containing only labels. The <code class="docutils literal"><span class="pre">map_token</span></code>
+If the map related settings are configured, the website content is
+also being made available.</p>
+<p>The <code class="docutils literal"><span class="pre">MAP_ID_BASE</span></code> and <code class="docutils literal"><span class="pre">MAP_ID_LABELS</span></code> settings specify Mapbox map
+ids for a base map and a map containing only labels. The <code class="docutils literal"><span class="pre">MAP_TOKEN</span></code>
 specifies a Mapbox access token.</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[web]</span>
-<span class="na">enabled</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">map_id_base</span> <span class="o">=</span> <span class="s">example_base.map-123</span>
-<span class="na">map_id_labels</span> <span class="o">=</span> <span class="s">example_labels.map-234</span>
-<span class="na">map_token</span> <span class="o">=</span> <span class="s">pk.example_public_access_token</span>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">MAP_ID_BASE</span> <span class="o">=</span> <span class="s">example_base.map-123</span>
+<span class="na">MAP_ID_LABELS</span> <span class="o">=</span> <span class="s">example_labels.map-234</span>
+<span class="na">MAP_TOKEN</span> <span class="o">=</span> <span class="s">pk.example_public_access_token</span>
 </pre></div>
 </div>
 </div>

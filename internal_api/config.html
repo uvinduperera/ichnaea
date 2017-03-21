@@ -167,77 +167,7 @@
             
   <div class="section" id="module-ichnaea.config">
 <span id="ichnaea-config"></span><h1><a class="reference internal" href="#module-ichnaea.config" title="ichnaea.config"><code class="xref py py-mod docutils literal"><span class="pre">ichnaea.config</span></code></a><a class="headerlink" href="#module-ichnaea.config" title="Permalink to this headline">¶</a></h1>
-<p>Contains helper functionality for reading and parsing configuration files
-and parsing of environment variables.</p>
-<dl class="class">
-<dt id="ichnaea.config.Config">
-<em class="property">class </em><code class="descclassname">ichnaea.config.</code><code class="descname">Config</code><span class="sig-paren">(</span><em>filename</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config" title="Permalink to this definition">¶</a></dt>
-<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">configparser.ConfigParser</span></code> subclass with added
-functionality.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> &#8211; The path to a configuration file.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="ichnaea.config.Config.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>section</em>, <em>option</em>, <em>default=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>A get method which returns the default argument when the option
-cannot be found instead of raising an exception.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ichnaea.config.Config.get_map">
-<code class="descname">get_map</code><span class="sig-paren">(</span><em>section</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config.get_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a config section as a dictionary.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ichnaea.config.Config.optionxform">
-<code class="descname">optionxform</code><span class="sig-paren">(</span><em>option</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config.optionxform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable automatic lowercasing of option names.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ichnaea.config.Config.asdict">
-<code class="descname">asdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.Config.asdict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the entire config as a dict of dicts.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.config.DummyConfig">
-<em class="property">class </em><code class="descclassname">ichnaea.config.</code><code class="descname">DummyConfig</code><span class="sig-paren">(</span><em>settings</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.DummyConfig" title="Permalink to this definition">¶</a></dt>
-<dd><p>A stub implementation of <a class="reference internal" href="#ichnaea.config.Config" title="ichnaea.config.Config"><code class="xref py py-class docutils literal"><span class="pre">ichnaea.config.Config</span></code></a> used in tests.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>settings</strong> &#8211; A dict of dicts representing the parsed config
-settings.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="ichnaea.config.read_config">
-<code class="descclassname">ichnaea.config.</code><code class="descname">read_config</code><span class="sig-paren">(</span><em>filename='/app/ichnaea/tests/data/test.ini'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/config.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.config.read_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read a configuration file from a passed in filename.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#ichnaea.config.Config" title="ichnaea.config.Config"><code class="xref py py-class docutils literal"><span class="pre">ichnaea.config.Config</span></code></a></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+<p>Contains helper functionality for parsing environment variables.</p>
 </div>
 
 

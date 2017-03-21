@@ -290,8 +290,6 @@ but only for results that met the expected accuracy.</p>
 <dl class="docutils">
 <dt><code class="docutils literal"><span class="pre">internal</span></code></dt>
 <dd>Data from our own crowd-sourcing effort.</dd>
-<dt><code class="docutils literal"><span class="pre">ocid</span></code></dt>
-<dd>Data from our <a class="reference internal" href="../glossary.html#term-opencellid"><span class="xref std std-term">OpenCellID</span></a> partner.</dd>
 <dt><code class="docutils literal"><span class="pre">fallback</span></code></dt>
 <dd>Data from the optional external fallback provider.</dd>
 <dt><code class="docutils literal"><span class="pre">geoip</span></code></dt>
@@ -311,7 +309,7 @@ individual data source we use to answer queries under the
 <p>Each request may use one or multiple of these sources to deliver a result.
 We log the same metrics as mentioned above for the result.</p>
 <p>All of this combined might lead to a tagged metric like:</p>
-<p><code class="docutils literal"><span class="pre">locate.source#key:test,region:de,source:ocid,accuracy:medium,status:hit</span></code></p>
+<p><code class="docutils literal"><span class="pre">locate.source#key:test,region:de,source:geoip,accuracy:low,status:hit</span></code></p>
 </div>
 <div class="section" id="api-fallback-source-metrics">
 <h2>API Fallback Source Metrics<a class="headerlink" href="#api-fallback-source-metrics" title="Permalink to this headline">¶</a></h2>

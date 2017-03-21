@@ -261,39 +261,10 @@ The accuracy is bounded by the min_accuracy and max_accuracy.</p>
 <dt id="ichnaea.api.locate.cell.CellPositionSource">
 <em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">CellPositionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements a search using our cell data.</p>
-<p>This source is only used in tests and as a base for the
-OCIDPositionSource.</p>
+<p>This source is only used in tests.</p>
 <dl class="attribute">
 <dt id="ichnaea.api.locate.cell.CellPositionSource.fallback_field">
 <code class="descname">fallback_field</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.CellPositionSource.fallback_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource">
-<em class="property">class </em><code class="descclassname">ichnaea.api.locate.cell.</code><code class="descname">OCIDPositionSource</code><span class="sig-paren">(</span><em>geoip_db</em>, <em>raven_client</em>, <em>redis_client</em>, <em>stats_client</em>, <em>data_queues</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implements a search using the <a class="reference internal" href="../../../glossary.html#term-ocid"><span class="xref std std-term">OCID</span></a> cell data.</p>
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource.cell_model">
-<code class="descname">cell_model</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource.cell_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">CellShardOCID</span></code></p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource.area_model">
-<code class="descname">area_model</code><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource.area_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">CellAreaOCID</span></code></p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource.fallback_field">
-<code class="descname">fallback_field</code><em class="property"> = None</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource.fallback_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ichnaea.api.locate.cell.OCIDPositionSource.source">
-<code class="descname">source</code><em class="property"> = 2</em><a class="reference external" href="https://github.com/mozilla/ichnaea/tree/master/ichnaea/api/locate/cell.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ichnaea.api.locate.cell.OCIDPositionSource.source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

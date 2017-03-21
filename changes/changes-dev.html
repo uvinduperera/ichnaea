@@ -164,6 +164,7 @@
 <div class="section" id="compatibility">
 <h4>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>Application configuration moved to environment variables.</li>
 <li>Moved initial database schema creation into an alembic migration.</li>
 <li>Test against Redis 3.2 instead of 2.8.</li>
 <li>Test against MySQL 5.7 instead of 5.6.</li>
@@ -183,6 +184,9 @@
 <div class="section" id="changes">
 <h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li>#492: Add new datamap cleanup task to delete old datamap rows.</li>
+<li>Update to botocore/boto3.</li>
+<li>No longer use secondary cell tables during lookups.</li>
 <li>Remove continous cell import functionality.</li>
 <li>Relax GeoIP database check to allow <cite>GeoLite2-City</cite> databases.</li>
 <li>Update region specific statistics once per day.</li>
