@@ -289,13 +289,13 @@ be of medium accuracy.</p>
 <p>One we have determined the expected accuracy category for the query, we
 compare it to the accuracy category of the result we determined. If we
 can deliver an equal or better category we consider the status to be
-a <cite>hit</cite>. If we don&#8217;t satisfy the expected category we consider the
+a <cite>hit</cite>. If we don’t satisfy the expected category we consider the
 result to be a <cite>miss</cite>.</p>
 <p>For each result we then log exactly one of the following tag combinations:</p>
 <p><code class="docutils literal"><span class="pre">#accuracy:high,status:hit</span></code>, <code class="docutils literal"><span class="pre">#accuracy:high,status:miss</span></code>,
 <code class="docutils literal"><span class="pre">#accuracy:medium,status:hit</span></code>, <code class="docutils literal"><span class="pre">#accuracy:medium,status:miss</span></code>,
 <code class="docutils literal"><span class="pre">#accuracy:low,status:hit</span></code>, <code class="docutils literal"><span class="pre">#accuracy:low,status:miss</span></code> : tags</p>
-<p>We don&#8217;t log metrics for the uncommon case of <code class="docutils literal"><span class="pre">none</span></code> or no expected
+<p>We don’t log metrics for the uncommon case of <code class="docutils literal"><span class="pre">none</span></code> or no expected
 accuracy.</p>
 <p>One special case exists for cell networks. If we cannot find an exact
 cell match, we might fall back to a cell area based estimate. If the
@@ -347,8 +347,8 @@ performance of outbound network calls and the effectiveness of its cache.</p>
 <blockquote>
 <div>Counts the number of hits and misses for the fallback cache. If
 the query should not be cached, a <cite>bypassed</cite> status is used.
-If the cached values couldn&#8217;t be read, a <cite>failure</cite> status is used.
-If the cached values didn&#8217;t agree on a consistent position,
+If the cached values couldn’t be read, a <cite>failure</cite> status is used.
+If the cached values didn’t agree on a consistent position,
 a <cite>inconsistent</cite> status is used.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">locate.fallback.lookup#fallback_name:&lt;fallback_name&gt;</span></code> : timer</p>
 <blockquote>
@@ -363,19 +363,19 @@ for example <cite>200</cite>.</div></blockquote>
 <div class="section" id="data-pipeline-metrics">
 <h2>Data Pipeline Metrics<a class="headerlink" href="#data-pipeline-metrics" title="Permalink to this headline">¶</a></h2>
 <p>When a batch of reports is accepted at one of the submission API
-endpoints, it is decomposed into a number of &#8220;items&#8221; &#8211; wifi or cell
-<a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a> &#8211; each of which then works its way through a process of
+endpoints, it is decomposed into a number of “items” – wifi or cell
+<a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a> – each of which then works its way through a process of
 normalization, consistency-checking and eventually (possibly) integration
 into aggregate <a class="reference internal" href="../glossary.html#term-station"><span class="xref std std-term">station</span></a> estimates held in the main database tables.
 Along the way several counters measure the steps involved:</p>
 <p><code class="docutils literal"><span class="pre">data.batch.upload</span></code>,
 <code class="docutils literal"><span class="pre">data.batch.upload#key:&lt;apikey&gt;</span></code> : counters</p>
 <blockquote>
-<div><p>Counts the number of &#8220;batches&#8221; of <a class="reference internal" href="../glossary.html#term-reports"><span class="xref std std-term">reports</span></a> accepted to the data
+<div><p>Counts the number of “batches” of <a class="reference internal" href="../glossary.html#term-reports"><span class="xref std std-term">reports</span></a> accepted to the data
 processing pipeline by an API endpoint. A batch generally
 corresponds to the set of <a class="reference internal" href="../glossary.html#term-reports"><span class="xref std std-term">reports</span></a> uploaded in a single HTTP POST
 to one of the submit APIs. In other words this metric counts
-&#8220;submissions that make it past coarse-grained checks&#8221; such as API-key
+“submissions that make it past coarse-grained checks” such as API-key
 and JSON schema validity checking.</p>
 <p>The metric is either emitted per tracked API key, or for everything
 else without a key tag.</p>
@@ -400,8 +400,8 @@ consistency, range or validity-condition error.</div></blockquote>
 <blockquote>
 <div><p>Count the number of Bluetooth, cell or WiFi <a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a> entering
 the data processing pipeline; before normalization and blocklist processing
-have been applied. In other words this metric counts &#8220;total Bluetooth,
-cell or WiFi <a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a> inside each submitted batch&#8221;, as each
+have been applied. In other words this metric counts “total Bluetooth,
+cell or WiFi <a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a> inside each submitted batch”, as each
 batch is composed of individual <a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a>.</p>
 <p>The metrics are either emitted per tracked API key, or for everything
 else without a key tag.</p>
@@ -429,7 +429,7 @@ normalized, integrated and not discarded due to consistency errors.</div></block
 <blockquote>
 <div>Count any Bluetooth, cell or WiFi network that is blocklisted due to
 the acceptance of multiple <a class="reference internal" href="../glossary.html#term-observations"><span class="xref std std-term">observations</span></a> at sufficiently different
-locations. In these cases, we decide that the <a class="reference internal" href="../glossary.html#term-station"><span class="xref std std-term">station</span></a> is &#8220;moving&#8221;
+locations. In these cases, we decide that the <a class="reference internal" href="../glossary.html#term-station"><span class="xref std std-term">station</span></a> is “moving”
 (such as a picocell or mobile hotspot on a public transit vehicle) and
 blocklist it, to avoid estimating query positions using the
 <a class="reference internal" href="../glossary.html#term-station"><span class="xref std std-term">station</span></a>.</div></blockquote>

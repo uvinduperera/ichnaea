@@ -323,17 +323,17 @@ inaccurate.</li>
 <li>#280: Relax the GeoIP country restriction and also trust the mcc derived
 country codes.</li>
 <li>#269: Improve search logic when dealing with multiple location areas.</li>
-<li>Correctly deal with multiple country codes per mcc value and don&#8217;t
+<li>Correctly deal with multiple country codes per mcc value and don’t
 restrict lookups to one arbitrary of those countries.</li>
 <li>Fix requirement in WiFi lookups to really only require two networks.</li>
-<li>Added basic setup for documenting internal code API&#8217;s and use the geocalc
+<li>Added basic setup for documenting internal code API’s and use the geocalc
 and service.locate modules as first examples.</li>
 <li>Initialize the application and outbound connections as part of the
 gunicorn worker startup process, instead of waiting for the first
 request and slowing it down.</li>
 <li>Switch pygeoip module to use memory caching, to prevent errors from
 changing the datafile from underneath the running process.</li>
-<li>Introduce 10% jitter into gunicorn&#8217;s max_requests setting, to prevent
+<li>Introduce 10% jitter into gunicorn’s max_requests setting, to prevent
 all worker processes from being recycled at once.</li>
 <li>Update gunicorn to 19.1.0 and use the new support for config settings
 based on a Python module. The gunicorn invocation needs to include
