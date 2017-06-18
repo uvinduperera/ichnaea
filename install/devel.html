@@ -258,19 +258,15 @@ with a web brower.</p>
 <div class="section" id="css-js-images">
 <h2>CSS / JS / Images<a class="headerlink" href="#css-js-images" title="Permalink to this headline">¶</a></h2>
 <p>The project depends on a number of external web assets. Those dependencies
-are tracked via npm and bower in files under <cite>docker/node</cite>.</p>
+are tracked via npm in files under <cite>docker/node</cite>.</p>
 <p>In order to install them, run:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>./server css
 ./server js
 </pre></div>
 </div>
-<p>This will install build tools and bower assets inside a docker container.
+<p>This will install build tools and assets inside a docker container.
 It will also copy, compile and minify files in various folders under
 <cite>ichnaea/content/static/</cite>.</p>
-<p>To check if the external assets are outdated run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./server bower_list
-</pre></div>
-</div>
 </div>
 <div class="section" id="python-dependencies">
 <h2>Python Dependencies<a class="headerlink" href="#python-dependencies" title="Permalink to this headline">¶</a></h2>
