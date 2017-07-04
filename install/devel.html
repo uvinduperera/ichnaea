@@ -212,14 +212,17 @@ docker-compose --version
 git submodule update --init --recursive
 </pre></div>
 </div>
-<p>Next you need to use the <code class="docutils literal"><span class="pre">./server</span></code> helper script to download and
-create all the required docker containers. As a first command you
-can use:</p>
+<p>For a development environment, you need to use the <code class="docutils literal"><span class="pre">./server</span></code> helper
+script to download and create all the required docker containers.
+As a first command you can use:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>./server <span class="nb">test</span>
 </pre></div>
 </div>
 <p>The first time around it’ll take a good while. This will also start
 a container running MySQL and one running Redis.</p>
+<p>Please note that running the tests will wipe the database and Redis
+instance it is connected to. DO NOT USE the server helper script for
+a production install.</p>
 <p>Next up, you can run the entire application, with its three different
 application containers:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>./server start
