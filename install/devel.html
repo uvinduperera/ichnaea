@@ -100,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#docker">Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#css-js-images">CSS / JS / Images</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#python-dependencies">Python Dependencies</a></li>
@@ -107,8 +108,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="deploy.html">Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html">Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metrics.html">Metrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
@@ -181,6 +182,12 @@
             
   <div class="section" id="development">
 <span id="devel"></span><h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to install a production version of the code,
+please skip these instructions and follow
+<a class="reference internal" href="deploy.html#deploy"><span class="std std-ref">the deployment docs</span></a> instead.</p>
+</div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>In order to install a development version of the service, you need to
@@ -238,6 +245,12 @@ interact with the containers.</p>
 Each of these commands also takes a second argument of either
 scheduler, services, web or worker. This allows you to start and stop
 only a specific type of container.</p>
+<p>The server script also reacts to a <cite>PULL</cite> environment variable, which
+allows you to skip pulling for new docker images during each invocation.
+Prefix the command with <cite>PULL=0</cite>, for example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">PULL</span><span class="o">=</span><span class="m">0</span> ./server start
+</pre></div>
+</div>
 <p>To interact and inspect the application image, there is one more helper
 command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>./server shell
@@ -245,6 +258,29 @@ command:</p>
 </div>
 <p>This will drop you into a bash shell inside a container based on the
 application image.</p>
+</div>
+<div class="section" id="unit-tests">
+<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The tests clear out the databae and Redis on each test run,
+so don’t run these against a production instance or you will
+loose all your data.</p>
+</div>
+<p>If you have a local development environment, you can run all tests
+including coverage tests via:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./server <span class="nb">test</span>
+</pre></div>
+</div>
+<p>Or run individual test modules via for example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./server <span class="nb">test</span> <span class="nv">TESTS</span><span class="o">=</span>ichnaea.tests.test_geoip
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since the tests use a real database and Redis connection,
+you cannot parallelize any tests.</p>
+</div>
 </div>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>

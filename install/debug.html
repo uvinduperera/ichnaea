@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Debugging &mdash; Ichnaea 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Ichnaea 2.0 documentation" href="../index.html"/>
+        <link rel="up" title="Installation" href="index.html"/>
+        <link rel="next" title="Metrics" href="metrics.html"/>
+        <link rel="prev" title="Configuration" href="config.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Ichnaea
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Services API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Data Export</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="devel.html">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intro">Intro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mysql-config">MySQL Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connections">Connections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#async-worker">Async Worker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-pipeline">Data Pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html">Metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../algo/index.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changes/index.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ichnaea</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Installation</a> &raquo;</li>
+        
+      <li>Debugging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/debug.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="debugging">
+<span id="debug"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<p>Once you have a development or production setup of the application,
+you might want to test it and see if all the different parts are
+configured correctly.</p>
+</div>
+<div class="section" id="mysql-config">
+<h2>MySQL Config<a class="headerlink" href="#mysql-config" title="Permalink to this headline">¶</a></h2>
+<p>First, lets check the database configuration. If you have a development
+setup, you can open a MySQL client prompt via:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker-compose <span class="nb">exec</span> mysql mysql -uroot -plocation location
+</pre></div>
+</div>
+<p>Otherwise use the the MySQL client tool and connect to your database.</p>
+<p>First up, check if the alembic database setup and migration was run:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">alembic_version</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">--------------+</span>
+<span class="o">|</span> <span class="n">version_num</span>  <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+</span>
+<span class="o">|</span> <span class="n">d2d9ecb12edc</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+</span>
+<span class="mi">1</span> <span class="k">row</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This needs to produce a single row and some <cite>version_num</cite> in it.
+If it isn’t there, check the <cite>Database Setup</cite> part of
+<a class="reference internal" href="deploy.html#deploy"><span class="std std-ref">the deploy docs</span></a>.</p>
+<p>Now check the API keys:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>select * from api_key\G
+*************************** 1. row ***************************
+                  valid_key: test
+                     maxreq: NULL
+             allow_fallback: 0
+               allow_locate: 1
+             allow_transfer: 0
+                  shortname: NULL
+              fallback_name: NULL
+               fallback_url: NULL
+         fallback_ratelimit: NULL
+fallback_ratelimit_interval: NULL
+      fallback_cache_expire: NULL
+        store_sample_locate: 100
+        store_sample_submit: 100
+1 row in set (0.00 sec)
+</pre></div>
+</div>
+<p>And the export config:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">export_config</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">----------+-------+----------+------+-----------+--------------+</span>
+<span class="o">|</span> <span class="n">name</span>     <span class="o">|</span> <span class="n">batch</span> <span class="o">|</span> <span class="k">schema</span>   <span class="o">|</span> <span class="n">url</span>  <span class="o">|</span> <span class="n">skip_keys</span> <span class="o">|</span> <span class="n">skip_sources</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">----------+-------+----------+------+-----------+--------------+</span>
+<span class="o">|</span> <span class="n">internal</span> <span class="o">|</span>   <span class="mi">100</span> <span class="o">|</span> <span class="n">internal</span> <span class="o">|</span> <span class="k">NULL</span> <span class="o">|</span> <span class="k">NULL</span>      <span class="o">|</span> <span class="k">NULL</span>         <span class="o">|</span>
+<span class="o">+</span><span class="c1">----------+-------+----------+------+-----------+--------------+</span>
+<span class="mi">1</span> <span class="k">row</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you are missing either of these entries, you might have setup your
+database as part of a development setup and used the <cite>./server test</cite>
+script. This sets up the database for testing needs, but doesn’t
+configure the export config required for running a real application setup.</p>
+<p>One way to correct this is to downgrade and re-upgrade the database
+schema using alembic. Using the appropriate docker invocation, you
+can run:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;...docker or server script...&gt; alembic downgrade base
+&lt;...docker or server script...&gt; alembic upgrade head
+</pre></div>
+</div>
+<p>This tears down the database schema to an empty state and upgrades it
+again. As part of the upgrade, the API key and export config are added.</p>
+</div>
+<div class="section" id="connections">
+<h2>Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h2>
+<p>Docker containers typically run on their own IP sub-network and
+connecting from inside an application container to a different
+machine can be tricky, especially if those other machines are also
+docker containers.</p>
+<p>Best to check if the containers can actually reach the MySQL database
+and Redis datastore.</p>
+<p>The easiest way is to follow the instructions in the <cite>Runtime Checks</cite>
+part of the <a class="reference internal" href="deploy.html#deploy"><span class="std std-ref">the deploy docs</span></a>. Especially calling the
+<cite>/__heartbeat__</cite> HTTP endpoint on the web application.</p>
+<p>Another way is to start a container and try to connect to the two
+external connections from inside it:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;...docker or server script...&gt; shell
+</pre></div>
+</div>
+<p>And inside the container:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>redis-cli -h <span class="nv">$REDIS_HOST</span>
+<span class="m">172</span>.17.0.2:6379&gt; keys *
+<span class="m">1</span><span class="o">)</span> <span class="s2">&quot;_kombu.binding.celery&quot;</span>
+<span class="m">2</span><span class="o">)</span> <span class="s2">&quot;unacked_mutex&quot;</span>
+<span class="m">3</span><span class="o">)</span> <span class="s2">&quot;_kombu.binding.celery.pidbox&quot;</span>
+</pre></div>
+</div>
+<p>The above output should be there if the async worker containers are
+running or have been run once.</p>
+<p>In the same way we can connect to the MySQL database from inside the
+container. In the same shell container as above:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mysql -h <span class="nv">$DB_HOST</span> -uroot -plocation location
+...
+Welcome to the MySQL monitor.  Commands end with <span class="p">;</span> or <span class="se">\g</span>.
+...
+mysql&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="async-worker">
+<h2>Async Worker<a class="headerlink" href="#async-worker" title="Permalink to this headline">¶</a></h2>
+<p>The async worker uses a Python framework called Celery. You can use the
+<a class="reference external" href="https://celery.readthedocs.io/en/latest/userguide/monitoring.html">Celery monitoring guide</a>
+for more detailed information.</p>
+<p>A basic test is to call the <cite>inspect stats</cite> commands. Open a shell container
+and inside it run:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>/app/bin/celery -A ichnaea.async.app:celery_app inspect stats
+-&gt; celery@388ec81273ba: OK
+<span class="o">{</span>
+    ...
+    <span class="s2">&quot;total&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;ichnaea.data.tasks.monitor_api_key_limits&quot;</span>: <span class="m">1</span>,
+        <span class="s2">&quot;ichnaea.data.tasks.monitor_api_users&quot;</span>: <span class="m">1</span>,
+        <span class="s2">&quot;ichnaea.data.tasks.monitor_queue_size&quot;</span>: <span class="m">15</span>,
+        <span class="s2">&quot;ichnaea.data.tasks.update_blue&quot;</span>: <span class="m">304</span>,
+        <span class="s2">&quot;ichnaea.data.tasks.update_cell&quot;</span>: <span class="m">66</span>,
+        <span class="s2">&quot;ichnaea.data.tasks.update_cellarea&quot;</span>: <span class="m">21</span>,
+        <span class="s2">&quot;ichnaea.data.tasks.update_incoming&quot;</span>: <span class="m">29</span>,
+        <span class="s2">&quot;ichnaea.data.tasks.update_wifi&quot;</span>: <span class="m">368</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The output is pretty long. For us the <cite>total</cite> section is the most
+interesting. If you have your worker and scheduler container running
+for some minutes, this section should fill up with various tasks.</p>
+<p>If this section continues to be empty, something is wrong with the
+scheduler and it isn’t adding tasks to the worker queues.</p>
+</div>
+<div class="section" id="data-pipeline">
+<h2>Data Pipeline<a class="headerlink" href="#data-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>Now that all the building blocks are in place, let’s try to send them
+real data to the service and see how it processes it.</p>
+<p>Assuming containers for all three roles are running, we’ll use the HTTP
+geosubmit v2 API endpoint to send some new data to the service:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -H <span class="s1">&#39;Content-Type: application/json&#39;</span> http://127.0.0.1:8000/v2/geosubmit?key<span class="o">=</span><span class="nb">test</span> -d <span class="se">\</span>
+<span class="s1">&#39;{&quot;items&quot;: [{&quot;wifiAccessPoints&quot;: [{&quot;macAddress&quot;: &quot;94B40F010D01&quot;}, {&quot;macAddress&quot;: &quot;94B40F010D00&quot;}, {&quot;macAddress&quot;: &quot;94B40F010D03&quot;}], &quot;position&quot;: {&quot;latitude&quot;: 51.0, &quot;longitude&quot;: 10.0}}]}&#39;</span>
+</pre></div>
+</div>
+<p>We can find this data again in Redis, open a Redis client and do:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>lrange <span class="s2">&quot;queue_export_internal&quot;</span> <span class="m">0</span> <span class="m">10</span>
+<span class="m">1</span><span class="o">)</span> <span class="s2">&quot;{\&quot;api_key\&quot;: \&quot;test\&quot;, \&quot;report\&quot;: {\&quot;timestamp\&quot;: 1499267286717, \&quot;bluetoothBeacons\&quot;: [], \&quot;wifiAccessPoints\&quot;: [{\&quot;macAddress\&quot;: \&quot;94B40F010D01\&quot;}, {\&quot;macAddress\&quot;: \&quot;94B40F010D00\&quot;}, {\&quot;macAddress\&quot;: \&quot;94B40F010D03\&quot;}], \&quot;cellTowers\&quot;: [], \&quot;position\&quot;: {\&quot;latitude\&quot;: 51.0, \&quot;longitude\&quot;: 10.0}}}&quot;</span>
+</pre></div>
+</div>
+<p>The data pipeline is optimized for production use and processes data in
+batches or if data sits too long in a queue. We can use the later feature
+to trick the pipeline into processing data sooner.</p>
+<p>In the same Redis client use:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>expire <span class="s2">&quot;queue_export_internal&quot;</span> <span class="m">300</span>
+</pre></div>
+</div>
+<p>This tells the queue to get deleted in 300 seconds. The scheduler runs
+a task to check this queue about once per minute and checks both its
+length and its remaining time-to-live.</p>
+<p>If we check the available Redis keys again, we might see something like:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>keys *
+<span class="m">1</span><span class="o">)</span> <span class="s2">&quot;_kombu.binding.celery&quot;</span>
+<span class="m">2</span><span class="o">)</span> <span class="s2">&quot;apiuser:submit:test:2017-07-05&quot;</span>
+<span class="m">3</span><span class="o">)</span> <span class="s2">&quot;update_wifi_0&quot;</span>
+<span class="m">4</span><span class="o">)</span> <span class="s2">&quot;unacked_mutex&quot;</span>
+<span class="m">5</span><span class="o">)</span> <span class="s2">&quot;statcounter_unique_wifi_20170705&quot;</span>
+<span class="m">6</span><span class="o">)</span> <span class="s2">&quot;_kombu.binding.celery.pidbox&quot;</span>
+</pre></div>
+</div>
+<p>If we wait a bit longer, the <cite>update_wifi_0</cite> entry should vanish.</p>
+<p>Once that happened, we can check the database directly. On a MySQL
+client prompt do:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="n">hex</span><span class="p">(</span><span class="o">`</span><span class="n">mac</span><span class="o">`</span><span class="p">),</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="k">from</span> <span class="n">wifi_shard_0</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">--------------+------+------+</span>
+<span class="o">|</span> <span class="n">hex</span><span class="p">(</span><span class="o">`</span><span class="n">mac</span><span class="o">`</span><span class="p">)</span>   <span class="o">|</span> <span class="n">lat</span>  <span class="o">|</span> <span class="n">lon</span>  <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+------+------+</span>
+<span class="o">|</span> <span class="mi">94</span><span class="n">B40F010D00</span> <span class="o">|</span>   <span class="mi">51</span> <span class="o">|</span>   <span class="mi">10</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">94</span><span class="n">B40F010D01</span> <span class="o">|</span>   <span class="mi">51</span> <span class="o">|</span>   <span class="mi">10</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">94</span><span class="n">B40F010D03</span> <span class="o">|</span>   <span class="mi">51</span> <span class="o">|</span>   <span class="mi">10</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+------+------+</span>
+<span class="mi">3</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once the data has been processed, we can try the public HTTP API again
+and see if we can locate us. To do that we can use both the geolocate
+and region APIs:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -H <span class="s1">&#39;Content-Type: application/json&#39;</span> http://127.0.0.1:8000/v1/geolocate?key<span class="o">=</span><span class="nb">test</span> -d <span class="se">\</span>
+<span class="s1">&#39;{&quot;wifiAccessPoints&quot;: [{&quot;macAddress&quot;: &quot;94B40F010D01&quot;}, {&quot;macAddress&quot;: &quot;94B40F010D00&quot;}, {&quot;macAddress&quot;: &quot;94B40F010D03&quot;}]}&#39;</span>
+</pre></div>
+</div>
+<p>This should produce a response:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">51.0</span><span class="p">,</span> <span class="s2">&quot;lng&quot;</span><span class="o">:</span> <span class="mf">10.0</span><span class="p">},</span> <span class="s2">&quot;accuracy&quot;</span><span class="o">:</span> <span class="mf">10.0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>And again using the region API:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -H <span class="s1">&#39;Content-Type: application/json&#39;</span> http://127.0.0.1:8000/v1/country?key<span class="o">=</span><span class="nb">test</span> -d <span class="se">\</span>
+<span class="s1">&#39;{&quot;wifiAccessPoints&quot;: [{&quot;macAddress&quot;: &quot;94B40F010D01&quot;}, {&quot;macAddress&quot;: &quot;94B40F010D00&quot;}, {&quot;macAddress&quot;: &quot;94B40F010D03&quot;}]}&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;country_code&quot;</span><span class="o">:</span> <span class="s2">&quot;DE&quot;</span><span class="p">,</span> <span class="s2">&quot;country_name&quot;</span><span class="o">:</span> <span class="s2">&quot;Germany&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If you check Redis queues again, there’s a new entry in there for the
+geolocate query we just submitted:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>lrange <span class="s2">&quot;queue_export_internal&quot;</span> <span class="m">0</span> <span class="m">10</span>
+<span class="m">1</span><span class="o">)</span> <span class="s2">&quot;{\&quot;api_key\&quot;: \&quot;test\&quot;, \&quot;report\&quot;: {\&quot;wifiAccessPoints\&quot;: [{\&quot;macAddress\&quot;: \&quot;94b40f010d01\&quot;}, {\&quot;macAddress\&quot;: \&quot;94b40f010d00\&quot;}, {\&quot;macAddress\&quot;: \&quot;94b40f010d03\&quot;}], \&quot;fallbacks\&quot;: {\&quot;ipf\&quot;: true, \&quot;lacf\&quot;: true}, \&quot;position\&quot;: {\&quot;latitude\&quot;: 51.0, \&quot;longitude\&quot;: 10.0, \&quot;accuracy\&quot;: 10.0, \&quot;source\&quot;: \&quot;query\&quot;}}}&quot;</span>
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal"><span class="pre">&quot;source&quot;:</span> <span class="pre">&quot;query&quot;</span></code> part at the end, which tells the pipeline
+the position data does not represent a GPS verified position, but was
+the result of a query.</p>
+<p>You can use the same <cite>expire</cite> trick as above again, to get the data
+processed faster.</p>
+<p>On a MySQL prompt, you can see the result:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="n">hex</span><span class="p">(</span><span class="o">`</span><span class="n">mac</span><span class="o">`</span><span class="p">),</span> <span class="n">last_seen</span> <span class="k">from</span> <span class="n">wifi_shard_0</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">--------------+------------+</span>
+<span class="o">|</span> <span class="n">hex</span><span class="p">(</span><span class="o">`</span><span class="n">mac</span><span class="o">`</span><span class="p">)</span>   <span class="o">|</span> <span class="n">last_seen</span>  <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+------------+</span>
+<span class="o">|</span> <span class="mi">94</span><span class="n">B40F010D00</span> <span class="o">|</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">05</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">94</span><span class="n">B40F010D01</span> <span class="o">|</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">05</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">94</span><span class="n">B40F010D03</span> <span class="o">|</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">05</span> <span class="o">|</span>
+<span class="o">+</span><span class="c1">--------------+------------+</span>
+<span class="mi">3</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since all the WiFi networks were already known, their position just got
+confirmed. This gets stored in the <cite>last_seen</cite> column, which tracks when
+the network was last confirmed in a query.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="metrics.html" class="btn btn-neutral float-right" title="Metrics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="config.html" class="btn btn-neutral" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013-2017, Mozilla.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
