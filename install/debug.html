@@ -214,8 +214,8 @@ If it isn’t there, check the <cite>Database Setup</cite> part of
                      maxreq: NULL
              allow_fallback: 0
                allow_locate: 1
+               allow_region: 1
              allow_transfer: 0
-                  shortname: NULL
               fallback_name: NULL
                fallback_url: NULL
          fallback_ratelimit: NULL
@@ -237,14 +237,14 @@ fallback_ratelimit_interval: NULL
 </pre></div>
 </div>
 <p>If you are missing either of these entries, you might have setup your
-database as part of a development setup and used the <cite>./server test</cite>
+database as part of a development setup and used the <cite>./dev test</cite>
 script. This sets up the database for testing needs, but doesn’t
 configure the export config required for running a real application setup.</p>
 <p>One way to correct this is to downgrade and re-upgrade the database
 schema using alembic. Using the appropriate docker invocation, you
 can run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;...docker or server script...&gt; alembic downgrade base
-&lt;...docker or server script...&gt; alembic upgrade head
+<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;...docker or dev script...&gt; alembic downgrade base
+&lt;...docker or dev script...&gt; alembic upgrade head
 </pre></div>
 </div>
 <p>This tears down the database schema to an empty state and upgrades it
@@ -263,7 +263,7 @@ part of the <a class="reference internal" href="deploy.html#deploy"><span class=
 <cite>/__heartbeat__</cite> HTTP endpoint on the web application.</p>
 <p>Another way is to start a container and try to connect to the two
 external connections from inside it:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;...docker or server script...&gt; shell
+<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;...docker or dev script...&gt; shell
 </pre></div>
 </div>
 <p>And inside the container:</p>
@@ -300,7 +300,6 @@ and inside it run:</p>
     <span class="s2">&quot;total&quot;</span>: <span class="o">{</span>
         <span class="s2">&quot;ichnaea.data.tasks.monitor_api_key_limits&quot;</span>: <span class="m">1</span>,
         <span class="s2">&quot;ichnaea.data.tasks.monitor_api_users&quot;</span>: <span class="m">1</span>,
-        <span class="s2">&quot;ichnaea.data.tasks.monitor_queue_size&quot;</span>: <span class="m">15</span>,
         <span class="s2">&quot;ichnaea.data.tasks.update_blue&quot;</span>: <span class="m">304</span>,
         <span class="s2">&quot;ichnaea.data.tasks.update_cell&quot;</span>: <span class="m">66</span>,
         <span class="s2">&quot;ichnaea.data.tasks.update_cellarea&quot;</span>: <span class="m">21</span>,

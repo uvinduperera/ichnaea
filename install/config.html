@@ -294,8 +294,41 @@ in hex representation are commonly used, for example
 <code class="docutils literal"><span class="pre">329694ac-a337-4856-af30-66162bc8187a</span></code>.</p>
 <p>But to start off, you can add a simple literal <cite>test</cite> API key:</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">api_key</span>
-<span class="p">(</span><span class="o">`</span><span class="n">valid_key</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">allow_locate</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;test&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">(</span><span class="o">`</span><span class="n">valid_key</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">allow_locate</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">allow_region</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;test&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
+</div>
+<div class="section" id="fallback">
+<h4>Fallback<a class="headerlink" href="#fallback" title="Permalink to this headline">¶</a></h4>
+<p>You can also enable a fallback location provider on a per API key basis.
+This allows you to send queries from this API key onwards to a different
+external service, if the application itself can’t provide a good enough
+result.</p>
+<p>In order to configure this fallback mode, some additional columns need
+to be set, for example:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">fallback_name: mozilla</span>
+<span class="na">fallback_schema: ichnaea/v1</span>
+<span class="na">fallback_url: https://location.services.mozilla.com/v1/geolocate?key</span><span class="o">=</span><span class="s">some_key</span>
+<span class="na">fallback_ratelimit: 10</span>
+<span class="na">fallback_ratelimit_interval: 60</span>
+<span class="na">fallback_cache_expire: 86400</span>
+</pre></div>
+</div>
+<p>The name can be shared between multiple API keys and acts as a partition
+key for the cache and rate limit tracking.</p>
+<p>The schema can be either <cite>NULL</cite>, <cite>ichnaea/v1</cite> or <cite>unwiredlabs/v1</cite>.
+<cite>NULL</cite> and <cite>ichnaea/v1</cite> are currently synonymous. Setting the schema to
+either one of those means the external service uses the same API as
+ichnaea. Examples of this are Google’s and Combain’s location services.
+Setting it to <cite>unwiredlabs/v1</cite> means you use unwiredlabs.com as a fallback.</p>
+<p>Note that these services all have different terms about allowing caching
+or rate limiting.</p>
+<p>If the service allows caching their responses on an intermediate service,
+the <cite>cache_expire</cite> setting can be used to specify the number of seconds
+the responses should be cached. This can avoid repeated calls to the
+external service for the same queries.</p>
+<p>The rate limit settings are a combination of how many requests are allowed
+to be send to the external service. It’s a “number” per “time interval”
+combination, so in the above example 10 requests per 60 seconds.</p>
 </div>
 </div>
 <div class="section" id="export-configuration">

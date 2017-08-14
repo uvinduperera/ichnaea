@@ -411,7 +411,7 @@ the database file was picked up correctly.</p>
 <h2>Upgrade<a class="headerlink" href="#upgrade" title="Permalink to this headline">¶</a></h2>
 <p>In order to upgrade a running installation of ichnaea to a new version,
 first check and get the docker image for the new version, for example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>docker pull mozilla/location:2.1.1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>docker pull mozilla/location:2.2.0
 </pre></div>
 </div>
 <p>Next up stop all containers running the scheduler and async worker roles.
@@ -419,7 +419,7 @@ If you use docker’s own daemon support, the <cite>ps</cite>, <cite>stop</cite>
 can be used to accomplish this.</p>
 <p>Now run the database migrations found in the new image:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>docker run -it --rm --env-file env.txt <span class="se">\</span>
-    mozilla/location:2.1.1 alembic upgrade head
+    mozilla/location:2.2.0 alembic upgrade head
 </pre></div>
 </div>
 <p>The web app role can work with both the old database and new database
