@@ -315,11 +315,16 @@ to be set, for example:</p>
 </div>
 <p>The name can be shared between multiple API keys and acts as a partition
 key for the cache and rate limit tracking.</p>
-<p>The schema can be either <cite>NULL</cite>, <cite>ichnaea/v1</cite> or <cite>unwiredlabs/v1</cite>.
-<cite>NULL</cite> and <cite>ichnaea/v1</cite> are currently synonymous. Setting the schema to
-either one of those means the external service uses the same API as
-ichnaea. Examples of this are Google’s and Combain’s location services.
-Setting it to <cite>unwiredlabs/v1</cite> means you use unwiredlabs.com as a fallback.</p>
+<p>The schema can be one of  <cite>NULL</cite>, <cite>ichnaea/v1</cite>, <cite>combain/v1</cite>, <cite>googlemaps/v1</cite>
+or <cite>unwiredlabs/v1</cite>.</p>
+<p><cite>NULL</cite> and <cite>ichnaea/v1</cite> are currently synonymous. Setting the schema to one
+of those means the external service uses the same API as the geolocate v1
+API used in ichnaea.</p>
+<p>If you set the url to one of the unwiredlabs endpoints, add your API
+token as an anchor fragment to the end of it, so instead of specfifying
+<code class="docutils literal"><span class="pre">https://us1.unwiredlabs.com/v2/process.php</span></code>, you would instead use
+<code class="docutils literal"><span class="pre">https://us1.unwiredlabs.com/v2/process.php#my_secret_token</span></code>. The
+code will read the token from here and put it into the request body.</p>
 <p>Note that these services all have different terms about allowing caching
 or rate limiting.</p>
 <p>If the service allows caching their responses on an intermediate service,

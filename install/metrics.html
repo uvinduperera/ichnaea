@@ -339,11 +339,12 @@ We log the same metrics as mentioned above for the result.</p>
 <h2>API Fallback Source Metrics<a class="headerlink" href="#api-fallback-source-metrics" title="Permalink to this headline">¶</a></h2>
 <p>The external fallback source has a couple extra metrics to observe the
 performance of outbound network calls and the effectiveness of its cache.</p>
-<p><code class="docutils literal"><span class="pre">locate.fallback.cache#status:hit</span></code>,
-<code class="docutils literal"><span class="pre">locate.fallback.cache#status:miss</span></code>,
-<code class="docutils literal"><span class="pre">locate.fallback.cache#status:bypassed</span></code>,
-<code class="docutils literal"><span class="pre">locate.fallback.cache#status:inconsistent</span></code>,
-<code class="docutils literal"><span class="pre">locate.fallback.cache#status:failure</span></code> : counter</p>
+<p>The fallback name tag specifies which fallback service is used.</p>
+<p><code class="docutils literal"><span class="pre">locate.fallback.cache#fallback_name:&lt;fallback_name&gt;,status:hit</span></code>,
+<code class="docutils literal"><span class="pre">locate.fallback.cache#fallback_name:&lt;fallback_name&gt;,status:miss</span></code>,
+<code class="docutils literal"><span class="pre">locate.fallback.cache#fallback_name:&lt;fallback_name&gt;,status:bypassed</span></code>,
+<code class="docutils literal"><span class="pre">locate.fallback.cache#fallback_name:&lt;fallback_name&gt;,status:inconsistent</span></code>,
+<code class="docutils literal"><span class="pre">locate.fallback.cache#fallback_name:&lt;fallback_name&gt;,status:failure</span></code> : counter</p>
 <blockquote>
 <div>Counts the number of hits and misses for the fallback cache. If
 the query should not be cached, a <cite>bypassed</cite> status is used.
@@ -352,13 +353,11 @@ If the cached values didn’t agree on a consistent position,
 a <cite>inconsistent</cite> status is used.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">locate.fallback.lookup#fallback_name:&lt;fallback_name&gt;</span></code> : timer</p>
 <blockquote>
-<div>Measures the time it takes to do each outbound network request.
-The fallback name tag specifies which fallback service is used.</div></blockquote>
+<div>Measures the time it takes to do each outbound network request.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">locate.fallback.lookup#fallback_name:&lt;fallback_name&gt;,status:&lt;code&gt;</span></code> : counter</p>
 <blockquote>
-<div>Counts the HTTP response codes for all outbound requests per named
-fallback service. There is one counter per HTTP response code,
-for example <cite>200</cite>.</div></blockquote>
+<div>Counts the HTTP response codes for all outbound requests. There
+is one counter per HTTP response code, for example <cite>200</cite>.</div></blockquote>
 </div>
 <div class="section" id="data-pipeline-metrics">
 <h2>Data Pipeline Metrics<a class="headerlink" href="#data-pipeline-metrics" title="Permalink to this headline">¶</a></h2>
