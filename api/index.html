@@ -93,6 +93,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Using the Service</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Services API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requesting-an-api-key">Requesting an API Key</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#api-access-keys">API Access Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#errors">Errors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#invalid-api-key">Invalid API Key</a></li>
@@ -186,6 +187,21 @@
 well as reporting a location based on IP addresses, cell or WiFi networks.</p>
 <p>New client developments should use the <a class="reference internal" href="region.html#api-region-latest"><span class="std std-ref">Region</span></a>,
 <a class="reference internal" href="geolocate.html#api-geolocate-latest"><span class="std std-ref">Geolocate</span></a> or <a class="reference internal" href="geosubmit2.html#api-geosubmit-latest"><span class="std std-ref">Geosubmit Version 2</span></a> APIs.</p>
+<div class="section" id="requesting-an-api-key">
+<h2>Requesting an API Key<a class="headerlink" href="#requesting-an-api-key" title="Permalink to this headline">¶</a></h2>
+<p>The key has a daily usage limit of about 100,000 requests. As we aren&#8217;t
+offering a commercial service, please note that we do not make any
+guarantees about the accuracy of the results or the availability of
+the service.</p>
+<p>Please make sure that you actually need the raw API access to
+perform geolocation lookups.  If you just need to get location data
+from your web application, you can directly use the
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation">HTML5 API</a>.</p>
+<p>To apply for an API key, please email <a class="reference external" href="mailto:mls-contact&#37;&#52;&#48;mozilla&#46;com">mls-contact<span>&#64;</span>mozilla<span>&#46;</span>com</a> with
+the number of requests you&#8217;re planning on making per day and how you
+are planning on using the location service.  This will help us plan
+out how we allocate resources to keep the service responsive.</p>
+</div>
 <div class="section" id="api-access-keys">
 <h2>API Access Keys<a class="headerlink" href="#api-access-keys" title="Permalink to this headline">¶</a></h2>
 <p>You can anonymously submit data to the service without an API key via
