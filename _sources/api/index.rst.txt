@@ -14,6 +14,9 @@ New client developments should use the :ref:`api_region_latest`,
 API Access Keys
 ===============
 
+Mozilla is currently evaluating its MLS service and terms and is
+not currently distributing API keys.
+
 You can anonymously submit data to the service without an API key via
 any of the submission APIs.
 
