@@ -276,13 +276,14 @@ and made available via a HTTPS frontend (Amazon CloudFront).</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="web">
-<h4>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h4>
-<p>The application contains both the HTTP API and some website content.</p>
-<p>The web functionality by default is limited to the public HTTP API.
-If the map related settings are configured, the website content is
-also being made available.</p>
-<p>The <code class="docutils literal"><span class="pre">MAP_TOKEN</span></code> specifies a Mapbox access token.</p>
+<div class="section" id="mapbox">
+<h4>Mapbox<a class="headerlink" href="#mapbox" title="Permalink to this headline">¶</a></h4>
+<p>The web site content uses Mapbox to generate tiles. In order to do this,
+it requires a Mapbox API token.</p>
+<p>You can create an account on their site: <a class="reference external" href="https://mapbox.com/">https://mapbox.com/</a></p>
+<p>After you have an account, you can create an API token at:
+<a class="reference external" href="https://accounts.mapbox.com/">https://accounts.mapbox.com/</a></p>
+<p>Set the <code class="docutils literal"><span class="pre">MAP_TOKEN</span></code> configuration value to your API token.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">MAP_TOKEN</span> <span class="o">=</span> <span class="s">pk.example_public_access_token</span>
 </pre></div>
 </div>
